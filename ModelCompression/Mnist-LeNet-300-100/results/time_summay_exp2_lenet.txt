@@ -1,0 +1,8 @@
+Lenet 300 100 mnist ds:
+P (full model)
+    size 300 100 - 266610 params
+    time ~00:12:00
+C
+    size 30 100 - 27660 params
+    time ~00:05:00
+    fine tuning time ~00:08:00

@@ -1,0 +1,488 @@
+C:\Users\GiladEiniKbyLake\AppData\Local\conda\conda\envs\cifar10clean-gpu\python.exe D:/workspace/2019SGD/ModelCompression/mc.py
+Python  Version 3.6.8 |Anaconda, Inc.| (default, Feb 21 2019, 18:30:04) [MSC v.1916 64 bit (AMD64)]
+PyTorch Version 1.1.0
+main_Lenet_full_sweep():
+	seed: 42
+	ds_name: mnist
+	ds_root: ../Datasets
+	p_bs_train: 64
+	bs_test: 1000
+	shuffle: True
+	data_limit: 0
+	input_size: (1, 28, 28)
+	save_models: True
+	f: <function cross_entropy at 0x0000014E6019B950>
+	p_epochs: 40
+	p_fc1: 300
+	p_fc2: 100
+	use_acc: False
+	p_OPT: {'name': 'ADAM', 'lr': 0.001, 'weight_decay': 0}
+	home_folder: ./mnist/by_loss/ADAM_lr_0_001/ft_only_end
+	p_path: ./mnist/by_loss/ADAM_lr_0_001
+	bal_OPT: {'name': 'ADAM', 'lr': 0.001, 'weight_decay': 0}
+	bal_epochs: 400
+	bal_shuffle: False
+	bal_bs: 500
+	bal_fc1: 30
+	bal_fc2: 100
+	ft_OPT: {'name': 'ADAM', 'lr': 0.001, 'weight_decay': 0.0001}
+	ft1_epochs: 10
+	ft2_epochs: 400
+	ft_bs_train: 128
+working on CPU
+get_data_set_transformed(mnist: train dataset): |X|=(60000, 1, 28, 28), |y|=(60000,)
+get_data_set_transformed(mnist: test dataset): |X|=(10000, 1, 28, 28), |y|=(10000,)
+
+p_model:
+Created p1_LeNetMnist_300_100: #param=266610. path=./mnist/by_loss/ADAM_lr_0_001/p1_LeNetMnist_300_100.pt
+./mnist/by_loss/ADAM_lr_0_001/p1_LeNetMnist_300_100.pt exists
+p1_LeNetMnist_300_100 loaded from ./mnist/by_loss/ADAM_lr_0_001/p1_LeNetMnist_300_100.pt
+p1_LeNetMnist_300_100 is fully frozen
+p1_LeNetMnist_300_100 test_datasets:
+	train loss=0.021430, accuracy=59571/60000 (99.28%)
+	test  loss=0.091702, accuracy=9793/10000 (97.93%)
+
+c1_model:
+Created c_LeNetMnist_30_100: path=./mnist/by_loss/ADAM_lr_0_001/ft_only_end/c_LeNetMnist_30_100.pt
+	full LeNet #params = 266,610
+	this LeNet #params =  27,660
+	compression ratio = 10.4%
+c_LeNetMnist_30_100 exists
+c_LeNetMnist_30_100 loaded from ./mnist/by_loss/ADAM_lr_0_001/ft_only_end/c_LeNetMnist_30_100.pt
+./mnist/by_loss/ADAM_lr_0_001/ft_only_end/c_LeNetMnist_30_100_tune_2.pt doesn't exists
+c_LeNetMnist_30_100 is fully trainable
+c_LeNetMnist_30_100:
+	fc1.weight     : [30, 784]  (  23520 params), trainable:True, is_cuda:False
+	fc1.bias       : [30]       (     30 params), trainable:True, is_cuda:False
+	fc2.weight     : [100, 30]  (   3000 params), trainable:True, is_cuda:False
+	fc2.bias       : [100]      (    100 params), trainable:True, is_cuda:False
+	fc3.weight     : [10, 100]  (   1000 params), trainable:True, is_cuda:False
+	fc3.bias       : [10]       (     10 params), trainable:True, is_cuda:False
+	Total 27660 params
+Training c_LeNetMnist_30_100:
+	train_ds: |X|=(60000, 1, 28, 28), |y|=(60000,)
+	saving on each loss improvment
+	epochs=400, bs_train=128, #trainBatches=469, bs_test=1000, #testBatches=10
+	optimizer = Adam (Parameter Group 0 amsgrad: False betas: (0.9, 0.999) eps: 1e-08 lr: 0.001 weight_decay: 0.0001)
+	epoch [  1/400] train loss:0.020463,test loss=0.168915, accuracy=9708/10000 (97.08%), time so far 00:00:01 New best found
+	epoch [  2/400] train loss:0.013159,test loss=0.152294, accuracy=9712/10000 (97.12%), time so far 00:00:02 New best found
+	epoch [  3/400] train loss:0.010317,test loss=0.155382, accuracy=9710/10000 (97.10%), time so far 00:00:03
+	epoch [  4/400] train loss:0.013179,test loss=0.159458, accuracy=9699/10000 (96.99%), time so far 00:00:04
+	epoch [  5/400] train loss:0.011095,test loss=0.152993, accuracy=9709/10000 (97.09%), time so far 00:00:06
+	epoch [  6/400] train loss:0.012127,test loss=0.147748, accuracy=9736/10000 (97.36%), time so far 00:00:07 New best found
+	epoch [  7/400] train loss:0.007531,test loss=0.155280, accuracy=9726/10000 (97.26%), time so far 00:00:08
+	epoch [  8/400] train loss:0.011822,test loss=0.160644, accuracy=9702/10000 (97.02%), time so far 00:00:09
+	epoch [  9/400] train loss:0.011091,test loss=0.164790, accuracy=9691/10000 (96.91%), time so far 00:00:10
+	epoch [ 10/400] train loss:0.011520,test loss=0.146035, accuracy=9718/10000 (97.18%), time so far 00:00:12 New best found
+	epoch [ 11/400] train loss:0.007784,test loss=0.139515, accuracy=9734/10000 (97.34%), time so far 00:00:13 New best found
+	epoch [ 12/400] train loss:0.011381,test loss=0.141355, accuracy=9721/10000 (97.21%), time so far 00:00:14
+	epoch [ 13/400] train loss:0.008351,test loss=0.160063, accuracy=9697/10000 (96.97%), time so far 00:00:15
+	epoch [ 14/400] train loss:0.007290,test loss=0.162970, accuracy=9732/10000 (97.32%), time so far 00:00:16
+	epoch [ 15/400] train loss:0.011775,test loss=0.155311, accuracy=9701/10000 (97.01%), time so far 00:00:18
+	epoch [ 16/400] train loss:0.010635,test loss=0.142634, accuracy=9727/10000 (97.27%), time so far 00:00:19
+	epoch [ 17/400] train loss:0.010365,test loss=0.146689, accuracy=9696/10000 (96.96%), time so far 00:00:20
+	epoch [ 18/400] train loss:0.008572,test loss=0.142271, accuracy=9723/10000 (97.23%), time so far 00:00:21
+	epoch [ 19/400] train loss:0.007424,test loss=0.157951, accuracy=9710/10000 (97.10%), time so far 00:00:22
+	epoch [ 20/400] train loss:0.006516,test loss=0.153033, accuracy=9702/10000 (97.02%), time so far 00:00:24
+	epoch [ 21/400] train loss:0.016029,test loss=0.155228, accuracy=9703/10000 (97.03%), time so far 00:00:25
+	epoch [ 22/400] train loss:0.007751,test loss=0.145597, accuracy=9738/10000 (97.38%), time so far 00:00:26
+	epoch [ 23/400] train loss:0.005417,test loss=0.137094, accuracy=9766/10000 (97.66%), time so far 00:00:27 New best found
+	epoch [ 24/400] train loss:0.008822,test loss=0.167479, accuracy=9672/10000 (96.72%), time so far 00:00:28
+	epoch [ 25/400] train loss:0.013791,test loss=0.167060, accuracy=9647/10000 (96.47%), time so far 00:00:30
+	epoch [ 26/400] train loss:0.009268,test loss=0.141200, accuracy=9733/10000 (97.33%), time so far 00:00:31
+	epoch [ 27/400] train loss:0.007701,test loss=0.137054, accuracy=9727/10000 (97.27%), time so far 00:00:32 New best found
+	epoch [ 28/400] train loss:0.007765,test loss=0.151130, accuracy=9719/10000 (97.19%), time so far 00:00:33
+	epoch [ 29/400] train loss:0.007646,test loss=0.131151, accuracy=9731/10000 (97.31%), time so far 00:00:34 New best found
+	epoch [ 30/400] train loss:0.012366,test loss=0.148332, accuracy=9723/10000 (97.23%), time so far 00:00:36
+	epoch [ 31/400] train loss:0.007198,test loss=0.139229, accuracy=9734/10000 (97.34%), time so far 00:00:37
+	epoch [ 32/400] train loss:0.010537,test loss=0.151181, accuracy=9710/10000 (97.10%), time so far 00:00:38
+	epoch [ 33/400] train loss:0.008846,test loss=0.148650, accuracy=9704/10000 (97.04%), time so far 00:00:39
+	epoch [ 34/400] train loss:0.006618,test loss=0.174825, accuracy=9683/10000 (96.83%), time so far 00:00:40
+	epoch [ 35/400] train loss:0.011470,test loss=0.158227, accuracy=9687/10000 (96.87%), time so far 00:00:42
+	epoch [ 36/400] train loss:0.009637,test loss=0.136316, accuracy=9714/10000 (97.14%), time so far 00:00:43
+	epoch [ 37/400] train loss:0.006652,test loss=0.136873, accuracy=9741/10000 (97.41%), time so far 00:00:44
+	epoch [ 38/400] train loss:0.010947,test loss=0.169942, accuracy=9687/10000 (96.87%), time so far 00:00:45
+	epoch [ 39/400] train loss:0.009662,test loss=0.143164, accuracy=9719/10000 (97.19%), time so far 00:00:46
+	epoch [ 40/400] train loss:0.007223,test loss=0.147416, accuracy=9725/10000 (97.25%), time so far 00:00:48
+	epoch [ 41/400] train loss:0.011971,test loss=0.173856, accuracy=9673/10000 (96.73%), time so far 00:00:49
+	epoch [ 42/400] train loss:0.007829,test loss=0.145057, accuracy=9745/10000 (97.45%), time so far 00:00:50
+	epoch [ 43/400] train loss:0.009203,test loss=0.162614, accuracy=9687/10000 (96.87%), time so far 00:00:51
+	epoch [ 44/400] train loss:0.009009,test loss=0.156595, accuracy=9694/10000 (96.94%), time so far 00:00:52
+	epoch [ 45/400] train loss:0.006146,test loss=0.152744, accuracy=9703/10000 (97.03%), time so far 00:00:54
+	epoch [ 46/400] train loss:0.009078,test loss=0.166676, accuracy=9704/10000 (97.04%), time so far 00:00:55
+	epoch [ 47/400] train loss:0.017595,test loss=0.146554, accuracy=9724/10000 (97.24%), time so far 00:00:56
+	epoch [ 48/400] train loss:0.006350,test loss=0.136719, accuracy=9750/10000 (97.50%), time so far 00:00:58
+	epoch [ 49/400] train loss:0.007629,test loss=0.144878, accuracy=9724/10000 (97.24%), time so far 00:00:59
+	epoch [ 50/400] train loss:0.010132,test loss=0.144406, accuracy=9729/10000 (97.29%), time so far 00:01:00
+	epoch [ 51/400] train loss:0.008047,test loss=0.141064, accuracy=9742/10000 (97.42%), time so far 00:01:01
+	epoch [ 52/400] train loss:0.008035,test loss=0.167161, accuracy=9683/10000 (96.83%), time so far 00:01:03
+	epoch [ 53/400] train loss:0.014651,test loss=0.143326, accuracy=9737/10000 (97.37%), time so far 00:01:04
+	epoch [ 54/400] train loss:0.008954,test loss=0.136425, accuracy=9729/10000 (97.29%), time so far 00:01:05
+	epoch [ 55/400] train loss:0.004538,test loss=0.138501, accuracy=9734/10000 (97.34%), time so far 00:01:07
+	epoch [ 56/400] train loss:0.005728,test loss=0.145285, accuracy=9725/10000 (97.25%), time so far 00:01:08
+	epoch [ 57/400] train loss:0.011663,test loss=0.160699, accuracy=9699/10000 (96.99%), time so far 00:01:09
+	epoch [ 58/400] train loss:0.011086,test loss=0.138953, accuracy=9740/10000 (97.40%), time so far 00:01:11
+	epoch [ 59/400] train loss:0.007223,test loss=0.140292, accuracy=9732/10000 (97.32%), time so far 00:01:12
+	epoch [ 60/400] train loss:0.008792,test loss=0.151411, accuracy=9696/10000 (96.96%), time so far 00:01:13
+	epoch [ 61/400] train loss:0.012209,test loss=0.137894, accuracy=9746/10000 (97.46%), time so far 00:01:15
+	epoch [ 62/400] train loss:0.003737,test loss=0.137736, accuracy=9735/10000 (97.35%), time so far 00:01:16
+	epoch [ 63/400] train loss:0.004239,test loss=0.156545, accuracy=9687/10000 (96.87%), time so far 00:01:17
+	epoch [ 64/400] train loss:0.016729,test loss=0.156382, accuracy=9722/10000 (97.22%), time so far 00:01:19
+	epoch [ 65/400] train loss:0.010523,test loss=0.152148, accuracy=9709/10000 (97.09%), time so far 00:01:20
+	epoch [ 66/400] train loss:0.007671,test loss=0.136644, accuracy=9729/10000 (97.29%), time so far 00:01:21
+	epoch [ 67/400] train loss:0.006734,test loss=0.135300, accuracy=9726/10000 (97.26%), time so far 00:01:22
+	epoch [ 68/400] train loss:0.007377,test loss=0.147637, accuracy=9719/10000 (97.19%), time so far 00:01:23
+	epoch [ 69/400] train loss:0.010311,test loss=0.153662, accuracy=9706/10000 (97.06%), time so far 00:01:25
+	epoch [ 70/400] train loss:0.008337,test loss=0.136044, accuracy=9733/10000 (97.33%), time so far 00:01:26
+	epoch [ 71/400] train loss:0.007657,test loss=0.134702, accuracy=9744/10000 (97.44%), time so far 00:01:27
+	epoch [ 72/400] train loss:0.006738,test loss=0.137573, accuracy=9732/10000 (97.32%), time so far 00:01:28
+	epoch [ 73/400] train loss:0.011500,test loss=0.162051, accuracy=9693/10000 (96.93%), time so far 00:01:29
+	epoch [ 74/400] train loss:0.012437,test loss=0.134629, accuracy=9746/10000 (97.46%), time so far 00:01:30
+	epoch [ 75/400] train loss:0.006154,test loss=0.139295, accuracy=9704/10000 (97.04%), time so far 00:01:32
+	epoch [ 76/400] train loss:0.005590,test loss=0.130885, accuracy=9742/10000 (97.42%), time so far 00:01:33 New best found
+	epoch [ 77/400] train loss:0.008110,test loss=0.163185, accuracy=9701/10000 (97.01%), time so far 00:01:34
+	epoch [ 78/400] train loss:0.012372,test loss=0.131216, accuracy=9722/10000 (97.22%), time so far 00:01:35
+	epoch [ 79/400] train loss:0.006666,test loss=0.133979, accuracy=9739/10000 (97.39%), time so far 00:01:36
+	epoch [ 80/400] train loss:0.009796,test loss=0.160245, accuracy=9688/10000 (96.88%), time so far 00:01:37
+	epoch [ 81/400] train loss:0.011894,test loss=0.128076, accuracy=9736/10000 (97.36%), time so far 00:01:39 New best found
+	epoch [ 82/400] train loss:0.004822,test loss=0.136024, accuracy=9715/10000 (97.15%), time so far 00:01:40
+	epoch [ 83/400] train loss:0.004739,test loss=0.126601, accuracy=9746/10000 (97.46%), time so far 00:01:41 New best found
+	epoch [ 84/400] train loss:0.003587,test loss=0.187221, accuracy=9626/10000 (96.26%), time so far 00:01:42
+	epoch [ 85/400] train loss:0.017198,test loss=0.140172, accuracy=9706/10000 (97.06%), time so far 00:01:43
+	epoch [ 86/400] train loss:0.007367,test loss=0.128523, accuracy=9738/10000 (97.38%), time so far 00:01:45
+	epoch [ 87/400] train loss:0.008021,test loss=0.143397, accuracy=9714/10000 (97.14%), time so far 00:01:46
+	epoch [ 88/400] train loss:0.008077,test loss=0.140471, accuracy=9728/10000 (97.28%), time so far 00:01:47
+	epoch [ 89/400] train loss:0.011965,test loss=0.156398, accuracy=9681/10000 (96.81%), time so far 00:01:48
+	epoch [ 90/400] train loss:0.009422,test loss=0.144138, accuracy=9708/10000 (97.08%), time so far 00:01:49
+	epoch [ 91/400] train loss:0.005027,test loss=0.131202, accuracy=9735/10000 (97.35%), time so far 00:01:50
+	epoch [ 92/400] train loss:0.004740,test loss=0.129502, accuracy=9754/10000 (97.54%), time so far 00:01:52
+	epoch [ 93/400] train loss:0.009564,test loss=0.132940, accuracy=9730/10000 (97.30%), time so far 00:01:53
+	epoch [ 94/400] train loss:0.009607,test loss=0.168395, accuracy=9655/10000 (96.55%), time so far 00:01:54
+	epoch [ 95/400] train loss:0.010072,test loss=0.125349, accuracy=9732/10000 (97.32%), time so far 00:01:55 New best found
+	epoch [ 96/400] train loss:0.006796,test loss=0.126830, accuracy=9739/10000 (97.39%), time so far 00:01:56
+	epoch [ 97/400] train loss:0.005402,test loss=0.136857, accuracy=9726/10000 (97.26%), time so far 00:01:57
+	epoch [ 98/400] train loss:0.009263,test loss=0.166117, accuracy=9685/10000 (96.85%), time so far 00:01:59
+	epoch [ 99/400] train loss:0.015095,test loss=0.138541, accuracy=9729/10000 (97.29%), time so far 00:02:00
+	epoch [100/400] train loss:0.005258,test loss=0.131866, accuracy=9746/10000 (97.46%), time so far 00:02:01
+	epoch [101/400] train loss:0.005944,test loss=0.141400, accuracy=9729/10000 (97.29%), time so far 00:02:02
+	epoch [102/400] train loss:0.008791,test loss=0.139149, accuracy=9731/10000 (97.31%), time so far 00:02:03
+	epoch [103/400] train loss:0.009960,test loss=0.138210, accuracy=9719/10000 (97.19%), time so far 00:02:04
+	epoch [104/400] train loss:0.006450,test loss=0.137469, accuracy=9732/10000 (97.32%), time so far 00:02:06
+	epoch [105/400] train loss:0.012151,test loss=0.131080, accuracy=9745/10000 (97.45%), time so far 00:02:07
+	epoch [106/400] train loss:0.007412,test loss=0.142001, accuracy=9723/10000 (97.23%), time so far 00:02:08
+	epoch [107/400] train loss:0.006971,test loss=0.136526, accuracy=9728/10000 (97.28%), time so far 00:02:09
+	epoch [108/400] train loss:0.005527,test loss=0.127334, accuracy=9736/10000 (97.36%), time so far 00:02:10
+	epoch [109/400] train loss:0.005939,test loss=0.130084, accuracy=9712/10000 (97.12%), time so far 00:02:11
+	epoch [110/400] train loss:0.016345,test loss=0.140375, accuracy=9734/10000 (97.34%), time so far 00:02:13
+	epoch [111/400] train loss:0.009114,test loss=0.134814, accuracy=9720/10000 (97.20%), time so far 00:02:14
+	epoch [112/400] train loss:0.002628,test loss=0.120042, accuracy=9754/10000 (97.54%), time so far 00:02:15 New best found
+	epoch [113/400] train loss:0.001999,test loss=0.117077, accuracy=9766/10000 (97.66%), time so far 00:02:16 New best found
+	epoch [114/400] train loss:0.008517,test loss=0.160172, accuracy=9703/10000 (97.03%), time so far 00:02:17
+	epoch [115/400] train loss:0.018750,test loss=0.127631, accuracy=9727/10000 (97.27%), time so far 00:02:19
+	epoch [116/400] train loss:0.005412,test loss=0.123452, accuracy=9752/10000 (97.52%), time so far 00:02:20
+	epoch [117/400] train loss:0.005192,test loss=0.118461, accuracy=9750/10000 (97.50%), time so far 00:02:21
+	epoch [118/400] train loss:0.007652,test loss=0.137667, accuracy=9717/10000 (97.17%), time so far 00:02:22
+	epoch [119/400] train loss:0.011883,test loss=0.121004, accuracy=9748/10000 (97.48%), time so far 00:02:23
+	epoch [120/400] train loss:0.006755,test loss=0.138456, accuracy=9735/10000 (97.35%), time so far 00:02:24
+	epoch [121/400] train loss:0.006204,test loss=0.127110, accuracy=9751/10000 (97.51%), time so far 00:02:26
+	epoch [122/400] train loss:0.005154,test loss=0.124228, accuracy=9755/10000 (97.55%), time so far 00:02:27
+	epoch [123/400] train loss:0.009704,test loss=0.125943, accuracy=9737/10000 (97.37%), time so far 00:02:28
+	epoch [124/400] train loss:0.013235,test loss=0.137498, accuracy=9719/10000 (97.19%), time so far 00:02:29
+	epoch [125/400] train loss:0.005144,test loss=0.119809, accuracy=9755/10000 (97.55%), time so far 00:02:30
+	epoch [126/400] train loss:0.006958,test loss=0.141577, accuracy=9686/10000 (96.86%), time so far 00:02:31
+	epoch [127/400] train loss:0.012210,test loss=0.132046, accuracy=9729/10000 (97.29%), time so far 00:02:32
+	epoch [128/400] train loss:0.007053,test loss=0.124237, accuracy=9745/10000 (97.45%), time so far 00:02:34
+	epoch [129/400] train loss:0.005184,test loss=0.130154, accuracy=9746/10000 (97.46%), time so far 00:02:35
+	epoch [130/400] train loss:0.008663,test loss=0.134333, accuracy=9740/10000 (97.40%), time so far 00:02:36
+	epoch [131/400] train loss:0.004870,test loss=0.131490, accuracy=9740/10000 (97.40%), time so far 00:02:37
+	epoch [132/400] train loss:0.008650,test loss=0.123360, accuracy=9738/10000 (97.38%), time so far 00:02:38
+	epoch [133/400] train loss:0.011658,test loss=0.121214, accuracy=9749/10000 (97.49%), time so far 00:02:39
+	epoch [134/400] train loss:0.007250,test loss=0.127699, accuracy=9749/10000 (97.49%), time so far 00:02:41
+	epoch [135/400] train loss:0.003234,test loss=0.126637, accuracy=9748/10000 (97.48%), time so far 00:02:42
+	epoch [136/400] train loss:0.012688,test loss=0.137892, accuracy=9727/10000 (97.27%), time so far 00:02:43
+	epoch [137/400] train loss:0.013290,test loss=0.143862, accuracy=9718/10000 (97.18%), time so far 00:02:44
+	epoch [138/400] train loss:0.005026,test loss=0.125955, accuracy=9740/10000 (97.40%), time so far 00:02:45
+	epoch [139/400] train loss:0.005521,test loss=0.115184, accuracy=9763/10000 (97.63%), time so far 00:02:46 New best found
+	epoch [140/400] train loss:0.002858,test loss=0.135217, accuracy=9720/10000 (97.20%), time so far 00:02:48
+	epoch [141/400] train loss:0.009773,test loss=0.139276, accuracy=9721/10000 (97.21%), time so far 00:02:49
+	epoch [142/400] train loss:0.015778,test loss=0.127843, accuracy=9736/10000 (97.36%), time so far 00:02:50
+	epoch [143/400] train loss:0.007396,test loss=0.117819, accuracy=9756/10000 (97.56%), time so far 00:02:51
+	epoch [144/400] train loss:0.004115,test loss=0.146079, accuracy=9690/10000 (96.90%), time so far 00:02:52
+	epoch [145/400] train loss:0.010292,test loss=0.124820, accuracy=9739/10000 (97.39%), time so far 00:02:53
+	epoch [146/400] train loss:0.007746,test loss=0.121336, accuracy=9756/10000 (97.56%), time so far 00:02:55
+	epoch [147/400] train loss:0.006885,test loss=0.122365, accuracy=9758/10000 (97.58%), time so far 00:02:56
+	epoch [148/400] train loss:0.008492,test loss=0.136367, accuracy=9725/10000 (97.25%), time so far 00:02:57
+	epoch [149/400] train loss:0.012777,test loss=0.113961, accuracy=9764/10000 (97.64%), time so far 00:02:58 New best found
+	epoch [150/400] train loss:0.003455,test loss=0.107487, accuracy=9777/10000 (97.77%), time so far 00:02:59 New best found
+	epoch [151/400] train loss:0.001791,test loss=0.118453, accuracy=9754/10000 (97.54%), time so far 00:03:00
+	epoch [152/400] train loss:0.016494,test loss=0.114883, accuracy=9763/10000 (97.63%), time so far 00:03:02
+	epoch [153/400] train loss:0.005736,test loss=0.118822, accuracy=9754/10000 (97.54%), time so far 00:03:03
+	epoch [154/400] train loss:0.004001,test loss=0.118153, accuracy=9764/10000 (97.64%), time so far 00:03:04
+	epoch [155/400] train loss:0.011915,test loss=0.149008, accuracy=9693/10000 (96.93%), time so far 00:03:05
+	epoch [156/400] train loss:0.011730,test loss=0.125334, accuracy=9731/10000 (97.31%), time so far 00:03:06
+	epoch [157/400] train loss:0.004388,test loss=0.116324, accuracy=9772/10000 (97.72%), time so far 00:03:07
+	epoch [158/400] train loss:0.005057,test loss=0.136079, accuracy=9754/10000 (97.54%), time so far 00:03:09
+	epoch [159/400] train loss:0.013198,test loss=0.141575, accuracy=9728/10000 (97.28%), time so far 00:03:10
+	epoch [160/400] train loss:0.007269,test loss=0.114942, accuracy=9762/10000 (97.62%), time so far 00:03:11
+	epoch [161/400] train loss:0.004468,test loss=0.121508, accuracy=9747/10000 (97.47%), time so far 00:03:12
+	epoch [162/400] train loss:0.006424,test loss=0.126806, accuracy=9752/10000 (97.52%), time so far 00:03:13
+	epoch [163/400] train loss:0.008912,test loss=0.138088, accuracy=9725/10000 (97.25%), time so far 00:03:14
+	epoch [164/400] train loss:0.010606,test loss=0.131465, accuracy=9735/10000 (97.35%), time so far 00:03:16
+	epoch [165/400] train loss:0.007624,test loss=0.121268, accuracy=9753/10000 (97.53%), time so far 00:03:17
+	epoch [166/400] train loss:0.007692,test loss=0.158859, accuracy=9668/10000 (96.68%), time so far 00:03:18
+	epoch [167/400] train loss:0.006288,test loss=0.123768, accuracy=9747/10000 (97.47%), time so far 00:03:19
+	epoch [168/400] train loss:0.004372,test loss=0.113237, accuracy=9761/10000 (97.61%), time so far 00:03:21
+	epoch [169/400] train loss:0.005718,test loss=0.118727, accuracy=9755/10000 (97.55%), time so far 00:03:22
+	epoch [170/400] train loss:0.011118,test loss=0.143967, accuracy=9703/10000 (97.03%), time so far 00:03:23
+	epoch [171/400] train loss:0.010666,test loss=0.121970, accuracy=9757/10000 (97.57%), time so far 00:03:24
+	epoch [172/400] train loss:0.004469,test loss=0.116559, accuracy=9753/10000 (97.53%), time so far 00:03:25
+	epoch [173/400] train loss:0.004841,test loss=0.133652, accuracy=9760/10000 (97.60%), time so far 00:03:27
+	epoch [174/400] train loss:0.008095,test loss=0.126650, accuracy=9738/10000 (97.38%), time so far 00:03:28
+	epoch [175/400] train loss:0.010842,test loss=0.126575, accuracy=9736/10000 (97.36%), time so far 00:03:29
+	epoch [176/400] train loss:0.008555,test loss=0.122838, accuracy=9742/10000 (97.42%), time so far 00:03:30
+	epoch [177/400] train loss:0.005567,test loss=0.142184, accuracy=9724/10000 (97.24%), time so far 00:03:31
+	epoch [178/400] train loss:0.009542,test loss=0.109809, accuracy=9759/10000 (97.59%), time so far 00:03:33
+	epoch [179/400] train loss:0.004176,test loss=0.115237, accuracy=9758/10000 (97.58%), time so far 00:03:34
+	epoch [180/400] train loss:0.002746,test loss=0.111211, accuracy=9774/10000 (97.74%), time so far 00:03:35
+	epoch [181/400] train loss:0.007438,test loss=0.147672, accuracy=9681/10000 (96.81%), time so far 00:03:36
+	epoch [182/400] train loss:0.015370,test loss=0.121160, accuracy=9752/10000 (97.52%), time so far 00:03:37
+	epoch [183/400] train loss:0.006952,test loss=0.109437, accuracy=9765/10000 (97.65%), time so far 00:03:39
+	epoch [184/400] train loss:0.004266,test loss=0.111909, accuracy=9761/10000 (97.61%), time so far 00:03:40
+	epoch [185/400] train loss:0.004578,test loss=0.118630, accuracy=9738/10000 (97.38%), time so far 00:03:41
+	epoch [186/400] train loss:0.012522,test loss=0.133504, accuracy=9702/10000 (97.02%), time so far 00:03:42
+	epoch [187/400] train loss:0.008694,test loss=0.129748, accuracy=9716/10000 (97.16%), time so far 00:03:43
+	epoch [188/400] train loss:0.007939,test loss=0.123232, accuracy=9744/10000 (97.44%), time so far 00:03:45
+	epoch [189/400] train loss:0.006432,test loss=0.124877, accuracy=9763/10000 (97.63%), time so far 00:03:46
+	epoch [190/400] train loss:0.005430,test loss=0.121644, accuracy=9763/10000 (97.63%), time so far 00:03:47
+	epoch [191/400] train loss:0.007521,test loss=0.128168, accuracy=9730/10000 (97.30%), time so far 00:03:48
+	epoch [192/400] train loss:0.010125,test loss=0.116087, accuracy=9758/10000 (97.58%), time so far 00:03:50
+	epoch [193/400] train loss:0.005979,test loss=0.121503, accuracy=9757/10000 (97.57%), time so far 00:03:51
+	epoch [194/400] train loss:0.007217,test loss=0.119070, accuracy=9754/10000 (97.54%), time so far 00:03:52
+	epoch [195/400] train loss:0.007864,test loss=0.112284, accuracy=9767/10000 (97.67%), time so far 00:03:53
+	epoch [196/400] train loss:0.007777,test loss=0.114023, accuracy=9768/10000 (97.68%), time so far 00:03:54
+	epoch [197/400] train loss:0.007394,test loss=0.117276, accuracy=9756/10000 (97.56%), time so far 00:03:56
+	epoch [198/400] train loss:0.009544,test loss=0.118211, accuracy=9745/10000 (97.45%), time so far 00:03:57
+	epoch [199/400] train loss:0.008634,test loss=0.116392, accuracy=9747/10000 (97.47%), time so far 00:03:58
+	epoch [200/400] train loss:0.006836,test loss=0.121341, accuracy=9745/10000 (97.45%), time so far 00:03:59
+	epoch [201/400] train loss:0.004797,test loss=0.114978, accuracy=9774/10000 (97.74%), time so far 00:04:00
+	epoch [202/400] train loss:0.006752,test loss=0.125405, accuracy=9730/10000 (97.30%), time so far 00:04:02
+	epoch [203/400] train loss:0.008580,test loss=0.128383, accuracy=9727/10000 (97.27%), time so far 00:04:03
+	epoch [204/400] train loss:0.009706,test loss=0.130317, accuracy=9746/10000 (97.46%), time so far 00:04:04
+	epoch [205/400] train loss:0.008759,test loss=0.133017, accuracy=9726/10000 (97.26%), time so far 00:04:05
+	epoch [206/400] train loss:0.004728,test loss=0.104797, accuracy=9774/10000 (97.74%), time so far 00:04:06 New best found
+	epoch [207/400] train loss:0.003041,test loss=0.114977, accuracy=9760/10000 (97.60%), time so far 00:04:08
+	epoch [208/400] train loss:0.014190,test loss=0.131795, accuracy=9720/10000 (97.20%), time so far 00:04:09
+	epoch [209/400] train loss:0.009919,test loss=0.118402, accuracy=9755/10000 (97.55%), time so far 00:04:10
+	epoch [210/400] train loss:0.003230,test loss=0.109084, accuracy=9781/10000 (97.81%), time so far 00:04:11
+	epoch [211/400] train loss:0.001978,test loss=0.127621, accuracy=9728/10000 (97.28%), time so far 00:04:12
+	epoch [212/400] train loss:0.018556,test loss=0.116780, accuracy=9757/10000 (97.57%), time so far 00:04:13
+	epoch [213/400] train loss:0.004744,test loss=0.112216, accuracy=9780/10000 (97.80%), time so far 00:04:14
+	epoch [214/400] train loss:0.003124,test loss=0.115823, accuracy=9749/10000 (97.49%), time so far 00:04:16
+	epoch [215/400] train loss:0.009237,test loss=0.127023, accuracy=9724/10000 (97.24%), time so far 00:04:17
+	epoch [216/400] train loss:0.010879,test loss=0.117690, accuracy=9751/10000 (97.51%), time so far 00:04:18
+	epoch [217/400] train loss:0.004305,test loss=0.118369, accuracy=9762/10000 (97.62%), time so far 00:04:19
+	epoch [218/400] train loss:0.004611,test loss=0.108860, accuracy=9768/10000 (97.68%), time so far 00:04:20
+	epoch [219/400] train loss:0.011469,test loss=0.125744, accuracy=9742/10000 (97.42%), time so far 00:04:21
+	epoch [220/400] train loss:0.008062,test loss=0.118617, accuracy=9750/10000 (97.50%), time so far 00:04:23
+	epoch [221/400] train loss:0.006371,test loss=0.115194, accuracy=9749/10000 (97.49%), time so far 00:04:24
+	epoch [222/400] train loss:0.003423,test loss=0.108649, accuracy=9779/10000 (97.79%), time so far 00:04:25
+	epoch [223/400] train loss:0.006052,test loss=0.138758, accuracy=9714/10000 (97.14%), time so far 00:04:26
+	epoch [224/400] train loss:0.013928,test loss=0.129129, accuracy=9746/10000 (97.46%), time so far 00:04:27
+	epoch [225/400] train loss:0.006627,test loss=0.104484, accuracy=9794/10000 (97.94%), time so far 00:04:28 New best found
+	epoch [226/400] train loss:0.004596,test loss=0.111204, accuracy=9778/10000 (97.78%), time so far 00:04:30
+	epoch [227/400] train loss:0.006190,test loss=0.109740, accuracy=9777/10000 (97.77%), time so far 00:04:31
+	epoch [228/400] train loss:0.002424,test loss=0.111894, accuracy=9764/10000 (97.64%), time so far 00:04:32
+	epoch [229/400] train loss:0.016567,test loss=0.112016, accuracy=9767/10000 (97.67%), time so far 00:04:33
+	epoch [230/400] train loss:0.006095,test loss=0.117873, accuracy=9781/10000 (97.81%), time so far 00:04:34
+	epoch [231/400] train loss:0.004421,test loss=0.117482, accuracy=9763/10000 (97.63%), time so far 00:04:35
+	epoch [232/400] train loss:0.007379,test loss=0.128188, accuracy=9753/10000 (97.53%), time so far 00:04:37
+	epoch [233/400] train loss:0.009362,test loss=0.125063, accuracy=9741/10000 (97.41%), time so far 00:04:38
+	epoch [234/400] train loss:0.006861,test loss=0.135467, accuracy=9735/10000 (97.35%), time so far 00:04:39
+	epoch [235/400] train loss:0.008518,test loss=0.126216, accuracy=9756/10000 (97.56%), time so far 00:04:40
+	epoch [236/400] train loss:0.004647,test loss=0.111181, accuracy=9766/10000 (97.66%), time so far 00:04:41
+	epoch [237/400] train loss:0.002957,test loss=0.128349, accuracy=9732/10000 (97.32%), time so far 00:04:42
+	epoch [238/400] train loss:0.010809,test loss=0.130797, accuracy=9744/10000 (97.44%), time so far 00:04:43
+	epoch [239/400] train loss:0.009875,test loss=0.105578, accuracy=9781/10000 (97.81%), time so far 00:04:45
+	epoch [240/400] train loss:0.003343,test loss=0.112827, accuracy=9779/10000 (97.79%), time so far 00:04:46
+	epoch [241/400] train loss:0.007741,test loss=0.127852, accuracy=9737/10000 (97.37%), time so far 00:04:47
+	epoch [242/400] train loss:0.008658,test loss=0.116775, accuracy=9762/10000 (97.62%), time so far 00:04:48
+	epoch [243/400] train loss:0.009879,test loss=0.117636, accuracy=9769/10000 (97.69%), time so far 00:04:49
+	epoch [244/400] train loss:0.004985,test loss=0.106569, accuracy=9778/10000 (97.78%), time so far 00:04:51
+	epoch [245/400] train loss:0.003632,test loss=0.118595, accuracy=9767/10000 (97.67%), time so far 00:04:52
+	epoch [246/400] train loss:0.010929,test loss=0.109197, accuracy=9759/10000 (97.59%), time so far 00:04:53
+	epoch [247/400] train loss:0.007859,test loss=0.135297, accuracy=9694/10000 (96.94%), time so far 00:04:54
+	epoch [248/400] train loss:0.009132,test loss=0.111930, accuracy=9766/10000 (97.66%), time so far 00:04:55
+	epoch [249/400] train loss:0.003599,test loss=0.115236, accuracy=9774/10000 (97.74%), time so far 00:04:57
+	epoch [250/400] train loss:0.002366,test loss=0.102871, accuracy=9789/10000 (97.89%), time so far 00:04:58 New best found
+	epoch [251/400] train loss:0.005445,test loss=0.147037, accuracy=9711/10000 (97.11%), time so far 00:04:59
+	epoch [252/400] train loss:0.015643,test loss=0.119644, accuracy=9770/10000 (97.70%), time so far 00:05:00
+	epoch [253/400] train loss:0.007784,test loss=0.130155, accuracy=9744/10000 (97.44%), time so far 00:05:01
+	epoch [254/400] train loss:0.004900,test loss=0.106319, accuracy=9775/10000 (97.75%), time so far 00:05:02
+	epoch [255/400] train loss:0.003937,test loss=0.110106, accuracy=9775/10000 (97.75%), time so far 00:05:04
+	epoch [256/400] train loss:0.004830,test loss=0.123892, accuracy=9766/10000 (97.66%), time so far 00:05:05
+	epoch [257/400] train loss:0.012810,test loss=0.114260, accuracy=9776/10000 (97.76%), time so far 00:05:06
+	epoch [258/400] train loss:0.006426,test loss=0.114980, accuracy=9736/10000 (97.36%), time so far 00:05:07
+	epoch [259/400] train loss:0.007806,test loss=0.112016, accuracy=9755/10000 (97.55%), time so far 00:05:09
+	epoch [260/400] train loss:0.007493,test loss=0.110713, accuracy=9766/10000 (97.66%), time so far 00:05:10
+	epoch [261/400] train loss:0.008697,test loss=0.126545, accuracy=9737/10000 (97.37%), time so far 00:05:11
+	epoch [262/400] train loss:0.006499,test loss=0.114910, accuracy=9767/10000 (97.67%), time so far 00:05:12
+	epoch [263/400] train loss:0.007332,test loss=0.119926, accuracy=9763/10000 (97.63%), time so far 00:05:13
+	epoch [264/400] train loss:0.003199,test loss=0.119535, accuracy=9770/10000 (97.70%), time so far 00:05:15
+	epoch [265/400] train loss:0.002339,test loss=0.099960, accuracy=9796/10000 (97.96%), time so far 00:05:16 New best found
+	epoch [266/400] train loss:0.015695,test loss=0.139812, accuracy=9735/10000 (97.35%), time so far 00:05:17
+	epoch [267/400] train loss:0.008082,test loss=0.107561, accuracy=9774/10000 (97.74%), time so far 00:05:18
+	epoch [268/400] train loss:0.003712,test loss=0.103164, accuracy=9797/10000 (97.97%), time so far 00:05:19
+	epoch [269/400] train loss:0.002754,test loss=0.107607, accuracy=9764/10000 (97.64%), time so far 00:05:21
+	epoch [270/400] train loss:0.011924,test loss=0.139973, accuracy=9729/10000 (97.29%), time so far 00:05:22
+	epoch [271/400] train loss:0.013807,test loss=0.118039, accuracy=9761/10000 (97.61%), time so far 00:05:23
+	epoch [272/400] train loss:0.004452,test loss=0.118236, accuracy=9744/10000 (97.44%), time so far 00:05:24
+	epoch [273/400] train loss:0.002712,test loss=0.098190, accuracy=9804/10000 (98.04%), time so far 00:05:25 New best found
+	epoch [274/400] train loss:0.007322,test loss=0.134886, accuracy=9710/10000 (97.10%), time so far 00:05:27
+	epoch [275/400] train loss:0.012055,test loss=0.116673, accuracy=9768/10000 (97.68%), time so far 00:05:28
+	epoch [276/400] train loss:0.005391,test loss=0.130841, accuracy=9746/10000 (97.46%), time so far 00:05:29
+	epoch [277/400] train loss:0.005288,test loss=0.120013, accuracy=9761/10000 (97.61%), time so far 00:05:30
+	epoch [278/400] train loss:0.007647,test loss=0.130044, accuracy=9742/10000 (97.42%), time so far 00:05:31
+	epoch [279/400] train loss:0.010414,test loss=0.111850, accuracy=9762/10000 (97.62%), time so far 00:05:33
+	epoch [280/400] train loss:0.004466,test loss=0.113090, accuracy=9782/10000 (97.82%), time so far 00:05:34
+	epoch [281/400] train loss:0.002191,test loss=0.105733, accuracy=9792/10000 (97.92%), time so far 00:05:35
+	epoch [282/400] train loss:0.002360,test loss=0.098640, accuracy=9798/10000 (97.98%), time so far 00:05:36
+	epoch [283/400] train loss:0.016122,test loss=0.103247, accuracy=9766/10000 (97.66%), time so far 00:05:37
+	epoch [284/400] train loss:0.006532,test loss=0.123138, accuracy=9739/10000 (97.39%), time so far 00:05:38
+	epoch [285/400] train loss:0.005760,test loss=0.132830, accuracy=9725/10000 (97.25%), time so far 00:05:40
+	epoch [286/400] train loss:0.013201,test loss=0.107764, accuracy=9774/10000 (97.74%), time so far 00:05:41
+	epoch [287/400] train loss:0.003948,test loss=0.104507, accuracy=9782/10000 (97.82%), time so far 00:05:42
+	epoch [288/400] train loss:0.002828,test loss=0.107466, accuracy=9780/10000 (97.80%), time so far 00:05:43
+	epoch [289/400] train loss:0.012360,test loss=0.128933, accuracy=9744/10000 (97.44%), time so far 00:05:44
+	epoch [290/400] train loss:0.008388,test loss=0.103972, accuracy=9783/10000 (97.83%), time so far 00:05:46
+	epoch [291/400] train loss:0.006951,test loss=0.131594, accuracy=9733/10000 (97.33%), time so far 00:05:47
+	epoch [292/400] train loss:0.006225,test loss=0.121367, accuracy=9755/10000 (97.55%), time so far 00:05:48
+	epoch [293/400] train loss:0.003870,test loss=0.107201, accuracy=9770/10000 (97.70%), time so far 00:05:49
+	epoch [294/400] train loss:0.004711,test loss=0.117494, accuracy=9761/10000 (97.61%), time so far 00:05:50
+	epoch [295/400] train loss:0.009353,test loss=0.124995, accuracy=9739/10000 (97.39%), time so far 00:05:51
+	epoch [296/400] train loss:0.009498,test loss=0.107979, accuracy=9769/10000 (97.69%), time so far 00:05:53
+	epoch [297/400] train loss:0.007389,test loss=0.114939, accuracy=9760/10000 (97.60%), time so far 00:05:54
+	epoch [298/400] train loss:0.007041,test loss=0.122964, accuracy=9770/10000 (97.70%), time so far 00:05:55
+	epoch [299/400] train loss:0.003727,test loss=0.110124, accuracy=9787/10000 (97.87%), time so far 00:05:56
+	epoch [300/400] train loss:0.001901,test loss=0.105281, accuracy=9790/10000 (97.90%), time so far 00:05:57
+	epoch [301/400] train loss:0.002014,test loss=0.132217, accuracy=9705/10000 (97.05%), time so far 00:05:59
+	epoch [302/400] train loss:0.023573,test loss=0.113426, accuracy=9745/10000 (97.45%), time so far 00:06:00
+	epoch [303/400] train loss:0.006654,test loss=0.106727, accuracy=9777/10000 (97.77%), time so far 00:06:01
+	epoch [304/400] train loss:0.004962,test loss=0.131534, accuracy=9748/10000 (97.48%), time so far 00:06:02
+	epoch [305/400] train loss:0.007291,test loss=0.110913, accuracy=9764/10000 (97.64%), time so far 00:06:03
+	epoch [306/400] train loss:0.007365,test loss=0.108926, accuracy=9774/10000 (97.74%), time so far 00:06:04
+	epoch [307/400] train loss:0.002194,test loss=0.108519, accuracy=9778/10000 (97.78%), time so far 00:06:05
+	epoch [308/400] train loss:0.006821,test loss=0.142744, accuracy=9712/10000 (97.12%), time so far 00:06:07
+	epoch [309/400] train loss:0.013093,test loss=0.112612, accuracy=9770/10000 (97.70%), time so far 00:06:08
+	epoch [310/400] train loss:0.006526,test loss=0.111429, accuracy=9761/10000 (97.61%), time so far 00:06:09
+	epoch [311/400] train loss:0.008263,test loss=0.113746, accuracy=9765/10000 (97.65%), time so far 00:06:10
+	epoch [312/400] train loss:0.004639,test loss=0.110972, accuracy=9775/10000 (97.75%), time so far 00:06:12
+	epoch [313/400] train loss:0.008425,test loss=0.116284, accuracy=9757/10000 (97.57%), time so far 00:06:13
+	epoch [314/400] train loss:0.008603,test loss=0.112102, accuracy=9755/10000 (97.55%), time so far 00:06:14
+	epoch [315/400] train loss:0.002988,test loss=0.118469, accuracy=9769/10000 (97.69%), time so far 00:06:15
+	epoch [316/400] train loss:0.002470,test loss=0.102951, accuracy=9786/10000 (97.86%), time so far 00:06:16
+	epoch [317/400] train loss:0.013293,test loss=0.141596, accuracy=9713/10000 (97.13%), time so far 00:06:17
+	epoch [318/400] train loss:0.011959,test loss=0.101213, accuracy=9781/10000 (97.81%), time so far 00:06:19
+	epoch [319/400] train loss:0.002595,test loss=0.100838, accuracy=9801/10000 (98.01%), time so far 00:06:20
+	epoch [320/400] train loss:0.002461,test loss=0.118519, accuracy=9758/10000 (97.58%), time so far 00:06:21
+	epoch [321/400] train loss:0.010859,test loss=0.130837, accuracy=9721/10000 (97.21%), time so far 00:06:22
+	epoch [322/400] train loss:0.008911,test loss=0.110299, accuracy=9764/10000 (97.64%), time so far 00:06:23
+	epoch [323/400] train loss:0.004460,test loss=0.107066, accuracy=9774/10000 (97.74%), time so far 00:06:24
+	epoch [324/400] train loss:0.004542,test loss=0.122785, accuracy=9749/10000 (97.49%), time so far 00:06:25
+	epoch [325/400] train loss:0.009216,test loss=0.133766, accuracy=9729/10000 (97.29%), time so far 00:06:27
+	epoch [326/400] train loss:0.012639,test loss=0.117474, accuracy=9754/10000 (97.54%), time so far 00:06:28
+	epoch [327/400] train loss:0.004271,test loss=0.106657, accuracy=9792/10000 (97.92%), time so far 00:06:29
+	epoch [328/400] train loss:0.001515,test loss=0.098093, accuracy=9808/10000 (98.08%), time so far 00:06:30 New best found
+	epoch [329/400] train loss:0.002393,test loss=0.137590, accuracy=9728/10000 (97.28%), time so far 00:06:31
+	epoch [330/400] train loss:0.019001,test loss=0.113987, accuracy=9757/10000 (97.57%), time so far 00:06:32
+	epoch [331/400] train loss:0.006751,test loss=0.116702, accuracy=9765/10000 (97.65%), time so far 00:06:34
+	epoch [332/400] train loss:0.002943,test loss=0.099936, accuracy=9779/10000 (97.79%), time so far 00:06:35
+	epoch [333/400] train loss:0.005014,test loss=0.107833, accuracy=9769/10000 (97.69%), time so far 00:06:37
+	epoch [334/400] train loss:0.010792,test loss=0.122302, accuracy=9765/10000 (97.65%), time so far 00:06:38
+	epoch [335/400] train loss:0.006613,test loss=0.108698, accuracy=9783/10000 (97.83%), time so far 00:06:39
+	epoch [336/400] train loss:0.008898,test loss=0.118222, accuracy=9754/10000 (97.54%), time so far 00:06:40
+	epoch [337/400] train loss:0.004735,test loss=0.110125, accuracy=9770/10000 (97.70%), time so far 00:06:41
+	epoch [338/400] train loss:0.007105,test loss=0.113538, accuracy=9765/10000 (97.65%), time so far 00:06:43
+	epoch [339/400] train loss:0.006823,test loss=0.110445, accuracy=9784/10000 (97.84%), time so far 00:06:44
+	epoch [340/400] train loss:0.005008,test loss=0.110696, accuracy=9769/10000 (97.69%), time so far 00:06:45
+	epoch [341/400] train loss:0.006322,test loss=0.108459, accuracy=9785/10000 (97.85%), time so far 00:06:46
+	epoch [342/400] train loss:0.007378,test loss=0.110440, accuracy=9764/10000 (97.64%), time so far 00:06:47
+	epoch [343/400] train loss:0.011858,test loss=0.116821, accuracy=9770/10000 (97.70%), time so far 00:06:48
+	epoch [344/400] train loss:0.004145,test loss=0.101223, accuracy=9795/10000 (97.95%), time so far 00:06:50
+	epoch [345/400] train loss:0.001604,test loss=0.097451, accuracy=9797/10000 (97.97%), time so far 00:06:51 New best found
+	epoch [346/400] train loss:0.000962,test loss=0.096694, accuracy=9801/10000 (98.01%), time so far 00:06:52 New best found
+	epoch [347/400] train loss:0.000936,test loss=0.102921, accuracy=9778/10000 (97.78%), time so far 00:06:53
+	epoch [348/400] train loss:0.027897,test loss=0.110470, accuracy=9749/10000 (97.49%), time so far 00:06:54
+	epoch [349/400] train loss:0.007606,test loss=0.108424, accuracy=9766/10000 (97.66%), time so far 00:06:55
+	epoch [350/400] train loss:0.003043,test loss=0.107943, accuracy=9762/10000 (97.62%), time so far 00:06:56
+	epoch [351/400] train loss:0.005800,test loss=0.111174, accuracy=9754/10000 (97.54%), time so far 00:06:58
+	epoch [352/400] train loss:0.006147,test loss=0.103947, accuracy=9781/10000 (97.81%), time so far 00:06:59
+	epoch [353/400] train loss:0.012117,test loss=0.118444, accuracy=9754/10000 (97.54%), time so far 00:07:00
+	epoch [354/400] train loss:0.006652,test loss=0.106155, accuracy=9774/10000 (97.74%), time so far 00:07:01
+	epoch [355/400] train loss:0.004827,test loss=0.104517, accuracy=9786/10000 (97.86%), time so far 00:07:02
+	epoch [356/400] train loss:0.001891,test loss=0.102415, accuracy=9789/10000 (97.89%), time so far 00:07:03
+	epoch [357/400] train loss:0.001489,test loss=0.096209, accuracy=9799/10000 (97.99%), time so far 00:07:05 New best found
+	epoch [358/400] train loss:0.011875,test loss=0.138826, accuracy=9729/10000 (97.29%), time so far 00:07:06
+	epoch [359/400] train loss:0.018319,test loss=0.111953, accuracy=9765/10000 (97.65%), time so far 00:07:07
+	epoch [360/400] train loss:0.006203,test loss=0.102608, accuracy=9780/10000 (97.80%), time so far 00:07:08
+	epoch [361/400] train loss:0.002323,test loss=0.094869, accuracy=9797/10000 (97.97%), time so far 00:07:09 New best found
+	epoch [362/400] train loss:0.001660,test loss=0.093048, accuracy=9798/10000 (97.98%), time so far 00:07:11 New best found
+	epoch [363/400] train loss:0.010595,test loss=0.116238, accuracy=9742/10000 (97.42%), time so far 00:07:12
+	epoch [364/400] train loss:0.015167,test loss=0.112377, accuracy=9763/10000 (97.63%), time so far 00:07:13
+	epoch [365/400] train loss:0.007548,test loss=0.109225, accuracy=9775/10000 (97.75%), time so far 00:07:14
+	epoch [366/400] train loss:0.002252,test loss=0.101867, accuracy=9786/10000 (97.86%), time so far 00:07:15
+	epoch [367/400] train loss:0.002832,test loss=0.095869, accuracy=9805/10000 (98.05%), time so far 00:07:16
+	epoch [368/400] train loss:0.011349,test loss=0.121615, accuracy=9742/10000 (97.42%), time so far 00:07:17
+	epoch [369/400] train loss:0.010784,test loss=0.110103, accuracy=9774/10000 (97.74%), time so far 00:07:19
+	epoch [370/400] train loss:0.003569,test loss=0.101851, accuracy=9783/10000 (97.83%), time so far 00:07:20
+	epoch [371/400] train loss:0.007507,test loss=0.119208, accuracy=9742/10000 (97.42%), time so far 00:07:21
+	epoch [372/400] train loss:0.007436,test loss=0.109027, accuracy=9775/10000 (97.75%), time so far 00:07:22
+	epoch [373/400] train loss:0.007025,test loss=0.112999, accuracy=9761/10000 (97.61%), time so far 00:07:24
+	epoch [374/400] train loss:0.004105,test loss=0.117160, accuracy=9765/10000 (97.65%), time so far 00:07:25
+	epoch [375/400] train loss:0.002060,test loss=0.102867, accuracy=9775/10000 (97.75%), time so far 00:07:26
+	epoch [376/400] train loss:0.012473,test loss=0.111860, accuracy=9757/10000 (97.57%), time so far 00:07:27
+	epoch [377/400] train loss:0.011290,test loss=0.111329, accuracy=9756/10000 (97.56%), time so far 00:07:28
+	epoch [378/400] train loss:0.007076,test loss=0.109902, accuracy=9775/10000 (97.75%), time so far 00:07:29
+	epoch [379/400] train loss:0.004977,test loss=0.100209, accuracy=9788/10000 (97.88%), time so far 00:07:31
+	epoch [380/400] train loss:0.002380,test loss=0.101332, accuracy=9792/10000 (97.92%), time so far 00:07:32
+	epoch [381/400] train loss:0.013789,test loss=0.137072, accuracy=9718/10000 (97.18%), time so far 00:07:33
+	epoch [382/400] train loss:0.007071,test loss=0.107838, accuracy=9778/10000 (97.78%), time so far 00:07:34
+	epoch [383/400] train loss:0.002338,test loss=0.105963, accuracy=9784/10000 (97.84%), time so far 00:07:35
+	epoch [384/400] train loss:0.001144,test loss=0.096688, accuracy=9789/10000 (97.89%), time so far 00:07:36
+	epoch [385/400] train loss:0.011814,test loss=0.137117, accuracy=9708/10000 (97.08%), time so far 00:07:38
+	epoch [386/400] train loss:0.013089,test loss=0.101883, accuracy=9776/10000 (97.76%), time so far 00:07:39
+	epoch [387/400] train loss:0.005132,test loss=0.097616, accuracy=9792/10000 (97.92%), time so far 00:07:40
+	epoch [388/400] train loss:0.001981,test loss=0.096589, accuracy=9801/10000 (98.01%), time so far 00:07:41
+	epoch [389/400] train loss:0.001097,test loss=0.091174, accuracy=9797/10000 (97.97%), time so far 00:07:42 New best found
+	epoch [390/400] train loss:0.001040,test loss=0.095400, accuracy=9791/10000 (97.91%), time so far 00:07:43
+	epoch [391/400] train loss:0.023809,test loss=0.112107, accuracy=9765/10000 (97.65%), time so far 00:07:45
+	epoch [392/400] train loss:0.010629,test loss=0.104801, accuracy=9756/10000 (97.56%), time so far 00:07:46
+	epoch [393/400] train loss:0.004728,test loss=0.101090, accuracy=9779/10000 (97.79%), time so far 00:07:47
+	epoch [394/400] train loss:0.001991,test loss=0.106082, accuracy=9781/10000 (97.81%), time so far 00:07:48
+	epoch [395/400] train loss:0.007165,test loss=0.121012, accuracy=9752/10000 (97.52%), time so far 00:07:49
+	epoch [396/400] train loss:0.014122,test loss=0.101256, accuracy=9775/10000 (97.75%), time so far 00:07:50
+	epoch [397/400] train loss:0.005292,test loss=0.105947, accuracy=9766/10000 (97.66%), time so far 00:07:52
+	epoch [398/400] train loss:0.002345,test loss=0.105720, accuracy=9778/10000 (97.78%), time so far 00:07:53
+	epoch [399/400] train loss:0.004793,test loss=0.122962, accuracy=9729/10000 (97.29%), time so far 00:07:54
+	epoch [400/400] train loss:0.015737,test loss=0.109572, accuracy=9771/10000 (97.71%), time so far 00:07:55
+Done training by loss    : On epoch 389: loss=0.091174, accuracy = 97.97%
+If trained by accuracy:    On epoch 328: loss=0.098093, accuracy = 98.08%
+c_LeNetMnist_30_100 loaded from ./mnist/by_loss/ADAM_lr_0_001/ft_only_end/c_LeNetMnist_30_100_tune_2.pt
+c_LeNetMnist_30_100 is fully frozen
+c_LeNetMnist_30_100 test_datasets:
+	train loss=0.000808, accuracy=60000/60000 (100.00%)
+	test  loss=0.091174, accuracy=9797/10000 (97.97%)
+
+effective_epsilons:
+Epsilon (p1_LeNetMnist_300_100 vs c_LeNetMnist_30_100)
+p_model 266610 params, c_model 27660 params, ratio = 10.37%
+	ds: |X|=(60000, 1, 28, 28), |y|=(60000,)
+	loss_c:0.0008, loss_p:0.0214, eps_loss:0.9623
+	acc_c:100.0000, acc_p:99.2850, eps_acc:0.0072
+Epsilon (p1_LeNetMnist_300_100 vs c_LeNetMnist_30_100)
+p_model 266610 params, c_model 27660 params, ratio = 10.37%
+	ds: |X|=(10000, 1, 28, 28), |y|=(10000,)
+	loss_c:0.0912, loss_p:0.0917, eps_loss:0.0058
+	acc_c:97.9700, acc_p:97.9300, eps_acc:0.0004
+Total run time 00:08:03
+
+Process finished with exit code 0

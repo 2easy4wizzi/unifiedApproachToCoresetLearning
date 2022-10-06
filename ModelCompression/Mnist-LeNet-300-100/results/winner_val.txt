@@ -1,0 +1,67 @@
+C:\Users\GiladEiniKbyLake\AppData\Local\conda\conda\envs\cifar10clean-gpu\python.exe D:/workspace/2019SGD/ModelCompression/Mnist-LeNet-300-100/mcLeNet.py
+Python Version 3.6.8 |Anaconda, Inc.| (default, Feb 21 2019, 18:30:04) [MSC v.1916 64 bit (AMD64)]
+PyTorch Version 1.1.0
+Working directory D:\workspace\2019SGD\ModelCompression\Mnist-LeNet-300-100
+	ds: {'name': 'mnist', 'root': '../../Datasets', 'data_limit': 0, 'input_size': (1, 28, 28)}
+	global: {'seed': 42, 'mode': 'fs', 'f': <function cross_entropy at 0x0000016B1FFA8268>, 'save_models': True, 'use_acc': False, 'bs_test': 1000}
+	full_model: {'bs_train': 64, 'shuffle': False, 'epochs': 40, 'fc1': 300, 'fc2': 100, 'opt_dict': {'name': 'ADAM', 'lr': 0.001, 'weight_decay': 0}, 'path': './p_LeNetMnist_300_100.pt'}
+	coreset: {'bs_train': 500, 'shuffle': False, 'epochs': 400, 'fc1': 30, 'fc2': 100, 'opt_dict': {'name': 'ADAM', 'lr': 0.001, 'weight_decay': 0}, 'path_base': './results/full_sweep_c_LeNetMnist_30_100.pt'}
+	ft: {'bs_train': 128, 'shuffle': False, 'epochs': 10, 'epochs_end': 400, 'opt_dict': {'name': 'ADAM', 'lr': 0.001, 'weight_decay': 0.0001}, 'path_base': './results/full_sweep_c_LeNetMnist_30_100_ft_exp2_shuffle.pt'}
+working on CPU
+get_data_set_transformed(mnist: train dataset): |X|=(60000, 1, 28, 28), |y|=(60000,)
+get_data_set_transformed(mnist: test dataset): |X|=(10000, 1, 28, 28), |y|=(10000,)
+
+p_model:
+Created p_LeNetMnist_300_100
+	#params=266,610, path=D:\workspace\2019SGD\ModelCompression\Mnist-LeNet-300-100\p_LeNetMnist_300_100.pt
+	mapping: {1: ['fc1.weight', 'fc1.bias'], 2: ['fc2.weight', 'fc2.bias'], 3: ['fc3.weight', 'fc3.bias']}
+p_LeNetMnist_300_100 loaded from D:\workspace\2019SGD\ModelCompression\Mnist-LeNet-300-100\p_LeNetMnist_300_100.pt
+p_LeNetMnist_300_100 is fully frozen
+p_LeNetMnist_300_100 test_datasets:
+	train loss=0.021430, accuracy=59571/60000 (99.28%)
+	test  loss=0.091702, accuracy=9793/10000 (97.93%)
+
+main_Lenet_full_sweep():
+Created full_sweep_c_LeNetMnist_30_100: path=D:\workspace\2019SGD\ModelCompression\Mnist-LeNet-300-100\results\full_sweep_c_LeNetMnist_30_100.pt
+	this model #params=27,660, full model #params=266,610, compression ratio=89.63%
+	mapping: {1: ['fc1.weight', 'fc1.bias'], 2: ['fc2.weight', 'fc2.bias'], 3: ['fc3.weight', 'fc3.bias']}
+p_LeNetMnist_300_100:
+	fc1.weight     : [300, 784] ( 235200 params), trainable:False, is_cuda:False
+	fc1.bias       : [300]      (    300 params), trainable:False, is_cuda:False
+	fc2.weight     : [100, 300] (  30000 params), trainable:False, is_cuda:False
+	fc2.bias       : [100]      (    100 params), trainable:False, is_cuda:False
+	fc3.weight     : [10, 100]  (   1000 params), trainable:False, is_cuda:False
+	fc3.bias       : [10]       (     10 params), trainable:False, is_cuda:False
+	Total 266,610 params
+full_sweep_c_LeNetMnist_30_100:
+	fc1.weight     : [30, 784]  (  23520 params), trainable:True, is_cuda:False
+	fc1.bias       : [30]       (     30 params), trainable:True, is_cuda:False
+	fc2.weight     : [100, 30]  (   3000 params), trainable:True, is_cuda:False
+	fc2.bias       : [100]      (    100 params), trainable:True, is_cuda:False
+	fc3.weight     : [10, 100]  (   1000 params), trainable:True, is_cuda:False
+	fc3.bias       : [10]       (     10 params), trainable:True, is_cuda:False
+	Total 27,660 params
+full_sweep_c_LeNetMnist_30_100 loaded from D:\workspace\2019SGD\ModelCompression\Mnist-LeNet-300-100\results\full_sweep_c_LeNetMnist_30_100.pt
+full_sweep_c_LeNetMnist_30_100 test_datasets:
+	train loss=0.024862, accuracy=59477/60000 (99.13%)
+	test  loss=0.172881, accuracy=9686/10000 (96.86%)
+full_sweep_c_LeNetMnist_30_100_ft_exp2_shuffle loaded from D:\workspace\2019SGD\ModelCompression\Mnist-LeNet-300-100\results\full_sweep_c_LeNetMnist_30_100_ft_exp2_shuffle.pt
+full_sweep_c_LeNetMnist_30_100_ft_exp2_shuffle is fully frozen
+full_sweep_c_LeNetMnist_30_100_ft_exp2_shuffle test_datasets:
+	train loss=0.000808, accuracy=60000/60000 (100.00%)
+	test  loss=0.091174, accuracy=9797/10000 (97.97%)
+
+effective_epsilons:
+Epsilon (p_LeNetMnist_300_100 vs full_sweep_c_LeNetMnist_30_100_ft_exp2_shuffle)
+p_model 266610 params, c_model 27660 params, compression ratio=89.63%
+	ds: |X|=(60000, 1, 28, 28), |y|=(60000,)
+	loss_c:0.0008, loss_p:0.0214, eps_loss:0.9623
+	acc_c:100.0000, acc_p:99.2850, eps_acc:0.0072
+Epsilon (p_LeNetMnist_300_100 vs full_sweep_c_LeNetMnist_30_100_ft_exp2_shuffle)
+p_model 266610 params, c_model 27660 params, compression ratio=89.63%
+	ds: |X|=(10000, 1, 28, 28), |y|=(10000,)
+	loss_c:0.0912, loss_p:0.0917, eps_loss:0.0058
+	acc_c:97.9700, acc_p:97.9300, eps_acc:0.0004
+Total run time 00:00:07
+
+Process finished with exit code 0

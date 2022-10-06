@@ -1,0 +1,836 @@
+C:\Users\geini\.conda\envs\tf_gpu\python.exe D:/gilad_eini/workspace/2019SGD/ModelCompression/Cifar10-Vgg19/mcVgg.py
+Python Version 3.6.8 |Anaconda, Inc.| (default, Feb 21 2019, 18:30:04) [MSC v.1916 64 bit (AMD64)]
+PyTorch Version 1.1.0
+Working directory D:\gilad_eini\workspace\2019SGD\ModelCompression\Cifar10-Vgg19
+	ds: {'name': 'cifar10', 'root': '../../Datasets', 'data_limit': 0, 'input_size': (3, 32, 32)}
+	global: {'seed': 42, 'mode': 'fs', 'f': <function cross_entropy at 0x000001F9B0BE9BF8>, 'save_models': True, 'use_acc': True, 'bs_test': 256, 'shuffle_test': False, 'batch_interval': 300}
+	full_model: {'bs_train': 64, 'shuffle': False, 'epochs': 160, 'vgg_type': '19', 'path': './vgg19-cifar10.pt', 'opt': {'name': 'SGD', 'lr': 0.1, 'momentum': 0.9, 'weight_decay': 0.0001}, 'lr_cps': [0.5, 0.75]}
+working on CUDA. default dtype = torch.cuda.FloatTensor <=> torch.float32
+get_data_loader(cifar10: train dataset): |X|=(50000, 32, 32, 3), |y|=(50000,)
+get_data_loader(cifar10: test dataset): |X|=(10000, 32, 32, 3), |y|=(10000,)
+
+p_model:
+Created vgg19-cifar10
+	#params=20,035,018, path=D:\gilad_eini\workspace\2019SGD\ModelCompression\Cifar10-Vgg19\vgg19-cifar10.pt
+	mapping: {1: ['feature.0.weight', 'feature.1.weight', 'feature.1.bias'], 2: ['feature.3.weight', 'feature.4.weight', 'feature.4.bias'], 3: ['feature.7.weight', 'feature.8.weight', 'feature.8.bias'], 4: ['feature.10.weight', 'feature.11.weight', 'feature.11.bias'], 5: ['feature.14.weight', 'feature.15.weight', 'feature.15.bias'], 6: ['feature.17.weight', 'feature.18.weight', 'feature.18.bias'], 7: ['feature.20.weight', 'feature.21.weight', 'feature.21.bias'], 8: ['feature.23.weight', 'feature.24.weight', 'feature.24.bias'], 9: ['feature.27.weight', 'feature.28.weight', 'feature.28.bias'], 10: ['feature.30.weight', 'feature.31.weight', 'feature.31.bias'], 11: ['feature.33.weight', 'feature.34.weight', 'feature.34.bias'], 12: ['feature.36.weight', 'feature.37.weight', 'feature.37.bias'], 13: ['feature.40.weight', 'feature.41.weight', 'feature.41.bias'], 14: ['feature.43.weight', 'feature.44.weight', 'feature.44.bias'], 15: ['feature.46.weight', 'feature.47.weight', 'feature.47.bias'], 16: ['feature.49.weight', 'feature.50.weight', 'feature.50.bias'], 17: ['classifier.weight', 'classifier.bias']}
+vgg19-cifar10 doesn't exists...
+vgg19-cifar10 is fully trainable
+train_using_dls - vgg19-cifar10:
+	Train data: |X|=(50000, 32, 32, 3), |y|=(50000,)
+	Test data: |X|=(10000, 32, 32, 3), |y|=(10000,)
+	saving on each accuracy improvment
+	epochs=160, bs_train=64, #trainBatches=782, bs_test=256, #testBatches=40
+	optimizer = SGD (Parameter Group 0 dampening: 0 lr: 0.1 momentum: 0.9 nesterov: False weight_decay: 0.0001)
+	if epoch in [80, 120]: lr/=10
+Training:
+Epoch 1/160:
+	Batch   0/782 (    0/50000) - Loss: 2.307784
+	Batch 300/782 (19200/50000) - Loss: 1.732899
+	Batch 600/782 (38400/50000) - Loss: 1.504016
+	Epoch [  1/160] train loss:1.593826,test loss=1.381694, accuracy=5276/10000 (52.76%), time so far 00:01:16 New best found
+Epoch 2/160:
+	Batch   0/782 (    0/50000) - Loss: 1.459804
+	Batch 300/782 (19200/50000) - Loss: 1.108865
+	Batch 600/782 (38400/50000) - Loss: 1.096132
+	Epoch [  2/160] train loss:1.081189,test loss=1.141042, accuracy=6090/10000 (60.90%), time so far 00:02:29 New best found
+Epoch 3/160:
+	Batch   0/782 (    0/50000) - Loss: 1.130891
+	Batch 300/782 (19200/50000) - Loss: 0.898901
+	Batch 600/782 (38400/50000) - Loss: 0.858084
+	Epoch [  3/160] train loss:0.868305,test loss=0.846461, accuracy=7140/10000 (71.40%), time so far 00:03:42 New best found
+Epoch 4/160:
+	Batch   0/782 (    0/50000) - Loss: 0.922445
+	Batch 300/782 (19200/50000) - Loss: 0.825335
+	Batch 600/782 (38400/50000) - Loss: 0.856193
+	Epoch [  4/160] train loss:0.756052,test loss=0.788198, accuracy=7360/10000 (73.60%), time so far 00:04:52 New best found
+Epoch 5/160:
+	Batch   0/782 (    0/50000) - Loss: 0.753886
+	Batch 300/782 (19200/50000) - Loss: 0.821588
+	Batch 600/782 (38400/50000) - Loss: 0.886789
+	Epoch [  5/160] train loss:0.684990,test loss=0.760507, accuracy=7503/10000 (75.03%), time so far 00:06:05 New best found
+Epoch 6/160:
+	Batch   0/782 (    0/50000) - Loss: 0.704599
+	Batch 300/782 (19200/50000) - Loss: 0.708460
+	Batch 600/782 (38400/50000) - Loss: 0.699572
+	Epoch [  6/160] train loss:0.618178,test loss=0.663718, accuracy=7811/10000 (78.11%), time so far 00:07:16 New best found
+Epoch 7/160:
+	Batch   0/782 (    0/50000) - Loss: 0.469189
+	Batch 300/782 (19200/50000) - Loss: 0.623328
+	Batch 600/782 (38400/50000) - Loss: 0.690071
+	Epoch [  7/160] train loss:0.579801,test loss=0.598249, accuracy=7999/10000 (79.99%), time so far 00:08:27 New best found
+Epoch 8/160:
+	Batch   0/782 (    0/50000) - Loss: 0.536192
+	Batch 300/782 (19200/50000) - Loss: 0.684294
+	Batch 600/782 (38400/50000) - Loss: 0.605430
+	Epoch [  8/160] train loss:0.540071,test loss=0.879823, accuracy=7362/10000 (73.62%), time so far 00:09:39
+Epoch 9/160:
+	Batch   0/782 (    0/50000) - Loss: 0.542238
+	Batch 300/782 (19200/50000) - Loss: 0.550342
+	Batch 600/782 (38400/50000) - Loss: 0.456008
+	Epoch [  9/160] train loss:0.508973,test loss=0.671654, accuracy=7814/10000 (78.14%), time so far 00:10:48
+Epoch 10/160:
+	Batch   0/782 (    0/50000) - Loss: 0.428464
+	Batch 300/782 (19200/50000) - Loss: 0.672234
+	Batch 600/782 (38400/50000) - Loss: 0.518577
+	Epoch [ 10/160] train loss:0.482630,test loss=0.593689, accuracy=8067/10000 (80.67%), time so far 00:12:00 New best found
+Epoch 11/160:
+	Batch   0/782 (    0/50000) - Loss: 0.434726
+	Batch 300/782 (19200/50000) - Loss: 0.487056
+	Batch 600/782 (38400/50000) - Loss: 0.478121
+	Epoch [ 11/160] train loss:0.462498,test loss=0.572049, accuracy=8064/10000 (80.64%), time so far 00:13:09
+Epoch 12/160:
+	Batch   0/782 (    0/50000) - Loss: 0.365496
+	Batch 300/782 (19200/50000) - Loss: 0.511523
+	Batch 600/782 (38400/50000) - Loss: 0.344336
+	Epoch [ 12/160] train loss:0.443367,test loss=0.588354, accuracy=8038/10000 (80.38%), time so far 00:14:22
+Epoch 13/160:
+	Batch   0/782 (    0/50000) - Loss: 0.425748
+	Batch 300/782 (19200/50000) - Loss: 0.585854
+	Batch 600/782 (38400/50000) - Loss: 0.402646
+	Epoch [ 13/160] train loss:0.415561,test loss=0.548659, accuracy=8205/10000 (82.05%), time so far 00:15:33 New best found
+Epoch 14/160:
+	Batch   0/782 (    0/50000) - Loss: 0.335505
+	Batch 300/782 (19200/50000) - Loss: 0.536153
+	Batch 600/782 (38400/50000) - Loss: 0.572519
+	Epoch [ 14/160] train loss:0.405497,test loss=0.601685, accuracy=8143/10000 (81.43%), time so far 00:16:39
+Epoch 15/160:
+	Batch   0/782 (    0/50000) - Loss: 0.356037
+	Batch 300/782 (19200/50000) - Loss: 0.549183
+	Batch 600/782 (38400/50000) - Loss: 0.379353
+	Epoch [ 15/160] train loss:0.396903,test loss=0.500987, accuracy=8375/10000 (83.75%), time so far 00:17:49 New best found
+Epoch 16/160:
+	Batch   0/782 (    0/50000) - Loss: 0.364633
+	Batch 300/782 (19200/50000) - Loss: 0.356726
+	Batch 600/782 (38400/50000) - Loss: 0.365440
+	Epoch [ 16/160] train loss:0.381001,test loss=0.521111, accuracy=8335/10000 (83.35%), time so far 00:18:57
+Epoch 17/160:
+	Batch   0/782 (    0/50000) - Loss: 0.289252
+	Batch 300/782 (19200/50000) - Loss: 0.471692
+	Batch 600/782 (38400/50000) - Loss: 0.339387
+	Epoch [ 17/160] train loss:0.361148,test loss=0.475832, accuracy=8464/10000 (84.64%), time so far 00:20:05 New best found
+Epoch 18/160:
+	Batch   0/782 (    0/50000) - Loss: 0.339866
+	Batch 300/782 (19200/50000) - Loss: 0.443991
+	Batch 600/782 (38400/50000) - Loss: 0.505417
+	Epoch [ 18/160] train loss:0.356821,test loss=0.557954, accuracy=8307/10000 (83.07%), time so far 00:21:13
+Epoch 19/160:
+	Batch   0/782 (    0/50000) - Loss: 0.257745
+	Batch 300/782 (19200/50000) - Loss: 0.288894
+	Batch 600/782 (38400/50000) - Loss: 0.352586
+	Epoch [ 19/160] train loss:0.344602,test loss=0.491459, accuracy=8464/10000 (84.64%), time so far 00:22:20
+Epoch 20/160:
+	Batch   0/782 (    0/50000) - Loss: 0.401841
+	Batch 300/782 (19200/50000) - Loss: 0.432917
+	Batch 600/782 (38400/50000) - Loss: 0.282526
+	Epoch [ 20/160] train loss:0.340783,test loss=0.479616, accuracy=8470/10000 (84.70%), time so far 00:23:26 New best found
+Epoch 21/160:
+	Batch   0/782 (    0/50000) - Loss: 0.328603
+	Batch 300/782 (19200/50000) - Loss: 0.492150
+	Batch 600/782 (38400/50000) - Loss: 0.417100
+	Epoch [ 21/160] train loss:0.334284,test loss=0.508114, accuracy=8400/10000 (84.00%), time so far 00:24:34
+Epoch 22/160:
+	Batch   0/782 (    0/50000) - Loss: 0.192535
+	Batch 300/782 (19200/50000) - Loss: 0.396119
+	Batch 600/782 (38400/50000) - Loss: 0.227294
+	Epoch [ 22/160] train loss:0.320272,test loss=0.599150, accuracy=8127/10000 (81.27%), time so far 00:25:43
+Epoch 23/160:
+	Batch   0/782 (    0/50000) - Loss: 0.265251
+	Batch 300/782 (19200/50000) - Loss: 0.516612
+	Batch 600/782 (38400/50000) - Loss: 0.252178
+	Epoch [ 23/160] train loss:0.323766,test loss=0.485428, accuracy=8445/10000 (84.45%), time so far 00:26:50
+Epoch 24/160:
+	Batch   0/782 (    0/50000) - Loss: 0.243965
+	Batch 300/782 (19200/50000) - Loss: 0.529463
+	Batch 600/782 (38400/50000) - Loss: 0.316871
+	Epoch [ 24/160] train loss:0.315227,test loss=0.590660, accuracy=8249/10000 (82.49%), time so far 00:27:57
+Epoch 25/160:
+	Batch   0/782 (    0/50000) - Loss: 0.189200
+	Batch 300/782 (19200/50000) - Loss: 0.298223
+	Batch 600/782 (38400/50000) - Loss: 0.254093
+	Epoch [ 25/160] train loss:0.313132,test loss=0.496975, accuracy=8416/10000 (84.16%), time so far 00:29:05
+Epoch 26/160:
+	Batch   0/782 (    0/50000) - Loss: 0.303315
+	Batch 300/782 (19200/50000) - Loss: 0.495504
+	Batch 600/782 (38400/50000) - Loss: 0.189009
+	Epoch [ 26/160] train loss:0.298885,test loss=0.469498, accuracy=8541/10000 (85.41%), time so far 00:30:11 New best found
+Epoch 27/160:
+	Batch   0/782 (    0/50000) - Loss: 0.305726
+	Batch 300/782 (19200/50000) - Loss: 0.267307
+	Batch 600/782 (38400/50000) - Loss: 0.357265
+	Epoch [ 27/160] train loss:0.306876,test loss=0.483900, accuracy=8470/10000 (84.70%), time so far 00:31:17
+Epoch 28/160:
+	Batch   0/782 (    0/50000) - Loss: 0.289810
+	Batch 300/782 (19200/50000) - Loss: 0.246205
+	Batch 600/782 (38400/50000) - Loss: 0.282642
+	Epoch [ 28/160] train loss:0.294534,test loss=0.515313, accuracy=8392/10000 (83.92%), time so far 00:32:22
+Epoch 29/160:
+	Batch   0/782 (    0/50000) - Loss: 0.243273
+	Batch 300/782 (19200/50000) - Loss: 0.203699
+	Batch 600/782 (38400/50000) - Loss: 0.252140
+	Epoch [ 29/160] train loss:0.290810,test loss=0.464501, accuracy=8545/10000 (85.45%), time so far 00:33:27 New best found
+Epoch 30/160:
+	Batch   0/782 (    0/50000) - Loss: 0.259228
+	Batch 300/782 (19200/50000) - Loss: 0.369494
+	Batch 600/782 (38400/50000) - Loss: 0.305743
+	Epoch [ 30/160] train loss:0.284629,test loss=0.500915, accuracy=8438/10000 (84.38%), time so far 00:34:33
+Epoch 31/160:
+	Batch   0/782 (    0/50000) - Loss: 0.277936
+	Batch 300/782 (19200/50000) - Loss: 0.402148
+	Batch 600/782 (38400/50000) - Loss: 0.267798
+	Epoch [ 31/160] train loss:0.282937,test loss=0.622305, accuracy=8154/10000 (81.54%), time so far 00:35:42
+Epoch 32/160:
+	Batch   0/782 (    0/50000) - Loss: 0.306029
+	Batch 300/782 (19200/50000) - Loss: 0.248668
+	Batch 600/782 (38400/50000) - Loss: 0.327493
+	Epoch [ 32/160] train loss:0.286539,test loss=0.629833, accuracy=8118/10000 (81.18%), time so far 00:36:46
+Epoch 33/160:
+	Batch   0/782 (    0/50000) - Loss: 0.180850
+	Batch 300/782 (19200/50000) - Loss: 0.351576
+	Batch 600/782 (38400/50000) - Loss: 0.138441
+	Epoch [ 33/160] train loss:0.277032,test loss=0.452747, accuracy=8594/10000 (85.94%), time so far 00:37:54 New best found
+Epoch 34/160:
+	Batch   0/782 (    0/50000) - Loss: 0.232408
+	Batch 300/782 (19200/50000) - Loss: 0.226714
+	Batch 600/782 (38400/50000) - Loss: 0.194686
+	Epoch [ 34/160] train loss:0.270489,test loss=0.508418, accuracy=8435/10000 (84.35%), time so far 00:39:02
+Epoch 35/160:
+	Batch   0/782 (    0/50000) - Loss: 0.216579
+	Batch 300/782 (19200/50000) - Loss: 0.309756
+	Batch 600/782 (38400/50000) - Loss: 0.236955
+	Epoch [ 35/160] train loss:0.269204,test loss=0.519024, accuracy=8501/10000 (85.01%), time so far 00:40:10
+Epoch 36/160:
+	Batch   0/782 (    0/50000) - Loss: 0.352005
+	Batch 300/782 (19200/50000) - Loss: 0.129813
+	Batch 600/782 (38400/50000) - Loss: 0.212325
+	Epoch [ 36/160] train loss:0.269407,test loss=0.429196, accuracy=8651/10000 (86.51%), time so far 00:41:18 New best found
+Epoch 37/160:
+	Batch   0/782 (    0/50000) - Loss: 0.139909
+	Batch 300/782 (19200/50000) - Loss: 0.371162
+	Batch 600/782 (38400/50000) - Loss: 0.204696
+	Epoch [ 37/160] train loss:0.266720,test loss=0.475192, accuracy=8505/10000 (85.05%), time so far 00:42:23
+Epoch 38/160:
+	Batch   0/782 (    0/50000) - Loss: 0.226691
+	Batch 300/782 (19200/50000) - Loss: 0.350268
+	Batch 600/782 (38400/50000) - Loss: 0.185704
+	Epoch [ 38/160] train loss:0.263541,test loss=0.470475, accuracy=8560/10000 (85.60%), time so far 00:43:30
+Epoch 39/160:
+	Batch   0/782 (    0/50000) - Loss: 0.307856
+	Batch 300/782 (19200/50000) - Loss: 0.178560
+	Batch 600/782 (38400/50000) - Loss: 0.276211
+	Epoch [ 39/160] train loss:0.266026,test loss=0.617100, accuracy=8270/10000 (82.70%), time so far 00:44:36
+Epoch 40/160:
+	Batch   0/782 (    0/50000) - Loss: 0.237609
+	Batch 300/782 (19200/50000) - Loss: 0.381963
+	Batch 600/782 (38400/50000) - Loss: 0.259160
+	Epoch [ 40/160] train loss:0.266275,test loss=0.440207, accuracy=8640/10000 (86.40%), time so far 00:45:43
+Epoch 41/160:
+	Batch   0/782 (    0/50000) - Loss: 0.193702
+	Batch 300/782 (19200/50000) - Loss: 0.209665
+	Batch 600/782 (38400/50000) - Loss: 0.343087
+	Epoch [ 41/160] train loss:0.258307,test loss=0.436019, accuracy=8638/10000 (86.38%), time so far 00:46:49
+Epoch 42/160:
+	Batch   0/782 (    0/50000) - Loss: 0.296629
+	Batch 300/782 (19200/50000) - Loss: 0.450311
+	Batch 600/782 (38400/50000) - Loss: 0.255369
+	Epoch [ 42/160] train loss:0.251365,test loss=0.444206, accuracy=8643/10000 (86.43%), time so far 00:47:56
+Epoch 43/160:
+	Batch   0/782 (    0/50000) - Loss: 0.166723
+	Batch 300/782 (19200/50000) - Loss: 0.298853
+	Batch 600/782 (38400/50000) - Loss: 0.219039
+	Epoch [ 43/160] train loss:0.253484,test loss=0.561843, accuracy=8402/10000 (84.02%), time so far 00:49:04
+Epoch 44/160:
+	Batch   0/782 (    0/50000) - Loss: 0.341586
+	Batch 300/782 (19200/50000) - Loss: 0.317762
+	Batch 600/782 (38400/50000) - Loss: 0.179954
+	Epoch [ 44/160] train loss:0.254888,test loss=0.493066, accuracy=8529/10000 (85.29%), time so far 00:50:09
+Epoch 45/160:
+	Batch   0/782 (    0/50000) - Loss: 0.272283
+	Batch 300/782 (19200/50000) - Loss: 0.269194
+	Batch 600/782 (38400/50000) - Loss: 0.247019
+	Epoch [ 45/160] train loss:0.247329,test loss=0.544465, accuracy=8400/10000 (84.00%), time so far 00:51:16
+Epoch 46/160:
+	Batch   0/782 (    0/50000) - Loss: 0.132547
+	Batch 300/782 (19200/50000) - Loss: 0.299219
+	Batch 600/782 (38400/50000) - Loss: 0.340105
+	Epoch [ 46/160] train loss:0.245859,test loss=0.421353, accuracy=8721/10000 (87.21%), time so far 00:52:22 New best found
+Epoch 47/160:
+	Batch   0/782 (    0/50000) - Loss: 0.169207
+	Batch 300/782 (19200/50000) - Loss: 0.354569
+	Batch 600/782 (38400/50000) - Loss: 0.163697
+	Epoch [ 47/160] train loss:0.250761,test loss=0.562711, accuracy=8396/10000 (83.96%), time so far 00:53:29
+Epoch 48/160:
+	Batch   0/782 (    0/50000) - Loss: 0.339969
+	Batch 300/782 (19200/50000) - Loss: 0.142491
+	Batch 600/782 (38400/50000) - Loss: 0.070780
+	Epoch [ 48/160] train loss:0.245061,test loss=0.461562, accuracy=8618/10000 (86.18%), time so far 00:54:35
+Epoch 49/160:
+	Batch   0/782 (    0/50000) - Loss: 0.146766
+	Batch 300/782 (19200/50000) - Loss: 0.219678
+	Batch 600/782 (38400/50000) - Loss: 0.165643
+	Epoch [ 49/160] train loss:0.239089,test loss=0.440997, accuracy=8654/10000 (86.54%), time so far 00:55:43
+Epoch 50/160:
+	Batch   0/782 (    0/50000) - Loss: 0.257159
+	Batch 300/782 (19200/50000) - Loss: 0.556013
+	Batch 600/782 (38400/50000) - Loss: 0.205731
+	Epoch [ 50/160] train loss:0.242064,test loss=0.418895, accuracy=8758/10000 (87.58%), time so far 00:56:51 New best found
+Epoch 51/160:
+	Batch   0/782 (    0/50000) - Loss: 0.165300
+	Batch 300/782 (19200/50000) - Loss: 0.187772
+	Batch 600/782 (38400/50000) - Loss: 0.239463
+	Epoch [ 51/160] train loss:0.239802,test loss=0.500023, accuracy=8505/10000 (85.05%), time so far 00:57:59
+Epoch 52/160:
+	Batch   0/782 (    0/50000) - Loss: 0.242707
+	Batch 300/782 (19200/50000) - Loss: 0.149104
+	Batch 600/782 (38400/50000) - Loss: 0.187596
+	Epoch [ 52/160] train loss:0.243091,test loss=0.438028, accuracy=8693/10000 (86.93%), time so far 00:59:07
+Epoch 53/160:
+	Batch   0/782 (    0/50000) - Loss: 0.138738
+	Batch 300/782 (19200/50000) - Loss: 0.195501
+	Batch 600/782 (38400/50000) - Loss: 0.413327
+	Epoch [ 53/160] train loss:0.237568,test loss=0.469421, accuracy=8582/10000 (85.82%), time so far 01:00:18
+Epoch 54/160:
+	Batch   0/782 (    0/50000) - Loss: 0.328372
+	Batch 300/782 (19200/50000) - Loss: 0.183711
+	Batch 600/782 (38400/50000) - Loss: 0.197987
+	Epoch [ 54/160] train loss:0.237784,test loss=0.555528, accuracy=8388/10000 (83.88%), time so far 01:01:27
+Epoch 55/160:
+	Batch   0/782 (    0/50000) - Loss: 0.160096
+	Batch 300/782 (19200/50000) - Loss: 0.297038
+	Batch 600/782 (38400/50000) - Loss: 0.199627
+	Epoch [ 55/160] train loss:0.237773,test loss=0.427348, accuracy=8699/10000 (86.99%), time so far 01:02:34
+Epoch 56/160:
+	Batch   0/782 (    0/50000) - Loss: 0.232274
+	Batch 300/782 (19200/50000) - Loss: 0.377096
+	Batch 600/782 (38400/50000) - Loss: 0.192121
+	Epoch [ 56/160] train loss:0.237614,test loss=0.436510, accuracy=8709/10000 (87.09%), time so far 01:03:42
+Epoch 57/160:
+	Batch   0/782 (    0/50000) - Loss: 0.195264
+	Batch 300/782 (19200/50000) - Loss: 0.285807
+	Batch 600/782 (38400/50000) - Loss: 0.207112
+	Epoch [ 57/160] train loss:0.231730,test loss=0.469099, accuracy=8568/10000 (85.68%), time so far 01:04:51
+Epoch 58/160:
+	Batch   0/782 (    0/50000) - Loss: 0.204529
+	Batch 300/782 (19200/50000) - Loss: 0.220345
+	Batch 600/782 (38400/50000) - Loss: 0.175729
+	Epoch [ 58/160] train loss:0.229588,test loss=0.503370, accuracy=8493/10000 (84.93%), time so far 01:06:01
+Epoch 59/160:
+	Batch   0/782 (    0/50000) - Loss: 0.116011
+	Batch 300/782 (19200/50000) - Loss: 0.165213
+	Batch 600/782 (38400/50000) - Loss: 0.336205
+	Epoch [ 59/160] train loss:0.229982,test loss=0.476224, accuracy=8540/10000 (85.40%), time so far 01:07:07
+Epoch 60/160:
+	Batch   0/782 (    0/50000) - Loss: 0.255575
+	Batch 300/782 (19200/50000) - Loss: 0.259345
+	Batch 600/782 (38400/50000) - Loss: 0.216497
+	Epoch [ 60/160] train loss:0.228405,test loss=0.501638, accuracy=8510/10000 (85.10%), time so far 01:08:14
+Epoch 61/160:
+	Batch   0/782 (    0/50000) - Loss: 0.179882
+	Batch 300/782 (19200/50000) - Loss: 0.223020
+	Batch 600/782 (38400/50000) - Loss: 0.196225
+	Epoch [ 61/160] train loss:0.236427,test loss=0.414851, accuracy=8720/10000 (87.20%), time so far 01:09:22
+Epoch 62/160:
+	Batch   0/782 (    0/50000) - Loss: 0.187197
+	Batch 300/782 (19200/50000) - Loss: 0.252587
+	Batch 600/782 (38400/50000) - Loss: 0.274925
+	Epoch [ 62/160] train loss:0.224735,test loss=0.412695, accuracy=8721/10000 (87.21%), time so far 01:10:31
+Epoch 63/160:
+	Batch   0/782 (    0/50000) - Loss: 0.187843
+	Batch 300/782 (19200/50000) - Loss: 0.128610
+	Batch 600/782 (38400/50000) - Loss: 0.237322
+	Epoch [ 63/160] train loss:0.224965,test loss=0.444193, accuracy=8631/10000 (86.31%), time so far 01:11:42
+Epoch 64/160:
+	Batch   0/782 (    0/50000) - Loss: 0.188756
+	Batch 300/782 (19200/50000) - Loss: 0.234266
+	Batch 600/782 (38400/50000) - Loss: 0.192484
+	Epoch [ 64/160] train loss:0.218304,test loss=0.425140, accuracy=8727/10000 (87.27%), time so far 01:12:53
+Epoch 65/160:
+	Batch   0/782 (    0/50000) - Loss: 0.160637
+	Batch 300/782 (19200/50000) - Loss: 0.401227
+	Batch 600/782 (38400/50000) - Loss: 0.165429
+	Epoch [ 65/160] train loss:0.223767,test loss=0.480755, accuracy=8545/10000 (85.45%), time so far 01:14:03
+Epoch 66/160:
+	Batch   0/782 (    0/50000) - Loss: 0.239823
+	Batch 300/782 (19200/50000) - Loss: 0.151998
+	Batch 600/782 (38400/50000) - Loss: 0.254195
+	Epoch [ 66/160] train loss:0.226259,test loss=0.543394, accuracy=8464/10000 (84.64%), time so far 01:15:14
+Epoch 67/160:
+	Batch   0/782 (    0/50000) - Loss: 0.298196
+	Batch 300/782 (19200/50000) - Loss: 0.174379
+	Batch 600/782 (38400/50000) - Loss: 0.242873
+	Epoch [ 67/160] train loss:0.224248,test loss=0.396688, accuracy=8835/10000 (88.35%), time so far 01:16:22 New best found
+Epoch 68/160:
+	Batch   0/782 (    0/50000) - Loss: 0.197295
+	Batch 300/782 (19200/50000) - Loss: 0.183781
+	Batch 600/782 (38400/50000) - Loss: 0.169303
+	Epoch [ 68/160] train loss:0.219546,test loss=0.500398, accuracy=8524/10000 (85.24%), time so far 01:17:32
+Epoch 69/160:
+	Batch   0/782 (    0/50000) - Loss: 0.401400
+	Batch 300/782 (19200/50000) - Loss: 0.311397
+	Batch 600/782 (38400/50000) - Loss: 0.268579
+	Epoch [ 69/160] train loss:0.220268,test loss=0.499880, accuracy=8577/10000 (85.77%), time so far 01:18:40
+Epoch 70/160:
+	Batch   0/782 (    0/50000) - Loss: 0.157230
+	Batch 300/782 (19200/50000) - Loss: 0.217320
+	Batch 600/782 (38400/50000) - Loss: 0.252834
+	Epoch [ 70/160] train loss:0.220251,test loss=0.421940, accuracy=8781/10000 (87.81%), time so far 01:19:47
+Epoch 71/160:
+	Batch   0/782 (    0/50000) - Loss: 0.156668
+	Batch 300/782 (19200/50000) - Loss: 0.253798
+	Batch 600/782 (38400/50000) - Loss: 0.158448
+	Epoch [ 71/160] train loss:0.219779,test loss=0.435475, accuracy=8720/10000 (87.20%), time so far 01:20:53
+Epoch 72/160:
+	Batch   0/782 (    0/50000) - Loss: 0.155464
+	Batch 300/782 (19200/50000) - Loss: 0.137514
+	Batch 600/782 (38400/50000) - Loss: 0.218769
+	Epoch [ 72/160] train loss:0.224698,test loss=0.405262, accuracy=8755/10000 (87.55%), time so far 01:22:00
+Epoch 73/160:
+	Batch   0/782 (    0/50000) - Loss: 0.208656
+	Batch 300/782 (19200/50000) - Loss: 0.232678
+	Batch 600/782 (38400/50000) - Loss: 0.097961
+	Epoch [ 73/160] train loss:0.221814,test loss=0.429400, accuracy=8689/10000 (86.89%), time so far 01:23:05
+Epoch 74/160:
+	Batch   0/782 (    0/50000) - Loss: 0.107423
+	Batch 300/782 (19200/50000) - Loss: 0.215362
+	Batch 600/782 (38400/50000) - Loss: 0.155069
+	Epoch [ 74/160] train loss:0.214329,test loss=0.412738, accuracy=8772/10000 (87.72%), time so far 01:24:13
+Epoch 75/160:
+	Batch   0/782 (    0/50000) - Loss: 0.159215
+	Batch 300/782 (19200/50000) - Loss: 0.290229
+	Batch 600/782 (38400/50000) - Loss: 0.247634
+	Epoch [ 75/160] train loss:0.222346,test loss=0.492131, accuracy=8511/10000 (85.11%), time so far 01:25:19
+Epoch 76/160:
+	Batch   0/782 (    0/50000) - Loss: 0.227258
+	Batch 300/782 (19200/50000) - Loss: 0.232668
+	Batch 600/782 (38400/50000) - Loss: 0.169352
+	Epoch [ 76/160] train loss:0.220054,test loss=0.378686, accuracy=8846/10000 (88.46%), time so far 01:26:24 New best found
+Epoch 77/160:
+	Batch   0/782 (    0/50000) - Loss: 0.287064
+	Batch 300/782 (19200/50000) - Loss: 0.326919
+	Batch 600/782 (38400/50000) - Loss: 0.250913
+	Epoch [ 77/160] train loss:0.215338,test loss=0.390502, accuracy=8809/10000 (88.09%), time so far 01:27:30
+Epoch 78/160:
+	Batch   0/782 (    0/50000) - Loss: 0.107430
+	Batch 300/782 (19200/50000) - Loss: 0.328065
+	Batch 600/782 (38400/50000) - Loss: 0.148248
+	Epoch [ 78/160] train loss:0.217688,test loss=0.536251, accuracy=8548/10000 (85.48%), time so far 01:28:34
+Epoch 79/160:
+	Batch   0/782 (    0/50000) - Loss: 0.151338
+	Batch 300/782 (19200/50000) - Loss: 0.149880
+	Batch 600/782 (38400/50000) - Loss: 0.191713
+	Epoch [ 79/160] train loss:0.217944,test loss=0.425595, accuracy=8661/10000 (86.61%), time so far 01:29:39
+Epoch 80/160:
+	optimizer changed = SGD (Parameter Group 0 dampening: 0 lr: 0.01 momentum: 0.9 nesterov: False weight_decay: 0.0001)
+	Batch   0/782 (    0/50000) - Loss: 0.207546
+	Batch 300/782 (19200/50000) - Loss: 0.050349
+	Batch 600/782 (38400/50000) - Loss: 0.136225
+	Epoch [ 80/160] train loss:0.102122,test loss=0.259813, accuracy=9224/10000 (92.24%), time so far 01:30:46 New best found
+Epoch 81/160:
+	Batch   0/782 (    0/50000) - Loss: 0.018405
+	Batch 300/782 (19200/50000) - Loss: 0.049512
+	Batch 600/782 (38400/50000) - Loss: 0.055006
+	Epoch [ 81/160] train loss:0.066906,test loss=0.258261, accuracy=9235/10000 (92.35%), time so far 01:31:52 New best found
+Epoch 82/160:
+	Batch   0/782 (    0/50000) - Loss: 0.037557
+	Batch 300/782 (19200/50000) - Loss: 0.011669
+	Batch 600/782 (38400/50000) - Loss: 0.038674
+	Epoch [ 82/160] train loss:0.051771,test loss=0.268355, accuracy=9246/10000 (92.46%), time so far 01:33:01 New best found
+Epoch 83/160:
+	Batch   0/782 (    0/50000) - Loss: 0.007336
+	Batch 300/782 (19200/50000) - Loss: 0.035378
+	Batch 600/782 (38400/50000) - Loss: 0.034364
+	Epoch [ 83/160] train loss:0.044908,test loss=0.268242, accuracy=9271/10000 (92.71%), time so far 01:34:06 New best found
+Epoch 84/160:
+	Batch   0/782 (    0/50000) - Loss: 0.020059
+	Batch 300/782 (19200/50000) - Loss: 0.009884
+	Batch 600/782 (38400/50000) - Loss: 0.030606
+	Epoch [ 84/160] train loss:0.035887,test loss=0.275294, accuracy=9265/10000 (92.65%), time so far 01:35:12
+Epoch 85/160:
+	Batch   0/782 (    0/50000) - Loss: 0.010188
+	Batch 300/782 (19200/50000) - Loss: 0.068542
+	Batch 600/782 (38400/50000) - Loss: 0.007244
+	Epoch [ 85/160] train loss:0.032879,test loss=0.285161, accuracy=9254/10000 (92.54%), time so far 01:36:19
+Epoch 86/160:
+	Batch   0/782 (    0/50000) - Loss: 0.010036
+	Batch 300/782 (19200/50000) - Loss: 0.001877
+	Batch 600/782 (38400/50000) - Loss: 0.106626
+	Epoch [ 86/160] train loss:0.028783,test loss=0.289437, accuracy=9253/10000 (92.53%), time so far 01:37:25
+Epoch 87/160:
+	Batch   0/782 (    0/50000) - Loss: 0.003979
+	Batch 300/782 (19200/50000) - Loss: 0.043014
+	Batch 600/782 (38400/50000) - Loss: 0.030985
+	Epoch [ 87/160] train loss:0.023495,test loss=0.293780, accuracy=9270/10000 (92.70%), time so far 01:38:31
+Epoch 88/160:
+	Batch   0/782 (    0/50000) - Loss: 0.010095
+	Batch 300/782 (19200/50000) - Loss: 0.003679
+	Batch 600/782 (38400/50000) - Loss: 0.017596
+	Epoch [ 88/160] train loss:0.021964,test loss=0.293626, accuracy=9285/10000 (92.85%), time so far 01:39:37 New best found
+Epoch 89/160:
+	Batch   0/782 (    0/50000) - Loss: 0.009487
+	Batch 300/782 (19200/50000) - Loss: 0.033447
+	Batch 600/782 (38400/50000) - Loss: 0.020210
+	Epoch [ 89/160] train loss:0.021188,test loss=0.297874, accuracy=9278/10000 (92.78%), time so far 01:40:42
+Epoch 90/160:
+	Batch   0/782 (    0/50000) - Loss: 0.062439
+	Batch 300/782 (19200/50000) - Loss: 0.002247
+	Batch 600/782 (38400/50000) - Loss: 0.005132
+	Epoch [ 90/160] train loss:0.018182,test loss=0.298847, accuracy=9283/10000 (92.83%), time so far 01:41:51
+Epoch 91/160:
+	Batch   0/782 (    0/50000) - Loss: 0.003804
+	Batch 300/782 (19200/50000) - Loss: 0.004354
+	Batch 600/782 (38400/50000) - Loss: 0.044672
+	Epoch [ 91/160] train loss:0.015832,test loss=0.315441, accuracy=9267/10000 (92.67%), time so far 01:42:58
+Epoch 92/160:
+	Batch   0/782 (    0/50000) - Loss: 0.003659
+	Batch 300/782 (19200/50000) - Loss: 0.012777
+	Batch 600/782 (38400/50000) - Loss: 0.003456
+	Epoch [ 92/160] train loss:0.014380,test loss=0.307548, accuracy=9279/10000 (92.79%), time so far 01:44:03
+Epoch 93/160:
+	Batch   0/782 (    0/50000) - Loss: 0.002693
+	Batch 300/782 (19200/50000) - Loss: 0.001708
+	Batch 600/782 (38400/50000) - Loss: 0.007636
+	Epoch [ 93/160] train loss:0.013722,test loss=0.316294, accuracy=9290/10000 (92.90%), time so far 01:45:11 New best found
+Epoch 94/160:
+	Batch   0/782 (    0/50000) - Loss: 0.003556
+	Batch 300/782 (19200/50000) - Loss: 0.013713
+	Batch 600/782 (38400/50000) - Loss: 0.001852
+	Epoch [ 94/160] train loss:0.011557,test loss=0.315491, accuracy=9288/10000 (92.88%), time so far 01:46:18
+Epoch 95/160:
+	Batch   0/782 (    0/50000) - Loss: 0.000900
+	Batch 300/782 (19200/50000) - Loss: 0.000905
+	Batch 600/782 (38400/50000) - Loss: 0.020509
+	Epoch [ 95/160] train loss:0.013516,test loss=0.322938, accuracy=9275/10000 (92.75%), time so far 01:47:25
+Epoch 96/160:
+	Batch   0/782 (    0/50000) - Loss: 0.001833
+	Batch 300/782 (19200/50000) - Loss: 0.003922
+	Batch 600/782 (38400/50000) - Loss: 0.046737
+	Epoch [ 96/160] train loss:0.012466,test loss=0.330891, accuracy=9268/10000 (92.68%), time so far 01:48:31
+Epoch 97/160:
+	Batch   0/782 (    0/50000) - Loss: 0.004933
+	Batch 300/782 (19200/50000) - Loss: 0.069310
+	Batch 600/782 (38400/50000) - Loss: 0.006557
+	Epoch [ 97/160] train loss:0.012631,test loss=0.327416, accuracy=9282/10000 (92.82%), time so far 01:49:38
+Epoch 98/160:
+	Batch   0/782 (    0/50000) - Loss: 0.039670
+	Batch 300/782 (19200/50000) - Loss: 0.055102
+	Batch 600/782 (38400/50000) - Loss: 0.005730
+	Epoch [ 98/160] train loss:0.011707,test loss=0.336587, accuracy=9266/10000 (92.66%), time so far 01:50:44
+Epoch 99/160:
+	Batch   0/782 (    0/50000) - Loss: 0.027970
+	Batch 300/782 (19200/50000) - Loss: 0.009865
+	Batch 600/782 (38400/50000) - Loss: 0.014682
+	Epoch [ 99/160] train loss:0.012254,test loss=0.322293, accuracy=9279/10000 (92.79%), time so far 01:51:49
+Epoch 100/160:
+	Batch   0/782 (    0/50000) - Loss: 0.001293
+	Batch 300/782 (19200/50000) - Loss: 0.002304
+	Batch 600/782 (38400/50000) - Loss: 0.001293
+	Epoch [100/160] train loss:0.009705,test loss=0.335947, accuracy=9280/10000 (92.80%), time so far 01:52:56
+Epoch 101/160:
+	Batch   0/782 (    0/50000) - Loss: 0.009957
+	Batch 300/782 (19200/50000) - Loss: 0.036911
+	Batch 600/782 (38400/50000) - Loss: 0.006225
+	Epoch [101/160] train loss:0.010623,test loss=0.343893, accuracy=9275/10000 (92.75%), time so far 01:54:01
+Epoch 102/160:
+	Batch   0/782 (    0/50000) - Loss: 0.000754
+	Batch 300/782 (19200/50000) - Loss: 0.002809
+	Batch 600/782 (38400/50000) - Loss: 0.000972
+	Epoch [102/160] train loss:0.008979,test loss=0.356705, accuracy=9260/10000 (92.60%), time so far 01:55:10
+Epoch 103/160:
+	Batch   0/782 (    0/50000) - Loss: 0.001158
+	Batch 300/782 (19200/50000) - Loss: 0.051486
+	Batch 600/782 (38400/50000) - Loss: 0.000718
+	Epoch [103/160] train loss:0.008670,test loss=0.333886, accuracy=9305/10000 (93.05%), time so far 01:56:16 New best found
+Epoch 104/160:
+	Batch   0/782 (    0/50000) - Loss: 0.001483
+	Batch 300/782 (19200/50000) - Loss: 0.037079
+	Batch 600/782 (38400/50000) - Loss: 0.008682
+	Epoch [104/160] train loss:0.009169,test loss=0.345674, accuracy=9273/10000 (92.73%), time so far 01:57:24
+Epoch 105/160:
+	Batch   0/782 (    0/50000) - Loss: 0.000424
+	Batch 300/782 (19200/50000) - Loss: 0.000868
+	Batch 600/782 (38400/50000) - Loss: 0.001782
+	Epoch [105/160] train loss:0.008228,test loss=0.345807, accuracy=9271/10000 (92.71%), time so far 01:58:30
+Epoch 106/160:
+	Batch   0/782 (    0/50000) - Loss: 0.001160
+	Batch 300/782 (19200/50000) - Loss: 0.000853
+	Batch 600/782 (38400/50000) - Loss: 0.002172
+	Epoch [106/160] train loss:0.007611,test loss=0.335548, accuracy=9287/10000 (92.87%), time so far 01:59:37
+Epoch 107/160:
+	Batch   0/782 (    0/50000) - Loss: 0.001132
+	Batch 300/782 (19200/50000) - Loss: 0.001610
+	Batch 600/782 (38400/50000) - Loss: 0.012460
+	Epoch [107/160] train loss:0.007314,test loss=0.341836, accuracy=9294/10000 (92.94%), time so far 02:00:44
+Epoch 108/160:
+	Batch   0/782 (    0/50000) - Loss: 0.008554
+	Batch 300/782 (19200/50000) - Loss: 0.021036
+	Batch 600/782 (38400/50000) - Loss: 0.001711
+	Epoch [108/160] train loss:0.008579,test loss=0.344148, accuracy=9287/10000 (92.87%), time so far 02:01:51
+Epoch 109/160:
+	Batch   0/782 (    0/50000) - Loss: 0.001244
+	Batch 300/782 (19200/50000) - Loss: 0.003328
+	Batch 600/782 (38400/50000) - Loss: 0.000962
+	Epoch [109/160] train loss:0.006826,test loss=0.353196, accuracy=9283/10000 (92.83%), time so far 02:02:57
+Epoch 110/160:
+	Batch   0/782 (    0/50000) - Loss: 0.003576
+	Batch 300/782 (19200/50000) - Loss: 0.025976
+	Batch 600/782 (38400/50000) - Loss: 0.001636
+	Epoch [110/160] train loss:0.008034,test loss=0.341365, accuracy=9293/10000 (92.93%), time so far 02:04:04
+Epoch 111/160:
+	Batch   0/782 (    0/50000) - Loss: 0.000900
+	Batch 300/782 (19200/50000) - Loss: 0.000734
+	Batch 600/782 (38400/50000) - Loss: 0.020055
+	Epoch [111/160] train loss:0.006181,test loss=0.347360, accuracy=9258/10000 (92.58%), time so far 02:05:11
+Epoch 112/160:
+	Batch   0/782 (    0/50000) - Loss: 0.000438
+	Batch 300/782 (19200/50000) - Loss: 0.009493
+	Batch 600/782 (38400/50000) - Loss: 0.020845
+	Epoch [112/160] train loss:0.008732,test loss=0.347061, accuracy=9273/10000 (92.73%), time so far 02:06:20
+Epoch 113/160:
+	Batch   0/782 (    0/50000) - Loss: 0.000941
+	Batch 300/782 (19200/50000) - Loss: 0.000990
+	Batch 600/782 (38400/50000) - Loss: 0.001737
+	Epoch [113/160] train loss:0.010546,test loss=0.346867, accuracy=9254/10000 (92.54%), time so far 02:07:27
+Epoch 114/160:
+	Batch   0/782 (    0/50000) - Loss: 0.007479
+	Batch 300/782 (19200/50000) - Loss: 0.001013
+	Batch 600/782 (38400/50000) - Loss: 0.005439
+	Epoch [114/160] train loss:0.009326,test loss=0.348947, accuracy=9260/10000 (92.60%), time so far 02:08:35
+Epoch 115/160:
+	Batch   0/782 (    0/50000) - Loss: 0.000985
+	Batch 300/782 (19200/50000) - Loss: 0.002983
+	Batch 600/782 (38400/50000) - Loss: 0.000759
+	Epoch [115/160] train loss:0.008500,test loss=0.340185, accuracy=9284/10000 (92.84%), time so far 02:09:42
+Epoch 116/160:
+	Batch   0/782 (    0/50000) - Loss: 0.003533
+	Batch 300/782 (19200/50000) - Loss: 0.002670
+	Batch 600/782 (38400/50000) - Loss: 0.001927
+	Epoch [116/160] train loss:0.009047,test loss=0.358848, accuracy=9234/10000 (92.34%), time so far 02:10:48
+Epoch 117/160:
+	Batch   0/782 (    0/50000) - Loss: 0.001585
+	Batch 300/782 (19200/50000) - Loss: 0.000931
+	Batch 600/782 (38400/50000) - Loss: 0.025256
+	Epoch [117/160] train loss:0.008376,test loss=0.347598, accuracy=9257/10000 (92.57%), time so far 02:11:58
+Epoch 118/160:
+	Batch   0/782 (    0/50000) - Loss: 0.001174
+	Batch 300/782 (19200/50000) - Loss: 0.001388
+	Batch 600/782 (38400/50000) - Loss: 0.001441
+	Epoch [118/160] train loss:0.007921,test loss=0.353707, accuracy=9265/10000 (92.65%), time so far 02:13:03
+Epoch 119/160:
+	Batch   0/782 (    0/50000) - Loss: 0.001101
+	Batch 300/782 (19200/50000) - Loss: 0.000678
+	Batch 600/782 (38400/50000) - Loss: 0.003831
+	Epoch [119/160] train loss:0.008031,test loss=0.365042, accuracy=9259/10000 (92.59%), time so far 02:14:10
+Epoch 120/160:
+	optimizer changed = SGD (Parameter Group 0 dampening: 0 lr: 0.001 momentum: 0.9 nesterov: False weight_decay: 0.0001)
+	Batch   0/782 (    0/50000) - Loss: 0.000802
+	Batch 300/782 (19200/50000) - Loss: 0.001178
+	Batch 600/782 (38400/50000) - Loss: 0.002019
+	Epoch [120/160] train loss:0.006437,test loss=0.346750, accuracy=9283/10000 (92.83%), time so far 02:15:17
+Epoch 121/160:
+	Batch   0/782 (    0/50000) - Loss: 0.001065
+	Batch 300/782 (19200/50000) - Loss: 0.000882
+	Batch 600/782 (38400/50000) - Loss: 0.000557
+	Epoch [121/160] train loss:0.004574,test loss=0.344570, accuracy=9281/10000 (92.81%), time so far 02:16:24
+Epoch 122/160:
+	Batch   0/782 (    0/50000) - Loss: 0.001003
+	Batch 300/782 (19200/50000) - Loss: 0.000793
+	Batch 600/782 (38400/50000) - Loss: 0.009940
+	Epoch [122/160] train loss:0.003606,test loss=0.341564, accuracy=9290/10000 (92.90%), time so far 02:17:30
+Epoch 123/160:
+	Batch   0/782 (    0/50000) - Loss: 0.000664
+	Batch 300/782 (19200/50000) - Loss: 0.000608
+	Batch 600/782 (38400/50000) - Loss: 0.003030
+	Epoch [123/160] train loss:0.003788,test loss=0.343310, accuracy=9301/10000 (93.01%), time so far 02:18:39
+Epoch 124/160:
+	Batch   0/782 (    0/50000) - Loss: 0.000779
+	Batch 300/782 (19200/50000) - Loss: 0.000858
+	Batch 600/782 (38400/50000) - Loss: 0.001363
+	Epoch [124/160] train loss:0.003450,test loss=0.341476, accuracy=9307/10000 (93.07%), time so far 02:19:46 New best found
+Epoch 125/160:
+	Batch   0/782 (    0/50000) - Loss: 0.000640
+	Batch 300/782 (19200/50000) - Loss: 0.000574
+	Batch 600/782 (38400/50000) - Loss: 0.006481
+	Epoch [125/160] train loss:0.003267,test loss=0.341693, accuracy=9302/10000 (93.02%), time so far 02:20:56
+Epoch 126/160:
+	Batch   0/782 (    0/50000) - Loss: 0.000464
+	Batch 300/782 (19200/50000) - Loss: 0.001206
+	Batch 600/782 (38400/50000) - Loss: 0.005088
+	Epoch [126/160] train loss:0.002959,test loss=0.340611, accuracy=9310/10000 (93.10%), time so far 02:22:03 New best found
+Epoch 127/160:
+	Batch   0/782 (    0/50000) - Loss: 0.000424
+	Batch 300/782 (19200/50000) - Loss: 0.001218
+	Batch 600/782 (38400/50000) - Loss: 0.002186
+	Epoch [127/160] train loss:0.002192,test loss=0.340191, accuracy=9314/10000 (93.14%), time so far 02:23:10 New best found
+Epoch 128/160:
+	Batch   0/782 (    0/50000) - Loss: 0.000556
+	Batch 300/782 (19200/50000) - Loss: 0.000702
+	Batch 600/782 (38400/50000) - Loss: 0.001227
+	Epoch [128/160] train loss:0.002187,test loss=0.339457, accuracy=9323/10000 (93.23%), time so far 02:24:16 New best found
+Epoch 129/160:
+	Batch   0/782 (    0/50000) - Loss: 0.000438
+	Batch 300/782 (19200/50000) - Loss: 0.004229
+	Batch 600/782 (38400/50000) - Loss: 0.013959
+	Epoch [129/160] train loss:0.002579,test loss=0.339318, accuracy=9315/10000 (93.15%), time so far 02:25:24
+Epoch 130/160:
+	Batch   0/782 (    0/50000) - Loss: 0.000571
+	Batch 300/782 (19200/50000) - Loss: 0.001325
+	Batch 600/782 (38400/50000) - Loss: 0.000810
+	Epoch [130/160] train loss:0.002402,test loss=0.338280, accuracy=9308/10000 (93.08%), time so far 02:26:33
+Epoch 131/160:
+	Batch   0/782 (    0/50000) - Loss: 0.001167
+	Batch 300/782 (19200/50000) - Loss: 0.001075
+	Batch 600/782 (38400/50000) - Loss: 0.000408
+	Epoch [131/160] train loss:0.002049,test loss=0.339574, accuracy=9311/10000 (93.11%), time so far 02:27:40
+Epoch 132/160:
+	Batch   0/782 (    0/50000) - Loss: 0.000387
+	Batch 300/782 (19200/50000) - Loss: 0.000710
+	Batch 600/782 (38400/50000) - Loss: 0.000520
+	Epoch [132/160] train loss:0.002466,test loss=0.339325, accuracy=9317/10000 (93.17%), time so far 02:28:48
+Epoch 133/160:
+	Batch   0/782 (    0/50000) - Loss: 0.000581
+	Batch 300/782 (19200/50000) - Loss: 0.000673
+	Batch 600/782 (38400/50000) - Loss: 0.001336
+	Epoch [133/160] train loss:0.001845,test loss=0.339763, accuracy=9315/10000 (93.15%), time so far 02:29:57
+Epoch 134/160:
+	Batch   0/782 (    0/50000) - Loss: 0.000538
+	Batch 300/782 (19200/50000) - Loss: 0.000752
+	Batch 600/782 (38400/50000) - Loss: 0.004793
+	Epoch [134/160] train loss:0.001594,test loss=0.340387, accuracy=9312/10000 (93.12%), time so far 02:31:07
+Epoch 135/160:
+	Batch   0/782 (    0/50000) - Loss: 0.000340
+	Batch 300/782 (19200/50000) - Loss: 0.000552
+	Batch 600/782 (38400/50000) - Loss: 0.000740
+	Epoch [135/160] train loss:0.002159,test loss=0.338653, accuracy=9312/10000 (93.12%), time so far 02:32:12
+Epoch 136/160:
+	Batch   0/782 (    0/50000) - Loss: 0.000577
+	Batch 300/782 (19200/50000) - Loss: 0.000665
+	Batch 600/782 (38400/50000) - Loss: 0.000469
+	Epoch [136/160] train loss:0.002068,test loss=0.337523, accuracy=9319/10000 (93.19%), time so far 02:33:19
+Epoch 137/160:
+	Batch   0/782 (    0/50000) - Loss: 0.001605
+	Batch 300/782 (19200/50000) - Loss: 0.002465
+	Batch 600/782 (38400/50000) - Loss: 0.000430
+	Epoch [137/160] train loss:0.001768,test loss=0.338790, accuracy=9325/10000 (93.25%), time so far 02:34:24 New best found
+Epoch 138/160:
+	Batch   0/782 (    0/50000) - Loss: 0.000513
+	Batch 300/782 (19200/50000) - Loss: 0.003596
+	Batch 600/782 (38400/50000) - Loss: 0.000671
+	Epoch [138/160] train loss:0.001679,test loss=0.338832, accuracy=9320/10000 (93.20%), time so far 02:35:31
+Epoch 139/160:
+	Batch   0/782 (    0/50000) - Loss: 0.000716
+	Batch 300/782 (19200/50000) - Loss: 0.000562
+	Batch 600/782 (38400/50000) - Loss: 0.000480
+	Epoch [139/160] train loss:0.001605,test loss=0.340153, accuracy=9314/10000 (93.14%), time so far 02:36:39
+Epoch 140/160:
+	Batch   0/782 (    0/50000) - Loss: 0.002943
+	Batch 300/782 (19200/50000) - Loss: 0.000673
+	Batch 600/782 (38400/50000) - Loss: 0.000659
+	Epoch [140/160] train loss:0.001445,test loss=0.341051, accuracy=9313/10000 (93.13%), time so far 02:37:45
+Epoch 141/160:
+	Batch   0/782 (    0/50000) - Loss: 0.001009
+	Batch 300/782 (19200/50000) - Loss: 0.000484
+	Batch 600/782 (38400/50000) - Loss: 0.000437
+	Epoch [141/160] train loss:0.001719,test loss=0.339044, accuracy=9319/10000 (93.19%), time so far 02:38:52
+Epoch 142/160:
+	Batch   0/782 (    0/50000) - Loss: 0.000721
+	Batch 300/782 (19200/50000) - Loss: 0.000778
+	Batch 600/782 (38400/50000) - Loss: 0.000413
+	Epoch [142/160] train loss:0.001860,test loss=0.338322, accuracy=9318/10000 (93.18%), time so far 02:39:57
+Epoch 143/160:
+	Batch   0/782 (    0/50000) - Loss: 0.000431
+	Batch 300/782 (19200/50000) - Loss: 0.000636
+	Batch 600/782 (38400/50000) - Loss: 0.003898
+	Epoch [143/160] train loss:0.001338,test loss=0.337671, accuracy=9316/10000 (93.16%), time so far 02:41:05
+Epoch 144/160:
+	Batch   0/782 (    0/50000) - Loss: 0.000373
+	Batch 300/782 (19200/50000) - Loss: 0.000623
+	Batch 600/782 (38400/50000) - Loss: 0.001202
+	Epoch [144/160] train loss:0.001549,test loss=0.338218, accuracy=9320/10000 (93.20%), time so far 02:42:10
+Epoch 145/160:
+	Batch   0/782 (    0/50000) - Loss: 0.000424
+	Batch 300/782 (19200/50000) - Loss: 0.001592
+	Batch 600/782 (38400/50000) - Loss: 0.000456
+	Epoch [145/160] train loss:0.001341,test loss=0.338283, accuracy=9321/10000 (93.21%), time so far 02:43:18
+Epoch 146/160:
+	Batch   0/782 (    0/50000) - Loss: 0.000405
+	Batch 300/782 (19200/50000) - Loss: 0.000638
+	Batch 600/782 (38400/50000) - Loss: 0.000510
+	Epoch [146/160] train loss:0.001511,test loss=0.338566, accuracy=9313/10000 (93.13%), time so far 02:44:22
+Epoch 147/160:
+	Batch   0/782 (    0/50000) - Loss: 0.000564
+	Batch 300/782 (19200/50000) - Loss: 0.000996
+	Batch 600/782 (38400/50000) - Loss: 0.000498
+	Epoch [147/160] train loss:0.001397,test loss=0.338786, accuracy=9308/10000 (93.08%), time so far 02:45:29
+Epoch 148/160:
+	Batch   0/782 (    0/50000) - Loss: 0.000615
+	Batch 300/782 (19200/50000) - Loss: 0.010643
+	Batch 600/782 (38400/50000) - Loss: 0.000510
+	Epoch [148/160] train loss:0.001481,test loss=0.339592, accuracy=9314/10000 (93.14%), time so far 02:46:37
+Epoch 149/160:
+	Batch   0/782 (    0/50000) - Loss: 0.000295
+	Batch 300/782 (19200/50000) - Loss: 0.000539
+	Batch 600/782 (38400/50000) - Loss: 0.000476
+	Epoch [149/160] train loss:0.001273,test loss=0.339351, accuracy=9313/10000 (93.13%), time so far 02:47:42
+Epoch 150/160:
+	Batch   0/782 (    0/50000) - Loss: 0.002422
+	Batch 300/782 (19200/50000) - Loss: 0.000550
+	Batch 600/782 (38400/50000) - Loss: 0.000560
+	Epoch [150/160] train loss:0.001296,test loss=0.341152, accuracy=9321/10000 (93.21%), time so far 02:48:47
+Epoch 151/160:
+	Batch   0/782 (    0/50000) - Loss: 0.000646
+	Batch 300/782 (19200/50000) - Loss: 0.000854
+	Batch 600/782 (38400/50000) - Loss: 0.000547
+	Epoch [151/160] train loss:0.001292,test loss=0.340751, accuracy=9323/10000 (93.23%), time so far 02:49:52
+Epoch 152/160:
+	Batch   0/782 (    0/50000) - Loss: 0.001426
+	Batch 300/782 (19200/50000) - Loss: 0.000485
+	Batch 600/782 (38400/50000) - Loss: 0.000920
+	Epoch [152/160] train loss:0.001138,test loss=0.341440, accuracy=9321/10000 (93.21%), time so far 02:50:58
+Epoch 153/160:
+	Batch   0/782 (    0/50000) - Loss: 0.000461
+	Batch 300/782 (19200/50000) - Loss: 0.000563
+	Batch 600/782 (38400/50000) - Loss: 0.001567
+	Epoch [153/160] train loss:0.001368,test loss=0.342488, accuracy=9318/10000 (93.18%), time so far 02:52:06
+Epoch 154/160:
+	Batch   0/782 (    0/50000) - Loss: 0.000496
+	Batch 300/782 (19200/50000) - Loss: 0.000536
+	Batch 600/782 (38400/50000) - Loss: 0.001599
+	Epoch [154/160] train loss:0.001195,test loss=0.340543, accuracy=9322/10000 (93.22%), time so far 02:53:14
+Epoch 155/160:
+	Batch   0/782 (    0/50000) - Loss: 0.000330
+	Batch 300/782 (19200/50000) - Loss: 0.000502
+	Batch 600/782 (38400/50000) - Loss: 0.000373
+	Epoch [155/160] train loss:0.001167,test loss=0.341802, accuracy=9315/10000 (93.15%), time so far 02:54:18
+Epoch 156/160:
+	Batch   0/782 (    0/50000) - Loss: 0.000400
+	Batch 300/782 (19200/50000) - Loss: 0.000567
+	Batch 600/782 (38400/50000) - Loss: 0.000471
+	Epoch [156/160] train loss:0.001330,test loss=0.341759, accuracy=9310/10000 (93.10%), time so far 02:55:26
+Epoch 157/160:
+	Batch   0/782 (    0/50000) - Loss: 0.000330
+	Batch 300/782 (19200/50000) - Loss: 0.001141
+	Batch 600/782 (38400/50000) - Loss: 0.000388
+	Epoch [157/160] train loss:0.001097,test loss=0.342566, accuracy=9316/10000 (93.16%), time so far 02:56:34
+Epoch 158/160:
+	Batch   0/782 (    0/50000) - Loss: 0.001609
+	Batch 300/782 (19200/50000) - Loss: 0.001089
+	Batch 600/782 (38400/50000) - Loss: 0.001254
+	Epoch [158/160] train loss:0.001308,test loss=0.341872, accuracy=9323/10000 (93.23%), time so far 02:57:40
+Epoch 159/160:
+	Batch   0/782 (    0/50000) - Loss: 0.000649
+	Batch 300/782 (19200/50000) - Loss: 0.000683
+	Batch 600/782 (38400/50000) - Loss: 0.000948
+	Epoch [159/160] train loss:0.001190,test loss=0.341404, accuracy=9317/10000 (93.17%), time so far 02:58:47
+Epoch 160/160:
+	Batch   0/782 (    0/50000) - Loss: 0.000338
+	Batch 300/782 (19200/50000) - Loss: 0.000966
+	Batch 600/782 (38400/50000) - Loss: 0.001619
+	Epoch [160/160] train loss:0.001231,test loss=0.340265, accuracy=9317/10000 (93.17%), time so far 02:59:53
+Done training by accuracy: On epoch 137: loss=0.338790, accuracy = 93.25%
+If trained by loss       : On epoch 81: loss=0.258261, accuracy = 92.35%
+vgg19-cifar10 loaded from D:\gilad_eini\workspace\2019SGD\ModelCompression\Cifar10-Vgg19\vgg19-cifar10.pt
+vgg19-cifar10 is fully frozen
+vgg19-cifar10 test loaders:
+	train loss=0.004027, accuracy=49933/50000 (99.87%)
+	test  loss=0.338790, accuracy=9325/10000 (93.25%)
+
+Process finished with exit code 99

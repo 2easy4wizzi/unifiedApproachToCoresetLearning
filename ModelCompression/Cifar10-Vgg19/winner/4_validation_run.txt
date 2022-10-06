@@ -1,0 +1,152 @@
+C:\Users\GiladEiniKbyLake\AppData\Local\conda\conda\envs\cifar10clean-gpu\python.exe D:/workspace/2019SGD/ModelCompression/Cifar10-Vgg19/winner/mcVgg_winner.py
+Python Version 3.6.8 |Anaconda, Inc.| (default, Feb 21 2019, 18:30:04) [MSC v.1916 64 bit (AMD64)]
+PyTorch Version 1.1.0
+Working directory D:\workspace\2019SGD\ModelCompression\Cifar10-Vgg19\winner
+	ds: {'name': 'cifar10', 'root': '../../../Datasets', 'data_limit': 0, 'input_size': (3, 32, 32)}
+	global: {'seed': 42, 'mode': 'fs', 'f': <function cross_entropy at 0x000001E9045A9488>, 'save_models': True, 'use_acc': True, 'bs_test': 256, 'shuffle_test': False, 'batch_interval': -1}
+	full_model: {'bs_train': 64, 'shuffle': False, 'epochs': 160, 'vgg_type': '19', 'path': './vgg19-cifar10.pt', 'opt': {'name': 'SGD', 'lr': 0.1, 'momentum': 0.9, 'weight_decay': 0.0001}, 'lr_cps': [0.5, 0.75]}
+	coreset: {'bs_train': 512, 'shuffle': False, 'epochs': 180, 'opt_dict': {'name': 'ADAM', 'lr': 0.001, 'weight_decay': 0}, 'path_base': './full_sweep_vgg19-cifar10_coreset.pt', 'vgg_type': '19_coreset', 'batch_interval': 30, 'lr_cps': [0.33, 0.66]}
+	ft: {'bs_train': 64, 'shuffle': True, 'epochs': 10, 'epochs_end': 180, 'opt_dict': {'name': 'SGD', 'lr': 0.1, 'momentum': 0.9, 'weight_decay': 0.0001}, 'path_base': './full_sweep_vgg19-cifar10_coreset_ft_11.pt', 'lr_cps': [0.5, 0.75]}
+working on CUDA. default dtype = torch.cuda.FloatTensor <=> torch.float32
+get_data_loader(cifar10: train dataset): |X|=(50000, 32, 32, 3), |y|=(50000,)
+get_data_loader(cifar10: test dataset): |X|=(10000, 32, 32, 3), |y|=(10000,)
+
+p_model:
+Created vgg19-cifar10
+	#params=20,035,018, path=D:\workspace\2019SGD\ModelCompression\Cifar10-Vgg19\winner\vgg19-cifar10.pt
+	mapping: {1: ['feature.0.weight', 'feature.1.weight', 'feature.1.bias'], 2: ['feature.3.weight', 'feature.4.weight', 'feature.4.bias'], 3: ['feature.7.weight', 'feature.8.weight', 'feature.8.bias'], 4: ['feature.10.weight', 'feature.11.weight', 'feature.11.bias'], 5: ['feature.14.weight', 'feature.15.weight', 'feature.15.bias'], 6: ['feature.17.weight', 'feature.18.weight', 'feature.18.bias'], 7: ['feature.20.weight', 'feature.21.weight', 'feature.21.bias'], 8: ['feature.23.weight', 'feature.24.weight', 'feature.24.bias'], 9: ['feature.27.weight', 'feature.28.weight', 'feature.28.bias'], 10: ['feature.30.weight', 'feature.31.weight', 'feature.31.bias'], 11: ['feature.33.weight', 'feature.34.weight', 'feature.34.bias'], 12: ['feature.36.weight', 'feature.37.weight', 'feature.37.bias'], 13: ['feature.40.weight', 'feature.41.weight', 'feature.41.bias'], 14: ['feature.43.weight', 'feature.44.weight', 'feature.44.bias'], 15: ['feature.46.weight', 'feature.47.weight', 'feature.47.bias'], 16: ['feature.49.weight', 'feature.50.weight', 'feature.50.bias'], 17: ['classifier.weight', 'classifier.bias']}
+vgg19-cifar10 loaded from D:\workspace\2019SGD\ModelCompression\Cifar10-Vgg19\winner\vgg19-cifar10.pt
+vgg19-cifar10 is fully frozen
+
+main_vgg19_full_sweep():
+c_model:
+get_data_loader(cifar10: train dataset): |X|=(50000, 32, 32, 3), |y|=(50000,)
+Created full_sweep_vgg19-cifar10_coreset: path=D:\workspace\2019SGD\ModelCompression\Cifar10-Vgg19\winner\full_sweep_vgg19-cifar10_coreset.pt
+	this model #params=2,366,600, full model #params=20,035,018, compression ratio=88.19%
+	mapping: {1: ['feature.0.weight', 'feature.1.weight', 'feature.1.bias'], 2: ['feature.3.weight', 'feature.4.weight', 'feature.4.bias'], 3: ['feature.7.weight', 'feature.8.weight', 'feature.8.bias'], 4: ['feature.10.weight', 'feature.11.weight', 'feature.11.bias'], 5: ['feature.14.weight', 'feature.15.weight', 'feature.15.bias'], 6: ['feature.17.weight', 'feature.18.weight', 'feature.18.bias'], 7: ['feature.20.weight', 'feature.21.weight', 'feature.21.bias'], 8: ['feature.23.weight', 'feature.24.weight', 'feature.24.bias'], 9: ['feature.27.weight', 'feature.28.weight', 'feature.28.bias'], 10: ['feature.30.weight', 'feature.31.weight', 'feature.31.bias'], 11: ['feature.33.weight', 'feature.34.weight', 'feature.34.bias'], 12: ['feature.36.weight', 'feature.37.weight', 'feature.37.bias'], 13: ['feature.40.weight', 'feature.41.weight', 'feature.41.bias'], 14: ['feature.43.weight', 'feature.44.weight', 'feature.44.bias'], 15: ['feature.46.weight', 'feature.47.weight', 'feature.47.bias'], 16: ['feature.49.weight', 'feature.50.weight', 'feature.50.bias'], 17: ['classifier.weight', 'classifier.bias']}
+vgg19-cifar10:
+	feature.0.weight: [64, 3, 3, 3] (   1728 params), trainable:False, is_cuda:True
+	feature.1.weight: [64]       (     64 params), trainable:False, is_cuda:True
+	feature.1.bias : [64]       (     64 params), trainable:False, is_cuda:True
+	feature.3.weight: [64, 64, 3, 3] (  36864 params), trainable:False, is_cuda:True
+	feature.4.weight: [64]       (     64 params), trainable:False, is_cuda:True
+	feature.4.bias : [64]       (     64 params), trainable:False, is_cuda:True
+	feature.7.weight: [128, 64, 3, 3] (  73728 params), trainable:False, is_cuda:True
+	feature.8.weight: [128]      (    128 params), trainable:False, is_cuda:True
+	feature.8.bias : [128]      (    128 params), trainable:False, is_cuda:True
+	feature.10.weight: [128, 128, 3, 3] ( 147456 params), trainable:False, is_cuda:True
+	feature.11.weight: [128]      (    128 params), trainable:False, is_cuda:True
+	feature.11.bias: [128]      (    128 params), trainable:False, is_cuda:True
+	feature.14.weight: [256, 128, 3, 3] ( 294912 params), trainable:False, is_cuda:True
+	feature.15.weight: [256]      (    256 params), trainable:False, is_cuda:True
+	feature.15.bias: [256]      (    256 params), trainable:False, is_cuda:True
+	feature.17.weight: [256, 256, 3, 3] ( 589824 params), trainable:False, is_cuda:True
+	feature.18.weight: [256]      (    256 params), trainable:False, is_cuda:True
+	feature.18.bias: [256]      (    256 params), trainable:False, is_cuda:True
+	feature.20.weight: [256, 256, 3, 3] ( 589824 params), trainable:False, is_cuda:True
+	feature.21.weight: [256]      (    256 params), trainable:False, is_cuda:True
+	feature.21.bias: [256]      (    256 params), trainable:False, is_cuda:True
+	feature.23.weight: [256, 256, 3, 3] ( 589824 params), trainable:False, is_cuda:True
+	feature.24.weight: [256]      (    256 params), trainable:False, is_cuda:True
+	feature.24.bias: [256]      (    256 params), trainable:False, is_cuda:True
+	feature.27.weight: [512, 256, 3, 3] (1179648 params), trainable:False, is_cuda:True
+	feature.28.weight: [512]      (    512 params), trainable:False, is_cuda:True
+	feature.28.bias: [512]      (    512 params), trainable:False, is_cuda:True
+	feature.30.weight: [512, 512, 3, 3] (2359296 params), trainable:False, is_cuda:True
+	feature.31.weight: [512]      (    512 params), trainable:False, is_cuda:True
+	feature.31.bias: [512]      (    512 params), trainable:False, is_cuda:True
+	feature.33.weight: [512, 512, 3, 3] (2359296 params), trainable:False, is_cuda:True
+	feature.34.weight: [512]      (    512 params), trainable:False, is_cuda:True
+	feature.34.bias: [512]      (    512 params), trainable:False, is_cuda:True
+	feature.36.weight: [512, 512, 3, 3] (2359296 params), trainable:False, is_cuda:True
+	feature.37.weight: [512]      (    512 params), trainable:False, is_cuda:True
+	feature.37.bias: [512]      (    512 params), trainable:False, is_cuda:True
+	feature.40.weight: [512, 512, 3, 3] (2359296 params), trainable:False, is_cuda:True
+	feature.41.weight: [512]      (    512 params), trainable:False, is_cuda:True
+	feature.41.bias: [512]      (    512 params), trainable:False, is_cuda:True
+	feature.43.weight: [512, 512, 3, 3] (2359296 params), trainable:False, is_cuda:True
+	feature.44.weight: [512]      (    512 params), trainable:False, is_cuda:True
+	feature.44.bias: [512]      (    512 params), trainable:False, is_cuda:True
+	feature.46.weight: [512, 512, 3, 3] (2359296 params), trainable:False, is_cuda:True
+	feature.47.weight: [512]      (    512 params), trainable:False, is_cuda:True
+	feature.47.bias: [512]      (    512 params), trainable:False, is_cuda:True
+	feature.49.weight: [512, 512, 3, 3] (2359296 params), trainable:False, is_cuda:True
+	feature.50.weight: [512]      (    512 params), trainable:False, is_cuda:True
+	feature.50.bias: [512]      (    512 params), trainable:False, is_cuda:True
+	classifier.weight: [10, 512]  (   5120 params), trainable:False, is_cuda:True
+	classifier.bias: [10]       (     10 params), trainable:False, is_cuda:True
+	Total 20,035,018 params
+full_sweep_vgg19-cifar10_coreset:
+	feature.0.weight: [49, 3, 3, 3] (   1323 params), trainable:True, is_cuda:True
+	feature.1.weight: [49]       (     49 params), trainable:True, is_cuda:True
+	feature.1.bias : [49]       (     49 params), trainable:True, is_cuda:True
+	feature.3.weight: [64, 49, 3, 3] (  28224 params), trainable:True, is_cuda:True
+	feature.4.weight: [64]       (     64 params), trainable:True, is_cuda:True
+	feature.4.bias : [64]       (     64 params), trainable:True, is_cuda:True
+	feature.7.weight: [128, 64, 3, 3] (  73728 params), trainable:True, is_cuda:True
+	feature.8.weight: [128]      (    128 params), trainable:True, is_cuda:True
+	feature.8.bias : [128]      (    128 params), trainable:True, is_cuda:True
+	feature.10.weight: [128, 128, 3, 3] ( 147456 params), trainable:True, is_cuda:True
+	feature.11.weight: [128]      (    128 params), trainable:True, is_cuda:True
+	feature.11.bias: [128]      (    128 params), trainable:True, is_cuda:True
+	feature.14.weight: [256, 128, 3, 3] ( 294912 params), trainable:True, is_cuda:True
+	feature.15.weight: [256]      (    256 params), trainable:True, is_cuda:True
+	feature.15.bias: [256]      (    256 params), trainable:True, is_cuda:True
+	feature.17.weight: [254, 256, 3, 3] ( 585216 params), trainable:True, is_cuda:True
+	feature.18.weight: [254]      (    254 params), trainable:True, is_cuda:True
+	feature.18.bias: [254]      (    254 params), trainable:True, is_cuda:True
+	feature.20.weight: [234, 254, 3, 3] ( 534924 params), trainable:True, is_cuda:True
+	feature.21.weight: [234]      (    234 params), trainable:True, is_cuda:True
+	feature.21.bias: [234]      (    234 params), trainable:True, is_cuda:True
+	feature.23.weight: [198, 234, 3, 3] ( 416988 params), trainable:True, is_cuda:True
+	feature.24.weight: [198]      (    198 params), trainable:True, is_cuda:True
+	feature.24.bias: [198]      (    198 params), trainable:True, is_cuda:True
+	feature.27.weight: [114, 198, 3, 3] ( 203148 params), trainable:True, is_cuda:True
+	feature.28.weight: [114]      (    114 params), trainable:True, is_cuda:True
+	feature.28.bias: [114]      (    114 params), trainable:True, is_cuda:True
+	feature.30.weight: [41, 114, 3, 3] (  42066 params), trainable:True, is_cuda:True
+	feature.31.weight: [41]       (     41 params), trainable:True, is_cuda:True
+	feature.31.bias: [41]       (     41 params), trainable:True, is_cuda:True
+	feature.33.weight: [24, 41, 3, 3] (   8856 params), trainable:True, is_cuda:True
+	feature.34.weight: [24]       (     24 params), trainable:True, is_cuda:True
+	feature.34.bias: [24]       (     24 params), trainable:True, is_cuda:True
+	feature.36.weight: [11, 24, 3, 3] (   2376 params), trainable:True, is_cuda:True
+	feature.37.weight: [11]       (     11 params), trainable:True, is_cuda:True
+	feature.37.bias: [11]       (     11 params), trainable:True, is_cuda:True
+	feature.40.weight: [14, 11, 3, 3] (   1386 params), trainable:True, is_cuda:True
+	feature.41.weight: [14]       (     14 params), trainable:True, is_cuda:True
+	feature.41.bias: [14]       (     14 params), trainable:True, is_cuda:True
+	feature.43.weight: [13, 14, 3, 3] (   1638 params), trainable:True, is_cuda:True
+	feature.44.weight: [13]       (     13 params), trainable:True, is_cuda:True
+	feature.44.bias: [13]       (     13 params), trainable:True, is_cuda:True
+	feature.46.weight: [19, 13, 3, 3] (   2223 params), trainable:True, is_cuda:True
+	feature.47.weight: [19]       (     19 params), trainable:True, is_cuda:True
+	feature.47.bias: [19]       (     19 params), trainable:True, is_cuda:True
+	feature.49.weight: [104, 19, 3, 3] (  17784 params), trainable:True, is_cuda:True
+	feature.50.weight: [104]      (    104 params), trainable:True, is_cuda:True
+	feature.50.bias: [104]      (    104 params), trainable:True, is_cuda:True
+	classifier.weight: [10, 104]  (   1040 params), trainable:True, is_cuda:True
+	classifier.bias: [10]       (     10 params), trainable:True, is_cuda:True
+	Total 2,366,600 params
+full_sweep_vgg19-cifar10_coreset loaded from D:\workspace\2019SGD\ModelCompression\Cifar10-Vgg19\winner\full_sweep_vgg19-cifar10_coreset.pt
+full_sweep_vgg19-cifar10_coreset test loaders:
+	train loss=0.005561, accuracy=49917/50000 (99.83%)
+	test  loss=0.480745, accuracy=9094/10000 (90.94%)
+get_data_loader(cifar10: train dataset): |X|=(50000, 32, 32, 3), |y|=(50000,)
+full_sweep_vgg19-cifar10_coreset_ft_11 loaded from D:\workspace\2019SGD\ModelCompression\Cifar10-Vgg19\winner\full_sweep_vgg19-cifar10_coreset_ft_11.pt
+full_sweep_vgg19-cifar10_coreset_ft_11 is fully frozen
+
+effective_epsilons:
+Epsilon (vgg19-cifar10 vs full_sweep_vgg19-cifar10_coreset_ft_11)
+p_model 20035018 params, c_model 2366600 params, compression ratio=88.19%
+	dl: |X|=(50000, 32, 32, 3), |y|=(50000,)
+	loss_c:0.0011, loss_p:0.0043, eps_loss:0.7350
+	acc_c:99.9860, acc_p:99.8560, eps_acc:0.0013
+Epsilon (vgg19-cifar10 vs full_sweep_vgg19-cifar10_coreset_ft_11)
+p_model 20035018 params, c_model 2366600 params, compression ratio=88.19%
+	dl: |X|=(10000, 32, 32, 3), |y|=(10000,)
+	loss_c:0.3200, loss_p:0.3388, eps_loss:0.0554
+	acc_c:93.5100, acc_p:93.2500, eps_acc:0.0028
+Total run time 00:02:25
+
+Process finished with exit code 0

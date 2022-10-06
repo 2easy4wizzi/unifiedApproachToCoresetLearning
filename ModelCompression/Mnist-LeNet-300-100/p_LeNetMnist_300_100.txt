@@ -1,0 +1,96 @@
+C:\Users\GiladEiniKbyLake\AppData\Local\conda\conda\envs\cifar10clean-gpu\python.exe D:/workspace/2019SGD/ModelCompression/mc.py
+Python  Version 3.6.8 |Anaconda, Inc.| (default, Feb 21 2019, 18:30:04) [MSC v.1916 64 bit (AMD64)]
+PyTorch Version 1.1.0
+	seed: 42
+	debug_mode: False
+	ds_name: mnist
+	ds_root: ../Datasets
+	bs_train: 64
+	bs_test: 1000
+	shuffle: False
+	data_limit: 0
+	input_size: (1, 28, 28)
+	home_folder: ./mnist/2
+	save_models: True
+	print_model_info: False
+	use_acc: False
+	f: <function cross_entropy at 0x000001E039C45620>
+	epochs: 40
+	fc_sizes: (300, 100)
+	OPT: ('ADAM', 0.001)
+	bal_OPT: ('ADAM', 0.001)
+	bal_epochs: 200
+	bal_fc_sizes: (33, 11)
+	ft_OPT: ('ADAM', 0.001)
+	ft_epochs: 5
+working on CUDA. default dtype = torch.cuda.FloatTensor <=> torch.float32
+get_data(ds_name=mnist):
+mnist: train data: 60000x[1, 28, 28]
+mnist: test  data: 10000x[1, 28, 28]
+
+p_model:
+Created p__LeNetMnist_300_100: #param=266610. save load path ./mnist/by_loss/ADAM_lr_0_001/p__LeNetMnist_300_100.pt
+./mnist/by_loss/ADAM_lr_0_001/p__LeNetMnist_300_100.pt doesn't exists
+p__LeNetMnist_300_100 is fully trainable
+p__LeNetMnist_300_100:
+	fc1.weight     : [300, 784]     , trainable:True, is_cuda:True
+	fc1.bias       : [300]          , trainable:True, is_cuda:True
+	fc2.weight     : [100, 300]     , trainable:True, is_cuda:True
+	fc2.bias       : [100]          , trainable:True, is_cuda:True
+	fc3.weight     : [10, 100]      , trainable:True, is_cuda:True
+	fc3.bias       : [10]           , trainable:True, is_cuda:True
+Training p__LeNetMnist_300_100:
+	saving on each loss improvment
+	epochs = 40
+	total_batches = 938
+	optimizer lr = 0.001
+	train data: 60000x[1, 28, 28]
+	test data: 10000x[1, 28, 28]
+	epoch [  1/ 40] train loss:0.243048,test loss=0.144044, accuracy=9555/10000 (95.55%), time so far 00:00:20 New best found
+	epoch [  2/ 40] train loss:0.099898,test loss=0.116103, accuracy=9644/10000 (96.44%), time so far 00:00:38 New best found
+	epoch [  3/ 40] train loss:0.066202,test loss=0.108169, accuracy=9678/10000 (96.78%), time so far 00:00:56 New best found
+	epoch [  4/ 40] train loss:0.046351,test loss=0.102193, accuracy=9716/10000 (97.16%), time so far 00:01:13 New best found
+	epoch [  5/ 40] train loss:0.034932,test loss=0.142556, accuracy=9671/10000 (96.71%), time so far 00:01:30
+	epoch [  6/ 40] train loss:0.033026,test loss=0.094145, accuracy=9764/10000 (97.64%), time so far 00:01:47 New best found
+	epoch [  7/ 40] train loss:0.027982,test loss=0.097856, accuracy=9756/10000 (97.56%), time so far 00:02:04
+	epoch [  8/ 40] train loss:0.027070,test loss=0.103512, accuracy=9768/10000 (97.68%), time so far 00:02:21
+	epoch [  9/ 40] train loss:0.020721,test loss=0.091702, accuracy=9793/10000 (97.93%), time so far 00:02:38 New best found
+	epoch [ 10/ 40] train loss:0.019924,test loss=0.096370, accuracy=9780/10000 (97.80%), time so far 00:02:55
+	epoch [ 11/ 40] train loss:0.019162,test loss=0.104774, accuracy=9749/10000 (97.49%), time so far 00:03:13
+	epoch [ 12/ 40] train loss:0.018341,test loss=0.096924, accuracy=9789/10000 (97.89%), time so far 00:03:31
+	epoch [ 13/ 40] train loss:0.015725,test loss=0.127442, accuracy=9756/10000 (97.56%), time so far 00:03:49
+	epoch [ 14/ 40] train loss:0.015943,test loss=0.110229, accuracy=9780/10000 (97.80%), time so far 00:04:06
+	epoch [ 15/ 40] train loss:0.015532,test loss=0.115252, accuracy=9790/10000 (97.90%), time so far 00:04:23
+	epoch [ 16/ 40] train loss:0.015359,test loss=0.123849, accuracy=9777/10000 (97.77%), time so far 00:04:41
+	epoch [ 17/ 40] train loss:0.014830,test loss=0.119854, accuracy=9787/10000 (97.87%), time so far 00:04:59
+	epoch [ 18/ 40] train loss:0.012405,test loss=0.113941, accuracy=9793/10000 (97.93%), time so far 00:05:17
+	epoch [ 19/ 40] train loss:0.010508,test loss=0.099675, accuracy=9813/10000 (98.13%), time so far 00:05:35
+	epoch [ 20/ 40] train loss:0.011756,test loss=0.133425, accuracy=9791/10000 (97.91%), time so far 00:05:53
+	epoch [ 21/ 40] train loss:0.010401,test loss=0.127755, accuracy=9782/10000 (97.82%), time so far 00:06:11
+	epoch [ 22/ 40] train loss:0.011999,test loss=0.166366, accuracy=9755/10000 (97.55%), time so far 00:06:28
+	epoch [ 23/ 40] train loss:0.010830,test loss=0.122406, accuracy=9802/10000 (98.02%), time so far 00:06:45
+	epoch [ 24/ 40] train loss:0.007128,test loss=0.134313, accuracy=9812/10000 (98.12%), time so far 00:07:02
+	epoch [ 25/ 40] train loss:0.013893,test loss=0.160474, accuracy=9769/10000 (97.69%), time so far 00:07:19
+	epoch [ 26/ 40] train loss:0.008334,test loss=0.145899, accuracy=9784/10000 (97.84%), time so far 00:07:36
+	epoch [ 27/ 40] train loss:0.010763,test loss=0.119471, accuracy=9812/10000 (98.12%), time so far 00:07:54
+	epoch [ 28/ 40] train loss:0.009783,test loss=0.120463, accuracy=9802/10000 (98.02%), time so far 00:08:11
+	epoch [ 29/ 40] train loss:0.006968,test loss=0.131047, accuracy=9801/10000 (98.01%), time so far 00:08:28
+	epoch [ 30/ 40] train loss:0.011072,test loss=0.117969, accuracy=9810/10000 (98.10%), time so far 00:08:46
+	epoch [ 31/ 40] train loss:0.010316,test loss=0.142578, accuracy=9797/10000 (97.97%), time so far 00:09:03
+	epoch [ 32/ 40] train loss:0.006602,test loss=0.129844, accuracy=9813/10000 (98.13%), time so far 00:09:20
+	epoch [ 33/ 40] train loss:0.009446,test loss=0.174468, accuracy=9785/10000 (97.85%), time so far 00:09:37
+	epoch [ 34/ 40] train loss:0.010528,test loss=0.145728, accuracy=9800/10000 (98.00%), time so far 00:09:53
+	epoch [ 35/ 40] train loss:0.007786,test loss=0.159974, accuracy=9781/10000 (97.81%), time so far 00:10:07
+	epoch [ 36/ 40] train loss:0.007491,test loss=0.153614, accuracy=9804/10000 (98.04%), time so far 00:10:19
+	epoch [ 37/ 40] train loss:0.011929,test loss=0.145787, accuracy=9805/10000 (98.05%), time so far 00:10:32
+	epoch [ 38/ 40] train loss:0.007086,test loss=0.163673, accuracy=9809/10000 (98.09%), time so far 00:10:45
+	epoch [ 39/ 40] train loss:0.010703,test loss=0.162564, accuracy=9809/10000 (98.09%), time so far 00:10:58
+	epoch [ 40/ 40] train loss:0.006642,test loss=0.154894, accuracy=9822/10000 (98.22%), time so far 00:11:11
+Done training. On epoch 9 captured 97.93% accuracy and 0.091702 loss
+p__LeNetMnist_300_100 loaded from ./mnist/by_loss/ADAM_lr_0_001/p__LeNetMnist_300_100.pt
+p__LeNetMnist_300_100 is fully frozen
+p__LeNetMnist_300_100 test loaders:
+	train loss=0.021430, accuracy=59571/60000 (99.28%)
+	test  loss=0.091702, accuracy=9793/10000 (97.93%)
+
+Process finished with exit code 22

@@ -1,0 +1,9 @@
+VGG 19 cifar10 ds:
+P (full model)
+    size - 20,035,018 params
+    time ~03:00:00
+C
+    size - 2,366,600 params
+    time ~01:35:00
+    fine tuning time ~05:00:00
+

@@ -1,0 +1,904 @@
+C:\Users\GiladEiniKbyLake\AppData\Local\conda\conda\envs\cifar10clean-gpu\python.exe D:/workspace/2019SGD/ModelCompression/mc.py
+Python  Version 3.6.8 |Anaconda, Inc.| (default, Feb 21 2019, 18:30:04) [MSC v.1916 64 bit (AMD64)]
+PyTorch Version 1.1.0
+main_Lenet_full_sweep():
+	seed: 42
+	ds_name: mnist
+	ds_root: ../Datasets
+	p_bs_train: 64
+	bs_test: 1000
+	shuffle: False
+	data_limit: 0
+	input_size: (1, 28, 28)
+	save_models: True
+	f: <function cross_entropy at 0x000001F38F0EA950>
+	p_epochs: 40
+	p_fc1: 300
+	p_fc2: 100
+	use_acc: False
+	p_OPT: {'name': 'ADAM', 'lr': 0.001, 'weight_decay': 0}
+	home_folder: ./mnist/by_loss/ADAM_lr_0_001/ft_only_end
+	p_path: ./mnist/by_loss/ADAM_lr_0_001
+	bal_OPT: {'name': 'ADAM', 'lr': 0.001, 'weight_decay': 0}
+	bal_epochs: 400
+	bal_fc1: 32
+	bal_fc2: 100
+	bal_shuffle: False
+	bal_bs: 500
+	ft_OPT: {'name': 'ADAM', 'lr': 0.001, 'weight_decay': 0.0001}
+	ft1_epochs: 10
+	ft2_epochs: 400
+	ft_bs_train: 128
+working on CPU
+get_data_set_transformed(mnist: train dataset): |X|=(60000, 1, 28, 28), |y|=(60000,)
+get_data_set_transformed(mnist: test dataset): |X|=(10000, 1, 28, 28), |y|=(10000,)
+
+p_model:
+Created p1_LeNetMnist_300_100: #param=266610. path=./mnist/by_loss/ADAM_lr_0_001/p1_LeNetMnist_300_100.pt
+./mnist/by_loss/ADAM_lr_0_001/p1_LeNetMnist_300_100.pt exists
+p1_LeNetMnist_300_100 loaded from ./mnist/by_loss/ADAM_lr_0_001/p1_LeNetMnist_300_100.pt
+p1_LeNetMnist_300_100 is fully frozen
+p1_LeNetMnist_300_100 test_datasets:
+	train loss=0.021430, accuracy=59571/60000 (99.28%)
+	test  loss=0.091702, accuracy=9793/10000 (97.93%)
+
+c1_model:
+Created c_LeNetMnist_32_100: path=./mnist/by_loss/ADAM_lr_0_001/ft_only_end/c_LeNetMnist_32_100.pt
+	full LeNet #params = 266,610
+	this LeNet #params =  29,430
+	compression ratio = 11.0%
+c_LeNetMnist_32_100 doesn't exists
+Model c_LeNetMnist_32_100: freezing all except ['fc1', 'fc2', 'fc3']:
+c_LeNetMnist_32_100:
+	fc1.weight     : [32, 784]  (  25088 params), trainable:True, is_cuda:False
+	fc1.bias       : [32]       (     32 params), trainable:True, is_cuda:False
+	fc2.weight     : [100, 32]  (   3200 params), trainable:True, is_cuda:False
+	fc2.bias       : [100]      (    100 params), trainable:True, is_cuda:False
+	fc3.weight     : [10, 100]  (   1000 params), trainable:True, is_cuda:False
+	fc3.bias       : [10]       (     10 params), trainable:True, is_cuda:False
+	Total 29430 params
+Copying model p1_LeNetMnist_300_100 to model c_LeNetMnist_32_100 except ['fc1', 'fc2', 'fc3']:
+Balancing c_LeNetMnist_32_100 using fixed p1_LeNetMnist_300_100:
+	|ds|: |X|=(60000, 1, 28, 28), |y|=(60000,)
+	saving on each loss improvment
+	epochs=400, bs=500, #batches=120
+	optimizer = Adam (Parameter Group 0 amsgrad: False betas: (0.9, 0.999) eps: 1e-08 lr: 0.001 weight_decay: 0)
+	epoch [1/400] loss_c:0.738769, loss_p:0.021430, loss:58.173770, time 00:00:00 New best found
+	epoch [2/400] loss_c:0.356546, loss_p:0.021430, loss:29.849170, time 00:00:01 New best found
+	epoch [3/400] loss_c:0.291237, loss_p:0.021430, loss:23.782639, time 00:00:01 New best found
+	epoch [4/400] loss_c:0.265617, loss_p:0.021430, loss:20.784128, time 00:00:02 New best found
+	epoch [5/400] loss_c:0.243735, loss_p:0.021430, loss:18.249126, time 00:00:03 New best found
+	epoch [6/400] loss_c:0.224481, loss_p:0.021430, loss:16.120070, time 00:00:03 New best found
+	epoch [7/400] loss_c:0.208528, loss_p:0.021430, loss:14.447882, time 00:00:04 New best found
+	epoch [8/400] loss_c:0.194219, loss_p:0.021430, loss:12.996002, time 00:00:05 New best found
+	epoch [9/400] loss_c:0.180730, loss_p:0.021430, loss:11.736056, time 00:00:05 New best found
+	epoch [10/400] loss_c:0.169773, loss_p:0.021430, loss:10.702346, time 00:00:06 New best found
+	epoch [11/400] loss_c:0.160317, loss_p:0.021430, loss:9.809302, time 00:00:07 New best found
+	epoch [12/400] loss_c:0.151894, loss_p:0.021430, loss:9.051652, time 00:00:07 New best found
+	epoch [13/400] loss_c:0.144961, loss_p:0.021430, loss:8.401244, time 00:00:08 New best found
+	epoch [14/400] loss_c:0.138374, loss_p:0.021430, loss:7.803421, time 00:00:09 New best found
+	epoch [15/400] loss_c:0.132363, loss_p:0.021430, loss:7.265207, time 00:00:09 New best found
+	epoch [16/400] loss_c:0.126725, loss_p:0.021430, loss:6.770533, time 00:00:10 New best found
+	epoch [17/400] loss_c:0.121642, loss_p:0.021430, loss:6.339347, time 00:00:11 New best found
+	epoch [18/400] loss_c:0.116509, loss_p:0.021430, loss:5.920067, time 00:00:11 New best found
+	epoch [19/400] loss_c:0.112259, loss_p:0.021430, loss:5.570265, time 00:00:12 New best found
+	epoch [20/400] loss_c:0.108001, loss_p:0.021430, loss:5.233420, time 00:00:13 New best found
+	epoch [21/400] loss_c:0.104051, loss_p:0.021430, loss:4.917798, time 00:00:13 New best found
+	epoch [22/400] loss_c:0.100941, loss_p:0.021430, loss:4.670499, time 00:00:14 New best found
+	epoch [23/400] loss_c:0.097477, loss_p:0.021430, loss:4.398156, time 00:00:15 New best found
+	epoch [24/400] loss_c:0.094305, loss_p:0.021430, loss:4.160911, time 00:00:15 New best found
+	epoch [25/400] loss_c:0.091378, loss_p:0.021430, loss:3.945356, time 00:00:16 New best found
+	epoch [26/400] loss_c:0.088372, loss_p:0.021430, loss:3.723208, time 00:00:17 New best found
+	epoch [27/400] loss_c:0.085441, loss_p:0.021430, loss:3.520823, time 00:00:17 New best found
+	epoch [28/400] loss_c:0.082715, loss_p:0.021430, loss:3.327404, time 00:00:18 New best found
+	epoch [29/400] loss_c:0.079797, loss_p:0.021430, loss:3.134499, time 00:00:19 New best found
+	epoch [30/400] loss_c:0.077083, loss_p:0.021430, loss:2.951633, time 00:00:20 New best found
+	epoch [31/400] loss_c:0.074623, loss_p:0.021430, loss:2.788335, time 00:00:21 New best found
+	epoch [32/400] loss_c:0.071987, loss_p:0.021430, loss:2.616090, time 00:00:21 New best found
+	epoch [33/400] loss_c:0.069574, loss_p:0.021430, loss:2.463269, time 00:00:22 New best found
+	epoch [34/400] loss_c:0.067054, loss_p:0.021430, loss:2.305827, time 00:00:23 New best found
+	epoch [35/400] loss_c:0.064968, loss_p:0.021430, loss:2.172206, time 00:00:23 New best found
+	epoch [36/400] loss_c:0.062653, loss_p:0.021430, loss:2.030085, time 00:00:24 New best found
+	epoch [37/400] loss_c:0.060331, loss_p:0.021430, loss:1.892715, time 00:00:25 New best found
+	epoch [38/400] loss_c:0.058486, loss_p:0.021430, loss:1.773375, time 00:00:25 New best found
+	epoch [39/400] loss_c:0.056505, loss_p:0.021430, loss:1.655563, time 00:00:26 New best found
+	epoch [40/400] loss_c:0.054435, loss_p:0.021430, loss:1.527975, time 00:00:27 New best found
+	epoch [41/400] loss_c:0.052501, loss_p:0.021430, loss:1.415649, time 00:00:27 New best found
+	epoch [42/400] loss_c:0.050572, loss_p:0.021430, loss:1.317032, time 00:00:28 New best found
+	epoch [43/400] loss_c:0.049095, loss_p:0.021430, loss:1.220348, time 00:00:29 New best found
+	epoch [44/400] loss_c:0.047172, loss_p:0.021430, loss:1.123727, time 00:00:30 New best found
+	epoch [45/400] loss_c:0.046617, loss_p:0.021430, loss:1.093667, time 00:00:30 New best found
+	epoch [46/400] loss_c:0.044176, loss_p:0.021430, loss:0.953680, time 00:00:31 New best found
+	epoch [47/400] loss_c:0.043587, loss_p:0.021430, loss:0.921492, time 00:00:32 New best found
+	epoch [48/400] loss_c:0.042214, loss_p:0.021430, loss:0.870287, time 00:00:32 New best found
+	epoch [49/400] loss_c:0.040909, loss_p:0.021430, loss:0.796659, time 00:00:33 New best found
+	epoch [50/400] loss_c:0.054881, loss_p:0.021430, loss:14.160952, time 00:00:34
+	epoch [51/400] loss_c:0.369062, loss_p:0.021430, loss:20.837029, time 00:00:34
+	epoch [52/400] loss_c:0.084300, loss_p:0.021430, loss:3.667272, time 00:00:35
+	epoch [53/400] loss_c:0.066413, loss_p:0.021430, loss:2.452935, time 00:00:36
+	epoch [54/400] loss_c:0.058000, loss_p:0.021430, loss:1.920652, time 00:00:36
+	epoch [55/400] loss_c:0.052933, loss_p:0.021430, loss:1.596326, time 00:00:37
+	epoch [56/400] loss_c:0.049180, loss_p:0.021430, loss:1.358858, time 00:00:38
+	epoch [57/400] loss_c:0.046208, loss_p:0.021430, loss:1.174619, time 00:00:39
+	epoch [58/400] loss_c:0.043617, loss_p:0.021430, loss:1.019076, time 00:00:39
+	epoch [59/400] loss_c:0.041660, loss_p:0.021430, loss:0.903415, time 00:00:40
+	epoch [60/400] loss_c:0.039803, loss_p:0.021430, loss:0.796435, time 00:00:41 New best found
+	epoch [61/400] loss_c:0.038307, loss_p:0.021430, loss:0.712871, time 00:00:42 New best found
+	epoch [62/400] loss_c:0.036904, loss_p:0.021430, loss:0.639508, time 00:00:42 New best found
+	epoch [63/400] loss_c:0.035825, loss_p:0.021430, loss:0.597185, time 00:00:43 New best found
+	epoch [64/400] loss_c:0.034462, loss_p:0.021430, loss:0.528491, time 00:00:44 New best found
+	epoch [65/400] loss_c:0.033864, loss_p:0.021430, loss:0.503979, time 00:00:44 New best found
+	epoch [66/400] loss_c:0.032619, loss_p:0.021430, loss:0.452406, time 00:00:45 New best found
+	epoch [67/400] loss_c:0.032213, loss_p:0.021430, loss:0.428502, time 00:00:46 New best found
+	epoch [68/400] loss_c:0.031931, loss_p:0.021430, loss:0.423278, time 00:00:46 New best found
+	epoch [69/400] loss_c:0.031197, loss_p:0.021430, loss:0.378239, time 00:00:47 New best found
+	epoch [70/400] loss_c:0.030158, loss_p:0.021430, loss:0.363171, time 00:00:48 New best found
+	epoch [71/400] loss_c:0.030837, loss_p:0.021430, loss:0.399974, time 00:00:49
+	epoch [72/400] loss_c:0.030547, loss_p:0.021430, loss:0.374148, time 00:00:49
+	epoch [73/400] loss_c:0.029134, loss_p:0.021430, loss:0.330151, time 00:00:50 New best found
+	epoch [74/400] loss_c:0.028754, loss_p:0.021430, loss:0.352817, time 00:00:51
+	epoch [75/400] loss_c:0.028185, loss_p:0.021430, loss:0.306380, time 00:00:51 New best found
+	epoch [76/400] loss_c:0.028326, loss_p:0.021430, loss:0.298746, time 00:00:52 New best found
+	epoch [77/400] loss_c:0.028321, loss_p:0.021430, loss:0.331311, time 00:00:53
+	epoch [78/400] loss_c:0.029028, loss_p:0.021430, loss:0.374906, time 00:00:53
+	epoch [79/400] loss_c:0.028218, loss_p:0.021430, loss:0.314631, time 00:00:54
+	epoch [80/400] loss_c:0.028494, loss_p:0.021430, loss:0.357336, time 00:00:55
+	epoch [81/400] loss_c:0.029627, loss_p:0.021430, loss:0.390463, time 00:00:56
+	epoch [82/400] loss_c:0.028480, loss_p:0.021430, loss:0.362763, time 00:00:56
+	epoch [83/400] loss_c:0.027913, loss_p:0.021430, loss:0.357007, time 00:00:57
+	epoch [84/400] loss_c:0.029432, loss_p:0.021430, loss:0.382158, time 00:00:58
+	epoch [85/400] loss_c:0.028055, loss_p:0.021430, loss:0.372033, time 00:00:58
+	epoch [86/400] loss_c:0.028616, loss_p:0.021430, loss:0.421949, time 00:00:59
+	epoch [87/400] loss_c:0.028662, loss_p:0.021430, loss:0.392670, time 00:01:00
+	epoch [88/400] loss_c:0.029986, loss_p:0.021430, loss:0.433416, time 00:01:01
+	epoch [89/400] loss_c:0.027576, loss_p:0.021430, loss:0.369942, time 00:01:01
+	epoch [90/400] loss_c:0.035812, loss_p:0.021430, loss:0.686281, time 00:01:02
+	epoch [91/400] loss_c:0.027783, loss_p:0.021430, loss:0.354900, time 00:01:03
+	epoch [92/400] loss_c:0.028674, loss_p:0.021430, loss:0.467995, time 00:01:03
+	epoch [93/400] loss_c:0.041568, loss_p:0.021430, loss:0.993848, time 00:01:04
+	epoch [94/400] loss_c:0.028597, loss_p:0.021430, loss:0.380608, time 00:01:05
+	epoch [95/400] loss_c:0.026682, loss_p:0.021430, loss:0.353904, time 00:01:06
+	epoch [96/400] loss_c:0.030056, loss_p:0.021430, loss:0.481379, time 00:01:06
+	epoch [97/400] loss_c:0.026639, loss_p:0.021430, loss:0.352150, time 00:01:07
+	epoch [98/400] loss_c:0.027233, loss_p:0.021430, loss:0.362185, time 00:01:08
+	epoch [99/400] loss_c:0.028926, loss_p:0.021430, loss:0.421569, time 00:01:08
+	epoch [100/400] loss_c:0.033022, loss_p:0.021430, loss:0.663383, time 00:01:09
+	epoch [101/400] loss_c:0.041404, loss_p:0.021430, loss:1.002360, time 00:01:10
+	epoch [102/400] loss_c:0.029148, loss_p:0.021430, loss:0.455946, time 00:01:10
+	epoch [103/400] loss_c:0.026798, loss_p:0.021430, loss:0.352332, time 00:01:11
+	epoch [104/400] loss_c:0.027816, loss_p:0.021430, loss:0.455375, time 00:01:12
+	epoch [105/400] loss_c:0.029104, loss_p:0.021430, loss:0.499538, time 00:01:13
+	epoch [106/400] loss_c:0.027695, loss_p:0.021430, loss:0.386664, time 00:01:13
+	epoch [107/400] loss_c:0.027293, loss_p:0.021430, loss:0.442397, time 00:01:14
+	epoch [108/400] loss_c:0.031585, loss_p:0.021430, loss:0.603345, time 00:01:15
+	epoch [109/400] loss_c:0.037599, loss_p:0.021430, loss:0.800197, time 00:01:15
+	epoch [110/400] loss_c:0.028346, loss_p:0.021430, loss:0.449296, time 00:01:16
+	epoch [111/400] loss_c:0.029887, loss_p:0.021430, loss:0.508771, time 00:01:17
+	epoch [112/400] loss_c:0.029607, loss_p:0.021430, loss:0.520405, time 00:01:18
+	epoch [113/400] loss_c:0.029320, loss_p:0.021430, loss:0.542655, time 00:01:18
+	epoch [114/400] loss_c:0.027507, loss_p:0.021430, loss:0.402389, time 00:01:19
+	epoch [115/400] loss_c:0.026329, loss_p:0.021430, loss:0.396795, time 00:01:20
+	epoch [116/400] loss_c:0.030266, loss_p:0.021430, loss:0.636209, time 00:01:20
+	epoch [117/400] loss_c:0.029775, loss_p:0.021430, loss:0.488069, time 00:01:21
+	epoch [118/400] loss_c:0.027615, loss_p:0.021430, loss:0.412650, time 00:01:22
+	epoch [119/400] loss_c:0.027975, loss_p:0.021430, loss:0.549795, time 00:01:22
+	epoch [120/400] loss_c:0.034297, loss_p:0.021430, loss:0.782017, time 00:01:23
+	epoch [121/400] loss_c:0.030023, loss_p:0.021430, loss:0.561704, time 00:01:24
+	epoch [122/400] loss_c:0.030939, loss_p:0.021430, loss:0.580202, time 00:01:25
+	epoch [123/400] loss_c:0.030933, loss_p:0.021430, loss:0.578053, time 00:01:25
+	epoch [124/400] loss_c:0.026485, loss_p:0.021430, loss:0.465677, time 00:01:26
+	epoch [125/400] loss_c:0.028704, loss_p:0.021430, loss:0.472196, time 00:01:27
+	epoch [126/400] loss_c:0.026586, loss_p:0.021430, loss:0.500058, time 00:01:28
+	epoch [127/400] loss_c:0.033766, loss_p:0.021430, loss:0.642516, time 00:01:28
+	epoch [128/400] loss_c:0.026025, loss_p:0.021430, loss:0.480050, time 00:01:29
+	epoch [129/400] loss_c:0.035319, loss_p:0.021430, loss:0.837682, time 00:01:30
+	epoch [130/400] loss_c:0.029528, loss_p:0.021430, loss:0.495326, time 00:01:30
+	epoch [131/400] loss_c:0.027843, loss_p:0.021430, loss:0.541713, time 00:01:31
+	epoch [132/400] loss_c:0.040716, loss_p:0.021430, loss:1.161000, time 00:01:32
+	epoch [133/400] loss_c:0.033628, loss_p:0.021430, loss:0.653673, time 00:01:33
+	epoch [134/400] loss_c:0.026127, loss_p:0.021430, loss:0.420557, time 00:01:33
+	epoch [135/400] loss_c:0.032754, loss_p:0.021430, loss:0.634721, time 00:01:34
+	epoch [136/400] loss_c:0.024940, loss_p:0.021430, loss:0.438669, time 00:01:35
+	epoch [137/400] loss_c:0.028177, loss_p:0.021430, loss:0.457814, time 00:01:35
+	epoch [138/400] loss_c:0.026249, loss_p:0.021430, loss:0.386862, time 00:01:36
+	epoch [139/400] loss_c:0.026148, loss_p:0.021430, loss:0.449171, time 00:01:37
+	epoch [140/400] loss_c:0.030175, loss_p:0.021430, loss:0.676304, time 00:01:38
+	epoch [141/400] loss_c:0.030732, loss_p:0.021430, loss:0.877098, time 00:01:38
+	epoch [142/400] loss_c:0.055271, loss_p:0.021430, loss:1.886056, time 00:01:39
+	epoch [143/400] loss_c:0.035284, loss_p:0.021430, loss:0.848308, time 00:01:40
+	epoch [144/400] loss_c:0.024682, loss_p:0.021430, loss:0.366533, time 00:01:40
+	epoch [145/400] loss_c:0.027115, loss_p:0.021430, loss:0.458579, time 00:01:41
+	epoch [146/400] loss_c:0.025681, loss_p:0.021430, loss:0.420838, time 00:01:42
+	epoch [147/400] loss_c:0.026502, loss_p:0.021430, loss:0.525099, time 00:01:43
+	epoch [148/400] loss_c:0.034984, loss_p:0.021430, loss:0.783583, time 00:01:43
+	epoch [149/400] loss_c:0.025185, loss_p:0.021430, loss:0.366909, time 00:01:44
+	epoch [150/400] loss_c:0.024951, loss_p:0.021430, loss:0.416351, time 00:01:45
+	epoch [151/400] loss_c:0.025927, loss_p:0.021430, loss:0.430932, time 00:01:45
+	epoch [152/400] loss_c:0.029241, loss_p:0.021430, loss:0.650160, time 00:01:46
+	epoch [153/400] loss_c:0.031172, loss_p:0.021430, loss:0.641718, time 00:01:47
+	epoch [154/400] loss_c:0.025401, loss_p:0.021430, loss:0.419283, time 00:01:47
+	epoch [155/400] loss_c:0.025520, loss_p:0.021430, loss:0.385963, time 00:01:48
+	epoch [156/400] loss_c:0.025252, loss_p:0.021430, loss:0.418684, time 00:01:49
+	epoch [157/400] loss_c:0.025890, loss_p:0.021430, loss:0.430778, time 00:01:50
+	epoch [158/400] loss_c:0.025307, loss_p:0.021430, loss:0.377421, time 00:01:51
+	epoch [159/400] loss_c:0.024604, loss_p:0.021430, loss:0.411956, time 00:01:51
+	epoch [160/400] loss_c:0.026644, loss_p:0.021430, loss:0.429566, time 00:01:52
+	epoch [161/400] loss_c:0.024837, loss_p:0.021430, loss:0.495856, time 00:01:53
+	epoch [162/400] loss_c:0.030480, loss_p:0.021430, loss:0.667926, time 00:01:54
+	epoch [163/400] loss_c:0.032154, loss_p:0.021430, loss:0.668668, time 00:01:55
+	epoch [164/400] loss_c:0.024829, loss_p:0.021430, loss:0.404234, time 00:01:55
+	epoch [165/400] loss_c:0.024987, loss_p:0.021430, loss:0.373983, time 00:01:56
+	epoch [166/400] loss_c:0.026423, loss_p:0.021430, loss:0.447975, time 00:01:57
+	epoch [167/400] loss_c:0.027259, loss_p:0.021430, loss:0.467223, time 00:01:58
+	epoch [168/400] loss_c:0.024566, loss_p:0.021430, loss:0.390216, time 00:01:58
+	epoch [169/400] loss_c:0.025209, loss_p:0.021430, loss:0.383370, time 00:01:59
+	epoch [170/400] loss_c:0.024638, loss_p:0.021430, loss:0.420717, time 00:02:00
+	epoch [171/400] loss_c:0.025343, loss_p:0.021430, loss:0.413001, time 00:02:00
+	epoch [172/400] loss_c:0.027075, loss_p:0.021430, loss:0.536169, time 00:02:01
+	epoch [173/400] loss_c:0.026933, loss_p:0.021430, loss:0.426700, time 00:02:02
+	epoch [174/400] loss_c:0.024121, loss_p:0.021430, loss:0.351070, time 00:02:03
+	epoch [175/400] loss_c:0.025509, loss_p:0.021430, loss:0.415616, time 00:02:04
+	epoch [176/400] loss_c:0.026271, loss_p:0.021430, loss:0.431533, time 00:02:04
+	epoch [177/400] loss_c:0.026512, loss_p:0.021430, loss:0.425817, time 00:02:05
+	epoch [178/400] loss_c:0.024178, loss_p:0.021430, loss:0.357551, time 00:02:06
+	epoch [179/400] loss_c:0.024888, loss_p:0.021430, loss:0.448338, time 00:02:07
+	epoch [180/400] loss_c:0.027153, loss_p:0.021430, loss:0.511200, time 00:02:07
+	epoch [181/400] loss_c:0.025619, loss_p:0.021430, loss:0.426108, time 00:02:08
+	epoch [182/400] loss_c:0.025684, loss_p:0.021430, loss:0.405423, time 00:02:09
+	epoch [183/400] loss_c:0.026064, loss_p:0.021430, loss:0.465248, time 00:02:10
+	epoch [184/400] loss_c:0.026102, loss_p:0.021430, loss:0.472897, time 00:02:10
+	epoch [185/400] loss_c:0.026201, loss_p:0.021430, loss:0.497881, time 00:02:11
+	epoch [186/400] loss_c:0.028872, loss_p:0.021430, loss:0.540359, time 00:02:12
+	epoch [187/400] loss_c:0.025722, loss_p:0.021430, loss:0.442743, time 00:02:12
+	epoch [188/400] loss_c:0.024025, loss_p:0.021430, loss:0.395041, time 00:02:13
+	epoch [189/400] loss_c:0.026943, loss_p:0.021430, loss:0.645039, time 00:02:14
+	epoch [190/400] loss_c:0.042056, loss_p:0.021430, loss:1.165615, time 00:02:14
+	epoch [191/400] loss_c:0.026882, loss_p:0.021430, loss:0.459437, time 00:02:15
+	epoch [192/400] loss_c:0.023982, loss_p:0.021430, loss:0.394936, time 00:02:16
+	epoch [193/400] loss_c:0.024534, loss_p:0.021430, loss:0.382254, time 00:02:16
+	epoch [194/400] loss_c:0.026489, loss_p:0.021430, loss:0.427700, time 00:02:17
+	epoch [195/400] loss_c:0.024590, loss_p:0.021430, loss:0.426039, time 00:02:18
+	epoch [196/400] loss_c:0.027206, loss_p:0.021430, loss:0.447522, time 00:02:19
+	epoch [197/400] loss_c:0.025178, loss_p:0.021430, loss:0.378390, time 00:02:19
+	epoch [198/400] loss_c:0.024204, loss_p:0.021430, loss:0.514146, time 00:02:20
+	epoch [199/400] loss_c:0.035129, loss_p:0.021430, loss:0.786184, time 00:02:21
+	epoch [200/400] loss_c:0.025112, loss_p:0.021430, loss:0.853156, time 00:02:21
+	epoch [201/400] loss_c:0.038296, loss_p:0.021430, loss:0.944389, time 00:02:22
+	epoch [202/400] loss_c:0.026713, loss_p:0.021430, loss:0.463625, time 00:02:23
+	epoch [203/400] loss_c:0.024592, loss_p:0.021430, loss:0.389977, time 00:02:23
+	epoch [204/400] loss_c:0.024974, loss_p:0.021430, loss:0.416563, time 00:02:24
+	epoch [205/400] loss_c:0.025446, loss_p:0.021430, loss:0.424952, time 00:02:25
+	epoch [206/400] loss_c:0.022931, loss_p:0.021430, loss:0.374416, time 00:02:25
+	epoch [207/400] loss_c:0.024281, loss_p:0.021430, loss:0.455069, time 00:02:26
+	epoch [208/400] loss_c:0.026578, loss_p:0.021430, loss:0.480782, time 00:02:27
+	epoch [209/400] loss_c:0.023997, loss_p:0.021430, loss:0.374987, time 00:02:28
+	epoch [210/400] loss_c:0.023043, loss_p:0.021430, loss:0.354417, time 00:02:28
+	epoch [211/400] loss_c:0.024835, loss_p:0.021430, loss:0.614818, time 00:02:29
+	epoch [212/400] loss_c:0.028551, loss_p:0.021430, loss:0.498996, time 00:02:30
+	epoch [213/400] loss_c:0.023363, loss_p:0.021430, loss:0.491587, time 00:02:31
+	epoch [214/400] loss_c:0.027964, loss_p:0.021430, loss:0.506754, time 00:02:31
+	epoch [215/400] loss_c:0.024379, loss_p:0.021430, loss:0.456546, time 00:02:32
+	epoch [216/400] loss_c:0.027132, loss_p:0.021430, loss:0.480734, time 00:02:33
+	epoch [217/400] loss_c:0.024081, loss_p:0.021430, loss:0.361999, time 00:02:34
+	epoch [218/400] loss_c:0.025425, loss_p:0.021430, loss:0.479373, time 00:02:34
+	epoch [219/400] loss_c:0.026764, loss_p:0.021430, loss:0.460482, time 00:02:35
+	epoch [220/400] loss_c:0.022425, loss_p:0.021430, loss:0.362329, time 00:02:36
+	epoch [221/400] loss_c:0.023335, loss_p:0.021430, loss:0.457936, time 00:02:36
+	epoch [222/400] loss_c:0.026375, loss_p:0.021430, loss:0.636379, time 00:02:37
+	epoch [223/400] loss_c:0.032327, loss_p:0.021430, loss:0.601659, time 00:02:38
+	epoch [224/400] loss_c:0.023871, loss_p:0.021430, loss:0.355085, time 00:02:39
+	epoch [225/400] loss_c:0.023728, loss_p:0.021430, loss:0.378111, time 00:02:39
+	epoch [226/400] loss_c:0.023450, loss_p:0.021430, loss:0.407786, time 00:02:40
+	epoch [227/400] loss_c:0.023100, loss_p:0.021430, loss:0.317814, time 00:02:41
+	epoch [228/400] loss_c:0.023822, loss_p:0.021430, loss:0.410083, time 00:02:41
+	epoch [229/400] loss_c:0.025288, loss_p:0.021430, loss:0.457203, time 00:02:42
+	epoch [230/400] loss_c:0.024557, loss_p:0.021430, loss:0.408245, time 00:02:43
+	epoch [231/400] loss_c:0.026089, loss_p:0.021430, loss:0.444502, time 00:02:44
+	epoch [232/400] loss_c:0.022712, loss_p:0.021430, loss:0.368777, time 00:02:44
+	epoch [233/400] loss_c:0.023528, loss_p:0.021430, loss:0.432671, time 00:02:45
+	epoch [234/400] loss_c:0.024652, loss_p:0.021430, loss:0.499758, time 00:02:46
+	epoch [235/400] loss_c:0.026720, loss_p:0.021430, loss:0.428700, time 00:02:47
+	epoch [236/400] loss_c:0.024534, loss_p:0.021430, loss:0.455543, time 00:02:47
+	epoch [237/400] loss_c:0.024376, loss_p:0.021430, loss:0.394907, time 00:02:48
+	epoch [238/400] loss_c:0.024512, loss_p:0.021430, loss:0.405344, time 00:02:49
+	epoch [239/400] loss_c:0.023111, loss_p:0.021430, loss:0.449093, time 00:02:49
+	epoch [240/400] loss_c:0.024807, loss_p:0.021430, loss:0.417227, time 00:02:50
+	epoch [241/400] loss_c:0.027185, loss_p:0.021430, loss:0.484698, time 00:02:51
+	epoch [242/400] loss_c:0.024394, loss_p:0.021430, loss:0.398123, time 00:02:52
+	epoch [243/400] loss_c:0.024925, loss_p:0.021430, loss:0.451324, time 00:02:52
+	epoch [244/400] loss_c:0.028111, loss_p:0.021430, loss:0.569638, time 00:02:53
+	epoch [245/400] loss_c:0.025356, loss_p:0.021430, loss:0.396874, time 00:02:54
+	epoch [246/400] loss_c:0.024173, loss_p:0.021430, loss:0.593469, time 00:02:55
+	epoch [247/400] loss_c:0.037565, loss_p:0.021430, loss:0.926879, time 00:02:55
+	epoch [248/400] loss_c:0.027270, loss_p:0.021430, loss:0.684483, time 00:02:56
+	epoch [249/400] loss_c:0.042640, loss_p:0.021430, loss:1.155291, time 00:02:57
+	epoch [250/400] loss_c:0.026692, loss_p:0.021430, loss:0.445860, time 00:02:57
+	epoch [251/400] loss_c:0.023746, loss_p:0.021430, loss:0.394983, time 00:02:58
+	epoch [252/400] loss_c:0.023381, loss_p:0.021430, loss:0.396458, time 00:02:59
+	epoch [253/400] loss_c:0.023167, loss_p:0.021430, loss:0.448217, time 00:03:00
+	epoch [254/400] loss_c:0.032102, loss_p:0.021430, loss:0.656540, time 00:03:00
+	epoch [255/400] loss_c:0.024770, loss_p:0.021430, loss:0.543153, time 00:03:01
+	epoch [256/400] loss_c:0.032000, loss_p:0.021430, loss:0.806138, time 00:03:02
+	epoch [257/400] loss_c:0.027085, loss_p:0.021430, loss:0.526655, time 00:03:03
+	epoch [258/400] loss_c:0.023023, loss_p:0.021430, loss:0.373810, time 00:03:03
+	epoch [259/400] loss_c:0.023136, loss_p:0.021430, loss:0.382561, time 00:03:04
+	epoch [260/400] loss_c:0.024691, loss_p:0.021430, loss:0.428757, time 00:03:05
+	epoch [261/400] loss_c:0.023314, loss_p:0.021430, loss:0.403244, time 00:03:06
+	epoch [262/400] loss_c:0.022135, loss_p:0.021430, loss:0.355244, time 00:03:06
+	epoch [263/400] loss_c:0.023752, loss_p:0.021430, loss:0.453100, time 00:03:07
+	epoch [264/400] loss_c:0.024304, loss_p:0.021430, loss:0.436244, time 00:03:08
+	epoch [265/400] loss_c:0.022785, loss_p:0.021430, loss:0.446129, time 00:03:08
+	epoch [266/400] loss_c:0.025550, loss_p:0.021430, loss:0.370083, time 00:03:09
+	epoch [267/400] loss_c:0.022975, loss_p:0.021430, loss:0.384987, time 00:03:10
+	epoch [268/400] loss_c:0.022153, loss_p:0.021430, loss:0.305762, time 00:03:10
+	epoch [269/400] loss_c:0.023493, loss_p:0.021430, loss:0.416897, time 00:03:11
+	epoch [270/400] loss_c:0.024172, loss_p:0.021430, loss:0.487359, time 00:03:12
+	epoch [271/400] loss_c:0.024597, loss_p:0.021430, loss:0.411929, time 00:03:12
+	epoch [272/400] loss_c:0.023295, loss_p:0.021430, loss:0.431386, time 00:03:13
+	epoch [273/400] loss_c:0.023480, loss_p:0.021430, loss:0.342476, time 00:03:14
+	epoch [274/400] loss_c:0.025633, loss_p:0.021430, loss:0.394631, time 00:03:15
+	epoch [275/400] loss_c:0.022221, loss_p:0.021430, loss:0.343005, time 00:03:15
+	epoch [276/400] loss_c:0.023704, loss_p:0.021430, loss:0.412441, time 00:03:16
+	epoch [277/400] loss_c:0.023546, loss_p:0.021430, loss:0.382126, time 00:03:17
+	epoch [278/400] loss_c:0.023379, loss_p:0.021430, loss:0.399507, time 00:03:17
+	epoch [279/400] loss_c:0.023333, loss_p:0.021430, loss:0.409410, time 00:03:18
+	epoch [280/400] loss_c:0.023913, loss_p:0.021430, loss:0.359854, time 00:03:19
+	epoch [281/400] loss_c:0.025399, loss_p:0.021430, loss:0.432215, time 00:03:19
+	epoch [282/400] loss_c:0.027574, loss_p:0.021430, loss:0.481183, time 00:03:20
+	epoch [283/400] loss_c:0.026950, loss_p:0.021430, loss:0.472282, time 00:03:21
+	epoch [284/400] loss_c:0.024109, loss_p:0.021430, loss:0.410963, time 00:03:21
+	epoch [285/400] loss_c:0.024480, loss_p:0.021430, loss:0.423509, time 00:03:22
+	epoch [286/400] loss_c:0.023334, loss_p:0.021430, loss:0.497065, time 00:03:23
+	epoch [287/400] loss_c:0.026959, loss_p:0.021430, loss:0.489873, time 00:03:24
+	epoch [288/400] loss_c:0.023315, loss_p:0.021430, loss:0.457636, time 00:03:24
+	epoch [289/400] loss_c:0.029113, loss_p:0.021430, loss:0.631494, time 00:03:25
+	epoch [290/400] loss_c:0.022671, loss_p:0.021430, loss:0.490381, time 00:03:26
+	epoch [291/400] loss_c:0.028071, loss_p:0.021430, loss:0.483571, time 00:03:26
+	epoch [292/400] loss_c:0.023467, loss_p:0.021430, loss:0.384290, time 00:03:27
+	epoch [293/400] loss_c:0.022585, loss_p:0.021430, loss:0.376630, time 00:03:28
+	epoch [294/400] loss_c:0.026778, loss_p:0.021430, loss:0.521677, time 00:03:28
+	epoch [295/400] loss_c:0.025201, loss_p:0.021430, loss:0.440856, time 00:03:29
+	epoch [296/400] loss_c:0.024200, loss_p:0.021430, loss:0.452278, time 00:03:30
+	epoch [297/400] loss_c:0.023713, loss_p:0.021430, loss:0.375675, time 00:03:31
+	epoch [298/400] loss_c:0.023840, loss_p:0.021430, loss:0.355073, time 00:03:31
+	epoch [299/400] loss_c:0.022572, loss_p:0.021430, loss:0.392318, time 00:03:32
+	epoch [300/400] loss_c:0.022815, loss_p:0.021430, loss:0.364040, time 00:03:33
+	epoch [301/400] loss_c:0.022327, loss_p:0.021430, loss:0.395349, time 00:03:34
+	epoch [302/400] loss_c:0.026603, loss_p:0.021430, loss:0.474578, time 00:03:34
+	epoch [303/400] loss_c:0.023481, loss_p:0.021430, loss:0.387714, time 00:03:35
+	epoch [304/400] loss_c:0.023028, loss_p:0.021430, loss:0.341092, time 00:03:36
+	epoch [305/400] loss_c:0.023517, loss_p:0.021430, loss:0.393295, time 00:03:36
+	epoch [306/400] loss_c:0.022596, loss_p:0.021430, loss:0.417790, time 00:03:37
+	epoch [307/400] loss_c:0.022855, loss_p:0.021430, loss:0.488612, time 00:03:38
+	epoch [308/400] loss_c:0.033275, loss_p:0.021430, loss:0.795894, time 00:03:39
+	epoch [309/400] loss_c:0.026400, loss_p:0.021430, loss:0.484550, time 00:03:39
+	epoch [310/400] loss_c:0.025094, loss_p:0.021430, loss:0.397563, time 00:03:40
+	epoch [311/400] loss_c:0.023096, loss_p:0.021430, loss:0.435970, time 00:03:41
+	epoch [312/400] loss_c:0.027017, loss_p:0.021430, loss:0.502692, time 00:03:41
+	epoch [313/400] loss_c:0.023630, loss_p:0.021430, loss:0.348008, time 00:03:42
+	epoch [314/400] loss_c:0.024334, loss_p:0.021430, loss:0.447283, time 00:03:43
+	epoch [315/400] loss_c:0.025009, loss_p:0.021430, loss:0.496916, time 00:03:44
+	epoch [316/400] loss_c:0.027642, loss_p:0.021430, loss:0.523114, time 00:03:44
+	epoch [317/400] loss_c:0.022191, loss_p:0.021430, loss:0.390765, time 00:03:45
+	epoch [318/400] loss_c:0.024724, loss_p:0.021430, loss:0.376322, time 00:03:46
+	epoch [319/400] loss_c:0.024023, loss_p:0.021430, loss:0.589230, time 00:03:46
+	epoch [320/400] loss_c:0.027085, loss_p:0.021430, loss:0.443539, time 00:03:47
+	epoch [321/400] loss_c:0.022145, loss_p:0.021430, loss:0.291177, time 00:03:48 New best found
+	epoch [322/400] loss_c:0.022206, loss_p:0.021430, loss:0.351188, time 00:03:48
+	epoch [323/400] loss_c:0.022230, loss_p:0.021430, loss:0.329665, time 00:03:49
+	epoch [324/400] loss_c:0.024287, loss_p:0.021430, loss:0.426446, time 00:03:50
+	epoch [325/400] loss_c:0.022946, loss_p:0.021430, loss:0.331242, time 00:03:50
+	epoch [326/400] loss_c:0.023089, loss_p:0.021430, loss:0.402086, time 00:03:51
+	epoch [327/400] loss_c:0.021701, loss_p:0.021430, loss:0.378141, time 00:03:52
+	epoch [328/400] loss_c:0.024601, loss_p:0.021430, loss:0.415972, time 00:03:53
+	epoch [329/400] loss_c:0.026298, loss_p:0.021430, loss:0.532263, time 00:03:53
+	epoch [330/400] loss_c:0.030489, loss_p:0.021430, loss:0.754013, time 00:03:54
+	epoch [331/400] loss_c:0.026089, loss_p:0.021430, loss:0.483353, time 00:03:55
+	epoch [332/400] loss_c:0.024861, loss_p:0.021430, loss:0.448408, time 00:03:55
+	epoch [333/400] loss_c:0.023875, loss_p:0.021430, loss:0.477870, time 00:03:56
+	epoch [334/400] loss_c:0.024900, loss_p:0.021430, loss:0.456261, time 00:03:57
+	epoch [335/400] loss_c:0.024696, loss_p:0.021430, loss:0.455767, time 00:03:57
+	epoch [336/400] loss_c:0.023438, loss_p:0.021430, loss:0.356829, time 00:03:58
+	epoch [337/400] loss_c:0.023864, loss_p:0.021430, loss:0.350194, time 00:03:59
+	epoch [338/400] loss_c:0.025018, loss_p:0.021430, loss:0.460632, time 00:03:59
+	epoch [339/400] loss_c:0.025078, loss_p:0.021430, loss:0.437789, time 00:04:00
+	epoch [340/400] loss_c:0.022268, loss_p:0.021430, loss:0.360336, time 00:04:01
+	epoch [341/400] loss_c:0.023648, loss_p:0.021430, loss:0.350043, time 00:04:01
+	epoch [342/400] loss_c:0.024731, loss_p:0.021430, loss:0.423387, time 00:04:02
+	epoch [343/400] loss_c:0.024292, loss_p:0.021430, loss:0.435003, time 00:04:03
+	epoch [344/400] loss_c:0.022769, loss_p:0.021430, loss:0.381509, time 00:04:04
+	epoch [345/400] loss_c:0.024904, loss_p:0.021430, loss:0.464485, time 00:04:04
+	epoch [346/400] loss_c:0.024937, loss_p:0.021430, loss:0.371960, time 00:04:05
+	epoch [347/400] loss_c:0.023450, loss_p:0.021430, loss:0.393547, time 00:04:06
+	epoch [348/400] loss_c:0.023776, loss_p:0.021430, loss:0.391475, time 00:04:06
+	epoch [349/400] loss_c:0.023669, loss_p:0.021430, loss:0.398074, time 00:04:07
+	epoch [350/400] loss_c:0.022692, loss_p:0.021430, loss:0.347416, time 00:04:08
+	epoch [351/400] loss_c:0.023510, loss_p:0.021430, loss:0.428323, time 00:04:08
+	epoch [352/400] loss_c:0.025075, loss_p:0.021430, loss:0.434023, time 00:04:09
+	epoch [353/400] loss_c:0.023810, loss_p:0.021430, loss:0.415089, time 00:04:10
+	epoch [354/400] loss_c:0.024074, loss_p:0.021430, loss:0.489511, time 00:04:11
+	epoch [355/400] loss_c:0.034645, loss_p:0.021430, loss:0.834646, time 00:04:11
+	epoch [356/400] loss_c:0.023600, loss_p:0.021430, loss:0.375952, time 00:04:12
+	epoch [357/400] loss_c:0.022998, loss_p:0.021430, loss:0.399166, time 00:04:13
+	epoch [358/400] loss_c:0.024594, loss_p:0.021430, loss:0.383564, time 00:04:13
+	epoch [359/400] loss_c:0.021464, loss_p:0.021430, loss:0.322885, time 00:04:14
+	epoch [360/400] loss_c:0.023168, loss_p:0.021430, loss:0.324272, time 00:04:15
+	epoch [361/400] loss_c:0.025164, loss_p:0.021430, loss:0.382736, time 00:04:15
+	epoch [362/400] loss_c:0.022682, loss_p:0.021430, loss:0.428214, time 00:04:16
+	epoch [363/400] loss_c:0.023181, loss_p:0.021430, loss:0.472243, time 00:04:17
+	epoch [364/400] loss_c:0.023602, loss_p:0.021430, loss:0.536842, time 00:04:17
+	epoch [365/400] loss_c:0.024329, loss_p:0.021430, loss:0.414846, time 00:04:18
+	epoch [366/400] loss_c:0.022010, loss_p:0.021430, loss:0.374265, time 00:04:19
+	epoch [367/400] loss_c:0.022592, loss_p:0.021430, loss:0.344108, time 00:04:20
+	epoch [368/400] loss_c:0.022376, loss_p:0.021430, loss:0.389166, time 00:04:20
+	epoch [369/400] loss_c:0.027511, loss_p:0.021430, loss:0.506011, time 00:04:21
+	epoch [370/400] loss_c:0.022315, loss_p:0.021430, loss:0.362489, time 00:04:22
+	epoch [371/400] loss_c:0.023410, loss_p:0.021430, loss:0.342001, time 00:04:22
+	epoch [372/400] loss_c:0.022937, loss_p:0.021430, loss:0.440712, time 00:04:23
+	epoch [373/400] loss_c:0.022841, loss_p:0.021430, loss:0.366785, time 00:04:24
+	epoch [374/400] loss_c:0.022717, loss_p:0.021430, loss:0.361678, time 00:04:24
+	epoch [375/400] loss_c:0.021974, loss_p:0.021430, loss:0.378829, time 00:04:25
+	epoch [376/400] loss_c:0.024660, loss_p:0.021430, loss:0.446205, time 00:04:26
+	epoch [377/400] loss_c:0.023614, loss_p:0.021430, loss:0.399740, time 00:04:26
+	epoch [378/400] loss_c:0.022734, loss_p:0.021430, loss:0.377009, time 00:04:27
+	epoch [379/400] loss_c:0.024677, loss_p:0.021430, loss:0.623599, time 00:04:28
+	epoch [380/400] loss_c:0.030951, loss_p:0.021430, loss:0.616744, time 00:04:28
+	epoch [381/400] loss_c:0.023354, loss_p:0.021430, loss:0.409159, time 00:04:29
+	epoch [382/400] loss_c:0.022473, loss_p:0.021430, loss:0.324468, time 00:04:30
+	epoch [383/400] loss_c:0.022936, loss_p:0.021430, loss:0.502759, time 00:04:30
+	epoch [384/400] loss_c:0.023177, loss_p:0.021430, loss:0.384566, time 00:04:31
+	epoch [385/400] loss_c:0.022283, loss_p:0.021430, loss:0.378151, time 00:04:32
+	epoch [386/400] loss_c:0.023679, loss_p:0.021430, loss:0.403060, time 00:04:32
+	epoch [387/400] loss_c:0.027528, loss_p:0.021430, loss:0.650278, time 00:04:33
+	epoch [388/400] loss_c:0.027261, loss_p:0.021430, loss:0.516163, time 00:04:34
+	epoch [389/400] loss_c:0.022632, loss_p:0.021430, loss:0.756553, time 00:04:35
+	epoch [390/400] loss_c:0.036199, loss_p:0.021430, loss:0.889425, time 00:04:35
+	epoch [391/400] loss_c:0.022585, loss_p:0.021430, loss:0.376073, time 00:04:36
+	epoch [392/400] loss_c:0.023880, loss_p:0.021430, loss:0.352599, time 00:04:37
+	epoch [393/400] loss_c:0.024905, loss_p:0.021430, loss:0.470867, time 00:04:37
+	epoch [394/400] loss_c:0.023613, loss_p:0.021430, loss:0.330915, time 00:04:38
+	epoch [395/400] loss_c:0.023369, loss_p:0.021430, loss:0.492875, time 00:04:39
+	epoch [396/400] loss_c:0.026507, loss_p:0.021430, loss:0.494861, time 00:04:39
+	epoch [397/400] loss_c:0.023359, loss_p:0.021430, loss:0.368346, time 00:04:40
+	epoch [398/400] loss_c:0.021783, loss_p:0.021430, loss:0.363449, time 00:04:41
+	epoch [399/400] loss_c:0.021542, loss_p:0.021430, loss:0.402408, time 00:04:42
+	epoch [400/400] loss_c:0.022130, loss_p:0.021430, loss:0.408483, time 00:04:42
+Done balancing. Lowest loss=0.291177 on epoch 321
+c_LeNetMnist_32_100 loaded from ./mnist/by_loss/ADAM_lr_0_001/ft_only_end/c_LeNetMnist_32_100.pt
+./mnist/by_loss/ADAM_lr_0_001/ft_only_end/c_LeNetMnist_32_100_tune_1.pt doesn't exists
+c_LeNetMnist_32_100 is fully trainable
+c_LeNetMnist_32_100:
+	fc1.weight     : [32, 784]  (  25088 params), trainable:True, is_cuda:False
+	fc1.bias       : [32]       (     32 params), trainable:True, is_cuda:False
+	fc2.weight     : [100, 32]  (   3200 params), trainable:True, is_cuda:False
+	fc2.bias       : [100]      (    100 params), trainable:True, is_cuda:False
+	fc3.weight     : [10, 100]  (   1000 params), trainable:True, is_cuda:False
+	fc3.bias       : [10]       (     10 params), trainable:True, is_cuda:False
+	Total 29430 params
+Training c_LeNetMnist_32_100:
+	train_ds: |X|=(60000, 1, 28, 28), |y|=(60000,)
+	saving on each loss improvment
+	epochs=400, bs_train=128, #trainBatches=469, bs_test=1000, #testBatches=10
+	optimizer = Adam (Parameter Group 0 amsgrad: False betas: (0.9, 0.999) eps: 1e-08 lr: 0.001 weight_decay: 0.0001)
+	epoch [  1/400] train loss:0.022628,test loss=0.148029, accuracy=9696/10000 (96.96%), time so far 00:00:01 New best found
+	epoch [  2/400] train loss:0.012843,test loss=0.155229, accuracy=9693/10000 (96.93%), time so far 00:00:02
+	epoch [  3/400] train loss:0.010729,test loss=0.149492, accuracy=9701/10000 (97.01%), time so far 00:00:03
+	epoch [  4/400] train loss:0.011340,test loss=0.142414, accuracy=9722/10000 (97.22%), time so far 00:00:04 New best found
+	epoch [  5/400] train loss:0.011415,test loss=0.160807, accuracy=9680/10000 (96.80%), time so far 00:00:05
+	epoch [  6/400] train loss:0.010772,test loss=0.149901, accuracy=9702/10000 (97.02%), time so far 00:00:06
+	epoch [  7/400] train loss:0.009512,test loss=0.139985, accuracy=9724/10000 (97.24%), time so far 00:00:08 New best found
+	epoch [  8/400] train loss:0.009613,test loss=0.155710, accuracy=9690/10000 (96.90%), time so far 00:00:09
+	epoch [  9/400] train loss:0.013775,test loss=0.152992, accuracy=9693/10000 (96.93%), time so far 00:00:10
+	epoch [ 10/400] train loss:0.010632,test loss=0.142235, accuracy=9708/10000 (97.08%), time so far 00:00:11
+	epoch [ 11/400] train loss:0.007869,test loss=0.142174, accuracy=9710/10000 (97.10%), time so far 00:00:12
+	epoch [ 12/400] train loss:0.009791,test loss=0.147945, accuracy=9720/10000 (97.20%), time so far 00:00:13
+	epoch [ 13/400] train loss:0.008406,test loss=0.155344, accuracy=9705/10000 (97.05%), time so far 00:00:14
+	epoch [ 14/400] train loss:0.011736,test loss=0.153238, accuracy=9682/10000 (96.82%), time so far 00:00:16
+	epoch [ 15/400] train loss:0.009397,test loss=0.145742, accuracy=9716/10000 (97.16%), time so far 00:00:17
+	epoch [ 16/400] train loss:0.008670,test loss=0.148107, accuracy=9697/10000 (96.97%), time so far 00:00:18
+	epoch [ 17/400] train loss:0.010273,test loss=0.148328, accuracy=9699/10000 (96.99%), time so far 00:00:19
+	epoch [ 18/400] train loss:0.007837,test loss=0.142553, accuracy=9714/10000 (97.14%), time so far 00:00:20
+	epoch [ 19/400] train loss:0.006758,test loss=0.149177, accuracy=9698/10000 (96.98%), time so far 00:00:21
+	epoch [ 20/400] train loss:0.007638,test loss=0.144202, accuracy=9710/10000 (97.10%), time so far 00:00:23
+	epoch [ 21/400] train loss:0.014187,test loss=0.138177, accuracy=9699/10000 (96.99%), time so far 00:00:24 New best found
+	epoch [ 22/400] train loss:0.010822,test loss=0.139829, accuracy=9713/10000 (97.13%), time so far 00:00:25
+	epoch [ 23/400] train loss:0.007030,test loss=0.141102, accuracy=9721/10000 (97.21%), time so far 00:00:26
+	epoch [ 24/400] train loss:0.011187,test loss=0.152878, accuracy=9687/10000 (96.87%), time so far 00:00:27
+	epoch [ 25/400] train loss:0.009884,test loss=0.133373, accuracy=9722/10000 (97.22%), time so far 00:00:28 New best found
+	epoch [ 26/400] train loss:0.006909,test loss=0.134947, accuracy=9717/10000 (97.17%), time so far 00:00:30
+	epoch [ 27/400] train loss:0.005368,test loss=0.143779, accuracy=9698/10000 (96.98%), time so far 00:00:31
+	epoch [ 28/400] train loss:0.010114,test loss=0.138059, accuracy=9717/10000 (97.17%), time so far 00:00:32
+	epoch [ 29/400] train loss:0.011866,test loss=0.143451, accuracy=9701/10000 (97.01%), time so far 00:00:33
+	epoch [ 30/400] train loss:0.013179,test loss=0.137748, accuracy=9721/10000 (97.21%), time so far 00:00:34
+	epoch [ 31/400] train loss:0.008364,test loss=0.134350, accuracy=9728/10000 (97.28%), time so far 00:00:35
+	epoch [ 32/400] train loss:0.005973,test loss=0.140173, accuracy=9717/10000 (97.17%), time so far 00:00:36
+	epoch [ 33/400] train loss:0.005689,test loss=0.180527, accuracy=9649/10000 (96.49%), time so far 00:00:38
+	epoch [ 34/400] train loss:0.009171,test loss=0.148292, accuracy=9722/10000 (97.22%), time so far 00:00:39
+	epoch [ 35/400] train loss:0.015355,test loss=0.148730, accuracy=9701/10000 (97.01%), time so far 00:00:40
+	epoch [ 36/400] train loss:0.011432,test loss=0.146520, accuracy=9715/10000 (97.15%), time so far 00:00:41
+	epoch [ 37/400] train loss:0.008768,test loss=0.126968, accuracy=9724/10000 (97.24%), time so far 00:00:42 New best found
+	epoch [ 38/400] train loss:0.005505,test loss=0.137173, accuracy=9737/10000 (97.37%), time so far 00:00:44
+	epoch [ 39/400] train loss:0.006116,test loss=0.138035, accuracy=9708/10000 (97.08%), time so far 00:00:45
+	epoch [ 40/400] train loss:0.005919,test loss=0.143297, accuracy=9725/10000 (97.25%), time so far 00:00:46
+	epoch [ 41/400] train loss:0.013468,test loss=0.150266, accuracy=9712/10000 (97.12%), time so far 00:00:47
+	epoch [ 42/400] train loss:0.011503,test loss=0.135453, accuracy=9722/10000 (97.22%), time so far 00:00:48
+	epoch [ 43/400] train loss:0.010348,test loss=0.140309, accuracy=9717/10000 (97.17%), time so far 00:00:49
+	epoch [ 44/400] train loss:0.005861,test loss=0.128808, accuracy=9742/10000 (97.42%), time so far 00:00:50
+	epoch [ 45/400] train loss:0.008613,test loss=0.126498, accuracy=9730/10000 (97.30%), time so far 00:00:52 New best found
+	epoch [ 46/400] train loss:0.010843,test loss=0.135225, accuracy=9727/10000 (97.27%), time so far 00:00:53
+	epoch [ 47/400] train loss:0.007388,test loss=0.125571, accuracy=9733/10000 (97.33%), time so far 00:00:54 New best found
+	epoch [ 48/400] train loss:0.005805,test loss=0.140627, accuracy=9715/10000 (97.15%), time so far 00:00:55
+	epoch [ 49/400] train loss:0.007841,test loss=0.139798, accuracy=9706/10000 (97.06%), time so far 00:00:56
+	epoch [ 50/400] train loss:0.010241,test loss=0.134670, accuracy=9709/10000 (97.09%), time so far 00:00:57
+	epoch [ 51/400] train loss:0.010050,test loss=0.133303, accuracy=9714/10000 (97.14%), time so far 00:00:58
+	epoch [ 52/400] train loss:0.007911,test loss=0.128938, accuracy=9736/10000 (97.36%), time so far 00:01:00
+	epoch [ 53/400] train loss:0.008717,test loss=0.139482, accuracy=9723/10000 (97.23%), time so far 00:01:01
+	epoch [ 54/400] train loss:0.009124,test loss=0.136793, accuracy=9717/10000 (97.17%), time so far 00:01:02
+	epoch [ 55/400] train loss:0.014237,test loss=0.139426, accuracy=9722/10000 (97.22%), time so far 00:01:03
+	epoch [ 56/400] train loss:0.006922,test loss=0.135626, accuracy=9735/10000 (97.35%), time so far 00:01:04
+	epoch [ 57/400] train loss:0.004828,test loss=0.138943, accuracy=9712/10000 (97.12%), time so far 00:01:05
+	epoch [ 58/400] train loss:0.008192,test loss=0.127053, accuracy=9721/10000 (97.21%), time so far 00:01:06
+	epoch [ 59/400] train loss:0.010991,test loss=0.138551, accuracy=9732/10000 (97.32%), time so far 00:01:08
+	epoch [ 60/400] train loss:0.008054,test loss=0.128943, accuracy=9737/10000 (97.37%), time so far 00:01:09
+	epoch [ 61/400] train loss:0.005564,test loss=0.129416, accuracy=9724/10000 (97.24%), time so far 00:01:10
+	epoch [ 62/400] train loss:0.007056,test loss=0.162246, accuracy=9683/10000 (96.83%), time so far 00:01:11
+	epoch [ 63/400] train loss:0.008242,test loss=0.125336, accuracy=9738/10000 (97.38%), time so far 00:01:12 New best found
+	epoch [ 64/400] train loss:0.012875,test loss=0.143199, accuracy=9690/10000 (96.90%), time so far 00:01:13
+	epoch [ 65/400] train loss:0.006174,test loss=0.129375, accuracy=9742/10000 (97.42%), time so far 00:01:15
+	epoch [ 66/400] train loss:0.007535,test loss=0.165356, accuracy=9660/10000 (96.60%), time so far 00:01:16
+	epoch [ 67/400] train loss:0.007941,test loss=0.151129, accuracy=9703/10000 (97.03%), time so far 00:01:17
+	epoch [ 68/400] train loss:0.006167,test loss=0.154230, accuracy=9692/10000 (96.92%), time so far 00:01:18
+	epoch [ 69/400] train loss:0.010890,test loss=0.144453, accuracy=9714/10000 (97.14%), time so far 00:01:19
+	epoch [ 70/400] train loss:0.006949,test loss=0.136610, accuracy=9722/10000 (97.22%), time so far 00:01:20
+	epoch [ 71/400] train loss:0.005343,test loss=0.129859, accuracy=9740/10000 (97.40%), time so far 00:01:22
+	epoch [ 72/400] train loss:0.009812,test loss=0.193535, accuracy=9635/10000 (96.35%), time so far 00:01:23
+	epoch [ 73/400] train loss:0.011080,test loss=0.142365, accuracy=9723/10000 (97.23%), time so far 00:01:24
+	epoch [ 74/400] train loss:0.006735,test loss=0.137213, accuracy=9731/10000 (97.31%), time so far 00:01:25
+	epoch [ 75/400] train loss:0.004265,test loss=0.130986, accuracy=9729/10000 (97.29%), time so far 00:01:26
+	epoch [ 76/400] train loss:0.005170,test loss=0.132830, accuracy=9724/10000 (97.24%), time so far 00:01:27
+	epoch [ 77/400] train loss:0.015239,test loss=0.144837, accuracy=9702/10000 (97.02%), time so far 00:01:28
+	epoch [ 78/400] train loss:0.009372,test loss=0.128463, accuracy=9750/10000 (97.50%), time so far 00:01:29
+	epoch [ 79/400] train loss:0.004060,test loss=0.128830, accuracy=9742/10000 (97.42%), time so far 00:01:30
+	epoch [ 80/400] train loss:0.004882,test loss=0.127194, accuracy=9754/10000 (97.54%), time so far 00:01:31
+	epoch [ 81/400] train loss:0.017267,test loss=0.143713, accuracy=9712/10000 (97.12%), time so far 00:01:32
+	epoch [ 82/400] train loss:0.009378,test loss=0.133674, accuracy=9738/10000 (97.38%), time so far 00:01:33
+	epoch [ 83/400] train loss:0.004699,test loss=0.126252, accuracy=9750/10000 (97.50%), time so far 00:01:35
+	epoch [ 84/400] train loss:0.003194,test loss=0.121511, accuracy=9754/10000 (97.54%), time so far 00:01:36 New best found
+	epoch [ 85/400] train loss:0.006841,test loss=0.154398, accuracy=9687/10000 (96.87%), time so far 00:01:37
+	epoch [ 86/400] train loss:0.015380,test loss=0.142815, accuracy=9698/10000 (96.98%), time so far 00:01:38
+	epoch [ 87/400] train loss:0.007627,test loss=0.134786, accuracy=9716/10000 (97.16%), time so far 00:01:39
+	epoch [ 88/400] train loss:0.004486,test loss=0.124369, accuracy=9740/10000 (97.40%), time so far 00:01:40
+	epoch [ 89/400] train loss:0.004909,test loss=0.118043, accuracy=9748/10000 (97.48%), time so far 00:01:41 New best found
+	epoch [ 90/400] train loss:0.019152,test loss=0.130516, accuracy=9716/10000 (97.16%), time so far 00:01:42
+	epoch [ 91/400] train loss:0.010667,test loss=0.137174, accuracy=9733/10000 (97.33%), time so far 00:01:43
+	epoch [ 92/400] train loss:0.003669,test loss=0.125196, accuracy=9729/10000 (97.29%), time so far 00:01:44
+	epoch [ 93/400] train loss:0.002050,test loss=0.124117, accuracy=9744/10000 (97.44%), time so far 00:01:45
+	epoch [ 94/400] train loss:0.001466,test loss=0.117934, accuracy=9758/10000 (97.58%), time so far 00:01:47 New best found
+	epoch [ 95/400] train loss:0.001248,test loss=0.117653, accuracy=9746/10000 (97.46%), time so far 00:01:48 New best found
+	epoch [ 96/400] train loss:0.001215,test loss=0.111362, accuracy=9757/10000 (97.57%), time so far 00:01:49 New best found
+	epoch [ 97/400] train loss:0.037883,test loss=0.137725, accuracy=9708/10000 (97.08%), time so far 00:01:50
+	epoch [ 98/400] train loss:0.014393,test loss=0.118778, accuracy=9747/10000 (97.47%), time so far 00:01:51
+	epoch [ 99/400] train loss:0.004488,test loss=0.107399, accuracy=9763/10000 (97.63%), time so far 00:01:52 New best found
+	epoch [100/400] train loss:0.002443,test loss=0.108131, accuracy=9763/10000 (97.63%), time so far 00:01:53
+	epoch [101/400] train loss:0.002047,test loss=0.108303, accuracy=9771/10000 (97.71%), time so far 00:01:54
+	epoch [102/400] train loss:0.002007,test loss=0.111976, accuracy=9746/10000 (97.46%), time so far 00:01:55
+	epoch [103/400] train loss:0.030153,test loss=0.117576, accuracy=9731/10000 (97.31%), time so far 00:01:57
+	epoch [104/400] train loss:0.009790,test loss=0.113849, accuracy=9745/10000 (97.45%), time so far 00:01:58
+	epoch [105/400] train loss:0.004135,test loss=0.107438, accuracy=9763/10000 (97.63%), time so far 00:01:59
+	epoch [106/400] train loss:0.002071,test loss=0.103427, accuracy=9763/10000 (97.63%), time so far 00:02:00 New best found
+	epoch [107/400] train loss:0.002095,test loss=0.106334, accuracy=9759/10000 (97.59%), time so far 00:02:01
+	epoch [108/400] train loss:0.021024,test loss=0.141808, accuracy=9701/10000 (97.01%), time so far 00:02:02
+	epoch [109/400] train loss:0.018206,test loss=0.123082, accuracy=9731/10000 (97.31%), time so far 00:02:03
+	epoch [110/400] train loss:0.006885,test loss=0.112890, accuracy=9737/10000 (97.37%), time so far 00:02:04
+	epoch [111/400] train loss:0.003919,test loss=0.109362, accuracy=9754/10000 (97.54%), time so far 00:02:05
+	epoch [112/400] train loss:0.002769,test loss=0.111905, accuracy=9752/10000 (97.52%), time so far 00:02:06
+	epoch [113/400] train loss:0.003755,test loss=0.133348, accuracy=9700/10000 (97.00%), time so far 00:02:07
+	epoch [114/400] train loss:0.020863,test loss=0.126677, accuracy=9741/10000 (97.41%), time so far 00:02:09
+	epoch [115/400] train loss:0.009115,test loss=0.119878, accuracy=9745/10000 (97.45%), time so far 00:02:10
+	epoch [116/400] train loss:0.005334,test loss=0.119132, accuracy=9739/10000 (97.39%), time so far 00:02:11
+	epoch [117/400] train loss:0.005960,test loss=0.120649, accuracy=9736/10000 (97.36%), time so far 00:02:12
+	epoch [118/400] train loss:0.009107,test loss=0.122341, accuracy=9733/10000 (97.33%), time so far 00:02:13
+	epoch [119/400] train loss:0.010309,test loss=0.125706, accuracy=9747/10000 (97.47%), time so far 00:02:14
+	epoch [120/400] train loss:0.010038,test loss=0.124234, accuracy=9731/10000 (97.31%), time so far 00:02:15
+	epoch [121/400] train loss:0.007944,test loss=0.130905, accuracy=9735/10000 (97.35%), time so far 00:02:16
+	epoch [122/400] train loss:0.006172,test loss=0.127940, accuracy=9729/10000 (97.29%), time so far 00:02:17
+	epoch [123/400] train loss:0.006626,test loss=0.138506, accuracy=9717/10000 (97.17%), time so far 00:02:18
+	epoch [124/400] train loss:0.008159,test loss=0.127768, accuracy=9727/10000 (97.27%), time so far 00:02:20
+	epoch [125/400] train loss:0.006707,test loss=0.115429, accuracy=9741/10000 (97.41%), time so far 00:02:21
+	epoch [126/400] train loss:0.009979,test loss=0.135114, accuracy=9737/10000 (97.37%), time so far 00:02:22
+	epoch [127/400] train loss:0.008911,test loss=0.128848, accuracy=9719/10000 (97.19%), time so far 00:02:23
+	epoch [128/400] train loss:0.008424,test loss=0.136218, accuracy=9733/10000 (97.33%), time so far 00:02:24
+	epoch [129/400] train loss:0.004733,test loss=0.128445, accuracy=9740/10000 (97.40%), time so far 00:02:25
+	epoch [130/400] train loss:0.006365,test loss=0.134053, accuracy=9719/10000 (97.19%), time so far 00:02:26
+	epoch [131/400] train loss:0.010406,test loss=0.147316, accuracy=9717/10000 (97.17%), time so far 00:02:27
+	epoch [132/400] train loss:0.010786,test loss=0.150532, accuracy=9699/10000 (96.99%), time so far 00:02:28
+	epoch [133/400] train loss:0.005271,test loss=0.124641, accuracy=9729/10000 (97.29%), time so far 00:02:29
+	epoch [134/400] train loss:0.004160,test loss=0.118126, accuracy=9760/10000 (97.60%), time so far 00:02:31
+	epoch [135/400] train loss:0.004577,test loss=0.131216, accuracy=9742/10000 (97.42%), time so far 00:02:32
+	epoch [136/400] train loss:0.012379,test loss=0.127547, accuracy=9747/10000 (97.47%), time so far 00:02:33
+	epoch [137/400] train loss:0.014201,test loss=0.124949, accuracy=9733/10000 (97.33%), time so far 00:02:34
+	epoch [138/400] train loss:0.007760,test loss=0.119524, accuracy=9746/10000 (97.46%), time so far 00:02:35
+	epoch [139/400] train loss:0.003362,test loss=0.121305, accuracy=9753/10000 (97.53%), time so far 00:02:36
+	epoch [140/400] train loss:0.001664,test loss=0.114781, accuracy=9774/10000 (97.74%), time so far 00:02:37
+	epoch [141/400] train loss:0.001233,test loss=0.109029, accuracy=9771/10000 (97.71%), time so far 00:02:38
+	epoch [142/400] train loss:0.001107,test loss=0.106059, accuracy=9761/10000 (97.61%), time so far 00:02:39
+	epoch [143/400] train loss:0.001067,test loss=0.102708, accuracy=9771/10000 (97.71%), time so far 00:02:40 New best found
+	epoch [144/400] train loss:0.037154,test loss=0.116595, accuracy=9739/10000 (97.39%), time so far 00:02:41
+	epoch [145/400] train loss:0.009976,test loss=0.115388, accuracy=9759/10000 (97.59%), time so far 00:02:43
+	epoch [146/400] train loss:0.003884,test loss=0.119889, accuracy=9741/10000 (97.41%), time so far 00:02:44
+	epoch [147/400] train loss:0.002303,test loss=0.102946, accuracy=9773/10000 (97.73%), time so far 00:02:45
+	epoch [148/400] train loss:0.001721,test loss=0.104163, accuracy=9768/10000 (97.68%), time so far 00:02:46
+	epoch [149/400] train loss:0.001709,test loss=0.172421, accuracy=9656/10000 (96.56%), time so far 00:02:47
+	epoch [150/400] train loss:0.029690,test loss=0.121242, accuracy=9742/10000 (97.42%), time so far 00:02:48
+	epoch [151/400] train loss:0.007168,test loss=0.114661, accuracy=9749/10000 (97.49%), time so far 00:02:49
+	epoch [152/400] train loss:0.003527,test loss=0.117641, accuracy=9741/10000 (97.41%), time so far 00:02:50
+	epoch [153/400] train loss:0.002618,test loss=0.104707, accuracy=9766/10000 (97.66%), time so far 00:02:51
+	epoch [154/400] train loss:0.001732,test loss=0.103693, accuracy=9757/10000 (97.57%), time so far 00:02:52
+	epoch [155/400] train loss:0.001450,test loss=0.100736, accuracy=9766/10000 (97.66%), time so far 00:02:54 New best found
+	epoch [156/400] train loss:0.014217,test loss=0.183889, accuracy=9597/10000 (95.97%), time so far 00:02:55
+	epoch [157/400] train loss:0.030446,test loss=0.126110, accuracy=9707/10000 (97.07%), time so far 00:02:56
+	epoch [158/400] train loss:0.007000,test loss=0.102556, accuracy=9764/10000 (97.64%), time so far 00:02:57
+	epoch [159/400] train loss:0.003441,test loss=0.114196, accuracy=9749/10000 (97.49%), time so far 00:02:58
+	epoch [160/400] train loss:0.002119,test loss=0.103102, accuracy=9773/10000 (97.73%), time so far 00:02:59
+	epoch [161/400] train loss:0.001721,test loss=0.097721, accuracy=9780/10000 (97.80%), time so far 00:03:00 New best found
+	epoch [162/400] train loss:0.001648,test loss=0.099228, accuracy=9766/10000 (97.66%), time so far 00:03:01
+	epoch [163/400] train loss:0.025380,test loss=0.168450, accuracy=9640/10000 (96.40%), time so far 00:03:02
+	epoch [164/400] train loss:0.018023,test loss=0.111608, accuracy=9767/10000 (97.67%), time so far 00:03:03
+	epoch [165/400] train loss:0.007707,test loss=0.108006, accuracy=9767/10000 (97.67%), time so far 00:03:05
+	epoch [166/400] train loss:0.004704,test loss=0.103581, accuracy=9775/10000 (97.75%), time so far 00:03:06
+	epoch [167/400] train loss:0.005100,test loss=0.112489, accuracy=9753/10000 (97.53%), time so far 00:03:07
+	epoch [168/400] train loss:0.007072,test loss=0.111025, accuracy=9747/10000 (97.47%), time so far 00:03:08
+	epoch [169/400] train loss:0.012799,test loss=0.112945, accuracy=9753/10000 (97.53%), time so far 00:03:09
+	epoch [170/400] train loss:0.006954,test loss=0.122518, accuracy=9731/10000 (97.31%), time so far 00:03:10
+	epoch [171/400] train loss:0.008735,test loss=0.130547, accuracy=9725/10000 (97.25%), time so far 00:03:11
+	epoch [172/400] train loss:0.006094,test loss=0.123627, accuracy=9732/10000 (97.32%), time so far 00:03:12
+	epoch [173/400] train loss:0.005091,test loss=0.128115, accuracy=9728/10000 (97.28%), time so far 00:03:13
+	epoch [174/400] train loss:0.012187,test loss=0.126562, accuracy=9742/10000 (97.42%), time so far 00:03:14
+	epoch [175/400] train loss:0.007354,test loss=0.131688, accuracy=9737/10000 (97.37%), time so far 00:03:15
+	epoch [176/400] train loss:0.006626,test loss=0.121583, accuracy=9749/10000 (97.49%), time so far 00:03:17
+	epoch [177/400] train loss:0.004475,test loss=0.121859, accuracy=9743/10000 (97.43%), time so far 00:03:18
+	epoch [178/400] train loss:0.007422,test loss=0.139362, accuracy=9729/10000 (97.29%), time so far 00:03:19
+	epoch [179/400] train loss:0.014113,test loss=0.120691, accuracy=9748/10000 (97.48%), time so far 00:03:20
+	epoch [180/400] train loss:0.004879,test loss=0.112461, accuracy=9763/10000 (97.63%), time so far 00:03:21
+	epoch [181/400] train loss:0.004118,test loss=0.116066, accuracy=9753/10000 (97.53%), time so far 00:03:22
+	epoch [182/400] train loss:0.003766,test loss=0.117436, accuracy=9756/10000 (97.56%), time so far 00:03:23
+	epoch [183/400] train loss:0.009173,test loss=0.125332, accuracy=9737/10000 (97.37%), time so far 00:03:24
+	epoch [184/400] train loss:0.014201,test loss=0.133374, accuracy=9746/10000 (97.46%), time so far 00:03:25
+	epoch [185/400] train loss:0.007396,test loss=0.117021, accuracy=9765/10000 (97.65%), time so far 00:03:26
+	epoch [186/400] train loss:0.003365,test loss=0.132046, accuracy=9733/10000 (97.33%), time so far 00:03:28
+	epoch [187/400] train loss:0.004435,test loss=0.116998, accuracy=9765/10000 (97.65%), time so far 00:03:29
+	epoch [188/400] train loss:0.009105,test loss=0.125148, accuracy=9734/10000 (97.34%), time so far 00:03:30
+	epoch [189/400] train loss:0.014508,test loss=0.118612, accuracy=9761/10000 (97.61%), time so far 00:03:31
+	epoch [190/400] train loss:0.006042,test loss=0.113314, accuracy=9778/10000 (97.78%), time so far 00:03:32
+	epoch [191/400] train loss:0.003727,test loss=0.118294, accuracy=9744/10000 (97.44%), time so far 00:03:33
+	epoch [192/400] train loss:0.002907,test loss=0.134808, accuracy=9732/10000 (97.32%), time so far 00:03:34
+	epoch [193/400] train loss:0.010971,test loss=0.131833, accuracy=9732/10000 (97.32%), time so far 00:03:35
+	epoch [194/400] train loss:0.010156,test loss=0.120778, accuracy=9758/10000 (97.58%), time so far 00:03:36
+	epoch [195/400] train loss:0.005076,test loss=0.123917, accuracy=9739/10000 (97.39%), time so far 00:03:37
+	epoch [196/400] train loss:0.005498,test loss=0.126155, accuracy=9745/10000 (97.45%), time so far 00:03:38
+	epoch [197/400] train loss:0.008566,test loss=0.123842, accuracy=9752/10000 (97.52%), time so far 00:03:40
+	epoch [198/400] train loss:0.007671,test loss=0.136907, accuracy=9741/10000 (97.41%), time so far 00:03:41
+	epoch [199/400] train loss:0.009479,test loss=0.124454, accuracy=9748/10000 (97.48%), time so far 00:03:42
+	epoch [200/400] train loss:0.004078,test loss=0.119303, accuracy=9740/10000 (97.40%), time so far 00:03:43
+	epoch [201/400] train loss:0.003622,test loss=0.129132, accuracy=9753/10000 (97.53%), time so far 00:03:44
+	epoch [202/400] train loss:0.005920,test loss=0.127101, accuracy=9734/10000 (97.34%), time so far 00:03:45
+	epoch [203/400] train loss:0.012469,test loss=0.139577, accuracy=9718/10000 (97.18%), time so far 00:03:46
+	epoch [204/400] train loss:0.008380,test loss=0.115483, accuracy=9764/10000 (97.64%), time so far 00:03:47
+	epoch [205/400] train loss:0.003800,test loss=0.116248, accuracy=9769/10000 (97.69%), time so far 00:03:48
+	epoch [206/400] train loss:0.002203,test loss=0.116725, accuracy=9769/10000 (97.69%), time so far 00:03:49
+	epoch [207/400] train loss:0.001347,test loss=0.105906, accuracy=9782/10000 (97.82%), time so far 00:03:50
+	epoch [208/400] train loss:0.001391,test loss=0.109192, accuracy=9771/10000 (97.71%), time so far 00:03:52
+	epoch [209/400] train loss:0.026523,test loss=0.128127, accuracy=9715/10000 (97.15%), time so far 00:03:53
+	epoch [210/400] train loss:0.015522,test loss=0.106440, accuracy=9782/10000 (97.82%), time so far 00:03:54
+	epoch [211/400] train loss:0.003915,test loss=0.106300, accuracy=9778/10000 (97.78%), time so far 00:03:55
+	epoch [212/400] train loss:0.002131,test loss=0.104905, accuracy=9780/10000 (97.80%), time so far 00:03:56
+	epoch [213/400] train loss:0.001335,test loss=0.100260, accuracy=9787/10000 (97.87%), time so far 00:03:57
+	epoch [214/400] train loss:0.001103,test loss=0.098991, accuracy=9786/10000 (97.86%), time so far 00:03:58
+	epoch [215/400] train loss:0.001141,test loss=0.094799, accuracy=9792/10000 (97.92%), time so far 00:03:59 New best found
+	epoch [216/400] train loss:0.010943,test loss=0.246394, accuracy=9511/10000 (95.11%), time so far 00:04:00
+	epoch [217/400] train loss:0.037570,test loss=0.111675, accuracy=9755/10000 (97.55%), time so far 00:04:01
+	epoch [218/400] train loss:0.008319,test loss=0.097450, accuracy=9784/10000 (97.84%), time so far 00:04:02
+	epoch [219/400] train loss:0.003434,test loss=0.095373, accuracy=9789/10000 (97.89%), time so far 00:04:04
+	epoch [220/400] train loss:0.001983,test loss=0.096766, accuracy=9779/10000 (97.79%), time so far 00:04:05
+	epoch [221/400] train loss:0.001421,test loss=0.094097, accuracy=9787/10000 (97.87%), time so far 00:04:06 New best found
+	epoch [222/400] train loss:0.001307,test loss=0.094386, accuracy=9782/10000 (97.82%), time so far 00:04:07
+	epoch [223/400] train loss:0.001731,test loss=0.101449, accuracy=9751/10000 (97.51%), time so far 00:04:08
+	epoch [224/400] train loss:0.042690,test loss=0.103415, accuracy=9766/10000 (97.66%), time so far 00:04:09
+	epoch [225/400] train loss:0.008368,test loss=0.100384, accuracy=9769/10000 (97.69%), time so far 00:04:10
+	epoch [226/400] train loss:0.003786,test loss=0.097345, accuracy=9781/10000 (97.81%), time so far 00:04:11
+	epoch [227/400] train loss:0.001825,test loss=0.095763, accuracy=9789/10000 (97.89%), time so far 00:04:12
+	epoch [228/400] train loss:0.001469,test loss=0.094075, accuracy=9789/10000 (97.89%), time so far 00:04:13 New best found
+	epoch [229/400] train loss:0.001406,test loss=0.092009, accuracy=9793/10000 (97.93%), time so far 00:04:14 New best found
+	epoch [230/400] train loss:0.006870,test loss=0.213638, accuracy=9524/10000 (95.24%), time so far 00:04:15
+	epoch [231/400] train loss:0.034408,test loss=0.118052, accuracy=9741/10000 (97.41%), time so far 00:04:17
+	epoch [232/400] train loss:0.006816,test loss=0.105441, accuracy=9768/10000 (97.68%), time so far 00:04:18
+	epoch [233/400] train loss:0.003779,test loss=0.093213, accuracy=9796/10000 (97.96%), time so far 00:04:19
+	epoch [234/400] train loss:0.003191,test loss=0.095156, accuracy=9784/10000 (97.84%), time so far 00:04:20
+	epoch [235/400] train loss:0.018200,test loss=0.101991, accuracy=9764/10000 (97.64%), time so far 00:04:21
+	epoch [236/400] train loss:0.005619,test loss=0.105711, accuracy=9766/10000 (97.66%), time so far 00:04:22
+	epoch [237/400] train loss:0.003276,test loss=0.100267, accuracy=9778/10000 (97.78%), time so far 00:04:23
+	epoch [238/400] train loss:0.002399,test loss=0.091884, accuracy=9792/10000 (97.92%), time so far 00:04:24 New best found
+	epoch [239/400] train loss:0.012301,test loss=0.113589, accuracy=9757/10000 (97.57%), time so far 00:04:25
+	epoch [240/400] train loss:0.014412,test loss=0.110522, accuracy=9755/10000 (97.55%), time so far 00:04:26
+	epoch [241/400] train loss:0.006876,test loss=0.119373, accuracy=9748/10000 (97.48%), time so far 00:04:28
+	epoch [242/400] train loss:0.005338,test loss=0.103811, accuracy=9772/10000 (97.72%), time so far 00:04:29
+	epoch [243/400] train loss:0.002864,test loss=0.095893, accuracy=9783/10000 (97.83%), time so far 00:04:30
+	epoch [244/400] train loss:0.004539,test loss=0.122037, accuracy=9747/10000 (97.47%), time so far 00:04:31
+	epoch [245/400] train loss:0.015726,test loss=0.105754, accuracy=9760/10000 (97.60%), time so far 00:04:32
+	epoch [246/400] train loss:0.007595,test loss=0.116784, accuracy=9747/10000 (97.47%), time so far 00:04:33
+	epoch [247/400] train loss:0.005038,test loss=0.099476, accuracy=9789/10000 (97.89%), time so far 00:04:34
+	epoch [248/400] train loss:0.003848,test loss=0.106595, accuracy=9769/10000 (97.69%), time so far 00:04:35
+	epoch [249/400] train loss:0.009377,test loss=0.177853, accuracy=9635/10000 (96.35%), time so far 00:04:36
+	epoch [250/400] train loss:0.012904,test loss=0.115745, accuracy=9751/10000 (97.51%), time so far 00:04:37
+	epoch [251/400] train loss:0.005432,test loss=0.108117, accuracy=9768/10000 (97.68%), time so far 00:04:38
+	epoch [252/400] train loss:0.002408,test loss=0.107883, accuracy=9760/10000 (97.60%), time so far 00:04:40
+	epoch [253/400] train loss:0.008292,test loss=0.121700, accuracy=9745/10000 (97.45%), time so far 00:04:41
+	epoch [254/400] train loss:0.010585,test loss=0.126545, accuracy=9722/10000 (97.22%), time so far 00:04:42
+	epoch [255/400] train loss:0.006440,test loss=0.112919, accuracy=9766/10000 (97.66%), time so far 00:04:43
+	epoch [256/400] train loss:0.004941,test loss=0.113151, accuracy=9771/10000 (97.71%), time so far 00:04:44
+	epoch [257/400] train loss:0.003382,test loss=0.130362, accuracy=9725/10000 (97.25%), time so far 00:04:45
+	epoch [258/400] train loss:0.011293,test loss=0.123150, accuracy=9748/10000 (97.48%), time so far 00:04:46
+	epoch [259/400] train loss:0.006201,test loss=0.106597, accuracy=9775/10000 (97.75%), time so far 00:04:47
+	epoch [260/400] train loss:0.005549,test loss=0.113800, accuracy=9761/10000 (97.61%), time so far 00:04:49
+	epoch [261/400] train loss:0.011072,test loss=0.118461, accuracy=9749/10000 (97.49%), time so far 00:04:50
+	epoch [262/400] train loss:0.010986,test loss=0.110306, accuracy=9781/10000 (97.81%), time so far 00:04:51
+	epoch [263/400] train loss:0.003855,test loss=0.105239, accuracy=9768/10000 (97.68%), time so far 00:04:52
+	epoch [264/400] train loss:0.003829,test loss=0.125064, accuracy=9739/10000 (97.39%), time so far 00:04:53
+	epoch [265/400] train loss:0.004113,test loss=0.114759, accuracy=9769/10000 (97.69%), time so far 00:04:54
+	epoch [266/400] train loss:0.006441,test loss=0.150785, accuracy=9691/10000 (96.91%), time so far 00:04:55
+	epoch [267/400] train loss:0.013900,test loss=0.118725, accuracy=9749/10000 (97.49%), time so far 00:04:56
+	epoch [268/400] train loss:0.005271,test loss=0.108512, accuracy=9763/10000 (97.63%), time so far 00:04:57
+	epoch [269/400] train loss:0.004126,test loss=0.109307, accuracy=9765/10000 (97.65%), time so far 00:04:58
+	epoch [270/400] train loss:0.002251,test loss=0.099080, accuracy=9792/10000 (97.92%), time so far 00:05:00
+	epoch [271/400] train loss:0.001174,test loss=0.095968, accuracy=9789/10000 (97.89%), time so far 00:05:01
+	epoch [272/400] train loss:0.000974,test loss=0.094628, accuracy=9785/10000 (97.85%), time so far 00:05:02
+	epoch [273/400] train loss:0.001015,test loss=0.091160, accuracy=9794/10000 (97.94%), time so far 00:05:03 New best found
+	epoch [274/400] train loss:0.032483,test loss=0.116630, accuracy=9749/10000 (97.49%), time so far 00:05:04
+	epoch [275/400] train loss:0.013280,test loss=0.104414, accuracy=9769/10000 (97.69%), time so far 00:05:05
+	epoch [276/400] train loss:0.003874,test loss=0.098201, accuracy=9778/10000 (97.78%), time so far 00:05:06
+	epoch [277/400] train loss:0.002006,test loss=0.093003, accuracy=9790/10000 (97.90%), time so far 00:05:07
+	epoch [278/400] train loss:0.001384,test loss=0.089229, accuracy=9793/10000 (97.93%), time so far 00:05:08 New best found
+	epoch [279/400] train loss:0.001258,test loss=0.087713, accuracy=9794/10000 (97.94%), time so far 00:05:10 New best found
+	epoch [280/400] train loss:0.001337,test loss=0.085484, accuracy=9807/10000 (98.07%), time so far 00:05:11 New best found
+	epoch [281/400] train loss:0.033636,test loss=0.108452, accuracy=9742/10000 (97.42%), time so far 00:05:12
+	epoch [282/400] train loss:0.013243,test loss=0.091929, accuracy=9786/10000 (97.86%), time so far 00:05:13
+	epoch [283/400] train loss:0.004355,test loss=0.091569, accuracy=9791/10000 (97.91%), time so far 00:05:14
+	epoch [284/400] train loss:0.002148,test loss=0.090911, accuracy=9788/10000 (97.88%), time so far 00:05:15
+	epoch [285/400] train loss:0.001556,test loss=0.090399, accuracy=9785/10000 (97.85%), time so far 00:05:16
+	epoch [286/400] train loss:0.001390,test loss=0.087068, accuracy=9797/10000 (97.97%), time so far 00:05:17
+	epoch [287/400] train loss:0.001830,test loss=0.098988, accuracy=9772/10000 (97.72%), time so far 00:05:19
+	epoch [288/400] train loss:0.036054,test loss=0.114652, accuracy=9750/10000 (97.50%), time so far 00:05:20
+	epoch [289/400] train loss:0.007584,test loss=0.102866, accuracy=9778/10000 (97.78%), time so far 00:05:21
+	epoch [290/400] train loss:0.003122,test loss=0.099663, accuracy=9787/10000 (97.87%), time so far 00:05:23
+	epoch [291/400] train loss:0.001949,test loss=0.096211, accuracy=9787/10000 (97.87%), time so far 00:05:24
+	epoch [292/400] train loss:0.001461,test loss=0.092172, accuracy=9792/10000 (97.92%), time so far 00:05:26
+	epoch [293/400] train loss:0.001413,test loss=0.089696, accuracy=9794/10000 (97.94%), time so far 00:05:27
+	epoch [294/400] train loss:0.017208,test loss=0.144264, accuracy=9663/10000 (96.63%), time so far 00:05:29
+	epoch [295/400] train loss:0.026057,test loss=0.099031, accuracy=9778/10000 (97.78%), time so far 00:05:31
+	epoch [296/400] train loss:0.005863,test loss=0.095474, accuracy=9788/10000 (97.88%), time so far 00:05:32
+	epoch [297/400] train loss:0.002475,test loss=0.092173, accuracy=9786/10000 (97.86%), time so far 00:05:34
+	epoch [298/400] train loss:0.001519,test loss=0.092009, accuracy=9791/10000 (97.91%), time so far 00:05:35
+	epoch [299/400] train loss:0.001346,test loss=0.089268, accuracy=9792/10000 (97.92%), time so far 00:05:36
+	epoch [300/400] train loss:0.001418,test loss=0.087594, accuracy=9799/10000 (97.99%), time so far 00:05:37
+	epoch [301/400] train loss:0.028510,test loss=0.108104, accuracy=9759/10000 (97.59%), time so far 00:05:38
+	epoch [302/400] train loss:0.014443,test loss=0.107662, accuracy=9753/10000 (97.53%), time so far 00:05:39
+	epoch [303/400] train loss:0.005577,test loss=0.100712, accuracy=9782/10000 (97.82%), time so far 00:05:41
+	epoch [304/400] train loss:0.002904,test loss=0.099807, accuracy=9790/10000 (97.90%), time so far 00:05:42
+	epoch [305/400] train loss:0.002224,test loss=0.095311, accuracy=9793/10000 (97.93%), time so far 00:05:43
+	epoch [306/400] train loss:0.013023,test loss=0.118818, accuracy=9753/10000 (97.53%), time so far 00:05:44
+	epoch [307/400] train loss:0.010053,test loss=0.109136, accuracy=9769/10000 (97.69%), time so far 00:05:45
+	epoch [308/400] train loss:0.005954,test loss=0.110515, accuracy=9778/10000 (97.78%), time so far 00:05:46
+	epoch [309/400] train loss:0.005434,test loss=0.118651, accuracy=9755/10000 (97.55%), time so far 00:05:47
+	epoch [310/400] train loss:0.005716,test loss=0.110055, accuracy=9760/10000 (97.60%), time so far 00:05:48
+	epoch [311/400] train loss:0.013724,test loss=0.124978, accuracy=9748/10000 (97.48%), time so far 00:05:49
+	epoch [312/400] train loss:0.006149,test loss=0.107741, accuracy=9770/10000 (97.70%), time so far 00:05:50
+	epoch [313/400] train loss:0.003416,test loss=0.118627, accuracy=9751/10000 (97.51%), time so far 00:05:52
+	epoch [314/400] train loss:0.003732,test loss=0.113420, accuracy=9762/10000 (97.62%), time so far 00:05:53
+	epoch [315/400] train loss:0.014522,test loss=0.134179, accuracy=9714/10000 (97.14%), time so far 00:05:54
+	epoch [316/400] train loss:0.014556,test loss=0.111964, accuracy=9770/10000 (97.70%), time so far 00:05:55
+	epoch [317/400] train loss:0.004244,test loss=0.110200, accuracy=9777/10000 (97.77%), time so far 00:05:56
+	epoch [318/400] train loss:0.001424,test loss=0.094987, accuracy=9793/10000 (97.93%), time so far 00:05:57
+	epoch [319/400] train loss:0.001045,test loss=0.093713, accuracy=9795/10000 (97.95%), time so far 00:05:58
+	epoch [320/400] train loss:0.000947,test loss=0.094194, accuracy=9797/10000 (97.97%), time so far 00:05:59
+	epoch [321/400] train loss:0.001081,test loss=0.091935, accuracy=9796/10000 (97.96%), time so far 00:06:00
+	epoch [322/400] train loss:0.022462,test loss=0.144927, accuracy=9682/10000 (96.82%), time so far 00:06:01
+	epoch [323/400] train loss:0.020405,test loss=0.097473, accuracy=9770/10000 (97.70%), time so far 00:06:02
+	epoch [324/400] train loss:0.006112,test loss=0.095836, accuracy=9776/10000 (97.76%), time so far 00:06:04
+	epoch [325/400] train loss:0.003056,test loss=0.101550, accuracy=9775/10000 (97.75%), time so far 00:06:05
+	epoch [326/400] train loss:0.002683,test loss=0.088417, accuracy=9791/10000 (97.91%), time so far 00:06:06
+	epoch [327/400] train loss:0.005178,test loss=0.118952, accuracy=9734/10000 (97.34%), time so far 00:06:07
+	epoch [328/400] train loss:0.017372,test loss=0.108887, accuracy=9774/10000 (97.74%), time so far 00:06:08
+	epoch [329/400] train loss:0.006920,test loss=0.106672, accuracy=9775/10000 (97.75%), time so far 00:06:09
+	epoch [330/400] train loss:0.003850,test loss=0.097332, accuracy=9783/10000 (97.83%), time so far 00:06:10
+	epoch [331/400] train loss:0.002134,test loss=0.091751, accuracy=9796/10000 (97.96%), time so far 00:06:11
+	epoch [332/400] train loss:0.004538,test loss=0.111312, accuracy=9762/10000 (97.62%), time so far 00:06:12
+	epoch [333/400] train loss:0.016992,test loss=0.125972, accuracy=9750/10000 (97.50%), time so far 00:06:14
+	epoch [334/400] train loss:0.007429,test loss=0.107449, accuracy=9782/10000 (97.82%), time so far 00:06:15
+	epoch [335/400] train loss:0.004518,test loss=0.106508, accuracy=9770/10000 (97.70%), time so far 00:06:16
+	epoch [336/400] train loss:0.005698,test loss=0.107603, accuracy=9770/10000 (97.70%), time so far 00:06:17
+	epoch [337/400] train loss:0.006623,test loss=0.104816, accuracy=9763/10000 (97.63%), time so far 00:06:18
+	epoch [338/400] train loss:0.007661,test loss=0.131666, accuracy=9728/10000 (97.28%), time so far 00:06:19
+	epoch [339/400] train loss:0.008240,test loss=0.110060, accuracy=9770/10000 (97.70%), time so far 00:06:20
+	epoch [340/400] train loss:0.006160,test loss=0.106324, accuracy=9775/10000 (97.75%), time so far 00:06:21
+	epoch [341/400] train loss:0.010695,test loss=0.112277, accuracy=9771/10000 (97.71%), time so far 00:06:22
+	epoch [342/400] train loss:0.004174,test loss=0.099061, accuracy=9795/10000 (97.95%), time so far 00:06:23
+	epoch [343/400] train loss:0.002744,test loss=0.094618, accuracy=9796/10000 (97.96%), time so far 00:06:25
+	epoch [344/400] train loss:0.001841,test loss=0.092006, accuracy=9798/10000 (97.98%), time so far 00:06:26
+	epoch [345/400] train loss:0.001968,test loss=0.106213, accuracy=9778/10000 (97.78%), time so far 00:06:27
+	epoch [346/400] train loss:0.024710,test loss=0.107096, accuracy=9757/10000 (97.57%), time so far 00:06:28
+	epoch [347/400] train loss:0.007640,test loss=0.116929, accuracy=9758/10000 (97.58%), time so far 00:06:29
+	epoch [348/400] train loss:0.004232,test loss=0.112918, accuracy=9768/10000 (97.68%), time so far 00:06:30
+	epoch [349/400] train loss:0.001999,test loss=0.101225, accuracy=9782/10000 (97.82%), time so far 00:06:31
+	epoch [350/400] train loss:0.001368,test loss=0.107427, accuracy=9777/10000 (97.77%), time so far 00:06:32
+	epoch [351/400] train loss:0.020301,test loss=0.127339, accuracy=9726/10000 (97.26%), time so far 00:06:33
+	epoch [352/400] train loss:0.011888,test loss=0.100348, accuracy=9783/10000 (97.83%), time so far 00:06:34
+	epoch [353/400] train loss:0.002850,test loss=0.093694, accuracy=9808/10000 (98.08%), time so far 00:06:36
+	epoch [354/400] train loss:0.002414,test loss=0.093722, accuracy=9798/10000 (97.98%), time so far 00:06:37
+	epoch [355/400] train loss:0.001331,test loss=0.087366, accuracy=9808/10000 (98.08%), time so far 00:06:38
+	epoch [356/400] train loss:0.000989,test loss=0.086429, accuracy=9813/10000 (98.13%), time so far 00:06:39
+	epoch [357/400] train loss:0.001066,test loss=0.086915, accuracy=9805/10000 (98.05%), time so far 00:06:40
+	epoch [358/400] train loss:0.013250,test loss=0.172037, accuracy=9608/10000 (96.08%), time so far 00:06:41
+	epoch [359/400] train loss:0.030084,test loss=0.109777, accuracy=9764/10000 (97.64%), time so far 00:06:42
+	epoch [360/400] train loss:0.004777,test loss=0.094294, accuracy=9793/10000 (97.93%), time so far 00:06:43
+	epoch [361/400] train loss:0.002245,test loss=0.092049, accuracy=9795/10000 (97.95%), time so far 00:06:44
+	epoch [362/400] train loss:0.001410,test loss=0.088375, accuracy=9803/10000 (98.03%), time so far 00:06:45
+	epoch [363/400] train loss:0.001264,test loss=0.085650, accuracy=9810/10000 (98.10%), time so far 00:06:46
+	epoch [364/400] train loss:0.001435,test loss=0.087822, accuracy=9793/10000 (97.93%), time so far 00:06:48
+	epoch [365/400] train loss:0.032732,test loss=0.103896, accuracy=9776/10000 (97.76%), time so far 00:06:49
+	epoch [366/400] train loss:0.009196,test loss=0.092860, accuracy=9793/10000 (97.93%), time so far 00:06:50
+	epoch [367/400] train loss:0.003861,test loss=0.089446, accuracy=9812/10000 (98.12%), time so far 00:06:51
+	epoch [368/400] train loss:0.002616,test loss=0.092772, accuracy=9803/10000 (98.03%), time so far 00:06:52
+	epoch [369/400] train loss:0.001517,test loss=0.086499, accuracy=9807/10000 (98.07%), time so far 00:06:53
+	epoch [370/400] train loss:0.001702,test loss=0.089547, accuracy=9800/10000 (98.00%), time so far 00:06:54
+	epoch [371/400] train loss:0.014771,test loss=0.271149, accuracy=9451/10000 (94.51%), time so far 00:06:55
+	epoch [372/400] train loss:0.026551,test loss=0.095983, accuracy=9782/10000 (97.82%), time so far 00:06:56
+	epoch [373/400] train loss:0.004948,test loss=0.087278, accuracy=9802/10000 (98.02%), time so far 00:06:57
+	epoch [374/400] train loss:0.002102,test loss=0.091592, accuracy=9800/10000 (98.00%), time so far 00:06:58
+	epoch [375/400] train loss:0.001629,test loss=0.085954, accuracy=9804/10000 (98.04%), time so far 00:06:59
+	epoch [376/400] train loss:0.001304,test loss=0.087116, accuracy=9801/10000 (98.01%), time so far 00:07:01
+	epoch [377/400] train loss:0.001350,test loss=0.085000, accuracy=9807/10000 (98.07%), time so far 00:07:02 New best found
+	epoch [378/400] train loss:0.030706,test loss=0.117564, accuracy=9730/10000 (97.30%), time so far 00:07:03
+	epoch [379/400] train loss:0.013481,test loss=0.094172, accuracy=9793/10000 (97.93%), time so far 00:07:04
+	epoch [380/400] train loss:0.003479,test loss=0.090780, accuracy=9802/10000 (98.02%), time so far 00:07:05
+	epoch [381/400] train loss:0.001779,test loss=0.087326, accuracy=9798/10000 (97.98%), time so far 00:07:06
+	epoch [382/400] train loss:0.001421,test loss=0.084910, accuracy=9805/10000 (98.05%), time so far 00:07:07 New best found
+	epoch [383/400] train loss:0.001386,test loss=0.083866, accuracy=9802/10000 (98.02%), time so far 00:07:08 New best found
+	epoch [384/400] train loss:0.002119,test loss=0.111118, accuracy=9756/10000 (97.56%), time so far 00:07:09
+	epoch [385/400] train loss:0.033369,test loss=0.112191, accuracy=9751/10000 (97.51%), time so far 00:07:10
+	epoch [386/400] train loss:0.009331,test loss=0.089877, accuracy=9807/10000 (98.07%), time so far 00:07:12
+	epoch [387/400] train loss:0.003621,test loss=0.085774, accuracy=9798/10000 (97.98%), time so far 00:07:13
+	epoch [388/400] train loss:0.001909,test loss=0.081872, accuracy=9808/10000 (98.08%), time so far 00:07:14 New best found
+	epoch [389/400] train loss:0.002961,test loss=0.095487, accuracy=9772/10000 (97.72%), time so far 00:07:15
+	epoch [390/400] train loss:0.022236,test loss=0.107962, accuracy=9765/10000 (97.65%), time so far 00:07:16
+	epoch [391/400] train loss:0.006560,test loss=0.095238, accuracy=9797/10000 (97.97%), time so far 00:07:17
+	epoch [392/400] train loss:0.003098,test loss=0.092527, accuracy=9807/10000 (98.07%), time so far 00:07:18
+	epoch [393/400] train loss:0.002405,test loss=0.088561, accuracy=9804/10000 (98.04%), time so far 00:07:19
+	epoch [394/400] train loss:0.001644,test loss=0.086274, accuracy=9812/10000 (98.12%), time so far 00:07:20
+	epoch [395/400] train loss:0.001404,test loss=0.084232, accuracy=9813/10000 (98.13%), time so far 00:07:22
+	epoch [396/400] train loss:0.001491,test loss=0.083118, accuracy=9814/10000 (98.14%), time so far 00:07:23
+	epoch [397/400] train loss:0.036870,test loss=0.094394, accuracy=9773/10000 (97.73%), time so far 00:07:24
+	epoch [398/400] train loss:0.007899,test loss=0.093763, accuracy=9792/10000 (97.92%), time so far 00:07:25
+	epoch [399/400] train loss:0.004477,test loss=0.093351, accuracy=9798/10000 (97.98%), time so far 00:07:26
+	epoch [400/400] train loss:0.002097,test loss=0.085349, accuracy=9801/10000 (98.01%), time so far 00:07:27
+Done training by loss    : On epoch 388: loss=0.081872, accuracy = 98.08%
+If trained by accuracy:    On epoch 396: loss=0.083118, accuracy = 98.14%
+c_LeNetMnist_32_100 loaded from ./mnist/by_loss/ADAM_lr_0_001/ft_only_end/c_LeNetMnist_32_100_tune_1.pt
+c_LeNetMnist_32_100 is fully frozen
+c_LeNetMnist_32_100 test_datasets:
+	train loss=0.002160, accuracy=59989/60000 (99.98%)
+	test  loss=0.081872, accuracy=9808/10000 (98.08%)
+
+effective_epsilons:
+Epsilon (p1_LeNetMnist_300_100 vs c_LeNetMnist_32_100)
+	p_model 266610 params, c_model 29430 params, ratio = 11.04%
+	ds: |X|=(60000, 1, 28, 28), |y|=(60000,)
+	loss_c:0.0022, loss_p:0.0214, eps_loss:0.8992
+	acc_c:99.9817, acc_p:99.2850, eps_acc:0.0070
+Epsilon (p1_LeNetMnist_300_100 vs c_LeNetMnist_32_100)
+	p_model 266610 params, c_model 29430 params, ratio = 11.04%
+	ds: |X|=(10000, 1, 28, 28), |y|=(10000,)
+	loss_c:0.0819, loss_p:0.0917, eps_loss:0.1072
+	acc_c:98.0800, acc_p:97.9300, eps_acc:0.0015
+Total run time 00:12:18
+
+Process finished with exit code 0

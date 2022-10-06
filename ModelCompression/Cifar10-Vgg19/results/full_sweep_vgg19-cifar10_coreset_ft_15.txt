@@ -1,0 +1,245 @@
+C:\Users\geini\.conda\envs\tf_gpu\python.exe D:/gilad_eini/workspace/2019SGD/ModelCompression/Cifar10-Vgg19/mcVgg.py
+Python Version 3.6.8 |Anaconda, Inc.| (default, Feb 21 2019, 18:30:04) [MSC v.1916 64 bit (AMD64)]
+PyTorch Version 1.1.0
+Working directory D:\gilad_eini\workspace\2019SGD\ModelCompression\Cifar10-Vgg19
+	ds: {'name': 'cifar10', 'root': '../../Datasets', 'data_limit': 0, 'input_size': (3, 32, 32)}
+	global: {'seed': 42, 'mode': 'fs', 'f': <function cross_entropy at 0x0000013CDD6E8D08>, 'save_models': True, 'use_acc': True, 'bs_test': 256, 'shuffle_test': False, 'batch_interval': -1}
+	full_model: {'bs_train': 64, 'shuffle': False, 'epochs': 160, 'vgg_type': '19', 'path': './vgg19-cifar10.pt', 'opt': {'name': 'SGD', 'lr': 0.1, 'momentum': 0.9, 'weight_decay': 0.0001}, 'lr_cps': [0.5, 0.75]}
+	coreset: {'bs_train': 512, 'shuffle': False, 'epochs': 180, 'opt_dict': {'name': 'ADAM', 'lr': 0.001, 'weight_decay': 0}, 'path_base': './results/full_sweep_vgg19-cifar10_coreset.pt', 'vgg_type': '19_coreset', 'batch_interval': 30, 'lr_cps': [0.33, 0.66]}
+	ft: {'bs_train': 128, 'shuffle': True, 'epochs': 10, 'epochs_end': 180, 'opt_dict': {'name': 'SGD', 'lr': 0.1, 'momentum': 0.9, 'weight_decay': 0.0001}, 'path_base': './results/full_sweep_vgg19-cifar10_coreset_ft_15.pt', 'lr_cps': [0.5, 0.75]}
+working on CUDA. default dtype = torch.cuda.FloatTensor <=> torch.float32
+get_data_loader(cifar10: train dataset): |X|=(50000, 32, 32, 3), |y|=(50000,)
+get_data_loader(cifar10: test dataset): |X|=(10000, 32, 32, 3), |y|=(10000,)
+
+p_model:
+Created vgg19-cifar10
+	#params=20,035,018, path=D:\gilad_eini\workspace\2019SGD\ModelCompression\Cifar10-Vgg19\vgg19-cifar10.pt
+	mapping: {1: ['feature.0.weight', 'feature.1.weight', 'feature.1.bias'], 2: ['feature.3.weight', 'feature.4.weight', 'feature.4.bias'], 3: ['feature.7.weight', 'feature.8.weight', 'feature.8.bias'], 4: ['feature.10.weight', 'feature.11.weight', 'feature.11.bias'], 5: ['feature.14.weight', 'feature.15.weight', 'feature.15.bias'], 6: ['feature.17.weight', 'feature.18.weight', 'feature.18.bias'], 7: ['feature.20.weight', 'feature.21.weight', 'feature.21.bias'], 8: ['feature.23.weight', 'feature.24.weight', 'feature.24.bias'], 9: ['feature.27.weight', 'feature.28.weight', 'feature.28.bias'], 10: ['feature.30.weight', 'feature.31.weight', 'feature.31.bias'], 11: ['feature.33.weight', 'feature.34.weight', 'feature.34.bias'], 12: ['feature.36.weight', 'feature.37.weight', 'feature.37.bias'], 13: ['feature.40.weight', 'feature.41.weight', 'feature.41.bias'], 14: ['feature.43.weight', 'feature.44.weight', 'feature.44.bias'], 15: ['feature.46.weight', 'feature.47.weight', 'feature.47.bias'], 16: ['feature.49.weight', 'feature.50.weight', 'feature.50.bias'], 17: ['classifier.weight', 'classifier.bias']}
+vgg19-cifar10 loaded from D:\gilad_eini\workspace\2019SGD\ModelCompression\Cifar10-Vgg19\vgg19-cifar10.pt
+vgg19-cifar10 is fully frozen
+
+main_vgg19_full_sweep():
+c_model:
+get_data_loader(cifar10: train dataset): |X|=(50000, 32, 32, 3), |y|=(50000,)
+Created full_sweep_vgg19-cifar10_coreset: path=D:\gilad_eini\workspace\2019SGD\ModelCompression\Cifar10-Vgg19\results\full_sweep_vgg19-cifar10_coreset.pt
+	this model #params=2,366,600, full model #params=20,035,018, compression ratio=88.19%
+	mapping: {1: ['feature.0.weight', 'feature.1.weight', 'feature.1.bias'], 2: ['feature.3.weight', 'feature.4.weight', 'feature.4.bias'], 3: ['feature.7.weight', 'feature.8.weight', 'feature.8.bias'], 4: ['feature.10.weight', 'feature.11.weight', 'feature.11.bias'], 5: ['feature.14.weight', 'feature.15.weight', 'feature.15.bias'], 6: ['feature.17.weight', 'feature.18.weight', 'feature.18.bias'], 7: ['feature.20.weight', 'feature.21.weight', 'feature.21.bias'], 8: ['feature.23.weight', 'feature.24.weight', 'feature.24.bias'], 9: ['feature.27.weight', 'feature.28.weight', 'feature.28.bias'], 10: ['feature.30.weight', 'feature.31.weight', 'feature.31.bias'], 11: ['feature.33.weight', 'feature.34.weight', 'feature.34.bias'], 12: ['feature.36.weight', 'feature.37.weight', 'feature.37.bias'], 13: ['feature.40.weight', 'feature.41.weight', 'feature.41.bias'], 14: ['feature.43.weight', 'feature.44.weight', 'feature.44.bias'], 15: ['feature.46.weight', 'feature.47.weight', 'feature.47.bias'], 16: ['feature.49.weight', 'feature.50.weight', 'feature.50.bias'], 17: ['classifier.weight', 'classifier.bias']}
+full_sweep_vgg19-cifar10_coreset loaded from D:\gilad_eini\workspace\2019SGD\ModelCompression\Cifar10-Vgg19\results\full_sweep_vgg19-cifar10_coreset.pt
+full_sweep_vgg19-cifar10_coreset test loaders:
+	train loss=0.005561, accuracy=49917/50000 (99.83%)
+	test  loss=0.480745, accuracy=9094/10000 (90.94%)
+get_data_loader(cifar10: train dataset): |X|=(50000, 32, 32, 3), |y|=(50000,)
+full_sweep_vgg19-cifar10_coreset_ft_15 doesn't exists...
+full_sweep_vgg19-cifar10_coreset_ft_15 is fully trainable
+train_using_dls - full_sweep_vgg19-cifar10_coreset_ft_15:
+	Train data: |X|=(50000, 32, 32, 3), |y|=(50000,)
+	Test data: |X|=(10000, 32, 32, 3), |y|=(10000,)
+	saving on each accuracy improvment
+	epochs=180, bs_train=128, #trainBatches=391, bs_test=256, #testBatches=40
+	optimizer = SGD (Parameter Group 0 dampening: 0 lr: 0.1 momentum: 0.9 nesterov: False weight_decay: 0.0001)
+	if epoch in [90, 135]: lr/=10
+Training:
+	Epoch [  1/180] train loss:0.510714,test loss=0.772235, accuracy=7900/10000 (79.00%), time so far 00:01:04 New best found
+	Epoch [  2/180] train loss:0.250985,test loss=0.452979, accuracy=8593/10000 (85.93%), time so far 00:02:11 New best found
+	Epoch [  3/180] train loss:0.215706,test loss=0.480711, accuracy=8648/10000 (86.48%), time so far 00:03:17 New best found
+	Epoch [  4/180] train loss:0.197006,test loss=0.470584, accuracy=8663/10000 (86.63%), time so far 00:04:28 New best found
+	Epoch [  5/180] train loss:0.188494,test loss=0.488650, accuracy=8629/10000 (86.29%), time so far 00:05:34
+	Epoch [  6/180] train loss:0.182931,test loss=0.543699, accuracy=8510/10000 (85.10%), time so far 00:06:47
+	Epoch [  7/180] train loss:0.180131,test loss=0.589137, accuracy=8360/10000 (83.60%), time so far 00:07:54
+	Epoch [  8/180] train loss:0.177040,test loss=0.473465, accuracy=8641/10000 (86.41%), time so far 00:09:06
+	Epoch [  9/180] train loss:0.176255,test loss=0.463509, accuracy=8706/10000 (87.06%), time so far 00:10:15 New best found
+	Epoch [ 10/180] train loss:0.169011,test loss=0.424077, accuracy=8763/10000 (87.63%), time so far 00:11:28 New best found
+	Epoch [ 11/180] train loss:0.171542,test loss=0.449297, accuracy=8686/10000 (86.86%), time so far 00:12:36
+	Epoch [ 12/180] train loss:0.171921,test loss=0.433306, accuracy=8755/10000 (87.55%), time so far 00:13:50
+	Epoch [ 13/180] train loss:0.164877,test loss=0.554986, accuracy=8491/10000 (84.91%), time so far 00:14:58
+	Epoch [ 14/180] train loss:0.167351,test loss=0.432852, accuracy=8762/10000 (87.62%), time so far 00:16:11
+	Epoch [ 15/180] train loss:0.168971,test loss=0.414692, accuracy=8771/10000 (87.71%), time so far 00:17:16 New best found
+	Epoch [ 16/180] train loss:0.168279,test loss=0.392395, accuracy=8874/10000 (88.74%), time so far 00:18:28 New best found
+	Epoch [ 17/180] train loss:0.160796,test loss=0.441072, accuracy=8800/10000 (88.00%), time so far 00:19:34
+	Epoch [ 18/180] train loss:0.170726,test loss=0.412300, accuracy=8768/10000 (87.68%), time so far 00:20:46
+	Epoch [ 19/180] train loss:0.165397,test loss=0.460390, accuracy=8663/10000 (86.63%), time so far 00:21:56
+	Epoch [ 20/180] train loss:0.170261,test loss=0.432506, accuracy=8643/10000 (86.43%), time so far 00:23:09
+	Epoch [ 21/180] train loss:0.168500,test loss=0.515626, accuracy=8619/10000 (86.19%), time so far 00:24:16
+	Epoch [ 22/180] train loss:0.169314,test loss=0.393812, accuracy=8847/10000 (88.47%), time so far 00:25:27
+	Epoch [ 23/180] train loss:0.164495,test loss=0.423385, accuracy=8785/10000 (87.85%), time so far 00:26:34
+	Epoch [ 24/180] train loss:0.160352,test loss=0.464311, accuracy=8648/10000 (86.48%), time so far 00:27:44
+	Epoch [ 25/180] train loss:0.163600,test loss=0.479514, accuracy=8652/10000 (86.52%), time so far 00:28:49
+	Epoch [ 26/180] train loss:0.166072,test loss=0.438633, accuracy=8741/10000 (87.41%), time so far 00:29:57
+	Epoch [ 27/180] train loss:0.163961,test loss=0.463225, accuracy=8665/10000 (86.65%), time so far 00:31:02
+	Epoch [ 28/180] train loss:0.160580,test loss=0.428164, accuracy=8726/10000 (87.26%), time so far 00:32:09
+	Epoch [ 29/180] train loss:0.164322,test loss=0.466347, accuracy=8702/10000 (87.02%), time so far 00:33:14
+	Epoch [ 30/180] train loss:0.168466,test loss=0.438676, accuracy=8749/10000 (87.49%), time so far 00:34:20
+	Epoch [ 31/180] train loss:0.164271,test loss=0.461084, accuracy=8662/10000 (86.62%), time so far 00:35:30
+	Epoch [ 32/180] train loss:0.158123,test loss=0.530592, accuracy=8535/10000 (85.35%), time so far 00:36:36
+	Epoch [ 33/180] train loss:0.161467,test loss=0.451479, accuracy=8688/10000 (86.88%), time so far 00:37:47
+	Epoch [ 34/180] train loss:0.154290,test loss=0.438652, accuracy=8674/10000 (86.74%), time so far 00:38:52
+	Epoch [ 35/180] train loss:0.159302,test loss=0.460867, accuracy=8711/10000 (87.11%), time so far 00:40:03
+	Epoch [ 36/180] train loss:0.160557,test loss=0.442385, accuracy=8688/10000 (86.88%), time so far 00:41:10
+	Epoch [ 37/180] train loss:0.153505,test loss=0.528293, accuracy=8529/10000 (85.29%), time so far 00:42:22
+	Epoch [ 38/180] train loss:0.158874,test loss=0.438708, accuracy=8757/10000 (87.57%), time so far 00:43:31
+	Epoch [ 39/180] train loss:0.159313,test loss=0.449317, accuracy=8715/10000 (87.15%), time so far 00:44:43
+	Epoch [ 40/180] train loss:0.155236,test loss=0.444772, accuracy=8731/10000 (87.31%), time so far 00:45:49
+	Epoch [ 41/180] train loss:0.159451,test loss=0.421331, accuracy=8814/10000 (88.14%), time so far 00:47:00
+	Epoch [ 42/180] train loss:0.150272,test loss=0.557742, accuracy=8543/10000 (85.43%), time so far 00:48:06
+	Epoch [ 43/180] train loss:0.148807,test loss=0.459660, accuracy=8684/10000 (86.84%), time so far 00:49:18
+	Epoch [ 44/180] train loss:0.153675,test loss=0.447069, accuracy=8714/10000 (87.14%), time so far 00:50:25
+	Epoch [ 45/180] train loss:0.149612,test loss=0.426609, accuracy=8737/10000 (87.37%), time so far 00:51:38
+	Epoch [ 46/180] train loss:0.149467,test loss=0.545263, accuracy=8589/10000 (85.89%), time so far 00:52:45
+	Epoch [ 47/180] train loss:0.150267,test loss=0.380417, accuracy=8798/10000 (87.98%), time so far 00:53:59
+	Epoch [ 48/180] train loss:0.149401,test loss=0.436109, accuracy=8701/10000 (87.01%), time so far 00:55:05
+	Epoch [ 49/180] train loss:0.146651,test loss=0.397489, accuracy=8827/10000 (88.27%), time so far 00:56:15
+	Epoch [ 50/180] train loss:0.149332,test loss=0.425687, accuracy=8804/10000 (88.04%), time so far 00:57:25
+	Epoch [ 51/180] train loss:0.148431,test loss=0.512042, accuracy=8601/10000 (86.01%), time so far 00:58:25
+	Epoch [ 52/180] train loss:0.143416,test loss=0.410911, accuracy=8780/10000 (87.80%), time so far 00:59:24
+	Epoch [ 53/180] train loss:0.145500,test loss=0.426356, accuracy=8824/10000 (88.24%), time so far 01:00:19
+	Epoch [ 54/180] train loss:0.146795,test loss=0.388415, accuracy=8852/10000 (88.52%), time so far 01:01:17
+	Epoch [ 55/180] train loss:0.147171,test loss=0.442697, accuracy=8773/10000 (87.73%), time so far 01:02:11
+	Epoch [ 56/180] train loss:0.144146,test loss=0.466745, accuracy=8715/10000 (87.15%), time so far 01:03:10
+	Epoch [ 57/180] train loss:0.144296,test loss=0.445197, accuracy=8743/10000 (87.43%), time so far 01:04:03
+	Epoch [ 58/180] train loss:0.144759,test loss=0.408335, accuracy=8835/10000 (88.35%), time so far 01:05:02
+	Epoch [ 59/180] train loss:0.144686,test loss=0.612742, accuracy=8364/10000 (83.64%), time so far 01:05:58
+	Epoch [ 60/180] train loss:0.147802,test loss=0.404504, accuracy=8851/10000 (88.51%), time so far 01:06:58
+	Epoch [ 61/180] train loss:0.140545,test loss=0.422487, accuracy=8776/10000 (87.76%), time so far 01:07:53
+	Epoch [ 62/180] train loss:0.138501,test loss=0.476403, accuracy=8695/10000 (86.95%), time so far 01:08:51
+	Epoch [ 63/180] train loss:0.137133,test loss=0.469442, accuracy=8689/10000 (86.89%), time so far 01:09:49
+	Epoch [ 64/180] train loss:0.139325,test loss=0.429071, accuracy=8734/10000 (87.34%), time so far 01:10:45
+	Epoch [ 65/180] train loss:0.141399,test loss=0.414835, accuracy=8806/10000 (88.06%), time so far 01:11:44
+	Epoch [ 66/180] train loss:0.136404,test loss=0.387277, accuracy=8901/10000 (89.01%), time so far 01:12:40 New best found
+	Epoch [ 67/180] train loss:0.138621,test loss=0.406189, accuracy=8801/10000 (88.01%), time so far 01:13:40
+	Epoch [ 68/180] train loss:0.136851,test loss=0.400941, accuracy=8833/10000 (88.33%), time so far 01:14:33
+	Epoch [ 69/180] train loss:0.142617,test loss=0.432174, accuracy=8756/10000 (87.56%), time so far 01:15:31
+	Epoch [ 70/180] train loss:0.136729,test loss=0.475310, accuracy=8719/10000 (87.19%), time so far 01:16:25
+	Epoch [ 71/180] train loss:0.135807,test loss=0.406272, accuracy=8805/10000 (88.05%), time so far 01:17:24
+	Epoch [ 72/180] train loss:0.135184,test loss=0.422816, accuracy=8789/10000 (87.89%), time so far 01:18:22
+	Epoch [ 73/180] train loss:0.136377,test loss=0.430484, accuracy=8777/10000 (87.77%), time so far 01:19:19
+	Epoch [ 74/180] train loss:0.131499,test loss=0.374741, accuracy=8904/10000 (89.04%), time so far 01:20:19 New best found
+	Epoch [ 75/180] train loss:0.137781,test loss=0.362098, accuracy=8912/10000 (89.12%), time so far 01:21:17 New best found
+	Epoch [ 76/180] train loss:0.134082,test loss=0.542126, accuracy=8572/10000 (85.72%), time so far 01:22:15
+	Epoch [ 77/180] train loss:0.134867,test loss=0.455391, accuracy=8729/10000 (87.29%), time so far 01:23:08
+	Epoch [ 78/180] train loss:0.131229,test loss=0.455908, accuracy=8750/10000 (87.50%), time so far 01:24:07
+	Epoch [ 79/180] train loss:0.133645,test loss=0.511585, accuracy=8656/10000 (86.56%), time so far 01:25:03
+	Epoch [ 80/180] train loss:0.136889,test loss=0.389517, accuracy=8856/10000 (88.56%), time so far 01:26:02
+	Epoch [ 81/180] train loss:0.135350,test loss=0.432071, accuracy=8769/10000 (87.69%), time so far 01:26:55
+	Epoch [ 82/180] train loss:0.138195,test loss=0.432175, accuracy=8790/10000 (87.90%), time so far 01:27:54
+	Epoch [ 83/180] train loss:0.126947,test loss=0.400424, accuracy=8871/10000 (88.71%), time so far 01:28:56
+	Epoch [ 84/180] train loss:0.122344,test loss=0.381771, accuracy=8897/10000 (88.97%), time so far 01:29:52
+	Epoch [ 85/180] train loss:0.135648,test loss=0.467475, accuracy=8701/10000 (87.01%), time so far 01:30:51
+	Epoch [ 86/180] train loss:0.135613,test loss=0.484200, accuracy=8682/10000 (86.82%), time so far 01:31:47
+	Epoch [ 87/180] train loss:0.131138,test loss=0.438614, accuracy=8726/10000 (87.26%), time so far 01:32:46
+	Epoch [ 88/180] train loss:0.131226,test loss=0.414425, accuracy=8850/10000 (88.50%), time so far 01:33:41
+	Epoch [ 89/180] train loss:0.130613,test loss=0.391064, accuracy=8905/10000 (89.05%), time so far 01:34:39
+	optimizer changed = SGD (Parameter Group 0 dampening: 0 lr: 0.01 momentum: 0.9 nesterov: False weight_decay: 0.0001)
+	Epoch [ 90/180] train loss:0.055793,test loss=0.268741, accuracy=9223/10000 (92.23%), time so far 01:35:33 New best found
+	Epoch [ 91/180] train loss:0.030090,test loss=0.269684, accuracy=9273/10000 (92.73%), time so far 01:36:33 New best found
+	Epoch [ 92/180] train loss:0.023024,test loss=0.286303, accuracy=9263/10000 (92.63%), time so far 01:37:29
+	Epoch [ 93/180] train loss:0.017904,test loss=0.288156, accuracy=9268/10000 (92.68%), time so far 01:38:35
+	Epoch [ 94/180] train loss:0.014118,test loss=0.298309, accuracy=9262/10000 (92.62%), time so far 01:39:40
+	Epoch [ 95/180] train loss:0.012536,test loss=0.305898, accuracy=9252/10000 (92.52%), time so far 01:40:51
+	Epoch [ 96/180] train loss:0.011619,test loss=0.312113, accuracy=9274/10000 (92.74%), time so far 01:42:04 New best found
+	Epoch [ 97/180] train loss:0.010995,test loss=0.308845, accuracy=9266/10000 (92.66%), time so far 01:43:20
+	Epoch [ 98/180] train loss:0.007394,test loss=0.308605, accuracy=9281/10000 (92.81%), time so far 01:44:30 New best found
+	Epoch [ 99/180] train loss:0.008482,test loss=0.322445, accuracy=9263/10000 (92.63%), time so far 01:45:38
+	Epoch [100/180] train loss:0.007125,test loss=0.320666, accuracy=9292/10000 (92.92%), time so far 01:46:45 New best found
+	Epoch [101/180] train loss:0.006808,test loss=0.324238, accuracy=9267/10000 (92.67%), time so far 01:47:59
+	Epoch [102/180] train loss:0.006825,test loss=0.326579, accuracy=9281/10000 (92.81%), time so far 01:49:15
+	Epoch [103/180] train loss:0.006802,test loss=0.320203, accuracy=9281/10000 (92.81%), time so far 01:50:28
+	Epoch [104/180] train loss:0.005872,test loss=0.328067, accuracy=9275/10000 (92.75%), time so far 01:51:35
+	Epoch [105/180] train loss:0.006258,test loss=0.327838, accuracy=9291/10000 (92.91%), time so far 01:52:41
+	Epoch [106/180] train loss:0.005246,test loss=0.331809, accuracy=9284/10000 (92.84%), time so far 01:53:54
+	Epoch [107/180] train loss:0.004649,test loss=0.335045, accuracy=9297/10000 (92.97%), time so far 01:55:07 New best found
+	Epoch [108/180] train loss:0.004129,test loss=0.330639, accuracy=9300/10000 (93.00%), time so far 01:56:24 New best found
+	Epoch [109/180] train loss:0.003491,test loss=0.340336, accuracy=9274/10000 (92.74%), time so far 01:57:30
+	Epoch [110/180] train loss:0.004329,test loss=0.340041, accuracy=9280/10000 (92.80%), time so far 01:58:39
+	Epoch [111/180] train loss:0.004709,test loss=0.341073, accuracy=9288/10000 (92.88%), time so far 01:59:42
+	Epoch [112/180] train loss:0.004777,test loss=0.340797, accuracy=9300/10000 (93.00%), time so far 02:00:54
+	Epoch [113/180] train loss:0.004272,test loss=0.349730, accuracy=9288/10000 (92.88%), time so far 02:02:03
+	Epoch [114/180] train loss:0.004325,test loss=0.340390, accuracy=9293/10000 (92.93%), time so far 02:03:19
+	Epoch [115/180] train loss:0.003766,test loss=0.337904, accuracy=9290/10000 (92.90%), time so far 02:04:23
+	Epoch [116/180] train loss:0.003795,test loss=0.343041, accuracy=9296/10000 (92.96%), time so far 02:05:31
+	Epoch [117/180] train loss:0.003536,test loss=0.341234, accuracy=9313/10000 (93.13%), time so far 02:06:34 New best found
+	Epoch [118/180] train loss:0.002675,test loss=0.353307, accuracy=9293/10000 (92.93%), time so far 02:07:46
+	Epoch [119/180] train loss:0.003349,test loss=0.351705, accuracy=9281/10000 (92.81%), time so far 02:08:58
+	Epoch [120/180] train loss:0.004112,test loss=0.341126, accuracy=9290/10000 (92.90%), time so far 02:10:14
+	Epoch [121/180] train loss:0.002977,test loss=0.345054, accuracy=9290/10000 (92.90%), time so far 02:11:20
+	Epoch [122/180] train loss:0.003417,test loss=0.350339, accuracy=9296/10000 (92.96%), time so far 02:12:29
+	Epoch [123/180] train loss:0.003335,test loss=0.344664, accuracy=9305/10000 (93.05%), time so far 02:13:36
+	Epoch [124/180] train loss:0.002938,test loss=0.345637, accuracy=9299/10000 (92.99%), time so far 02:14:49
+	Epoch [125/180] train loss:0.002191,test loss=0.351973, accuracy=9293/10000 (92.93%), time so far 02:16:00
+	Epoch [126/180] train loss:0.002751,test loss=0.357059, accuracy=9305/10000 (93.05%), time so far 02:17:10
+	Epoch [127/180] train loss:0.003076,test loss=0.357419, accuracy=9289/10000 (92.89%), time so far 02:18:17
+	Epoch [128/180] train loss:0.003882,test loss=0.348035, accuracy=9294/10000 (92.94%), time so far 02:19:21
+	Epoch [129/180] train loss:0.002898,test loss=0.346545, accuracy=9316/10000 (93.16%), time so far 02:20:29 New best found
+	Epoch [130/180] train loss:0.003033,test loss=0.350887, accuracy=9297/10000 (92.97%), time so far 02:21:39
+	Epoch [131/180] train loss:0.002823,test loss=0.356383, accuracy=9297/10000 (92.97%), time so far 02:22:55
+	Epoch [132/180] train loss:0.003795,test loss=0.365391, accuracy=9265/10000 (92.65%), time so far 02:24:03
+	Epoch [133/180] train loss:0.002837,test loss=0.361543, accuracy=9283/10000 (92.83%), time so far 02:25:13
+	Epoch [134/180] train loss:0.003473,test loss=0.359280, accuracy=9289/10000 (92.89%), time so far 02:26:16
+	optimizer changed = SGD (Parameter Group 0 dampening: 0 lr: 0.001 momentum: 0.9 nesterov: False weight_decay: 0.0001)
+	Epoch [135/180] train loss:0.002658,test loss=0.356808, accuracy=9298/10000 (92.98%), time so far 02:27:27
+	Epoch [136/180] train loss:0.002080,test loss=0.357554, accuracy=9299/10000 (92.99%), time so far 02:28:34
+	Epoch [137/180] train loss:0.002244,test loss=0.355650, accuracy=9300/10000 (93.00%), time so far 02:29:51
+	Epoch [138/180] train loss:0.002333,test loss=0.352546, accuracy=9307/10000 (93.07%), time so far 02:30:59
+	Epoch [139/180] train loss:0.001884,test loss=0.353054, accuracy=9301/10000 (93.01%), time so far 02:32:08
+	Epoch [140/180] train loss:0.002158,test loss=0.350922, accuracy=9298/10000 (92.98%), time so far 02:33:12
+	Epoch [141/180] train loss:0.001725,test loss=0.352882, accuracy=9305/10000 (93.05%), time so far 02:34:22
+	Epoch [142/180] train loss:0.001800,test loss=0.351139, accuracy=9310/10000 (93.10%), time so far 02:35:30
+	Epoch [143/180] train loss:0.001860,test loss=0.349509, accuracy=9302/10000 (93.02%), time so far 02:36:47
+	Epoch [144/180] train loss:0.001932,test loss=0.351163, accuracy=9306/10000 (93.06%), time so far 02:37:57
+	Epoch [145/180] train loss:0.001633,test loss=0.349020, accuracy=9311/10000 (93.11%), time so far 02:39:08
+	Epoch [146/180] train loss:0.001607,test loss=0.349920, accuracy=9311/10000 (93.11%), time so far 02:40:14
+	Epoch [147/180] train loss:0.001897,test loss=0.353985, accuracy=9308/10000 (93.08%), time so far 02:41:23
+	Epoch [148/180] train loss:0.001440,test loss=0.353119, accuracy=9305/10000 (93.05%), time so far 02:42:36
+	Epoch [149/180] train loss:0.001776,test loss=0.351768, accuracy=9301/10000 (93.01%), time so far 02:43:53
+	Epoch [150/180] train loss:0.001771,test loss=0.351632, accuracy=9309/10000 (93.09%), time so far 02:45:04
+	Epoch [151/180] train loss:0.001528,test loss=0.348025, accuracy=9312/10000 (93.12%), time so far 02:46:12
+	Epoch [152/180] train loss:0.001631,test loss=0.349537, accuracy=9316/10000 (93.16%), time so far 02:47:17
+	Epoch [153/180] train loss:0.001643,test loss=0.346484, accuracy=9317/10000 (93.17%), time so far 02:48:27 New best found
+	Epoch [154/180] train loss:0.001232,test loss=0.347376, accuracy=9313/10000 (93.13%), time so far 02:49:44
+	Epoch [155/180] train loss:0.001279,test loss=0.349692, accuracy=9320/10000 (93.20%), time so far 02:50:56 New best found
+	Epoch [156/180] train loss:0.001251,test loss=0.349086, accuracy=9311/10000 (93.11%), time so far 02:52:08
+	Epoch [157/180] train loss:0.001199,test loss=0.350644, accuracy=9315/10000 (93.15%), time so far 02:53:13
+	Epoch [158/180] train loss:0.001275,test loss=0.345097, accuracy=9320/10000 (93.20%), time so far 02:54:22
+	Epoch [159/180] train loss:0.001355,test loss=0.349013, accuracy=9311/10000 (93.11%), time so far 02:55:29
+	Epoch [160/180] train loss:0.001256,test loss=0.351797, accuracy=9312/10000 (93.12%), time so far 02:56:46
+	Epoch [161/180] train loss:0.001724,test loss=0.348221, accuracy=9315/10000 (93.15%), time so far 02:57:54
+	Epoch [162/180] train loss:0.001448,test loss=0.350906, accuracy=9310/10000 (93.10%), time so far 02:59:04
+	Epoch [163/180] train loss:0.001281,test loss=0.351166, accuracy=9316/10000 (93.16%), time so far 03:00:05
+	Epoch [164/180] train loss:0.001485,test loss=0.350168, accuracy=9311/10000 (93.11%), time so far 03:01:12
+	Epoch [165/180] train loss:0.001353,test loss=0.349941, accuracy=9311/10000 (93.11%), time so far 03:02:19
+	Epoch [166/180] train loss:0.001340,test loss=0.347944, accuracy=9312/10000 (93.12%), time so far 03:03:35
+	Epoch [167/180] train loss:0.001313,test loss=0.348348, accuracy=9311/10000 (93.11%), time so far 03:04:47
+	Epoch [168/180] train loss:0.001338,test loss=0.348240, accuracy=9311/10000 (93.11%), time so far 03:05:59
+	Epoch [169/180] train loss:0.001275,test loss=0.348647, accuracy=9313/10000 (93.13%), time so far 03:07:05
+	Epoch [170/180] train loss:0.001581,test loss=0.346751, accuracy=9313/10000 (93.13%), time so far 03:08:12
+	Epoch [171/180] train loss:0.001544,test loss=0.347615, accuracy=9315/10000 (93.15%), time so far 03:09:24
+	Epoch [172/180] train loss:0.001304,test loss=0.346000, accuracy=9316/10000 (93.16%), time so far 03:10:38
+	Epoch [173/180] train loss:0.001260,test loss=0.347271, accuracy=9324/10000 (93.24%), time so far 03:11:53 New best found
+	Epoch [174/180] train loss:0.001410,test loss=0.347080, accuracy=9309/10000 (93.09%), time so far 03:13:00
+	Epoch [175/180] train loss:0.001196,test loss=0.349514, accuracy=9316/10000 (93.16%), time so far 03:14:07
+	Epoch [176/180] train loss:0.001109,test loss=0.346379, accuracy=9315/10000 (93.15%), time so far 03:15:12
+	Epoch [177/180] train loss:0.001202,test loss=0.346903, accuracy=9318/10000 (93.18%), time so far 03:16:24
+	Epoch [178/180] train loss:0.001145,test loss=0.347123, accuracy=9315/10000 (93.15%), time so far 03:17:34
+	Epoch [179/180] train loss:0.001352,test loss=0.351305, accuracy=9319/10000 (93.19%), time so far 03:18:50
+	Epoch [180/180] train loss:0.001194,test loss=0.347584, accuracy=9323/10000 (93.23%), time so far 03:19:56
+Done training by accuracy: On epoch 173: loss=0.347271, accuracy = 93.24%
+If trained by loss       : On epoch 90: loss=0.268741, accuracy = 92.23%
+full_sweep_vgg19-cifar10_coreset_ft_15 loaded from D:\gilad_eini\workspace\2019SGD\ModelCompression\Cifar10-Vgg19\results\full_sweep_vgg19-cifar10_coreset_ft_15.pt
+full_sweep_vgg19-cifar10_coreset_ft_15 is fully frozen
+full_sweep_vgg19-cifar10_coreset_ft_15 test loaders:
+	train loss=0.000539, accuracy=49997/50000 (99.99%)
+	test  loss=0.347271, accuracy=9324/10000 (93.24%)
+
+effective_epsilons:
+Epsilon (vgg19-cifar10 vs full_sweep_vgg19-cifar10_coreset_ft_15)
+p_model 20035018 params, c_model 2366600 params, compression ratio=88.19%
+	dl: |X|=(50000, 32, 32, 3), |y|=(50000,)
+	loss_c:0.0006, loss_p:0.0035, eps_loss:0.8255
+	acc_c:99.9900, acc_p:99.8800, eps_acc:0.0011
+Epsilon (vgg19-cifar10 vs full_sweep_vgg19-cifar10_coreset_ft_15)
+p_model 20035018 params, c_model 2366600 params, compression ratio=88.19%
+	dl: |X|=(10000, 32, 32, 3), |y|=(10000,)
+	loss_c:0.3473, loss_p:0.3388, eps_loss:0.0250
+	acc_c:93.2400, acc_p:93.2500, eps_acc:0.0001
+Total run time 03:23:42
+
+Process finished with exit code 0
