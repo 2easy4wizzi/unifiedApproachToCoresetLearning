@@ -1,0 +1,317 @@
+C:\Users\GiladEiniKbyLake\.conda\envs\bin\python.exe D:/workspace/2019SGD/DataReduction/LogisticReg/mainLogisticRegression.py
+Python  Version 3.6.8 |Anaconda, Inc.| (default, Feb 21 2019, 18:30:04) [MSC v.1916 64 bit (AMD64)]
+PyTorch Version 1.1.0
+working on CPU
+get_data(ds_name=HTRU_2):
+Count classes: (y shape (17897,))
+	Class 0.0: 16258 samples
+	Class 1.0: 1639 samples
+Count classes: (y shape (17897,))
+	Class -1.0: 16258 samples
+	Class 1.0: 1639 samples
+HTRU_2  : [17897, 9], dtype:torch.float64, trainable:False, is_cuda:False
+
+LogisticReg.sanity_check:
+log_solver_sklearn:
+	A      : (17897, 9), dtype:float64
+	A[:2]  : (2, 9)  , dtype:float64, data: [[-0.33, 1.8, -0.01, -0.37, -0.37, -0.59, 0.5, 0.21, -1.0], [-0.31, -1.05, -0.14, -0.12, -0.32, -0.24, -0.13, -0.39, -1.0]]
+	q_opt  : (9,)    , dtype:float64, data: [0.5, -0.17, 6.13, -3.11, -0.82, 1.0, 0.08, -0.39, -4.21]
+	log_loss_sklearn_np(A,q_opt)=1,336.530820873948
+	log_loss_np_opt(A,q_opt)    =1,336.530820873948
+	log_loss_np(A,q_opt)        =1,336.530820873948
+	log_loss_opt_torch(A,q_opt) =1,336.530820873948
+	log_loss_torch(A,q_opt)     =1,336.530820873948
+log_solver_sklearn:
+	A      : (17897, 9), dtype:float64
+	A[:2]  : (2, 9)  , dtype:float64, data: [[-0.33, 1.8, -0.01, -0.37, -0.37, -0.59, 0.5, 0.21, -1.0], [-0.31, -1.05, -0.14, -0.12, -0.32, -0.24, -0.13, -0.39, -1.0]]
+	q_opt  : (9,)    , dtype:float64, data: [0.53, -0.19, 6.11, -3.18, -0.69, 0.99, 0.15, -0.34, -4.46]
+	w      : (17897,), dtype:float64
+	w[:5]  : (5,)    , dtype:float64, data: [1.0, 1.0, 1.0, 1.0, 1.0]
+	log_loss_sklearn_np(A,q_opt)=2,274.710955970468
+	log_loss_np_opt(A,q_opt)    =2,274.710955970468
+	log_loss_np(A,q_opt)        =2,274.710955970468
+	log_loss_opt_torch(A,q_opt) =2,274.710955970468
+	log_loss_torch(A,q_opt)     =2,274.710955970468
+lin_solver_sklearn:
+	A      : (17897, 9), dtype:float64
+	A[:2]  : (2, 9)  , dtype:float64, data: [[-0.33, 1.8, -0.01, -0.37, -0.37, -0.59, 0.5, 0.21, -1.0], [-0.31, -1.05, -0.14, -0.12, -0.32, -0.24, -0.13, -0.39, -1.0]]
+	q_opt  : (9,)    , dtype:float64, data: [0.14, -0.01, 0.77, -0.25, -0.04, 0.1, -0.05, 0.04, -0.83]
+	w      : (17897,), dtype:float64
+	w[:5]  : (5,)    , dtype:float64, data: [1.0, 1.0, 1.0, 1.0, 1.0]
+	lin_loss_np(A,q_opt)  =1,913.952119684010
+	lin_loss_np(A,q_opt,w)=3,153.135349852017
+	log_loss_np(A,q_opt)  =6,305.419084782082
+	ds: HTRU_2
+	plot_if_2d: False
+	show_hist: False
+	base_folder: ./HTRU_2_17897_9
+	f: <function log_loss_opt at 0x000002103B9D0950>
+	solver_f: <function log_solver_sklearn at 0x000002103B9D09D8>
+	Q_path: ./HTRU_2_17897_9/Q.pt
+	Q_params: (10, 1000, 1000, 0.001)
+	color_dict: {'SGD': 'b', 'SVD': 'g', 'UNI': 'r'}
+	sp_folder: ./HTRU_2_17897_9/sp
+	bal_coreset_folder: ./HTRU_2_17897_9/balance
+	bal_show_plots: False
+	bal_save_plots: True
+	bal_train_size: 1600
+	bal_val_size: 200
+	bal_test_size: 200
+	bal_params: (1000, 30, 0.001)
+	bal_c_sizes: [100]
+	bal_reps: 50
+
+main_balance:
+
+get_sp_list:
+LogisticReg.get_SP_SVD torch.Size([17897, 9]):
+	Loaded: ./HTRU_2_17897_9/sp/SVD.npy
+	|A|=torch.Size([17897, 9]), |SP_SVD|=(17897,), sum(SP_SVD)=9.00 (should be equal to d(9))
+sp_list: SGD,SVD,UNI
+
+Get Q(max_size=2000):
+	|initQ|=[10, 9]:
+		loss(A,q_opt)    =            1,336.53
+		avg loss(A,initQ)=           15,696.51
+		avg |1- loss(A,q)/loss(A,q_opt)|=10.744 with std 5.519
+1/10
+build_Q:
+	epochs 1000, bs 1000, #batches 18, base lr 0.001
+	In each epoch(1000 total) there are 18 batches(different qs). sample 10%(2) from them. expected |Q|=2000
+	early stop if |1-loss_q/loss_q_opt|< 0.001
+	Opt loss 1,336.531. avg=0.075
+	Our loss 14,184.877. avg=0.793
+Training...
+	epoch [100/1000] real avg loss:0.10727896,diff=0.43653363 lr=0.001, |Q|=200
+	epoch [200/1000] real avg loss:0.08705017,diff=0.16565730 lr=0.001, |Q|=400
+	epoch [300/1000] real avg loss:0.08181309,diff=0.09552941 lr=0.001, |Q|=600
+	epoch [400/1000] real avg loss:0.07995901,diff=0.07070217 lr=0.001, |Q|=800
+	epoch [500/1000] real avg loss:0.07920439,diff=0.06059734 lr=0.001, |Q|=1000
+	epoch [600/1000] real avg loss:0.07886817,diff=0.05609511 lr=0.001, |Q|=1200
+	epoch [700/1000] real avg loss:0.07871678,diff=0.05406785 lr=0.001, |Q|=1400
+	epoch [800/1000] real avg loss:0.07864630,diff=0.05312407 lr=0.001, |Q|=1600
+	epoch [900/1000] real avg loss:0.07861379,diff=0.05268878 lr=0.001, |Q|=1800
+	epoch [1000/1000] real avg loss:0.07860144,diff=0.05252336 lr=0.001, |Q|=2000
+Done training. Results:
+	Opt avg loss 0.075
+	Our avg loss 0.079 (epoch 990)
+	best_diff=0.052467
+2/10
+build_Q:
+	epochs 1000, bs 1000, #batches 18, base lr 0.001
+	In each epoch(1000 total) there are 18 batches(different qs). sample 10%(2) from them. expected |Q|=2000
+	early stop if |1-loss_q/loss_q_opt|< 0.001
+	Opt loss 1,336.531. avg=0.075
+	Our loss 25,022.724. avg=1.398
+Training...
+	epoch [100/1000] real avg loss:0.17313754,diff=1.31842204 lr=0.001, |Q|=200
+	epoch [200/1000] real avg loss:0.10027998,diff=0.34281286 lr=0.001, |Q|=400
+	epoch [300/1000] real avg loss:0.08700917,diff=0.16510821 lr=0.001, |Q|=600
+	epoch [400/1000] real avg loss:0.08251601,diff=0.10494194 lr=0.001, |Q|=800
+	epoch [500/1000] real avg loss:0.08061757,diff=0.07952072 lr=0.001, |Q|=1000
+	epoch [600/1000] real avg loss:0.07957960,diff=0.06562166 lr=0.001, |Q|=1200
+	epoch [700/1000] real avg loss:0.07904971,diff=0.05852606 lr=0.001, |Q|=1400
+	epoch [800/1000] real avg loss:0.07880312,diff=0.05522405 lr=0.001, |Q|=1600
+	epoch [900/1000] real avg loss:0.07869761,diff=0.05381121 lr=0.001, |Q|=1800
+	epoch [1000/1000] real avg loss:0.07864218,diff=0.05306897 lr=0.001, |Q|=2000
+Done training. Results:
+	Opt avg loss 0.075
+	Our avg loss 0.079 (epoch 994)
+	best_diff=0.053024
+3/10
+build_Q:
+	epochs 1000, bs 1000, #batches 18, base lr 0.001
+	In each epoch(1000 total) there are 18 batches(different qs). sample 10%(2) from them. expected |Q|=2000
+	early stop if |1-loss_q/loss_q_opt|< 0.001
+	Opt loss 1,336.531. avg=0.075
+	Our loss 7,460.946. avg=0.417
+Training...
+	epoch [100/1000] real avg loss:0.10254393,diff=0.37312864 lr=0.001, |Q|=200
+	epoch [200/1000] real avg loss:0.08323249,diff=0.11453617 lr=0.001, |Q|=400
+	epoch [300/1000] real avg loss:0.07948582,diff=0.06436578 lr=0.001, |Q|=600
+	epoch [400/1000] real avg loss:0.07876696,diff=0.05473978 lr=0.001, |Q|=800
+	epoch [500/1000] real avg loss:0.07865159,diff=0.05319489 lr=0.001, |Q|=1000
+	epoch [600/1000] real avg loss:0.07862034,diff=0.05277646 lr=0.001, |Q|=1200
+	epoch [700/1000] real avg loss:0.07861441,diff=0.05269712 lr=0.001, |Q|=1400
+	epoch [800/1000] real avg loss:0.07860357,diff=0.05255191 lr=0.001, |Q|=1600
+	epoch [900/1000] real avg loss:0.07859971,diff=0.05250019 lr=0.001, |Q|=1800
+	epoch [1000/1000] real avg loss:0.07859716,diff=0.05246607 lr=0.001, |Q|=2000
+Done training. Results:
+	Opt avg loss 0.075
+	Our avg loss 0.079 (epoch 964)
+	best_diff=0.052418
+4/10
+build_Q:
+	epochs 1000, bs 1000, #batches 18, base lr 0.001
+	In each epoch(1000 total) there are 18 batches(different qs). sample 10%(2) from them. expected |Q|=2000
+	early stop if |1-loss_q/loss_q_opt|< 0.001
+	Opt loss 1,336.531. avg=0.075
+	Our loss 9,551.445. avg=0.534
+Training...
+	epoch [100/1000] real avg loss:0.11832537,diff=0.58445220 lr=0.001, |Q|=200
+	epoch [200/1000] real avg loss:0.08818695,diff=0.18087954 lr=0.001, |Q|=400
+	epoch [300/1000] real avg loss:0.08223672,diff=0.10120210 lr=0.001, |Q|=600
+	epoch [400/1000] real avg loss:0.08037875,diff=0.07632276 lr=0.001, |Q|=800
+	epoch [500/1000] real avg loss:0.07943664,diff=0.06370729 lr=0.001, |Q|=1000
+	epoch [600/1000] real avg loss:0.07897758,diff=0.05756015 lr=0.001, |Q|=1200
+	epoch [700/1000] real avg loss:0.07876207,diff=0.05467432 lr=0.001, |Q|=1400
+	epoch [800/1000] real avg loss:0.07867657,diff=0.05352938 lr=0.001, |Q|=1600
+	epoch [900/1000] real avg loss:0.07862656,diff=0.05285983 lr=0.001, |Q|=1800
+	epoch [1000/1000] real avg loss:0.07860853,diff=0.05261834 lr=0.001, |Q|=2000
+Done training. Results:
+	Opt avg loss 0.075
+	Our avg loss 0.079 (epoch 995)
+	best_diff=0.052585
+5/10
+build_Q:
+	epochs 1000, bs 1000, #batches 18, base lr 0.001
+	In each epoch(1000 total) there are 18 batches(different qs). sample 10%(2) from them. expected |Q|=2000
+	early stop if |1-loss_q/loss_q_opt|< 0.001
+	Opt loss 1,336.531. avg=0.075
+	Our loss 8,448.367. avg=0.472
+Training...
+	epoch [100/1000] real avg loss:0.11858299,diff=0.58790192 lr=0.001, |Q|=200
+	epoch [200/1000] real avg loss:0.09006198,diff=0.20598731 lr=0.001, |Q|=400
+	epoch [300/1000] real avg loss:0.08425808,diff=0.12826947 lr=0.001, |Q|=600
+	epoch [400/1000] real avg loss:0.08181629,diff=0.09557233 lr=0.001, |Q|=800
+	epoch [500/1000] real avg loss:0.08019530,diff=0.07386627 lr=0.001, |Q|=1000
+	epoch [600/1000] real avg loss:0.07932566,diff=0.06222112 lr=0.001, |Q|=1200
+	epoch [700/1000] real avg loss:0.07890545,diff=0.05659424 lr=0.001, |Q|=1400
+	epoch [800/1000] real avg loss:0.07874227,diff=0.05440914 lr=0.001, |Q|=1600
+	epoch [900/1000] real avg loss:0.07866415,diff=0.05336315 lr=0.001, |Q|=1800
+	epoch [1000/1000] real avg loss:0.07862389,diff=0.05282407 lr=0.001, |Q|=2000
+Done training. Results:
+	Opt avg loss 0.075
+	Our avg loss 0.079 (epoch 995)
+	best_diff=0.052773
+6/10
+build_Q:
+	epochs 1000, bs 1000, #batches 18, base lr 0.001
+	In each epoch(1000 total) there are 18 batches(different qs). sample 10%(2) from them. expected |Q|=2000
+	early stop if |1-loss_q/loss_q_opt|< 0.001
+	Opt loss 1,336.531. avg=0.075
+	Our loss 9,256.927. avg=0.517
+Training...
+	epoch [100/1000] real avg loss:0.12366251,diff=0.65591980 lr=0.001, |Q|=200
+	epoch [200/1000] real avg loss:0.08861081,diff=0.18655525 lr=0.001, |Q|=400
+	epoch [300/1000] real avg loss:0.08158492,diff=0.09247404 lr=0.001, |Q|=600
+	epoch [400/1000] real avg loss:0.07958831,diff=0.06573829 lr=0.001, |Q|=800
+	epoch [500/1000] real avg loss:0.07898105,diff=0.05760657 lr=0.001, |Q|=1000
+	epoch [600/1000] real avg loss:0.07877497,diff=0.05484711 lr=0.001, |Q|=1200
+	epoch [700/1000] real avg loss:0.07867857,diff=0.05355628 lr=0.001, |Q|=1400
+	epoch [800/1000] real avg loss:0.07864487,diff=0.05310501 lr=0.001, |Q|=1600
+	epoch [900/1000] real avg loss:0.07861540,diff=0.05271027 lr=0.001, |Q|=1800
+	epoch [1000/1000] real avg loss:0.07860951,diff=0.05263150 lr=0.001, |Q|=2000
+Done training. Results:
+	Opt avg loss 0.075
+	Our avg loss 0.079 (epoch 973)
+	best_diff=0.052488
+7/10
+build_Q:
+	epochs 1000, bs 1000, #batches 18, base lr 0.001
+	In each epoch(1000 total) there are 18 batches(different qs). sample 10%(2) from them. expected |Q|=2000
+	early stop if |1-loss_q/loss_q_opt|< 0.001
+	Opt loss 1,336.531. avg=0.075
+	Our loss 19,864.301. avg=1.110
+Training...
+	epoch [100/1000] real avg loss:0.13007878,diff=0.74183776 lr=0.001, |Q|=200
+	epoch [200/1000] real avg loss:0.09393738,diff=0.25788139 lr=0.001, |Q|=400
+	epoch [300/1000] real avg loss:0.08497171,diff=0.13782545 lr=0.001, |Q|=600
+	epoch [400/1000] real avg loss:0.08205990,diff=0.09883435 lr=0.001, |Q|=800
+	epoch [500/1000] real avg loss:0.08066028,diff=0.08009256 lr=0.001, |Q|=1000
+	epoch [600/1000] real avg loss:0.07964884,diff=0.06654882 lr=0.001, |Q|=1200
+	epoch [700/1000] real avg loss:0.07908010,diff=0.05893294 lr=0.001, |Q|=1400
+	epoch [800/1000] real avg loss:0.07881682,diff=0.05540745 lr=0.001, |Q|=1600
+	epoch [900/1000] real avg loss:0.07869464,diff=0.05377142 lr=0.001, |Q|=1800
+	epoch [1000/1000] real avg loss:0.07864279,diff=0.05307714 lr=0.001, |Q|=2000
+Done training. Results:
+	Opt avg loss 0.075
+	Our avg loss 0.079 (epoch 984)
+	best_diff=0.053023
+8/10
+build_Q:
+	epochs 1000, bs 1000, #batches 18, base lr 0.001
+	In each epoch(1000 total) there are 18 batches(different qs). sample 10%(2) from them. expected |Q|=2000
+	early stop if |1-loss_q/loss_q_opt|< 0.001
+	Opt loss 1,336.531. avg=0.075
+	Our loss 11,053.733. avg=0.618
+Training...
+	epoch [100/1000] real avg loss:0.15437397,diff=1.06716595 lr=0.001, |Q|=200
+	epoch [200/1000] real avg loss:0.09619768,diff=0.28814830 lr=0.001, |Q|=400
+	epoch [300/1000] real avg loss:0.08340441,diff=0.11683826 lr=0.001, |Q|=600
+	epoch [400/1000] real avg loss:0.08002132,diff=0.07153651 lr=0.001, |Q|=800
+	epoch [500/1000] real avg loss:0.07905969,diff=0.05865971 lr=0.001, |Q|=1000
+	epoch [600/1000] real avg loss:0.07879550,diff=0.05512204 lr=0.001, |Q|=1200
+	epoch [700/1000] real avg loss:0.07869020,diff=0.05371190 lr=0.001, |Q|=1400
+	epoch [800/1000] real avg loss:0.07863750,diff=0.05300623 lr=0.001, |Q|=1600
+	epoch [900/1000] real avg loss:0.07862292,diff=0.05281103 lr=0.001, |Q|=1800
+	epoch [1000/1000] real avg loss:0.07860540,diff=0.05257648 lr=0.001, |Q|=2000
+Done training. Results:
+	Opt avg loss 0.075
+	Our avg loss 0.079 (epoch 994)
+	best_diff=0.052519
+9/10
+build_Q:
+	epochs 1000, bs 1000, #batches 18, base lr 0.001
+	In each epoch(1000 total) there are 18 batches(different qs). sample 10%(2) from them. expected |Q|=2000
+	early stop if |1-loss_q/loss_q_opt|< 0.001
+	Opt loss 1,336.531. avg=0.075
+	Our loss 26,934.605. avg=1.505
+Training...
+	epoch [100/1000] real avg loss:0.16792141,diff=1.24857481 lr=0.001, |Q|=200
+	epoch [200/1000] real avg loss:0.10840246,diff=0.45157805 lr=0.001, |Q|=400
+	epoch [300/1000] real avg loss:0.09322732,diff=0.24837331 lr=0.001, |Q|=600
+	epoch [400/1000] real avg loss:0.08756498,diff=0.17255097 lr=0.001, |Q|=800
+	epoch [500/1000] real avg loss:0.08422961,diff=0.12788816 lr=0.001, |Q|=1000
+	epoch [600/1000] real avg loss:0.08163718,diff=0.09317387 lr=0.001, |Q|=1200
+	epoch [700/1000] real avg loss:0.08001454,diff=0.07144570 lr=0.001, |Q|=1400
+	epoch [800/1000] real avg loss:0.07921923,diff=0.06079603 lr=0.001, |Q|=1600
+	epoch [900/1000] real avg loss:0.07887600,diff=0.05619995 lr=0.001, |Q|=1800
+	epoch [1000/1000] real avg loss:0.07872813,diff=0.05421992 lr=0.001, |Q|=2000
+Done training. Results:
+	Opt avg loss 0.075
+	Our avg loss 0.079 (epoch 997)
+	best_diff=0.054083
+10/10
+build_Q:
+	epochs 1000, bs 1000, #batches 18, base lr 0.001
+	In each epoch(1000 total) there are 18 batches(different qs). sample 10%(2) from them. expected |Q|=2000
+	early stop if |1-loss_q/loss_q_opt|< 0.001
+	Opt loss 1,336.531. avg=0.075
+	Our loss 25,187.155. avg=1.407
+Training...
+	epoch [100/1000] real avg loss:0.16479668,diff=1.20673270 lr=0.001, |Q|=200
+	epoch [200/1000] real avg loss:0.10182023,diff=0.36343776 lr=0.001, |Q|=400
+	epoch [300/1000] real avg loss:0.08642046,diff=0.15722501 lr=0.001, |Q|=600
+	epoch [400/1000] real avg loss:0.08191880,diff=0.09694497 lr=0.001, |Q|=800
+	epoch [500/1000] real avg loss:0.08036842,diff=0.07618435 lr=0.001, |Q|=1000
+	epoch [600/1000] real avg loss:0.07950437,diff=0.06461418 lr=0.001, |Q|=1200
+	epoch [700/1000] real avg loss:0.07901594,diff=0.05807382 lr=0.001, |Q|=1400
+	epoch [800/1000] real avg loss:0.07878122,diff=0.05493073 lr=0.001, |Q|=1600
+	epoch [900/1000] real avg loss:0.07868162,diff=0.05359708 lr=0.001, |Q|=1800
+	epoch [1000/1000] real avg loss:0.07863454,diff=0.05296657 lr=0.001, |Q|=2000
+Done training. Results:
+	Opt avg loss 0.075
+	Our avg loss 0.079 (epoch 998)
+	best_diff=0.052872
+Saved to: ./HTRU_2_17897_9/Q.pt
+    Q_all  : [20000, 9], dtype:torch.float64, trainable:False, is_cuda:False
+	|Q|=[2000, 9]:
+		loss(A,q_opt)=            1,336.53
+		avg loss(A,Q)=            1,960.23
+		avg |1- loss(A,q)/loss(A,q_opt)|=0.467 with std 1.650
+	|trainQ|=[1600, 9]:
+		loss(A,q_opt)     =            1,336.53
+		avg loss(A,trainQ)=            1,915.85
+		avg |1- loss(A,q)/loss(A,q_opt)|=0.433 with std 1.473
+	|valQ|=[200, 9]:
+		loss(A,q_opt)   =            1,336.53
+		avg loss(A,valQ)=            2,203.50
+		avg |1- loss(A,q)/loss(A,q_opt)|=0.649 with std 2.241
+	|testQ|=[200, 9]:
+		loss(A,q_opt)    =            1,336.53
+		avg loss(A,testQ)=            2,072.04
+		avg |1- loss(A,q)/loss(A,q_opt)|=0.550 with std 2.191
+Total run time 00:02:52
+
+Process finished with exit code 0

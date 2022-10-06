@@ -1,0 +1,90 @@
+C:\Users\GiladEiniKbyLake\.conda\envs\SGD\python.exe D:/workspace/2019SGD/DataReduction/LinearRegNewLoss/mainLinearRegressionV4.py
+--------------------------------------------------------------------------------
+main_wrapper:
+* Run started at 28-09-2021 18:55:35
+* Python Version 3.6.13 |Anaconda, Inc.| (default, Mar 16 2021, 11:37:27) [MSC v.1916 64 bit (AMD64)]
+* Operating System uname_result(system='Windows', node='Wizzi-Dorms', release='10', version='10.0.19041', machine='AMD64', processor='Intel64 Family 6 Model 158 Stepping 9, GenuineIntel')
+* Interpreter: C:\Users\GiladEiniKbyLake\.conda\envs\SGD\python.exe
+* wizzi_utils Version 6.8.0
+* Working Dir: D:\workspace\2019SGD\DataReduction\LinearRegNewLoss
+* Computer Mac: 70:4D:7B:8A:65:EE
+* CPU Info: AMD64, Intel64 Family 6 Model 158 Stepping 9, GenuineIntel, Physical cores 4, Total cores 8, Frequency 3601.00Mhz, CPU Usage 13.2%
+* Physical Memory: C: Total 232.33 GB, Used 226.04 GB(97.30%), Free 6.29 GB, D: Total 931.39 GB, Used 536.87 GB(57.60%), Free 394.51 GB, E: PermissionError: [WinError 21] The device is not ready: 'E', G: Total 17.0 GB, Used 11.03 GB(64.90%), Free 5.97 GB
+* RAM: Total 15.94 GB, Used 7.28 GB(45.7%), Available 8.65 GB
+* CUDA Version: v10.2 (cuDNN Version 7.6.5)
+* PyTorch Version 1.9.1+cu102 - GPU detected ? True
+Function <function main at 0x00000245660EF598> started:
+--------------------------------------------------------------------------------
+working on CUDA. default dtype = torch.cuda.FloatTensor <=> torch.float32
+get_data(ds_name=3DRoad):
+	3DRoad_data(torch.Tensor,s=torch.Size([434874, 3]),dtype=torch.float32,trainable=False,is_cuda=True): [[9.35, 56.74, 17.05], [9.35, 56.74, 17.61], [9.35, 56.74, 18.08], [9.35, 56.74, 18.28], [9.35, 56.7 ...too long
+get_data time 00:00:04
+argv:
+	ds_name: 3DRoad
+	base_folder: ./3DRoad_434874_3
+	f: <function f_opt at 0x00000245660E8400>
+	solver: <function solver_sklearn at 0x00000245660E8488>
+	Q: {'path': './3DRoad_434874_3/Q3.pt', 'init_size': 20, 'init_miu': 0, 'init_std': 1, 'sample_step': 0.5, 'epochs': 80, 'bs': 2000, 'lr': 0.0001, 'mv': {'factor': 0.1, 'patience': 80, 'min_lr': 0.0001}, 'infoQ_show_er': True, 'trainQ_s': 20000, 'valQ_s': 2000, 'testQ_s': 2000}
+	color_dict: {'SGD': 'b', 'SVD': 'g', 'UNI': 'r'}
+	SVD_sp_folder: ./3DRoad_434874_3
+	Bal: {'folder': './3DRoad_434874_3/bal', 'reps': 10, 'epochs': 10, 'bs': 25, 'lr': 0.01, 'mv': {'factor': 0.1, 'patience': 100000, 'min_lr': 0.001}, 'epochs_info': True, 'epochs_info_stds': False, 'batches_info': False, 'loss_stats': False}
+	show_plots: False
+	save_plots: True
+	c_sizes: [50, 60, 70, 80, 90, 100, 110, 120, 130, 140]
+	reps: 100
+./3DRoad_434874_3/bal exists
+Balancing:
+get_Q_sets
+Loaded: ./3DRoad_434874_3/Q3.pt
+	|allQ|=[174400, 3, 1]:
+	|trainQ|=[20000, 3, 1]:
+		loss(A,q_opt)      =      146,752,224.00(avg=337.46)
+		avg loss(A,trainQ )=      549,867,203.33(avg=1,264.43,std=2,025.44,min=346.22, max=14,156.79)
+		avg |1- loss(A,q)/loss(A,q_opt)|=2.747(std=6.00,min=0.03, max=40.95))
+	|valQ|=[2000, 3, 1]:
+		loss(A,q_opt)      =      146,752,224.00(avg=337.46)
+		avg loss(A,valQ   )=      523,021,493.87(avg=1,202.70,std=1,912.16,min=346.22, max=14,129.73)
+		avg |1- loss(A,q)/loss(A,q_opt)|=2.564(std=5.67,min=0.03, max=40.87))
+	|testQ|=[2000, 3, 1]:
+		loss(A,q_opt)      =      146,752,224.00(avg=337.46)
+		avg loss(A,testQ  )=      567,097,042.74(avg=1,304.05,std=2,128.76,min=346.22, max=13,527.27)
+		avg |1- loss(A,q)/loss(A,q_opt)|=2.864(std=6.31,min=0.03, max=39.09))
+get_Q_sets time 00:00:11
+get_sp_list:
+LinearReg.get_SP_SVD torch.Size([434874, 3]):
+	Loaded: ./3DRoad_434874_3/SVD.npy
+	|A|=torch.Size([434874, 3]), |SP_SVD|=(434874,), sum(SP_SVD)=3.00 (should be equal to d(3))
+sp_list: SVD,UNI
+get_sp_list time 00:00:00
+get_list_of_coresets_for_each_size:
+	|A|=[434874, 3], reps=100, c_sizes=[50, 60, 70, 80, 90, 100, 110, 120, 130, 140], sp_names=SVD,UNI
+	for size 50: created SVD 100x[50, 3] coresets, UNI 100x[50, 3] coresets
+	for size 60: created SVD 100x[60, 3] coresets, UNI 100x[60, 3] coresets
+	for size 70: created SVD 100x[70, 3] coresets, UNI 100x[70, 3] coresets
+	for size 80: created SVD 100x[80, 3] coresets, UNI 100x[80, 3] coresets
+	for size 90: created SVD 100x[90, 3] coresets, UNI 100x[90, 3] coresets
+	for size 100: created SVD 100x[100, 3] coresets, UNI 100x[100, 3] coresets
+	for size 110: created SVD 100x[110, 3] coresets, UNI 100x[110, 3] coresets
+	for size 120: created SVD 100x[120, 3] coresets, UNI 100x[120, 3] coresets
+	for size 130: created SVD 100x[130, 3] coresets, UNI 100x[130, 3] coresets
+	for size 140: created SVD 100x[140, 3] coresets, UNI 100x[140, 3] coresets
+get_list_of_coresets_for_each_size time 00:02:06
+test_coresets:
+	name_color_list:[('SVD', 'g'), ('UNI', 'r')]
+	|A|=[434874, 3], c_sizes [50, 60, 70, 80, 90, 100, 110, 120, 130, 140], reps=100, bal reps=10:
+		error(A, q_opt)=337.46
+weak test on SVD,UNI (other reps=100, bal reps=10)
+	SVD errors: [0.04990,0.04502,0.03074,0.02606,0.02607,0.02438,0.01948,0.01818,0.01899,0.01678], stds: [0.04927,0.05104,0.02856,0.02177,0.02653,0.02056,0.01633,0.01958,0.01861,0.01661]
+	UNI errors: [0.06363,0.05138,0.04463,0.03557,0.03112,0.02757,0.02736,0.02905,0.02085,0.01888], stds: [0.04751,0.04550,0.04185,0.03354,0.02742,0.02142,0.03550,0.02609,0.01968,0.01520]
+	saved to ./3DRoad_434874_3/bal/50_to_140_weak.png
+weak_time 00:00:03
+strong test(|testQ|=[2000, 3, 1]) on SVD,UNI (other reps=100, bal reps=10)
+	SVD errors: [0.09478,0.09459,0.08539,0.07926,0.06932,0.06358,0.06565,0.06008,0.05860,0.05446], stds: [0.04947,0.05266,0.04461,0.03776,0.03355,0.03245,0.03210,0.03320,0.02898,0.03051]
+	UNI errors: [0.16461,0.14704,0.13138,0.12750,0.11774,0.11748,0.11525,0.11350,0.09864,0.09082], stds: [0.10037,0.09666,0.09076,0.08480,0.07045,0.07500,0.08306,0.08446,0.06757,0.06223]
+	saved to ./3DRoad_434874_3/bal/50_to_140_strong_mean_mean.png
+st_mean_time 00:46:16
+test_coresets time 00:46:19
+--------------------------------------------------------------------------------
+Total run time 0:48:41
+
+Process finished with exit code 0

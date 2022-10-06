@@ -1,0 +1,13 @@
+Logistic regression HTRU_2 ds:
+Q.pt
+    size 20000,9
+    time 00:02:52 (extremely fast)
+coresets:
+    sizes [100, 200, 300, 400, 500]
+    reps 5
+    time per coreset (5 reps) ~12:30:00
+    time per run estimation about 62:30:00
+    * all time measurements include many redundant actions for debug
+
+NOTICE if a specific log show slower time measurements, it's more than likely it was running parallel to more
+experiments, hence time is slower

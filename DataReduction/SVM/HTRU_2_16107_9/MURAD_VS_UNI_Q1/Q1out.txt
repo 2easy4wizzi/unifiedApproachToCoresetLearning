@@ -1,0 +1,85 @@
+C:\Users\gilad\.conda\envs\AutoCL\python.exe C:/workspace/2019SGD/DataReduction/SVM/mainSVM.py
+--------------------------------------------------------------------------------
+main_wrapper:
+* Run started at 12-06-2022 16:05:09
+* Python Version 3.6.13 |Anaconda, Inc.| (default, Mar 16 2021, 11:37:27) [MSC v.1916 64 bit (AMD64)]
+* Operating System uname_result(system='Windows', node='Wizzi-Dell', release='10', version='10.0.19041', machine='AMD64', processor='Intel64 Family 6 Model 142 Stepping 12, GenuineIntel')
+* Interpreter: C:\Users\gilad\.conda\envs\AutoCL\python.exe
+* wizzi_utils Version 7.0.15
+* Working Dir: C:\workspace\2019SGD\DataReduction\SVM
+* Computer Mac: EC:18:CE:7C:62:CF
+* CPU Info: AMD64, Intel64 Family 6 Model 142 Stepping 12, GenuineIntel, Physical cores 4, Total cores 8, Frequency 1803.00Mhz, CPU Usage 14.1%
+* Physical Memory: C: Total 460.66 GB, Used 439.57 GB(95.40%), Free 21.09 GB
+* RAM: Total 15.79 GB, Used 7.34 GB(46.5%), Available 8.45 GB
+* No CUDA_PATH found (Turned off)
+* PyTorch Version 1.8.1+cpu - GPU detected ? False
+Function <function main at 0x00000136BCAE5048> started:
+--------------------------------------------------------------------------------
+working on CPU
+A_train(numpy.ndarray,s=(16107, 9),dtype=float64): [[0.03, 0.23, -0.24, -0.3, -0.38, -0.74, 1.14, 1.2, -1.0], [-1.26, -1.4, 0.25, 0.23, -0.17, 0.42, -0 ...too long
+A_test(numpy.ndarray,s=(1790, 9),dtype=float64): [[0.29, 0.24, -0.37, -0.29, -0.35, -0.66, 0.3, 0.23, -1.0], [1.24, -0.29, -0.66, -0.24, -0.25, 0.07, ...too long
+SP_train(numpy.ndarray,s=(16107,),dtype=float64): [0.04, 0.06, 0.04, 0.02, 0.03, 0.02, 0.05, 0.02, 0.02, 0.04, 0.04, 0.03, 0.03, 0.02, 0.04, 0.03, 0.0 ...too long
+./HTRU_2_16107_9 exists
+argv:
+	ds_name: HTRU_2
+	base_folder: ./HTRU_2_16107_9
+	f: <function f_opt at 0x00000136BCACAD90>
+	solver: <function solver_sklearn at 0x00000136BCACAD08>
+	Q: {'path': './HTRU_2_16107_9/Q1.pt', 'init_size': 10, 'init_miu': 0, 'init_std': 1, 'sample_step': 0.1, 'epochs': 1000, 'bs': 1000, 'lr': 0.001, 'mv': {'factor': 0.1, 'patience': 100000, 'min_lr': 0.0001}, 'infoQ_show_er': True, 'trainQ_s': 8000, 'valQ_s': 1600, 'testQ_s': 800}
+	color_dict: {'SGD': 'b', 'MURAD': 'g', 'UNI': 'r'}
+	Bal: {'folder': './HTRU_2_16107_9/MURAD_VS_UNI_tempQ', 'reps': 10, 'epochs': 10, 'bs': 25, 'lr': 0.01, 'mv': {'factor': 0.1, 'patience': 100000, 'min_lr': 0.001}, 'lambda': 1, 'epochs_info': True, 'epochs_info_stds': False, 'batches_info': False, 'loss_stats': False}
+	show_plots: False
+	save_plots: True
+	c_sizes: [800, 1000, 1200]
+	reps: 100
+./HTRU_2_16107_9/MURAD_VS_UNI_tempQ exists
+get_Q_sets
+Loaded: ./HTRU_2_16107_9/Q1.pt
+	|allQ|=[20000, 9, 1]:
+	|trainQ|=[8000, 9, 1]:
+		loss(A,q_opt)      =              885.38(avg=0.05)
+		avg loss(A,trainQ )=            2,106.08(avg=0.13,std=0.32,min=0.06, max=3.47)
+		avg |1- loss(A,q)/loss(A,q_opt)|=1.379(std=5.79,min=0.00, max=62.17))
+	|valQ|=[1600, 9, 1]:
+		loss(A,q_opt)      =              885.38(avg=0.05)
+		avg loss(A,valQ   )=            2,376.68(avg=0.15,std=0.37,min=0.06, max=3.35)
+		avg |1- loss(A,q)/loss(A,q_opt)|=1.684(std=6.66,min=0.00, max=60.00))
+	|testQ|=[800, 9, 1]:
+		loss(A,q_opt)      =              885.38(avg=0.05)
+		avg loss(A,testQ  )=            1,959.44(avg=0.12,std=0.27,min=0.06, max=2.71)
+		avg |1- loss(A,q)/loss(A,q_opt)|=1.213(std=4.87,min=0.00, max=48.22))
+get_Q_sets time 00:00:04
+get_sp_list:
+A_train(numpy.ndarray,s=(16107, 9),dtype=float64): [[0.03, 0.23, -0.24, -0.3, -0.38, -0.74, 1.14, 1.2, -1.0], [-1.26, -1.4, 0.25, 0.23, -0.17, 0.42, -0 ...too long
+A_test(numpy.ndarray,s=(1790, 9),dtype=float64): [[0.29, 0.24, -0.37, -0.29, -0.35, -0.66, 0.3, 0.23, -1.0], [1.24, -0.29, -0.66, -0.24, -0.25, 0.07, ...too long
+SP_train(numpy.ndarray,s=(16107,),dtype=float64): [0.04, 0.06, 0.04, 0.02, 0.03, 0.02, 0.05, 0.02, 0.02, 0.04, 0.04, 0.03, 0.03, 0.02, 0.04, 0.03, 0.0 ...too long
+|A|=(16107, 9), |SP_MURAD|=(16107,), sum(SP_MURAD)=740.41
+sp_list: MURAD,UNI
+get_sp_list time 00:00:00
+get_list_of_coresets_for_each_size:
+	|A|=[16107, 9], reps=100, c_sizes=[800, 1000, 1200], sp_names=MURAD,UNI
+	for size 800: created MURAD 100x[800, 9] coresets, UNI 100x[800, 9] coresets
+	for size 1000: created MURAD 100x[1000, 9] coresets, UNI 100x[1000, 9] coresets
+	for size 1200: created MURAD 100x[1200, 9] coresets, UNI 100x[1200, 9] coresets
+get_list_of_coresets_for_each_size time 00:00:01
+test_coresets:
+	name_color_list:[('MURAD', 'g'), ('UNI', 'r')]
+	|A|=[16107, 9], c_sizes [800, 1000, 1200], reps=100, bal reps=10:
+		error(A, q_opt)=0.05
+starting weak...
+weak test on MURAD,UNI (other reps=100, bal reps=10)
+	MURAD errors: [0.04333,0.03746,0.02865], stds: [0.02047,0.02310,0.01701]
+	UNI errors: [0.12202,0.09601,0.06724], stds: [0.09566,0.08216,0.03769]
+	saved to ./HTRU_2_16107_9/MURAD_VS_UNI_tempQ/800_to_1200_weak.png
+weak_time 00:00:11
+starting strong...
+strong test(|testQ|=[800, 9, 1]) on MURAD,UNI (other reps=100, bal reps=10)
+	MURAD errors: [0.08373,0.08460,0.08000], stds: [0.06229,0.06255,0.05442]
+	UNI errors: [0.13418,0.12776,0.10173], stds: [0.08934,0.08917,0.07486]
+	saved to ./HTRU_2_16107_9/MURAD_VS_UNI_tempQ/800_to_1200_strong_mean_mean.png
+st_mean_time 00:03:32
+test_coresets time 00:03:44
+--------------------------------------------------------------------------------
+Total run time 0:03:50
+
+Process finished with exit code 0

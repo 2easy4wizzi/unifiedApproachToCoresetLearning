@@ -1,0 +1,1249 @@
+C:\Users\GiladEiniKbyLake\.conda\envs\AutoCL2\python.exe D:/workspace/2019SGD/DataReduction/SVM/mainSVM.py
+--------------------------------------------------------------------------------
+main_wrapper:
+* Run started at 27-06-2022 03:22:17
+* Python Version 3.6.13 |Anaconda, Inc.| (default, Mar 16 2021, 11:37:27) [MSC v.1916 64 bit (AMD64)]
+* Operating System uname_result(system='Windows', node='Wizzi-Dorms', release='10', version='10.0.19041', machine='AMD64', processor='Intel64 Family 6 Model 158 Stepping 9, GenuineIntel')
+* Interpreter: C:\Users\GiladEiniKbyLake\.conda\envs\AutoCL2\python.exe
+* wizzi_utils Version 7.0.15
+* Working Dir: D:\workspace\2019SGD\DataReduction\SVM
+* Computer Mac: 70:4D:7B:8A:65:EE
+* CPU Info: AMD64, Intel64 Family 6 Model 158 Stepping 9, GenuineIntel, Physical cores 4, Total cores 8, Frequency 3601.00Mhz, CPU Usage 73.1%
+* Physical Memory: C: Total 232.33 GB, Used 210.64 GB(90.70%), Free 21.69 GB, D: Total 931.39 GB, Used 216.36 GB(23.20%), Free 715.02 GB, E: PermissionError: [WinError 21] The device is not ready: 'E'
+* RAM: Total 15.94 GB, Used 7.81 GB(49.0%), Available 8.12 GB
+* CUDA Version: v10.2 (cuDNN Version 7.6.5) (Turned off)
+* PyTorch Version 1.8.1+cu101 - GPU detected ? False
+Function <function main at 0x0000024637F53C80> started:
+--------------------------------------------------------------------------------
+working on CPU
+A_train(numpy.ndarray,s=(16107, 9),dtype=float64): [[0.03, 0.23, -0.24, -0.3, -0.38, -0.74, 1.14, 1.2, -1.0], [-1.26, -1.4, 0.25, 0.23, -0.17, 0.42, -0 ...too long
+A_test(numpy.ndarray,s=(1790, 9),dtype=float64): [[0.29, 0.24, -0.37, -0.29, -0.35, -0.66, 0.3, 0.23, -1.0], [1.24, -0.29, -0.66, -0.24, -0.25, 0.07, ...too long
+SP_train(numpy.ndarray,s=(16107,),dtype=float64): [0.04, 0.06, 0.04, 0.02, 0.03, 0.02, 0.05, 0.02, 0.02, 0.04, 0.04, 0.03, 0.03, 0.02, 0.04, 0.03, 0.0 ...too long
+./HTRU_2_16107_9 exists
+argv:
+	ds_name: HTRU_2
+	base_folder: ./HTRU_2_16107_9
+	f: <function f_opt at 0x0000024637F3EA60>
+	solver: <function solver_sklearn at 0x0000024637F3E9D8>
+	Q: {'path': './HTRU_2_16107_9/Q1.pt', 'init_size': 10, 'init_miu': 0, 'init_std': 1, 'sample_step': 0.1, 'epochs': 1000, 'bs': 1000, 'lr': 0.001, 'mv': {'factor': 0.1, 'patience': 100000, 'min_lr': 0.0001}, 'infoQ_show_er': True, 'trainQ_s': 10000, 'valQ_s': 2000, 'testQ_s': 1000}
+	color_dict: {'SGD': 'b', 'MURAD': 'g', 'UNI': 'r'}
+	Bal: {'folder': './HTRU_2_16107_9/BalQ1_6_6_1800', 'reps': 5, 'epochs': 200, 'bs': 100, 'lr': 0.001, 'mv': {'factor': 0.1, 'patience': 10000000, 'min_lr': 0.0001}, 'lambda': 1, 'epochs_info': True, 'epochs_info_stds': False, 'batches_info': False, 'loss_stats': True}
+	show_plots: False
+	save_plots: True
+	with_weak: True
+	with_strong: False
+	c_sizes: [1800]
+	reps: 100
+./HTRU_2_16107_9/BalQ1_6_6_1800 created
+get_Q_sets
+Loaded: ./HTRU_2_16107_9/Q1.pt
+	|allQ|=[20000, 9, 1]:
+	|trainQ|=[10000, 9, 1]:
+		loss(A,q_opt)      =              885.38(avg=0.05)
+		avg loss(A,trainQ )=            2,141.42(avg=0.13,std=0.32,min=0.06, max=3.47)
+		avg |1- loss(A,q)/loss(A,q_opt)|=1.419(std=5.91,min=0.00, max=62.17))
+	|valQ|=[2000, 9, 1]:
+		loss(A,q_opt)      =              885.38(avg=0.05)
+		avg loss(A,valQ   )=            2,058.77(avg=0.13,std=0.32,min=0.06, max=3.45)
+		avg |1- loss(A,q)/loss(A,q_opt)|=1.325(std=5.77,min=0.00, max=61.68))
+	|testQ|=[1000, 9, 1]:
+		loss(A,q_opt)      =              885.38(avg=0.05)
+		avg loss(A,testQ  )=            2,031.76(avg=0.13,std=0.28,min=0.06, max=2.80)
+		avg |1- loss(A,q)/loss(A,q_opt)|=1.295(std=5.15,min=0.00, max=49.94))
+working on CPU
+get_Q_sets time 00:00:06
+get_sp_list:
+A_train(numpy.ndarray,s=(16107, 9),dtype=float64): [[0.03, 0.23, -0.24, -0.3, -0.38, -0.74, 1.14, 1.2, -1.0], [-1.26, -1.4, 0.25, 0.23, -0.17, 0.42, -0 ...too long
+A_test(numpy.ndarray,s=(1790, 9),dtype=float64): [[0.29, 0.24, -0.37, -0.29, -0.35, -0.66, 0.3, 0.23, -1.0], [1.24, -0.29, -0.66, -0.24, -0.25, 0.07, ...too long
+SP_train(numpy.ndarray,s=(16107,),dtype=float64): [0.04, 0.06, 0.04, 0.02, 0.03, 0.02, 0.05, 0.02, 0.02, 0.04, 0.04, 0.03, 0.03, 0.02, 0.04, 0.03, 0.0 ...too long
+|A|=(16107, 9), |SP_MURAD|=(16107,), sum(SP_MURAD)=740.41
+build_bal_SGD_coresets for |A|=torch.Size([16107, 9]) (DONE ONLY ONCE):
+	c_sizes=[1800], bal_reps=5, |trainQ|=10000, |valQ|=2000
+c_size 1800:
+-------------------------------------------------------------------------------- rep 0
+	starting sum weights:
+		sum(W)=16107
+		sum(U)=16107.000732421875
+Balance params: epochs 200, batch_size 100, total batches 100, base_lr 0.001
+Loss before training:
+	trainQ(torch.Tensor,s=torch.Size([10000, 9, 1]),dtype=torch.float64,trainable=False,is_cuda=False): [[[0.34], [0.09], [1.89], [0.11], [-0.24], [0.24], [-0.12], [-0.01], [-1.33]], [[0.31], [0.11], [1.7 ...too long
+	A(torch.Tensor,s=torch.Size([16107, 9]),dtype=torch.float64,trainable=False,is_cuda=False): [[0.03, 0.23, -0.24, -0.3, -0.38, -0.74, 1.14, 1.2, -1.0], [-1.26, -1.4, 0.25, 0.23, -0.17, 0.42, -0 ...too long
+	C(torch.Tensor,s=torch.Size([1800, 9]),dtype=torch.float64,trainable=True,is_cuda=False): [[0.5, -0.79, -0.31, -0.16, -0.33, -0.33, 0.1, -0.2, -1.0], [0.19, 0.37, -0.24, -0.23, -0.34, -0.57, ...too long
+	U(torch.Tensor,s=torch.Size([1800]),dtype=torch.float64,trainable=True,is_cuda=False): [8.95, 8.95, 8.95, 8.95, 8.95, 8.95, 8.95, 8.95, 8.95, 8.95, 8.95, 8.95, 8.95, 8.95, 8.95, 8.95, 8.9 ...too long
+	loss(A,C,U,Q_train):|Q|=10000, loss_c=0.143, loss_p=0.133, error=0.16517(max=0.24056) (std=0.052)
+	valQ(torch.Tensor,s=torch.Size([2000, 9, 1]),dtype=torch.float64,trainable=False,is_cuda=False): [[[-0.22], [0.1], [1.29], [-0.0], [-0.34], [0.37], [-0.2], [0.07], [-1.63]], [[0.33], [0.13], [1.65] ...too long
+	loss(A,C,U,Q_val  ):|Q|=2000, loss_c=0.138, loss_p=0.128, error=0.16541(max=0.24037) (std=0.050)
+	testQ(torch.Tensor,s=torch.Size([1000, 9, 1]),dtype=torch.float64,trainable=False,is_cuda=False): [[[-0.32], [0.1], [1.18], [-0.05], [-0.42], [0.43], [-0.22], [0.06], [-1.71]], [[-0.97], [-0.61], [- ...too long
+	loss(A,C,U,testQ  ):|Q|=1000, loss_c=0.136, loss_p=0.126, error=0.16550(max=0.23935) (std=0.051)
+	Weak test(pre): f(A,lc)=0.05817, f(A,la)=0.05497, error=0.05819
+build_1_bal_SGD_coreset(size=1800):
+	optimizer = Adam (Parameter Group 0 amsgrad: False betas: (0.9, 0.999) eps: 1e-08 lr: 0.001 weight_decay: 0), |trainable_vars| = 2
+	Epoch[1/200]:loss_c:0.13585, loss_p:0.13295, erTrain:0.29145, erVal:0.00520, erWeak:0.04632, erAqc:0.058, erAqa:0.055, lr 0.00100, time 00:00:12, V
+	Epoch[2/200]:loss_c:0.13306, loss_p:0.13295, erTrain:0.19504, erVal:0.00205, erWeak:0.03251, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:00:25, V
+	Epoch[3/200]:loss_c:0.13296, loss_p:0.13295, erTrain:0.17818, erVal:0.00131, erWeak:0.03234, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:00:38, V
+	Epoch[4/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.17747, erVal:0.00101, erWeak:0.02873, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:00:51, V
+	Epoch[5/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19751, erVal:0.00089, erWeak:0.02952, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:01:04, V
+	Epoch[6/200]:loss_c:0.13294, loss_p:0.13295, erTrain:0.17766, erVal:0.00082, erWeak:0.02920, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:01:17, V
+	Epoch[7/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18568, erVal:0.00065, erWeak:0.02885, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:01:29, V
+	Epoch[8/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19025, erVal:0.00062, erWeak:0.02878, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:01:42, V
+	Epoch[9/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.17644, erVal:0.00067, erWeak:0.02947, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:01:56
+	Epoch[10/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18249, erVal:0.00058, erWeak:0.02983, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:02:11, V
+	Epoch[11/200]:loss_c:0.13296, loss_p:0.13295, erTrain:0.19235, erVal:0.00066, erWeak:0.02972, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:02:25
+	Epoch[12/200]:loss_c:0.13296, loss_p:0.13295, erTrain:0.17705, erVal:0.00058, erWeak:0.02967, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:02:38, V
+	Epoch[13/200]:loss_c:0.13296, loss_p:0.13295, erTrain:0.19115, erVal:0.00055, erWeak:0.02749, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:02:51, V
+	Epoch[14/200]:loss_c:0.13297, loss_p:0.13295, erTrain:0.18361, erVal:0.00049, erWeak:0.02608, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:03:04, V
+	Epoch[15/200]:loss_c:0.13297, loss_p:0.13295, erTrain:0.17618, erVal:0.00056, erWeak:0.02594, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:03:16
+	Epoch[16/200]:loss_c:0.13296, loss_p:0.13295, erTrain:0.18521, erVal:0.00048, erWeak:0.02560, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:03:29, V
+	Epoch[17/200]:loss_c:0.13296, loss_p:0.13295, erTrain:0.19023, erVal:0.00050, erWeak:0.02500, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:03:42
+	Epoch[18/200]:loss_c:0.13296, loss_p:0.13295, erTrain:0.17627, erVal:0.00045, erWeak:0.02636, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:03:55, V
+	Epoch[19/200]:loss_c:0.13296, loss_p:0.13295, erTrain:0.19716, erVal:0.00043, erWeak:0.02599, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:04:07, V
+	Epoch[20/200]:loss_c:0.13296, loss_p:0.13295, erTrain:0.17732, erVal:0.00045, erWeak:0.02521, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:04:20
+	Epoch[21/200]:loss_c:0.13296, loss_p:0.13295, erTrain:0.17694, erVal:0.00048, erWeak:0.02619, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:04:33
+	Epoch[22/200]:loss_c:0.13297, loss_p:0.13295, erTrain:0.19110, erVal:0.00048, erWeak:0.02619, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:04:46
+	Epoch[23/200]:loss_c:0.13296, loss_p:0.13295, erTrain:0.18359, erVal:0.00037, erWeak:0.02440, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:04:59, V
+	Epoch[24/200]:loss_c:0.13297, loss_p:0.13295, erTrain:0.18226, erVal:0.00046, erWeak:0.02387, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:05:12
+	Epoch[25/200]:loss_c:0.13296, loss_p:0.13295, erTrain:0.19220, erVal:0.00046, erWeak:0.02415, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:05:25
+	Epoch[26/200]:loss_c:0.13296, loss_p:0.13295, erTrain:0.17690, erVal:0.00037, erWeak:0.02334, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:05:38, V
+	Epoch[27/200]:loss_c:0.13296, loss_p:0.13295, erTrain:0.17665, erVal:0.00040, erWeak:0.02276, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:05:51
+	Epoch[28/200]:loss_c:0.13296, loss_p:0.13295, erTrain:0.19695, erVal:0.00041, erWeak:0.02307, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:06:04
+	Epoch[29/200]:loss_c:0.13296, loss_p:0.13295, erTrain:0.17716, erVal:0.00046, erWeak:0.02322, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:06:17
+	Epoch[30/200]:loss_c:0.13296, loss_p:0.13295, erTrain:0.18537, erVal:0.00049, erWeak:0.02387, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:06:30
+	Epoch[31/200]:loss_c:0.13296, loss_p:0.13295, erTrain:0.18997, erVal:0.00037, erWeak:0.02355, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:06:42
+	Epoch[32/200]:loss_c:0.13296, loss_p:0.13295, erTrain:0.17620, erVal:0.00046, erWeak:0.02269, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:06:55
+	Epoch[33/200]:loss_c:0.13296, loss_p:0.13295, erTrain:0.18232, erVal:0.00039, erWeak:0.02438, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:07:08
+	Epoch[34/200]:loss_c:0.13296, loss_p:0.13295, erTrain:0.19217, erVal:0.00060, erWeak:0.02283, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:07:20
+	Epoch[35/200]:loss_c:0.13296, loss_p:0.13295, erTrain:0.17690, erVal:0.00033, erWeak:0.02390, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:07:33, V
+	Epoch[36/200]:loss_c:0.13296, loss_p:0.13295, erTrain:0.19104, erVal:0.00041, erWeak:0.02271, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:07:46
+	Epoch[37/200]:loss_c:0.13296, loss_p:0.13295, erTrain:0.18353, erVal:0.00041, erWeak:0.02335, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:07:59
+	Epoch[38/200]:loss_c:0.13296, loss_p:0.13295, erTrain:0.17609, erVal:0.00039, erWeak:0.02307, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:08:12
+	Epoch[39/200]:loss_c:0.13296, loss_p:0.13295, erTrain:0.18511, erVal:0.00039, erWeak:0.02168, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:08:25
+	Epoch[40/200]:loss_c:0.13296, loss_p:0.13295, erTrain:0.19019, erVal:0.00044, erWeak:0.02239, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:08:37
+	Epoch[41/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.17622, erVal:0.00047, erWeak:0.02128, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:08:50
+	Epoch[42/200]:loss_c:0.13296, loss_p:0.13295, erTrain:0.19708, erVal:0.00032, erWeak:0.02126, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:09:03, V
+	Epoch[43/200]:loss_c:0.13296, loss_p:0.13295, erTrain:0.17724, erVal:0.00033, erWeak:0.02114, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:09:16
+	Epoch[44/200]:loss_c:0.13296, loss_p:0.13295, erTrain:0.17685, erVal:0.00042, erWeak:0.02104, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:09:28
+	Epoch[45/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19104, erVal:0.00033, erWeak:0.02135, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:09:41
+	Epoch[46/200]:loss_c:0.13296, loss_p:0.13295, erTrain:0.18353, erVal:0.00043, erWeak:0.02317, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:09:54
+	Epoch[47/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18219, erVal:0.00050, erWeak:0.02184, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:10:07
+	Epoch[48/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19216, erVal:0.00048, erWeak:0.02265, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:10:20
+	Epoch[49/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.17690, erVal:0.00040, erWeak:0.02212, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:10:32
+	Epoch[50/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.17661, erVal:0.00035, erWeak:0.02255, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:10:46
+	Epoch[51/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19690, erVal:0.00034, erWeak:0.02263, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:10:58
+	Epoch[52/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.17713, erVal:0.00035, erWeak:0.02073, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:11:11
+	Epoch[53/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18530, erVal:0.00038, erWeak:0.02336, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:11:24
+	Epoch[54/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18995, erVal:0.00034, erWeak:0.02206, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:11:37
+	Epoch[55/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.17616, erVal:0.00042, erWeak:0.02382, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:11:49
+	Epoch[56/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18223, erVal:0.00038, erWeak:0.02157, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:12:02
+	Epoch[57/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19216, erVal:0.00036, erWeak:0.02403, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:12:15
+	Epoch[58/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.17684, erVal:0.00038, erWeak:0.02339, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:12:27
+	Epoch[59/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19099, erVal:0.00037, erWeak:0.02102, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:12:40
+	Epoch[60/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18348, erVal:0.00043, erWeak:0.02173, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:12:53
+	Epoch[61/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.17604, erVal:0.00031, erWeak:0.02284, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:13:06, V
+	Epoch[62/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18506, erVal:0.00031, erWeak:0.02188, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:13:18, V
+	Epoch[63/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19014, erVal:0.00042, erWeak:0.02240, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:13:31
+	Epoch[64/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.17620, erVal:0.00034, erWeak:0.02250, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:13:43
+	Epoch[65/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19709, erVal:0.00036, erWeak:0.02198, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:13:56
+	Epoch[66/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.17725, erVal:0.00031, erWeak:0.02200, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:14:09
+	Epoch[67/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.17685, erVal:0.00033, erWeak:0.02268, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:14:21
+	Epoch[68/200]:loss_c:0.13296, loss_p:0.13295, erTrain:0.19099, erVal:0.00038, erWeak:0.02261, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:14:34
+	Epoch[69/200]:loss_c:0.13294, loss_p:0.13295, erTrain:0.18352, erVal:0.00032, erWeak:0.02356, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:14:47
+	Epoch[70/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18218, erVal:0.00031, erWeak:0.02316, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:15:00
+	Epoch[71/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19220, erVal:0.00041, erWeak:0.02268, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:15:13
+	Epoch[72/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.17684, erVal:0.00034, erWeak:0.02304, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:15:25
+	Epoch[73/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.17661, erVal:0.00040, erWeak:0.02267, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:15:38
+	Epoch[74/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19687, erVal:0.00042, erWeak:0.02288, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:15:51
+	Epoch[75/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.17707, erVal:0.00033, erWeak:0.02261, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:16:04
+	Epoch[76/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18523, erVal:0.00036, erWeak:0.02294, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:16:16
+	Epoch[77/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18991, erVal:0.00035, erWeak:0.02279, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:16:29
+	Epoch[78/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.17612, erVal:0.00033, erWeak:0.02378, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:16:42
+	Epoch[79/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18222, erVal:0.00031, erWeak:0.02304, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:16:55
+	Epoch[80/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19212, erVal:0.00034, erWeak:0.02395, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:17:08
+	Epoch[81/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.17685, erVal:0.00039, erWeak:0.02305, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:17:20
+	Epoch[82/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19101, erVal:0.00031, erWeak:0.02293, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:17:33
+	Epoch[83/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18347, erVal:0.00033, erWeak:0.02340, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:17:46
+	Epoch[84/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.17604, erVal:0.00037, erWeak:0.02305, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:17:59
+	Epoch[85/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18510, erVal:0.00043, erWeak:0.02347, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:18:12
+	Epoch[86/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19016, erVal:0.00030, erWeak:0.02425, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:18:25, V
+	Epoch[87/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.17616, erVal:0.00034, erWeak:0.02364, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:18:38
+	Epoch[88/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19704, erVal:0.00034, erWeak:0.02183, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:18:51
+	Epoch[89/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.17726, erVal:0.00039, erWeak:0.02302, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:19:04
+	Epoch[90/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.17682, erVal:0.00035, erWeak:0.02163, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:19:17
+	Epoch[91/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19101, erVal:0.00036, erWeak:0.02192, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:19:30
+	Epoch[92/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18349, erVal:0.00034, erWeak:0.02209, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:19:42
+	Epoch[93/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18215, erVal:0.00035, erWeak:0.02256, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:19:55
+	Epoch[94/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19214, erVal:0.00033, erWeak:0.02413, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:20:07
+	Epoch[95/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.17685, erVal:0.00037, erWeak:0.02284, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:20:20
+	Epoch[96/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.17660, erVal:0.00035, erWeak:0.02249, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:20:33
+	Epoch[97/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19684, erVal:0.00042, erWeak:0.02245, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:20:45
+	Epoch[98/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.17708, erVal:0.00029, erWeak:0.02286, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:20:58, V
+	Epoch[99/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18527, erVal:0.00043, erWeak:0.02337, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:21:11
+	Epoch[100/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18989, erVal:0.00030, erWeak:0.02205, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:21:24
+	Epoch[101/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.17615, erVal:0.00032, erWeak:0.02253, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:21:36
+	Epoch[102/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18220, erVal:0.00030, erWeak:0.02150, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:21:49
+	Epoch[103/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19210, erVal:0.00034, erWeak:0.02240, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:22:02
+	Epoch[104/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.17683, erVal:0.00038, erWeak:0.02281, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:22:15
+	Epoch[105/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19101, erVal:0.00039, erWeak:0.02191, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:22:27
+	Epoch[106/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18348, erVal:0.00046, erWeak:0.02221, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:22:40
+	Epoch[107/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.17604, erVal:0.00031, erWeak:0.02123, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:22:52
+	Epoch[108/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18507, erVal:0.00048, erWeak:0.02279, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:23:05
+	Epoch[109/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19018, erVal:0.00038, erWeak:0.02023, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:23:18
+	Epoch[110/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.17612, erVal:0.00032, erWeak:0.02232, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:23:30
+	Epoch[111/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19705, erVal:0.00037, erWeak:0.02278, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:23:43
+	Epoch[112/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.17725, erVal:0.00033, erWeak:0.02192, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:23:56
+	Epoch[113/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.17684, erVal:0.00041, erWeak:0.02305, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:24:08
+	Epoch[114/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19101, erVal:0.00029, erWeak:0.02305, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:24:21
+	Epoch[115/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18349, erVal:0.00030, erWeak:0.02170, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:24:34
+	Epoch[116/200]:loss_c:0.13294, loss_p:0.13295, erTrain:0.18216, erVal:0.00037, erWeak:0.02144, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:24:46
+	Epoch[117/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19211, erVal:0.00028, erWeak:0.02253, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:24:59, V
+	Epoch[118/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.17682, erVal:0.00026, erWeak:0.02219, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:25:11, V
+	Epoch[119/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.17662, erVal:0.00042, erWeak:0.02195, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:25:24
+	Epoch[120/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19686, erVal:0.00039, erWeak:0.02235, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:25:37
+	Epoch[121/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.17707, erVal:0.00025, erWeak:0.02324, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:25:49, V
+	Epoch[122/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18525, erVal:0.00033, erWeak:0.02280, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:26:02
+	Epoch[123/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18988, erVal:0.00034, erWeak:0.02316, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:26:15
+	Epoch[124/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.17611, erVal:0.00042, erWeak:0.02312, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:26:28
+	Epoch[125/200]:loss_c:0.13296, loss_p:0.13295, erTrain:0.18226, erVal:0.00035, erWeak:0.02156, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:26:40
+	Epoch[126/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19213, erVal:0.00035, erWeak:0.02253, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:26:53
+	Epoch[127/200]:loss_c:0.13294, loss_p:0.13295, erTrain:0.17682, erVal:0.00033, erWeak:0.02224, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:27:06
+	Epoch[128/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19098, erVal:0.00047, erWeak:0.02239, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:27:19
+	Epoch[129/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18347, erVal:0.00039, erWeak:0.02272, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:27:31
+	Epoch[130/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.17603, erVal:0.00035, erWeak:0.02265, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:27:44
+	Epoch[131/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18508, erVal:0.00041, erWeak:0.02153, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:27:57
+	Epoch[132/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19012, erVal:0.00031, erWeak:0.02274, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:28:10
+	Epoch[133/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.17609, erVal:0.00032, erWeak:0.02171, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:28:23
+	Epoch[134/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19703, erVal:0.00031, erWeak:0.02174, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:28:35
+	Epoch[135/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.17724, erVal:0.00042, erWeak:0.01937, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:28:48
+	Epoch[136/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.17687, erVal:0.00028, erWeak:0.02205, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:29:00
+	Epoch[137/200]:loss_c:0.13296, loss_p:0.13295, erTrain:0.19101, erVal:0.00038, erWeak:0.01551, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:29:13
+	Epoch[138/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18351, erVal:0.00031, erWeak:0.01696, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:29:26
+	Epoch[139/200]:loss_c:0.13294, loss_p:0.13295, erTrain:0.18215, erVal:0.00032, erWeak:0.01461, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:29:39
+	Epoch[140/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19214, erVal:0.00033, erWeak:0.01243, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:29:52
+	Epoch[141/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.17681, erVal:0.00029, erWeak:0.01228, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:30:05
+	Epoch[142/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.17657, erVal:0.00041, erWeak:0.01255, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:30:17
+	Epoch[143/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19692, erVal:0.00029, erWeak:0.01213, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:30:30
+	Epoch[144/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.17708, erVal:0.00040, erWeak:0.01367, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:30:43
+	Epoch[145/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18523, erVal:0.00026, erWeak:0.01253, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:30:55
+	Epoch[146/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18986, erVal:0.00034, erWeak:0.01160, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:31:08
+	Epoch[147/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.17611, erVal:0.00030, erWeak:0.01117, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:31:21
+	Epoch[148/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18222, erVal:0.00034, erWeak:0.01162, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:31:33
+	Epoch[149/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19213, erVal:0.00032, erWeak:0.01108, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:31:46
+	Epoch[150/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.17681, erVal:0.00041, erWeak:0.01221, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:31:59
+	Epoch[151/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19098, erVal:0.00033, erWeak:0.01120, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:32:12
+	Epoch[152/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18346, erVal:0.00032, erWeak:0.01174, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:32:24
+	Epoch[153/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.17604, erVal:0.00030, erWeak:0.01121, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:32:37
+	Epoch[154/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18505, erVal:0.00035, erWeak:0.01109, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:32:49
+	Epoch[155/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19015, erVal:0.00041, erWeak:0.01231, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:33:02
+	Epoch[156/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.17613, erVal:0.00028, erWeak:0.01211, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:33:15
+	Epoch[157/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19703, erVal:0.00050, erWeak:0.01107, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:33:28
+	Epoch[158/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.17721, erVal:0.00030, erWeak:0.01193, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:33:41
+	Epoch[159/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.17681, erVal:0.00031, erWeak:0.01112, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:33:53
+	Epoch[160/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19101, erVal:0.00031, erWeak:0.01127, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:34:06
+	Epoch[161/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18348, erVal:0.00032, erWeak:0.01200, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:34:18
+	Epoch[162/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18213, erVal:0.00024, erWeak:0.01129, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:34:31, V
+	Epoch[163/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19211, erVal:0.00037, erWeak:0.01080, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:34:44
+	Epoch[164/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.17685, erVal:0.00040, erWeak:0.01215, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:34:57
+	Epoch[165/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.17656, erVal:0.00032, erWeak:0.01184, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:35:09
+	Epoch[166/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19685, erVal:0.00033, erWeak:0.01171, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:35:22
+	Epoch[167/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.17704, erVal:0.00045, erWeak:0.01177, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:35:36
+	Epoch[168/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18524, erVal:0.00030, erWeak:0.01172, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:35:48
+	Epoch[169/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18989, erVal:0.00030, erWeak:0.01218, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:36:01
+	Epoch[170/200]:loss_c:0.13294, loss_p:0.13295, erTrain:0.17610, erVal:0.00035, erWeak:0.01203, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:36:14
+	Epoch[171/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18222, erVal:0.00034, erWeak:0.01155, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:36:26
+	Epoch[172/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19212, erVal:0.00040, erWeak:0.01231, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:36:39
+	Epoch[173/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.17680, erVal:0.00030, erWeak:0.01198, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:36:52
+	Epoch[174/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19095, erVal:0.00033, erWeak:0.01131, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:37:05
+	Epoch[175/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18351, erVal:0.00039, erWeak:0.01076, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:37:18
+	Epoch[176/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.17602, erVal:0.00026, erWeak:0.01171, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:37:31
+	Epoch[177/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18504, erVal:0.00034, erWeak:0.01119, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:37:44
+	Epoch[178/200]:loss_c:0.13294, loss_p:0.13295, erTrain:0.19014, erVal:0.00029, erWeak:0.01115, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:37:57
+	Epoch[179/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.17613, erVal:0.00027, erWeak:0.01274, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:38:10
+	Epoch[180/200]:loss_c:0.13294, loss_p:0.13295, erTrain:0.19703, erVal:0.00027, erWeak:0.01213, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:38:23
+	Epoch[181/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.17721, erVal:0.00029, erWeak:0.01056, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:38:36
+	Epoch[182/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.17681, erVal:0.00029, erWeak:0.01213, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:38:49
+	Epoch[183/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19098, erVal:0.00032, erWeak:0.01156, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:39:01
+	Epoch[184/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18350, erVal:0.00034, erWeak:0.01271, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:39:14
+	Epoch[185/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18214, erVal:0.00031, erWeak:0.01205, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:39:27
+	Epoch[186/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19210, erVal:0.00034, erWeak:0.01119, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:39:39
+	Epoch[187/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.17681, erVal:0.00032, erWeak:0.01145, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:39:51
+	Epoch[188/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.17655, erVal:0.00028, erWeak:0.01124, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:40:04
+	Epoch[189/200]:loss_c:0.13294, loss_p:0.13295, erTrain:0.19683, erVal:0.00030, erWeak:0.01015, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:40:17
+	Epoch[190/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.17709, erVal:0.00038, erWeak:0.01205, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:40:30
+	Epoch[191/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18522, erVal:0.00043, erWeak:0.01173, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:40:42
+	Epoch[192/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18989, erVal:0.00033, erWeak:0.01231, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:40:55
+	Epoch[193/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.17606, erVal:0.00033, erWeak:0.01116, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:41:07
+	Epoch[194/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18219, erVal:0.00043, erWeak:0.01102, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:41:20
+	Epoch[195/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19209, erVal:0.00035, erWeak:0.01019, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:41:33
+	Epoch[196/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.17685, erVal:0.00036, erWeak:0.01057, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:41:46
+	Epoch[197/200]:loss_c:0.13294, loss_p:0.13295, erTrain:0.19096, erVal:0.00030, erWeak:0.01048, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:41:58
+	Epoch[198/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18345, erVal:0.00027, erWeak:0.01004, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:42:11
+	Epoch[199/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.17601, erVal:0.00027, erWeak:0.00998, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:42:24
+	Epoch[200/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18508, erVal:0.00034, erWeak:0.00987, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:42:37
+Done balancing: epoch 162, best_val_err=0.00024, best_weak_er=0.00987, run time 00:42:37
+Saved to: ./HTRU_2_16107_9/BalQ1_6_6_1800/bal_coreset_1800_rep_0.pt
+Loss post training:
+	C(torch.Tensor,s=torch.Size([1800, 9]),dtype=torch.float64,trainable=False,is_cuda=False): [[0.48, -0.77, -0.32, -0.15, -0.36, -0.34, 0.03, -0.21, -1.0], [0.17, 0.36, -0.28, -0.3, -0.35, -0.5 ...too long
+	U(torch.Tensor,s=torch.Size([1800]),dtype=torch.float64,trainable=False,is_cuda=False): [8.95, 8.95, 8.95, 8.95, 8.95, 8.95, 8.95, 8.95, 8.95, 8.95, 8.95, 8.95, 8.95, 8.95, 8.95, 8.95, 8.9 ...too long
+	loss(A,C,U,Q_train):|Q|=10000, loss_c=0.133, loss_p=0.133, error=0.00024(max=0.00369) (std=0.000)
+	loss(A,C,U,Q_val  ):|Q|=2000, loss_c=0.128, loss_p=0.128, error=0.00024(max=0.00308) (std=0.000)
+	loss(A,C,U,testQ  ):|Q|=1000, loss_c=0.126, loss_p=0.126, error=0.00025(max=0.00628) (std=0.000)
+	Weak test(post): f(A,lc)=0.05559, f(A,la)=0.05497, error=0.01129
+	ending sum weights:
+		sum(W)=16107
+		sum(U)=16107.353254934183
+-------------------------------------------------------------------------------- rep 0 time 00:42:55
+-------------------------------------------------------------------------------- rep 1
+	starting sum weights:
+		sum(W)=16107
+		sum(U)=16107.000732421875
+Balance params: epochs 200, batch_size 100, total batches 100, base_lr 0.001
+Loss before training:
+	trainQ(torch.Tensor,s=torch.Size([10000, 9, 1]),dtype=torch.float64,trainable=False,is_cuda=False): [[[0.34], [0.09], [1.89], [0.11], [-0.24], [0.24], [-0.12], [-0.01], [-1.33]], [[0.31], [0.11], [1.7 ...too long
+	A(torch.Tensor,s=torch.Size([16107, 9]),dtype=torch.float64,trainable=False,is_cuda=False): [[0.03, 0.23, -0.24, -0.3, -0.38, -0.74, 1.14, 1.2, -1.0], [-1.26, -1.4, 0.25, 0.23, -0.17, 0.42, -0 ...too long
+	C(torch.Tensor,s=torch.Size([1800, 9]),dtype=torch.float64,trainable=True,is_cuda=False): [[1.27, -0.22, -0.67, -0.18, -0.35, -0.72, 0.44, 0.54, -1.0], [0.16, 0.63, -0.33, -0.31, -0.37, -0.4 ...too long
+	U(torch.Tensor,s=torch.Size([1800]),dtype=torch.float64,trainable=True,is_cuda=False): [8.95, 8.95, 8.95, 8.95, 8.95, 8.95, 8.95, 8.95, 8.95, 8.95, 8.95, 8.95, 8.95, 8.95, 8.95, 8.95, 8.9 ...too long
+	loss(A,C,U,Q_train):|Q|=10000, loss_c=0.128, loss_p=0.133, error=0.06157(max=0.14552) (std=0.021)
+	valQ(torch.Tensor,s=torch.Size([2000, 9, 1]),dtype=torch.float64,trainable=False,is_cuda=False): [[[-0.22], [0.1], [1.29], [-0.0], [-0.34], [0.37], [-0.2], [0.07], [-1.63]], [[0.33], [0.13], [1.65] ...too long
+	loss(A,C,U,Q_val  ):|Q|=2000, loss_c=0.123, loss_p=0.128, error=0.06208(max=0.14584) (std=0.021)
+	testQ(torch.Tensor,s=torch.Size([1000, 9, 1]),dtype=torch.float64,trainable=False,is_cuda=False): [[[-0.32], [0.1], [1.18], [-0.05], [-0.42], [0.43], [-0.22], [0.06], [-1.71]], [[-0.97], [-0.61], [- ...too long
+	loss(A,C,U,testQ  ):|Q|=1000, loss_c=0.121, loss_p=0.126, error=0.06176(max=0.14433) (std=0.021)
+	Weak test(pre): f(A,lc)=0.05702, f(A,la)=0.05497, error=0.03730
+build_1_bal_SGD_coreset(size=1800):
+	optimizer = Adam (Parameter Group 0 amsgrad: False betas: (0.9, 0.999) eps: 1e-08 lr: 0.001 weight_decay: 0), |trainable_vars| = 2
+	Epoch[1/200]:loss_c:0.13220, loss_p:0.13295, erTrain:0.24508, erVal:0.00287, erWeak:0.04297, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:00:12, V
+	Epoch[2/200]:loss_c:0.13290, loss_p:0.13295, erTrain:0.20040, erVal:0.00104, erWeak:0.03045, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:00:25, V
+	Epoch[3/200]:loss_c:0.13293, loss_p:0.13295, erTrain:0.17793, erVal:0.00083, erWeak:0.03025, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:00:37, V
+	Epoch[4/200]:loss_c:0.13293, loss_p:0.13295, erTrain:0.19875, erVal:0.00069, erWeak:0.03055, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:00:50, V
+	Epoch[5/200]:loss_c:0.13293, loss_p:0.13295, erTrain:0.18508, erVal:0.00065, erWeak:0.02865, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:01:03, V
+	Epoch[6/200]:loss_c:0.13294, loss_p:0.13295, erTrain:0.19351, erVal:0.00048, erWeak:0.02934, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:01:16, V
+	Epoch[7/200]:loss_c:0.13294, loss_p:0.13295, erTrain:0.17774, erVal:0.00062, erWeak:0.02894, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:01:28
+	Epoch[8/200]:loss_c:0.13294, loss_p:0.13295, erTrain:0.19938, erVal:0.00053, erWeak:0.02757, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:01:41
+	Epoch[9/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19232, erVal:0.00044, erWeak:0.02719, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:01:53, V
+	Epoch[10/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18483, erVal:0.00048, erWeak:0.02726, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:02:06
+	Epoch[11/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18582, erVal:0.00037, erWeak:0.02790, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:02:18, V
+	Epoch[12/200]:loss_c:0.13296, loss_p:0.13295, erTrain:0.19128, erVal:0.00048, erWeak:0.02808, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:02:31
+	Epoch[13/200]:loss_c:0.13296, loss_p:0.13295, erTrain:0.19900, erVal:0.00041, erWeak:0.02803, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:02:43
+	Epoch[14/200]:loss_c:0.13296, loss_p:0.13295, erTrain:0.17738, erVal:0.00034, erWeak:0.02997, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:02:56, V
+	Epoch[15/200]:loss_c:0.13297, loss_p:0.13295, erTrain:0.19838, erVal:0.00049, erWeak:0.02839, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:03:09
+	Epoch[16/200]:loss_c:0.13296, loss_p:0.13295, erTrain:0.18489, erVal:0.00036, erWeak:0.02986, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:03:22
+	Epoch[17/200]:loss_c:0.13296, loss_p:0.13295, erTrain:0.19340, erVal:0.00046, erWeak:0.02989, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:03:34
+	Epoch[18/200]:loss_c:0.13297, loss_p:0.13295, erTrain:0.17767, erVal:0.00046, erWeak:0.02992, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:03:47
+	Epoch[19/200]:loss_c:0.13296, loss_p:0.13295, erTrain:0.19925, erVal:0.00039, erWeak:0.02945, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:04:00
+	Epoch[20/200]:loss_c:0.13296, loss_p:0.13295, erTrain:0.19221, erVal:0.00043, erWeak:0.02789, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:04:13
+	Epoch[21/200]:loss_c:0.13296, loss_p:0.13295, erTrain:0.18473, erVal:0.00050, erWeak:0.02800, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:04:26
+	Epoch[22/200]:loss_c:0.13296, loss_p:0.13295, erTrain:0.18574, erVal:0.00032, erWeak:0.02835, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:04:43, V
+	Epoch[23/200]:loss_c:0.13296, loss_p:0.13295, erTrain:0.19113, erVal:0.00041, erWeak:0.02789, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:04:58
+	Epoch[24/200]:loss_c:0.13296, loss_p:0.13295, erTrain:0.19897, erVal:0.00038, erWeak:0.02824, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:05:11
+	Epoch[25/200]:loss_c:0.13296, loss_p:0.13295, erTrain:0.17741, erVal:0.00067, erWeak:0.02752, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:05:24
+	Epoch[26/200]:loss_c:0.13296, loss_p:0.13295, erTrain:0.19847, erVal:0.00034, erWeak:0.02780, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:05:37
+	Epoch[27/200]:loss_c:0.13296, loss_p:0.13295, erTrain:0.18490, erVal:0.00035, erWeak:0.02794, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:05:49
+	Epoch[28/200]:loss_c:0.13296, loss_p:0.13295, erTrain:0.19334, erVal:0.00038, erWeak:0.02761, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:06:02
+	Epoch[29/200]:loss_c:0.13296, loss_p:0.13295, erTrain:0.17762, erVal:0.00045, erWeak:0.02755, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:06:15
+	Epoch[30/200]:loss_c:0.13296, loss_p:0.13295, erTrain:0.19921, erVal:0.00032, erWeak:0.02776, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:06:27
+	Epoch[31/200]:loss_c:0.13296, loss_p:0.13295, erTrain:0.19223, erVal:0.00057, erWeak:0.02774, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:06:40
+	Epoch[32/200]:loss_c:0.13296, loss_p:0.13295, erTrain:0.18478, erVal:0.00031, erWeak:0.02780, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:06:53, V
+	Epoch[33/200]:loss_c:0.13296, loss_p:0.13295, erTrain:0.18572, erVal:0.00044, erWeak:0.02770, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:07:05
+	Epoch[34/200]:loss_c:0.13296, loss_p:0.13295, erTrain:0.19112, erVal:0.00032, erWeak:0.02783, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:07:18
+	Epoch[35/200]:loss_c:0.13296, loss_p:0.13295, erTrain:0.19891, erVal:0.00049, erWeak:0.02804, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:07:30
+	Epoch[36/200]:loss_c:0.13296, loss_p:0.13295, erTrain:0.17733, erVal:0.00038, erWeak:0.02766, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:07:43
+	Epoch[37/200]:loss_c:0.13296, loss_p:0.13295, erTrain:0.19834, erVal:0.00030, erWeak:0.02843, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:07:56, V
+	Epoch[38/200]:loss_c:0.13296, loss_p:0.13295, erTrain:0.18486, erVal:0.00039, erWeak:0.02838, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:08:09
+	Epoch[39/200]:loss_c:0.13296, loss_p:0.13295, erTrain:0.19334, erVal:0.00041, erWeak:0.02942, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:08:22
+	Epoch[40/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.17766, erVal:0.00027, erWeak:0.02917, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:08:35, V
+	Epoch[41/200]:loss_c:0.13296, loss_p:0.13295, erTrain:0.19916, erVal:0.00030, erWeak:0.03016, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:08:47
+	Epoch[42/200]:loss_c:0.13296, loss_p:0.13295, erTrain:0.19220, erVal:0.00057, erWeak:0.02907, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:09:00
+	Epoch[43/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18468, erVal:0.00039, erWeak:0.02880, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:09:13
+	Epoch[44/200]:loss_c:0.13296, loss_p:0.13295, erTrain:0.18573, erVal:0.00036, erWeak:0.02871, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:09:25
+	Epoch[45/200]:loss_c:0.13296, loss_p:0.13295, erTrain:0.19113, erVal:0.00039, erWeak:0.02837, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:09:38
+	Epoch[46/200]:loss_c:0.13296, loss_p:0.13295, erTrain:0.19888, erVal:0.00036, erWeak:0.02802, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:09:51
+	Epoch[47/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.17734, erVal:0.00033, erWeak:0.02768, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:10:03
+	Epoch[48/200]:loss_c:0.13296, loss_p:0.13295, erTrain:0.19834, erVal:0.00038, erWeak:0.02897, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:10:16
+	Epoch[49/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18486, erVal:0.00029, erWeak:0.02791, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:10:28
+	Epoch[50/200]:loss_c:0.13296, loss_p:0.13295, erTrain:0.19330, erVal:0.00035, erWeak:0.02805, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:10:41
+	Epoch[51/200]:loss_c:0.13296, loss_p:0.13295, erTrain:0.17763, erVal:0.00026, erWeak:0.02779, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:10:54, V
+	Epoch[52/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19917, erVal:0.00030, erWeak:0.02698, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:11:06
+	Epoch[53/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19221, erVal:0.00033, erWeak:0.02733, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:11:19
+	Epoch[54/200]:loss_c:0.13296, loss_p:0.13295, erTrain:0.18473, erVal:0.00036, erWeak:0.02745, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:11:31
+	Epoch[55/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18567, erVal:0.00035, erWeak:0.02679, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:11:44
+	Epoch[56/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19109, erVal:0.00026, erWeak:0.02809, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:11:56
+	Epoch[57/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19889, erVal:0.00063, erWeak:0.02737, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:12:09
+	Epoch[58/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.17739, erVal:0.00041, erWeak:0.02883, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:12:22
+	Epoch[59/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19836, erVal:0.00040, erWeak:0.02741, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:12:35
+	Epoch[60/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18488, erVal:0.00036, erWeak:0.02912, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:12:48
+	Epoch[61/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19333, erVal:0.00026, erWeak:0.02701, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:13:00
+	Epoch[62/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.17760, erVal:0.00038, erWeak:0.02724, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:13:13
+	Epoch[63/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19928, erVal:0.00047, erWeak:0.02740, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:13:25
+	Epoch[64/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19220, erVal:0.00028, erWeak:0.02684, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:13:37
+	Epoch[65/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18465, erVal:0.00038, erWeak:0.02768, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:13:50
+	Epoch[66/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18564, erVal:0.00037, erWeak:0.02718, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:14:03
+	Epoch[67/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19117, erVal:0.00041, erWeak:0.02767, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:14:16
+	Epoch[68/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19892, erVal:0.00038, erWeak:0.02810, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:14:28
+	Epoch[69/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.17734, erVal:0.00037, erWeak:0.02700, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:14:41
+	Epoch[70/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19846, erVal:0.00039, erWeak:0.02727, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:14:53
+	Epoch[71/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18480, erVal:0.00040, erWeak:0.02720, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:15:06
+	Epoch[72/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19344, erVal:0.00033, erWeak:0.02762, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:15:19
+	Epoch[73/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.17760, erVal:0.00040, erWeak:0.02773, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:15:32
+	Epoch[74/200]:loss_c:0.13296, loss_p:0.13295, erTrain:0.19918, erVal:0.00031, erWeak:0.02804, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:15:44
+	Epoch[75/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19213, erVal:0.00031, erWeak:0.02723, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:15:57
+	Epoch[76/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18469, erVal:0.00038, erWeak:0.02743, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:16:10
+	Epoch[77/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18567, erVal:0.00030, erWeak:0.02734, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:16:22
+	Epoch[78/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19110, erVal:0.00044, erWeak:0.02673, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:16:35
+	Epoch[79/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19887, erVal:0.00045, erWeak:0.02705, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:16:48
+	Epoch[80/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.17729, erVal:0.00027, erWeak:0.02719, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:17:00
+	Epoch[81/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19839, erVal:0.00039, erWeak:0.02719, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:17:13
+	Epoch[82/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18482, erVal:0.00061, erWeak:0.02729, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:17:26
+	Epoch[83/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19344, erVal:0.00034, erWeak:0.02722, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:17:38
+	Epoch[84/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.17763, erVal:0.00031, erWeak:0.02729, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:17:51
+	Epoch[85/200]:loss_c:0.13296, loss_p:0.13295, erTrain:0.19915, erVal:0.00045, erWeak:0.02751, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:18:04
+	Epoch[86/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19218, erVal:0.00043, erWeak:0.02740, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:18:17
+	Epoch[87/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18465, erVal:0.00029, erWeak:0.02710, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:18:30
+	Epoch[88/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18571, erVal:0.00025, erWeak:0.02738, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:18:42, V
+	Epoch[89/200]:loss_c:0.13296, loss_p:0.13295, erTrain:0.19111, erVal:0.00029, erWeak:0.02739, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:18:55
+	Epoch[90/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19887, erVal:0.00033, erWeak:0.02779, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:19:08
+	Epoch[91/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.17728, erVal:0.00032, erWeak:0.02748, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:19:21
+	Epoch[92/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19830, erVal:0.00029, erWeak:0.02721, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:19:33
+	Epoch[93/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18480, erVal:0.00046, erWeak:0.02732, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:19:46
+	Epoch[94/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19335, erVal:0.00029, erWeak:0.02726, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:19:59
+	Epoch[95/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.17761, erVal:0.00030, erWeak:0.02719, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:20:11
+	Epoch[96/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19920, erVal:0.00029, erWeak:0.02768, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:20:24
+	Epoch[97/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19219, erVal:0.00049, erWeak:0.02770, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:20:37
+	Epoch[98/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18469, erVal:0.00030, erWeak:0.02749, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:20:49
+	Epoch[99/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18562, erVal:0.00027, erWeak:0.02769, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:21:02
+	Epoch[100/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19108, erVal:0.00030, erWeak:0.02761, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:21:15
+	Epoch[101/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19895, erVal:0.00025, erWeak:0.02756, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:21:27
+	Epoch[102/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.17728, erVal:0.00031, erWeak:0.02766, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:21:40
+	Epoch[103/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19832, erVal:0.00100, erWeak:0.02762, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:21:52
+	Epoch[104/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18480, erVal:0.00025, erWeak:0.02690, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:22:04
+	Epoch[105/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19330, erVal:0.00039, erWeak:0.02751, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:22:17
+	Epoch[106/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.17759, erVal:0.00043, erWeak:0.02760, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:22:30
+	Epoch[107/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19917, erVal:0.00036, erWeak:0.02717, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:22:43
+	Epoch[108/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19221, erVal:0.00033, erWeak:0.02754, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:22:55
+	Epoch[109/200]:loss_c:0.13294, loss_p:0.13295, erTrain:0.18463, erVal:0.00029, erWeak:0.02763, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:23:08
+	Epoch[110/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18570, erVal:0.00034, erWeak:0.02716, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:23:20
+	Epoch[111/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19109, erVal:0.00035, erWeak:0.02739, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:23:33
+	Epoch[112/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19891, erVal:0.00029, erWeak:0.02739, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:23:45
+	Epoch[113/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.17740, erVal:0.00033, erWeak:0.02735, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:23:58
+	Epoch[114/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19830, erVal:0.00037, erWeak:0.02747, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:24:10
+	Epoch[115/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18480, erVal:0.00029, erWeak:0.02717, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:24:23
+	Epoch[116/200]:loss_c:0.13294, loss_p:0.13295, erTrain:0.19332, erVal:0.00047, erWeak:0.02724, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:24:36
+	Epoch[117/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.17754, erVal:0.00030, erWeak:0.02715, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:24:48
+	Epoch[118/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19916, erVal:0.00039, erWeak:0.02736, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:25:01
+	Epoch[119/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19227, erVal:0.00076, erWeak:0.02706, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:25:14
+	Epoch[120/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18478, erVal:0.00032, erWeak:0.02708, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:25:27
+	Epoch[121/200]:loss_c:0.13294, loss_p:0.13295, erTrain:0.18564, erVal:0.00042, erWeak:0.02721, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:25:39
+	Epoch[122/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19116, erVal:0.00056, erWeak:0.02703, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:25:52
+	Epoch[123/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19893, erVal:0.00034, erWeak:0.02710, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:26:04
+	Epoch[124/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.17728, erVal:0.00029, erWeak:0.02711, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:26:17
+	Epoch[125/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19828, erVal:0.00025, erWeak:0.02731, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:26:30
+	Epoch[126/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18484, erVal:0.00029, erWeak:0.02714, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:26:43
+	Epoch[127/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19327, erVal:0.00032, erWeak:0.02714, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:26:55
+	Epoch[128/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.17761, erVal:0.00033, erWeak:0.02709, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:27:08
+	Epoch[129/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19915, erVal:0.00037, erWeak:0.02716, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:27:21
+	Epoch[130/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19221, erVal:0.00043, erWeak:0.02717, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:27:34
+	Epoch[131/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18465, erVal:0.00026, erWeak:0.02711, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:27:47
+	Epoch[132/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18567, erVal:0.00034, erWeak:0.02709, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:27:59
+	Epoch[133/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19112, erVal:0.00053, erWeak:0.02716, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:28:12
+	Epoch[134/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19899, erVal:0.00023, erWeak:0.02709, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:28:24, V
+	Epoch[135/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.17731, erVal:0.00031, erWeak:0.02698, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:28:37
+	Epoch[136/200]:loss_c:0.13296, loss_p:0.13295, erTrain:0.19833, erVal:0.00028, erWeak:0.02720, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:28:50
+	Epoch[137/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18481, erVal:0.00031, erWeak:0.02705, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:29:03
+	Epoch[138/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19331, erVal:0.00027, erWeak:0.02702, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:29:16
+	Epoch[139/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.17761, erVal:0.00032, erWeak:0.02702, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:29:29
+	Epoch[140/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19915, erVal:0.00032, erWeak:0.02700, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:29:41
+	Epoch[141/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19218, erVal:0.00030, erWeak:0.02701, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:29:54
+	Epoch[142/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18466, erVal:0.00033, erWeak:0.02686, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:30:07
+	Epoch[143/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18565, erVal:0.00032, erWeak:0.02683, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:30:19
+	Epoch[144/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19110, erVal:0.00037, erWeak:0.02678, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:30:32
+	Epoch[145/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19897, erVal:0.00023, erWeak:0.02675, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:30:45
+	Epoch[146/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.17730, erVal:0.00035, erWeak:0.02673, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:30:57
+	Epoch[147/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19834, erVal:0.00030, erWeak:0.02678, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:31:10
+	Epoch[148/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18482, erVal:0.00027, erWeak:0.02685, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:31:23
+	Epoch[149/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19341, erVal:0.00038, erWeak:0.02691, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:31:36
+	Epoch[150/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.17760, erVal:0.00027, erWeak:0.02684, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:31:49
+	Epoch[151/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19911, erVal:0.00042, erWeak:0.02672, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:32:01
+	Epoch[152/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19221, erVal:0.00028, erWeak:0.02677, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:32:14
+	Epoch[153/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18467, erVal:0.00027, erWeak:0.02673, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:32:27
+	Epoch[154/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18563, erVal:0.00026, erWeak:0.02673, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:32:39
+	Epoch[155/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19110, erVal:0.00036, erWeak:0.02675, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:32:52
+	Epoch[156/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19892, erVal:0.00038, erWeak:0.02656, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:33:04
+	Epoch[157/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.17735, erVal:0.00026, erWeak:0.02656, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:33:17
+	Epoch[158/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19833, erVal:0.00023, erWeak:0.02662, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:33:30
+	Epoch[159/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18479, erVal:0.00031, erWeak:0.02663, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:33:43
+	Epoch[160/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19331, erVal:0.00035, erWeak:0.02662, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:33:55
+	Epoch[161/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.17758, erVal:0.00028, erWeak:0.02681, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:34:08
+	Epoch[162/200]:loss_c:0.13296, loss_p:0.13295, erTrain:0.19914, erVal:0.00028, erWeak:0.02667, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:34:21
+	Epoch[163/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19215, erVal:0.00041, erWeak:0.02685, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:34:34
+	Epoch[164/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18471, erVal:0.00025, erWeak:0.02677, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:34:47
+	Epoch[165/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18570, erVal:0.00041, erWeak:0.02663, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:34:59
+	Epoch[166/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19109, erVal:0.00040, erWeak:0.02683, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:35:12
+	Epoch[167/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19894, erVal:0.00056, erWeak:0.02667, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:35:24
+	Epoch[168/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.17737, erVal:0.00028, erWeak:0.02664, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:35:37
+	Epoch[169/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19830, erVal:0.00039, erWeak:0.02668, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:35:50
+	Epoch[170/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18482, erVal:0.00030, erWeak:0.02673, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:36:02
+	Epoch[171/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19330, erVal:0.00028, erWeak:0.02669, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:36:15
+	Epoch[172/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.17764, erVal:0.00042, erWeak:0.02658, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:36:28
+	Epoch[173/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19915, erVal:0.00047, erWeak:0.02667, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:36:40
+	Epoch[174/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19218, erVal:0.00024, erWeak:0.02672, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:36:53
+	Epoch[175/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18463, erVal:0.00029, erWeak:0.02674, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:37:06
+	Epoch[176/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18563, erVal:0.00032, erWeak:0.02670, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:37:18
+	Epoch[177/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19110, erVal:0.00031, erWeak:0.02678, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:37:31
+	Epoch[178/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19893, erVal:0.00039, erWeak:0.02678, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:37:44
+	Epoch[179/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.17728, erVal:0.00045, erWeak:0.02676, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:37:57
+	Epoch[180/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19831, erVal:0.00046, erWeak:0.02663, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:38:10
+	Epoch[181/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18479, erVal:0.00035, erWeak:0.02665, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:38:23
+	Epoch[182/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19331, erVal:0.00033, erWeak:0.02661, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:38:36
+	Epoch[183/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.17760, erVal:0.00026, erWeak:0.02665, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:38:48
+	Epoch[184/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19916, erVal:0.00032, erWeak:0.02671, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:39:01
+	Epoch[185/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19218, erVal:0.00023, erWeak:0.02669, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:39:14
+	Epoch[186/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18465, erVal:0.00046, erWeak:0.02659, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:39:26
+	Epoch[187/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18568, erVal:0.00023, erWeak:0.02676, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:39:39
+	Epoch[188/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19108, erVal:0.00038, erWeak:0.02655, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:39:51
+	Epoch[189/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19891, erVal:0.00026, erWeak:0.02652, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:40:04
+	Epoch[190/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.17728, erVal:0.00042, erWeak:0.02673, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:40:17
+	Epoch[191/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19841, erVal:0.00038, erWeak:0.02647, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:40:29
+	Epoch[192/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18480, erVal:0.00033, erWeak:0.02653, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:40:42
+	Epoch[193/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19333, erVal:0.00025, erWeak:0.02660, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:40:54
+	Epoch[194/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.17758, erVal:0.00034, erWeak:0.02641, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:41:07
+	Epoch[195/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19916, erVal:0.00038, erWeak:0.02647, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:41:20
+	Epoch[196/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19220, erVal:0.00037, erWeak:0.02656, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:41:32
+	Epoch[197/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18473, erVal:0.00040, erWeak:0.02659, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:41:45
+	Epoch[198/200]:loss_c:0.13296, loss_p:0.13295, erTrain:0.18562, erVal:0.00026, erWeak:0.02658, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:41:58
+	Epoch[199/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19111, erVal:0.00026, erWeak:0.02659, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:42:11
+	Epoch[200/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19893, erVal:0.00038, erWeak:0.02655, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:42:23
+Done balancing: epoch 134, best_val_err=0.00023, best_weak_er=0.02641, run time 00:42:23
+Saved to: ./HTRU_2_16107_9/BalQ1_6_6_1800/bal_coreset_1800_rep_1.pt
+Loss post training:
+	C(torch.Tensor,s=torch.Size([1800, 9]),dtype=torch.float64,trainable=False,is_cuda=False): [[1.33, -0.24, -0.67, -0.19, -0.38, -0.72, 0.46, 0.55, -1.0], [0.19, 0.66, -0.28, -0.31, -0.36, -0.4 ...too long
+	U(torch.Tensor,s=torch.Size([1800]),dtype=torch.float64,trainable=False,is_cuda=False): [8.95, 8.95, 8.95, 8.95, 8.95, 8.95, 8.95, 8.95, 8.95, 8.95, 8.95, 8.95, 8.95, 8.95, 8.95, 8.95, 8.9 ...too long
+	loss(A,C,U,Q_train):|Q|=10000, loss_c=0.133, loss_p=0.133, error=0.00023(max=0.00610) (std=0.000)
+	loss(A,C,U,Q_val  ):|Q|=2000, loss_c=0.128, loss_p=0.128, error=0.00023(max=0.00641) (std=0.000)
+	loss(A,C,U,testQ  ):|Q|=1000, loss_c=0.126, loss_p=0.126, error=0.00023(max=0.01167) (std=0.001)
+	Weak test(post): f(A,lc)=0.05646, f(A,la)=0.05497, error=0.02709
+	ending sum weights:
+		sum(W)=16107
+		sum(U)=16107.131584243078
+-------------------------------------------------------------------------------- rep 1 time 00:42:39
+-------------------------------------------------------------------------------- rep 2
+	starting sum weights:
+		sum(W)=16107
+		sum(U)=16107.000732421875
+Balance params: epochs 200, batch_size 100, total batches 100, base_lr 0.001
+Loss before training:
+	trainQ(torch.Tensor,s=torch.Size([10000, 9, 1]),dtype=torch.float64,trainable=False,is_cuda=False): [[[0.34], [0.09], [1.89], [0.11], [-0.24], [0.24], [-0.12], [-0.01], [-1.33]], [[0.31], [0.11], [1.7 ...too long
+	A(torch.Tensor,s=torch.Size([16107, 9]),dtype=torch.float64,trainable=False,is_cuda=False): [[0.03, 0.23, -0.24, -0.3, -0.38, -0.74, 1.14, 1.2, -1.0], [-1.26, -1.4, 0.25, 0.23, -0.17, 0.42, -0 ...too long
+	C(torch.Tensor,s=torch.Size([1800, 9]),dtype=torch.float64,trainable=True,is_cuda=False): [[-0.47, -0.23, 0.25, -0.1, -0.39, -0.72, 1.72, 1.67, -1.0], [0.0, 0.71, -0.15, -0.3, -0.37, -0.64,  ...too long
+	U(torch.Tensor,s=torch.Size([1800]),dtype=torch.float64,trainable=True,is_cuda=False): [8.95, 8.95, 8.95, 8.95, 8.95, 8.95, 8.95, 8.95, 8.95, 8.95, 8.95, 8.95, 8.95, 8.95, 8.95, 8.95, 8.9 ...too long
+	loss(A,C,U,Q_train):|Q|=10000, loss_c=0.124, loss_p=0.133, error=0.14207(max=0.16828) (std=0.041)
+	valQ(torch.Tensor,s=torch.Size([2000, 9, 1]),dtype=torch.float64,trainable=False,is_cuda=False): [[[-0.22], [0.1], [1.29], [-0.0], [-0.34], [0.37], [-0.2], [0.07], [-1.63]], [[0.33], [0.13], [1.65] ...too long
+	loss(A,C,U,Q_val  ):|Q|=2000, loss_c=0.119, loss_p=0.128, error=0.14186(max=0.16825) (std=0.041)
+	testQ(torch.Tensor,s=torch.Size([1000, 9, 1]),dtype=torch.float64,trainable=False,is_cuda=False): [[[-0.32], [0.1], [1.18], [-0.05], [-0.42], [0.43], [-0.22], [0.06], [-1.71]], [[-0.97], [-0.61], [- ...too long
+	loss(A,C,U,testQ  ):|Q|=1000, loss_c=0.118, loss_p=0.126, error=0.14243(max=0.16829) (std=0.041)
+	Weak test(pre): f(A,lc)=0.05603, f(A,la)=0.05497, error=0.01922
+build_1_bal_SGD_coreset(size=1800):
+	optimizer = Adam (Parameter Group 0 amsgrad: False betas: (0.9, 0.999) eps: 1e-08 lr: 0.001 weight_decay: 0), |trainable_vars| = 2
+	Epoch[1/200]:loss_c:0.13145, loss_p:0.13295, erTrain:0.27367, erVal:0.00477, erWeak:0.06962, erAqc:0.059, erAqa:0.055, lr 0.00100, time 00:00:12, V
+	Epoch[2/200]:loss_c:0.13302, loss_p:0.13295, erTrain:0.20145, erVal:0.00180, erWeak:0.05267, erAqc:0.058, erAqa:0.055, lr 0.00100, time 00:00:25, V
+	Epoch[3/200]:loss_c:0.13296, loss_p:0.13295, erTrain:0.17841, erVal:0.00104, erWeak:0.04261, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:00:38, V
+	Epoch[4/200]:loss_c:0.13296, loss_p:0.13295, erTrain:0.19889, erVal:0.00090, erWeak:0.04813, erAqc:0.058, erAqa:0.055, lr 0.00100, time 00:00:50, V
+	Epoch[5/200]:loss_c:0.13296, loss_p:0.13295, erTrain:0.18534, erVal:0.00092, erWeak:0.04404, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:01:03
+	Epoch[6/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19369, erVal:0.00063, erWeak:0.04408, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:01:15, V
+	Epoch[7/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.17789, erVal:0.00060, erWeak:0.04332, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:01:28, V
+	Epoch[8/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19951, erVal:0.00059, erWeak:0.04111, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:01:40, V
+	Epoch[9/200]:loss_c:0.13296, loss_p:0.13295, erTrain:0.19244, erVal:0.00051, erWeak:0.04079, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:01:53, V
+	Epoch[10/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18491, erVal:0.00055, erWeak:0.04068, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:02:06
+	Epoch[11/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18594, erVal:0.00061, erWeak:0.04169, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:02:18
+	Epoch[12/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19125, erVal:0.00056, erWeak:0.04267, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:02:31
+	Epoch[13/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19912, erVal:0.00059, erWeak:0.04208, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:02:44
+	Epoch[14/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.17752, erVal:0.00048, erWeak:0.04497, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:02:57, V
+	Epoch[15/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19849, erVal:0.00048, erWeak:0.04519, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:03:09, V
+	Epoch[16/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18503, erVal:0.00050, erWeak:0.04548, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:03:22
+	Epoch[17/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19349, erVal:0.00062, erWeak:0.04507, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:03:35
+	Epoch[18/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.17773, erVal:0.00048, erWeak:0.04306, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:03:47
+	Epoch[19/200]:loss_c:0.13294, loss_p:0.13295, erTrain:0.19936, erVal:0.00047, erWeak:0.04375, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:04:00, V
+	Epoch[20/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19230, erVal:0.00050, erWeak:0.04448, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:04:13
+	Epoch[21/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18480, erVal:0.00046, erWeak:0.04357, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:04:26, V
+	Epoch[22/200]:loss_c:0.13294, loss_p:0.13295, erTrain:0.18590, erVal:0.00044, erWeak:0.04348, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:04:38, V
+	Epoch[23/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19122, erVal:0.00051, erWeak:0.04441, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:04:51
+	Epoch[24/200]:loss_c:0.13294, loss_p:0.13295, erTrain:0.19908, erVal:0.00050, erWeak:0.04343, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:05:04
+	Epoch[25/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.17743, erVal:0.00039, erWeak:0.04273, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:05:17, V
+	Epoch[26/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19840, erVal:0.00044, erWeak:0.04221, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:05:29
+	Epoch[27/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18495, erVal:0.00043, erWeak:0.04240, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:05:42
+	Epoch[28/200]:loss_c:0.13294, loss_p:0.13295, erTrain:0.19349, erVal:0.00047, erWeak:0.04236, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:05:55
+	Epoch[29/200]:loss_c:0.13294, loss_p:0.13295, erTrain:0.17771, erVal:0.00041, erWeak:0.04242, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:06:07
+	Epoch[30/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19932, erVal:0.00041, erWeak:0.04243, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:06:20
+	Epoch[31/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19229, erVal:0.00051, erWeak:0.04063, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:06:33
+	Epoch[32/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18485, erVal:0.00041, erWeak:0.04211, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:06:46
+	Epoch[33/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18584, erVal:0.00037, erWeak:0.04039, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:06:58, V
+	Epoch[34/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19119, erVal:0.00038, erWeak:0.04374, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:07:11
+	Epoch[35/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19899, erVal:0.00039, erWeak:0.04451, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:07:24
+	Epoch[36/200]:loss_c:0.13294, loss_p:0.13295, erTrain:0.17742, erVal:0.00045, erWeak:0.04463, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:07:37
+	Epoch[37/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19836, erVal:0.00050, erWeak:0.04386, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:07:49
+	Epoch[38/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18495, erVal:0.00036, erWeak:0.04331, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:08:02, V
+	Epoch[39/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19340, erVal:0.00042, erWeak:0.04411, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:08:15
+	Epoch[40/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.17764, erVal:0.00042, erWeak:0.04084, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:08:27
+	Epoch[41/200]:loss_c:0.13294, loss_p:0.13295, erTrain:0.19930, erVal:0.00037, erWeak:0.04310, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:08:40
+	Epoch[42/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19226, erVal:0.00039, erWeak:0.04216, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:08:53
+	Epoch[43/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18475, erVal:0.00042, erWeak:0.04200, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:09:05
+	Epoch[44/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18581, erVal:0.00037, erWeak:0.04078, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:09:18
+	Epoch[45/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19116, erVal:0.00049, erWeak:0.04209, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:09:31
+	Epoch[46/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19898, erVal:0.00041, erWeak:0.04036, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:09:43
+	Epoch[47/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.17739, erVal:0.00033, erWeak:0.04111, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:09:56, V
+	Epoch[48/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19835, erVal:0.00040, erWeak:0.03639, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:10:08
+	Epoch[49/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18493, erVal:0.00044, erWeak:0.03970, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:10:21
+	Epoch[50/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19339, erVal:0.00034, erWeak:0.04102, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:10:34
+	Epoch[51/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.17762, erVal:0.00052, erWeak:0.03428, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:10:47
+	Epoch[52/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19929, erVal:0.00034, erWeak:0.03530, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:10:59
+	Epoch[53/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19227, erVal:0.00035, erWeak:0.03542, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:11:12
+	Epoch[54/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18471, erVal:0.00034, erWeak:0.03564, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:11:25
+	Epoch[55/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18583, erVal:0.00038, erWeak:0.03701, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:11:37
+	Epoch[56/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19114, erVal:0.00036, erWeak:0.03594, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:11:50
+	Epoch[57/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19893, erVal:0.00042, erWeak:0.03552, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:12:03
+	Epoch[58/200]:loss_c:0.13294, loss_p:0.13295, erTrain:0.17736, erVal:0.00033, erWeak:0.03604, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:12:15
+	Epoch[59/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19832, erVal:0.00032, erWeak:0.03607, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:12:28, V
+	Epoch[60/200]:loss_c:0.13294, loss_p:0.13295, erTrain:0.18494, erVal:0.00046, erWeak:0.03619, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:12:41
+	Epoch[61/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19343, erVal:0.00044, erWeak:0.03534, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:12:54
+	Epoch[62/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.17758, erVal:0.00032, erWeak:0.03590, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:13:06, V
+	Epoch[63/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19929, erVal:0.00037, erWeak:0.03614, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:13:19
+	Epoch[64/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19226, erVal:0.00033, erWeak:0.03597, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:13:32
+	Epoch[65/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18473, erVal:0.00041, erWeak:0.03561, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:13:45
+	Epoch[66/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18578, erVal:0.00035, erWeak:0.03698, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:13:57
+	Epoch[67/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19115, erVal:0.00031, erWeak:0.03585, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:14:10, V
+	Epoch[68/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19901, erVal:0.00052, erWeak:0.03954, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:14:23
+	Epoch[69/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.17741, erVal:0.00035, erWeak:0.03548, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:14:36
+	Epoch[70/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19832, erVal:0.00038, erWeak:0.03585, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:14:48
+	Epoch[71/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18494, erVal:0.00039, erWeak:0.03604, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:15:01
+	Epoch[72/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19335, erVal:0.00039, erWeak:0.03562, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:15:14
+	Epoch[73/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.17756, erVal:0.00030, erWeak:0.03619, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:15:27, V
+	Epoch[74/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19927, erVal:0.00035, erWeak:0.03609, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:15:39
+	Epoch[75/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19228, erVal:0.00040, erWeak:0.03605, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:15:52
+	Epoch[76/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18474, erVal:0.00030, erWeak:0.03537, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:16:05
+	Epoch[77/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18574, erVal:0.00037, erWeak:0.03503, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:16:18
+	Epoch[78/200]:loss_c:0.13294, loss_p:0.13295, erTrain:0.19107, erVal:0.00041, erWeak:0.03382, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:16:30
+	Epoch[79/200]:loss_c:0.13296, loss_p:0.13295, erTrain:0.19899, erVal:0.00034, erWeak:0.03478, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:16:43
+	Epoch[80/200]:loss_c:0.13294, loss_p:0.13295, erTrain:0.17739, erVal:0.00040, erWeak:0.03373, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:16:55
+	Epoch[81/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19829, erVal:0.00041, erWeak:0.03192, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:17:08
+	Epoch[82/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18488, erVal:0.00049, erWeak:0.03284, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:17:21
+	Epoch[83/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19338, erVal:0.00038, erWeak:0.02995, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:17:34
+	Epoch[84/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.17759, erVal:0.00029, erWeak:0.03010, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:17:46, V
+	Epoch[85/200]:loss_c:0.13294, loss_p:0.13295, erTrain:0.19922, erVal:0.00032, erWeak:0.03019, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:17:59
+	Epoch[86/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19218, erVal:0.00038, erWeak:0.03044, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:18:12
+	Epoch[87/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18475, erVal:0.00050, erWeak:0.03026, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:18:25
+	Epoch[88/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18574, erVal:0.00033, erWeak:0.03021, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:18:37
+	Epoch[89/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19106, erVal:0.00053, erWeak:0.03025, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:18:50
+	Epoch[90/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19897, erVal:0.00054, erWeak:0.03034, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:19:03
+	Epoch[91/200]:loss_c:0.13294, loss_p:0.13295, erTrain:0.17740, erVal:0.00035, erWeak:0.03053, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:19:15
+	Epoch[92/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19831, erVal:0.00039, erWeak:0.03086, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:19:28
+	Epoch[93/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18489, erVal:0.00036, erWeak:0.03052, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:19:41
+	Epoch[94/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19338, erVal:0.00050, erWeak:0.03036, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:19:53
+	Epoch[95/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.17757, erVal:0.00033, erWeak:0.03037, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:20:06
+	Epoch[96/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19922, erVal:0.00027, erWeak:0.03024, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:20:19, V
+	Epoch[97/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19221, erVal:0.00042, erWeak:0.02995, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:20:31
+	Epoch[98/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18474, erVal:0.00035, erWeak:0.03063, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:20:44
+	Epoch[99/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18574, erVal:0.00033, erWeak:0.03028, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:20:57
+	Epoch[100/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19112, erVal:0.00031, erWeak:0.03041, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:21:09
+	Epoch[101/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19898, erVal:0.00071, erWeak:0.03047, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:21:22
+	Epoch[102/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.17736, erVal:0.00035, erWeak:0.03043, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:21:35
+	Epoch[103/200]:loss_c:0.13294, loss_p:0.13295, erTrain:0.19832, erVal:0.00037, erWeak:0.03052, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:21:48
+	Epoch[104/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18490, erVal:0.00040, erWeak:0.03056, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:22:00
+	Epoch[105/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19332, erVal:0.00030, erWeak:0.03056, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:22:13
+	Epoch[106/200]:loss_c:0.13294, loss_p:0.13295, erTrain:0.17758, erVal:0.00038, erWeak:0.03067, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:22:25
+	Epoch[107/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19922, erVal:0.00037, erWeak:0.03034, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:22:38
+	Epoch[108/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19222, erVal:0.00044, erWeak:0.02994, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:22:51
+	Epoch[109/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18473, erVal:0.00037, erWeak:0.02998, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:23:03
+	Epoch[110/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18575, erVal:0.00033, erWeak:0.03013, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:23:16
+	Epoch[111/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19109, erVal:0.00034, erWeak:0.03001, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:23:29
+	Epoch[112/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19896, erVal:0.00030, erWeak:0.02993, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:23:41
+	Epoch[113/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.17734, erVal:0.00030, erWeak:0.03000, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:23:54
+	Epoch[114/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19830, erVal:0.00033, erWeak:0.02990, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:24:07
+	Epoch[115/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18491, erVal:0.00033, erWeak:0.02978, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:24:19
+	Epoch[116/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19334, erVal:0.00031, erWeak:0.02964, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:24:32
+	Epoch[117/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.17757, erVal:0.00031, erWeak:0.02970, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:24:45
+	Epoch[118/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19923, erVal:0.00036, erWeak:0.02955, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:24:58
+	Epoch[119/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19220, erVal:0.00027, erWeak:0.02964, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:25:10
+	Epoch[120/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18468, erVal:0.00052, erWeak:0.02953, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:25:23
+	Epoch[121/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18578, erVal:0.00033, erWeak:0.02953, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:25:36
+	Epoch[122/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19109, erVal:0.00033, erWeak:0.02939, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:25:49
+	Epoch[123/200]:loss_c:0.13294, loss_p:0.13295, erTrain:0.19906, erVal:0.00039, erWeak:0.02930, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:26:01
+	Epoch[124/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.17732, erVal:0.00037, erWeak:0.02937, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:26:15
+	Epoch[125/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19834, erVal:0.00047, erWeak:0.02920, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:26:27
+	Epoch[126/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18491, erVal:0.00033, erWeak:0.02929, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:26:40
+	Epoch[127/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19330, erVal:0.00028, erWeak:0.02923, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:26:53
+	Epoch[128/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.17755, erVal:0.00033, erWeak:0.02926, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:27:06
+	Epoch[129/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19926, erVal:0.00034, erWeak:0.02917, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:27:19
+	Epoch[130/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19222, erVal:0.00035, erWeak:0.02925, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:27:31
+	Epoch[131/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18466, erVal:0.00030, erWeak:0.02911, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:27:44
+	Epoch[132/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18576, erVal:0.00035, erWeak:0.02902, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:27:57
+	Epoch[133/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19108, erVal:0.00041, erWeak:0.02922, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:28:10
+	Epoch[134/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19896, erVal:0.00036, erWeak:0.02920, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:28:22
+	Epoch[135/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.17728, erVal:0.00036, erWeak:0.02915, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:28:35
+	Epoch[136/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19829, erVal:0.00035, erWeak:0.02899, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:28:48
+	Epoch[137/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18490, erVal:0.00033, erWeak:0.02908, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:29:01
+	Epoch[138/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19333, erVal:0.00037, erWeak:0.02908, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:29:13
+	Epoch[139/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.17756, erVal:0.00040, erWeak:0.02902, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:29:26
+	Epoch[140/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19925, erVal:0.00029, erWeak:0.02876, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:29:39
+	Epoch[141/200]:loss_c:0.13294, loss_p:0.13295, erTrain:0.19220, erVal:0.00038, erWeak:0.02900, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:29:51
+	Epoch[142/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18474, erVal:0.00033, erWeak:0.02883, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:30:04
+	Epoch[143/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18573, erVal:0.00043, erWeak:0.02879, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:30:17
+	Epoch[144/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19114, erVal:0.00045, erWeak:0.02900, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:30:29
+	Epoch[145/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19899, erVal:0.00034, erWeak:0.02868, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:30:42
+	Epoch[146/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.17728, erVal:0.00048, erWeak:0.02882, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:30:55
+	Epoch[147/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19830, erVal:0.00047, erWeak:0.02871, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:31:08
+	Epoch[148/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18491, erVal:0.00041, erWeak:0.02896, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:31:20
+	Epoch[149/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19331, erVal:0.00032, erWeak:0.02871, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:31:33
+	Epoch[150/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.17760, erVal:0.00033, erWeak:0.02876, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:31:46
+	Epoch[151/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19921, erVal:0.00032, erWeak:0.02883, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:31:58
+	Epoch[152/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19219, erVal:0.00031, erWeak:0.02880, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:32:11
+	Epoch[153/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18469, erVal:0.00039, erWeak:0.02880, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:32:24
+	Epoch[154/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18570, erVal:0.00028, erWeak:0.02881, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:32:36
+	Epoch[155/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19104, erVal:0.00030, erWeak:0.02889, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:32:49
+	Epoch[156/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19892, erVal:0.00036, erWeak:0.02890, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:33:02
+	Epoch[157/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.17736, erVal:0.00028, erWeak:0.02886, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:33:15
+	Epoch[158/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19830, erVal:0.00029, erWeak:0.02878, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:33:27
+	Epoch[159/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18494, erVal:0.00038, erWeak:0.02877, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:33:40
+	Epoch[160/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19333, erVal:0.00032, erWeak:0.02859, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:33:52
+	Epoch[161/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.17756, erVal:0.00034, erWeak:0.02862, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:34:05
+	Epoch[162/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19922, erVal:0.00030, erWeak:0.02868, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:34:18
+	Epoch[163/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19220, erVal:0.00027, erWeak:0.02869, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:34:31
+	Epoch[164/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18467, erVal:0.00034, erWeak:0.02861, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:34:44
+	Epoch[165/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18576, erVal:0.00041, erWeak:0.02881, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:34:57
+	Epoch[166/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19105, erVal:0.00037, erWeak:0.02872, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:35:09
+	Epoch[167/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19896, erVal:0.00026, erWeak:0.02876, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:35:22, V
+	Epoch[168/200]:loss_c:0.13296, loss_p:0.13295, erTrain:0.17732, erVal:0.00039, erWeak:0.02876, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:35:35
+	Epoch[169/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19831, erVal:0.00032, erWeak:0.02899, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:35:47
+	Epoch[170/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18486, erVal:0.00044, erWeak:0.02889, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:36:00
+	Epoch[171/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19331, erVal:0.00030, erWeak:0.02825, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:36:13
+	Epoch[172/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.17757, erVal:0.00041, erWeak:0.02776, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:36:25
+	Epoch[173/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19926, erVal:0.00033, erWeak:0.02781, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:36:38
+	Epoch[174/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19216, erVal:0.00026, erWeak:0.02751, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:36:51
+	Epoch[175/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18468, erVal:0.00033, erWeak:0.02762, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:37:03
+	Epoch[176/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18573, erVal:0.00028, erWeak:0.02760, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:37:16
+	Epoch[177/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19106, erVal:0.00055, erWeak:0.02822, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:37:28
+	Epoch[178/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19895, erVal:0.00027, erWeak:0.02784, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:37:41
+	Epoch[179/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.17731, erVal:0.00057, erWeak:0.02788, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:37:54
+	Epoch[180/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19831, erVal:0.00031, erWeak:0.02776, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:38:07
+	Epoch[181/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18487, erVal:0.00030, erWeak:0.02797, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:38:19
+	Epoch[182/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19333, erVal:0.00044, erWeak:0.02786, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:38:32
+	Epoch[183/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.17759, erVal:0.00033, erWeak:0.02820, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:38:45
+	Epoch[184/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19922, erVal:0.00041, erWeak:0.02815, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:38:58
+	Epoch[185/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19217, erVal:0.00031, erWeak:0.02817, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:39:10
+	Epoch[186/200]:loss_c:0.13294, loss_p:0.13295, erTrain:0.18468, erVal:0.00033, erWeak:0.02842, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:39:23
+	Epoch[187/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18579, erVal:0.00036, erWeak:0.02854, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:39:36
+	Epoch[188/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19111, erVal:0.00033, erWeak:0.02841, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:39:48
+	Epoch[189/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19894, erVal:0.00040, erWeak:0.02877, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:40:01
+	Epoch[190/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.17739, erVal:0.00032, erWeak:0.02849, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:40:13
+	Epoch[191/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19829, erVal:0.00045, erWeak:0.02834, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:40:26
+	Epoch[192/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18488, erVal:0.00030, erWeak:0.02850, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:40:39
+	Epoch[193/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19330, erVal:0.00029, erWeak:0.02862, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:40:52
+	Epoch[194/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.17755, erVal:0.00033, erWeak:0.02859, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:41:04
+	Epoch[195/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19924, erVal:0.00044, erWeak:0.02848, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:41:17
+	Epoch[196/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19216, erVal:0.00030, erWeak:0.02877, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:41:30
+	Epoch[197/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18468, erVal:0.00036, erWeak:0.02866, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:41:42
+	Epoch[198/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.18574, erVal:0.00029, erWeak:0.02720, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:41:55
+	Epoch[199/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19106, erVal:0.00046, erWeak:0.02807, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:42:08
+	Epoch[200/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19895, erVal:0.00035, erWeak:0.02892, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:42:21
+Done balancing: epoch 167, best_val_err=0.00026, best_weak_er=0.02720, run time 00:42:21
+Saved to: ./HTRU_2_16107_9/BalQ1_6_6_1800/bal_coreset_1800_rep_2.pt
+Loss post training:
+	C(torch.Tensor,s=torch.Size([1800, 9]),dtype=torch.float64,trainable=False,is_cuda=False): [[-0.47, -0.22, 0.26, -0.09, -0.33, -0.73, 1.71, 1.68, -1.0], [-0.07, 0.73, -0.17, -0.3, -0.33, -0.6 ...too long
+	U(torch.Tensor,s=torch.Size([1800]),dtype=torch.float64,trainable=False,is_cuda=False): [8.95, 8.95, 8.95, 8.95, 8.95, 8.95, 8.95, 8.95, 8.95, 8.95, 8.95, 8.95, 8.95, 8.95, 8.95, 8.95, 8.9 ...too long
+	loss(A,C,U,Q_train):|Q|=10000, loss_c=0.133, loss_p=0.133, error=0.00026(max=0.00370) (std=0.000)
+	loss(A,C,U,Q_val  ):|Q|=2000, loss_c=0.128, loss_p=0.128, error=0.00026(max=0.00312) (std=0.000)
+	loss(A,C,U,testQ  ):|Q|=1000, loss_c=0.126, loss_p=0.126, error=0.00026(max=0.00633) (std=0.000)
+	Weak test(post): f(A,lc)=0.05655, f(A,la)=0.05497, error=0.02876
+	ending sum weights:
+		sum(W)=16107
+		sum(U)=16107.134145176078
+-------------------------------------------------------------------------------- rep 2 time 00:42:37
+-------------------------------------------------------------------------------- rep 3
+	starting sum weights:
+		sum(W)=16107
+		sum(U)=16107.000732421875
+Balance params: epochs 200, batch_size 100, total batches 100, base_lr 0.001
+Loss before training:
+	trainQ(torch.Tensor,s=torch.Size([10000, 9, 1]),dtype=torch.float64,trainable=False,is_cuda=False): [[[0.34], [0.09], [1.89], [0.11], [-0.24], [0.24], [-0.12], [-0.01], [-1.33]], [[0.31], [0.11], [1.7 ...too long
+	A(torch.Tensor,s=torch.Size([16107, 9]),dtype=torch.float64,trainable=False,is_cuda=False): [[0.03, 0.23, -0.24, -0.3, -0.38, -0.74, 1.14, 1.2, -1.0], [-1.26, -1.4, 0.25, 0.23, -0.17, 0.42, -0 ...too long
+	C(torch.Tensor,s=torch.Size([1800, 9]),dtype=torch.float64,trainable=True,is_cuda=False): [[0.13, 1.16, -0.31, -0.35, -0.3, -0.39, -0.33, -0.43, -1.0], [0.13, -0.26, -0.09, -0.21, -0.35, -0. ...too long
+	U(torch.Tensor,s=torch.Size([1800]),dtype=torch.float64,trainable=True,is_cuda=False): [8.95, 8.95, 8.95, 8.95, 8.95, 8.95, 8.95, 8.95, 8.95, 8.95, 8.95, 8.95, 8.95, 8.95, 8.95, 8.95, 8.9 ...too long
+	loss(A,C,U,Q_train):|Q|=10000, loss_c=0.138, loss_p=0.133, error=0.08721(max=0.14236) (std=0.028)
+	valQ(torch.Tensor,s=torch.Size([2000, 9, 1]),dtype=torch.float64,trainable=False,is_cuda=False): [[[-0.22], [0.1], [1.29], [-0.0], [-0.34], [0.37], [-0.2], [0.07], [-1.63]], [[0.33], [0.13], [1.65] ...too long
+	loss(A,C,U,Q_val  ):|Q|=2000, loss_c=0.132, loss_p=0.128, error=0.08768(max=0.14230) (std=0.028)
+	testQ(torch.Tensor,s=torch.Size([1000, 9, 1]),dtype=torch.float64,trainable=False,is_cuda=False): [[[-0.32], [0.1], [1.18], [-0.05], [-0.42], [0.43], [-0.22], [0.06], [-1.71]], [[-0.97], [-0.61], [- ...too long
+	loss(A,C,U,testQ  ):|Q|=1000, loss_c=0.131, loss_p=0.126, error=0.08770(max=0.14173) (std=0.028)
+	Weak test(pre): f(A,lc)=0.05618, f(A,la)=0.05497, error=0.02204
+build_1_bal_SGD_coreset(size=1800):
+	optimizer = Adam (Parameter Group 0 amsgrad: False betas: (0.9, 0.999) eps: 1e-08 lr: 0.001 weight_decay: 0), |trainable_vars| = 2
+	Epoch[1/200]:loss_c:0.13396, loss_p:0.13295, erTrain:0.27443, erVal:0.00335, erWeak:0.02274, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:00:12, V
+	Epoch[2/200]:loss_c:0.13299, loss_p:0.13295, erTrain:0.20086, erVal:0.00108, erWeak:0.01549, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:00:25, V
+	Epoch[3/200]:loss_c:0.13296, loss_p:0.13295, erTrain:0.20007, erVal:0.00069, erWeak:0.01511, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:00:38, V
+	Epoch[4/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.21443, erVal:0.00061, erWeak:0.01684, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:00:50, V
+	Epoch[5/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20612, erVal:0.00036, erWeak:0.01677, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:01:03, V
+	Epoch[6/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19966, erVal:0.00051, erWeak:0.01654, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:01:15
+	Epoch[7/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20579, erVal:0.00047, erWeak:0.01642, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:01:28
+	Epoch[8/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20805, erVal:0.00039, erWeak:0.01449, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:01:41
+	Epoch[9/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20688, erVal:0.00041, erWeak:0.01611, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:01:53
+	Epoch[10/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19940, erVal:0.00039, erWeak:0.01585, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:02:06
+	Epoch[11/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20500, erVal:0.00036, erWeak:0.01565, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:02:18
+	Epoch[12/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.21483, erVal:0.00031, erWeak:0.01497, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:02:31, V
+	Epoch[13/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20013, erVal:0.00033, erWeak:0.01392, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:02:43
+	Epoch[14/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19948, erVal:0.00040, erWeak:0.01384, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:02:56
+	Epoch[15/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20719, erVal:0.00041, erWeak:0.01373, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:03:08
+	Epoch[16/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.21201, erVal:0.00033, erWeak:0.01422, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:03:21
+	Epoch[17/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20076, erVal:0.00031, erWeak:0.01377, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:03:34
+	Epoch[18/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20067, erVal:0.00037, erWeak:0.01345, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:03:46
+	Epoch[19/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20655, erVal:0.00032, erWeak:0.01308, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:03:59
+	Epoch[20/200]:loss_c:0.13294, loss_p:0.13295, erTrain:0.21254, erVal:0.00037, erWeak:0.01362, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:04:12
+	Epoch[21/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19944, erVal:0.00051, erWeak:0.01366, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:04:24
+	Epoch[22/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19959, erVal:0.00041, erWeak:0.01437, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:04:37
+	Epoch[23/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.21416, erVal:0.00030, erWeak:0.01488, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:04:49, V
+	Epoch[24/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20601, erVal:0.00036, erWeak:0.01508, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:05:02
+	Epoch[25/200]:loss_c:0.13294, loss_p:0.13295, erTrain:0.19953, erVal:0.00034, erWeak:0.01404, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:05:15
+	Epoch[26/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20572, erVal:0.00026, erWeak:0.01377, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:05:27, V
+	Epoch[27/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20803, erVal:0.00033, erWeak:0.01393, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:05:40
+	Epoch[28/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20683, erVal:0.00035, erWeak:0.01289, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:05:53
+	Epoch[29/200]:loss_c:0.13294, loss_p:0.13295, erTrain:0.19928, erVal:0.00035, erWeak:0.01370, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:06:05
+	Epoch[30/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20495, erVal:0.00035, erWeak:0.01363, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:06:17
+	Epoch[31/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.21483, erVal:0.00028, erWeak:0.01431, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:06:30
+	Epoch[32/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20011, erVal:0.00033, erWeak:0.01519, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:06:43
+	Epoch[33/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19945, erVal:0.00030, erWeak:0.01410, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:06:56
+	Epoch[34/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20718, erVal:0.00033, erWeak:0.01354, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:07:08
+	Epoch[35/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.21193, erVal:0.00033, erWeak:0.01381, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:07:21
+	Epoch[36/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20073, erVal:0.00033, erWeak:0.01428, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:07:33
+	Epoch[37/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20063, erVal:0.00028, erWeak:0.01382, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:07:46
+	Epoch[38/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20658, erVal:0.00032, erWeak:0.01384, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:07:58
+	Epoch[39/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.21255, erVal:0.00043, erWeak:0.01391, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:08:11
+	Epoch[40/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19947, erVal:0.00030, erWeak:0.01359, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:08:23
+	Epoch[41/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19955, erVal:0.00029, erWeak:0.01370, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:08:36
+	Epoch[42/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.21416, erVal:0.00029, erWeak:0.01278, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:08:49
+	Epoch[43/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20605, erVal:0.00033, erWeak:0.01237, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:09:01
+	Epoch[44/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19949, erVal:0.00032, erWeak:0.01194, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:09:14
+	Epoch[45/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20575, erVal:0.00041, erWeak:0.01357, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:09:27
+	Epoch[46/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20799, erVal:0.00034, erWeak:0.01360, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:09:39
+	Epoch[47/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20684, erVal:0.00032, erWeak:0.01264, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:09:52
+	Epoch[48/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19929, erVal:0.00026, erWeak:0.01313, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:10:04
+	Epoch[49/200]:loss_c:0.13294, loss_p:0.13295, erTrain:0.20491, erVal:0.00028, erWeak:0.01419, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:10:17
+	Epoch[50/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.21482, erVal:0.00030, erWeak:0.01340, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:10:30
+	Epoch[51/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20012, erVal:0.00031, erWeak:0.01324, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:10:43
+	Epoch[52/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19944, erVal:0.00037, erWeak:0.01183, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:10:55
+	Epoch[53/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20718, erVal:0.00035, erWeak:0.01194, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:11:08
+	Epoch[54/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.21194, erVal:0.00029, erWeak:0.01201, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:11:20
+	Epoch[55/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20073, erVal:0.00035, erWeak:0.01218, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:11:33
+	Epoch[56/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20062, erVal:0.00055, erWeak:0.01114, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:11:46
+	Epoch[57/200]:loss_c:0.13294, loss_p:0.13295, erTrain:0.20656, erVal:0.00035, erWeak:0.00980, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:11:59
+	Epoch[58/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.21252, erVal:0.00036, erWeak:0.01008, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:12:11
+	Epoch[59/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19940, erVal:0.00031, erWeak:0.01024, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:12:24
+	Epoch[60/200]:loss_c:0.13294, loss_p:0.13295, erTrain:0.19955, erVal:0.00033, erWeak:0.01073, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:12:37
+	Epoch[61/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.21416, erVal:0.00042, erWeak:0.01089, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:12:49
+	Epoch[62/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20597, erVal:0.00025, erWeak:0.01105, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:13:02, V
+	Epoch[63/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19949, erVal:0.00025, erWeak:0.01116, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:13:15, V
+	Epoch[64/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20572, erVal:0.00030, erWeak:0.01161, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:13:27
+	Epoch[65/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20798, erVal:0.00026, erWeak:0.01193, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:13:40
+	Epoch[66/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20685, erVal:0.00031, erWeak:0.01129, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:13:53
+	Epoch[67/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19927, erVal:0.00029, erWeak:0.01106, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:14:06
+	Epoch[68/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20490, erVal:0.00031, erWeak:0.01096, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:14:18
+	Epoch[69/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.21482, erVal:0.00030, erWeak:0.01069, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:14:31
+	Epoch[70/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20012, erVal:0.00032, erWeak:0.01153, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:14:44
+	Epoch[71/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19945, erVal:0.00034, erWeak:0.01145, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:14:56
+	Epoch[72/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20717, erVal:0.00036, erWeak:0.01138, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:15:09
+	Epoch[73/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.21194, erVal:0.00027, erWeak:0.01081, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:15:22
+	Epoch[74/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20077, erVal:0.00030, erWeak:0.01113, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:15:34
+	Epoch[75/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20063, erVal:0.00028, erWeak:0.01129, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:15:47
+	Epoch[76/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20652, erVal:0.00030, erWeak:0.01070, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:15:59
+	Epoch[77/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.21259, erVal:0.00071, erWeak:0.01086, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:16:12
+	Epoch[78/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19947, erVal:0.00046, erWeak:0.01007, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:16:25
+	Epoch[79/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19965, erVal:0.00036, erWeak:0.01081, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:16:37
+	Epoch[80/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.21417, erVal:0.00027, erWeak:0.01080, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:16:50
+	Epoch[81/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20597, erVal:0.00025, erWeak:0.01117, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:17:03
+	Epoch[82/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19948, erVal:0.00027, erWeak:0.01134, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:17:16
+	Epoch[83/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20570, erVal:0.00034, erWeak:0.01097, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:17:29
+	Epoch[84/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20799, erVal:0.00032, erWeak:0.01058, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:17:42
+	Epoch[85/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20684, erVal:0.00035, erWeak:0.01077, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:17:54
+	Epoch[86/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19928, erVal:0.00026, erWeak:0.01065, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:18:07
+	Epoch[87/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20491, erVal:0.00026, erWeak:0.01077, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:18:20
+	Epoch[88/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.21477, erVal:0.00031, erWeak:0.01060, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:18:32
+	Epoch[89/200]:loss_c:0.13296, loss_p:0.13295, erTrain:0.20013, erVal:0.00045, erWeak:0.01137, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:18:45
+	Epoch[90/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19947, erVal:0.00043, erWeak:0.01103, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:18:58
+	Epoch[91/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20716, erVal:0.00033, erWeak:0.01109, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:19:11
+	Epoch[92/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.21194, erVal:0.00026, erWeak:0.01085, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:19:23
+	Epoch[93/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20074, erVal:0.00041, erWeak:0.01102, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:19:36
+	Epoch[94/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20063, erVal:0.00026, erWeak:0.01077, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:19:48
+	Epoch[95/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20653, erVal:0.00043, erWeak:0.01209, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:20:01
+	Epoch[96/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.21246, erVal:0.00027, erWeak:0.01180, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:20:14
+	Epoch[97/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19939, erVal:0.00034, erWeak:0.01063, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:20:26
+	Epoch[98/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19953, erVal:0.00031, erWeak:0.01194, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:20:39
+	Epoch[99/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.21414, erVal:0.00025, erWeak:0.01195, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:20:52
+	Epoch[100/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20596, erVal:0.00030, erWeak:0.01205, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:21:04
+	Epoch[101/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19951, erVal:0.00049, erWeak:0.01199, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:21:17
+	Epoch[102/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20571, erVal:0.00023, erWeak:0.01081, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:21:29, V
+	Epoch[103/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20799, erVal:0.00027, erWeak:0.01133, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:21:42
+	Epoch[104/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20683, erVal:0.00023, erWeak:0.01183, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:21:55, V
+	Epoch[105/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19927, erVal:0.00025, erWeak:0.01208, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:22:08
+	Epoch[106/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20491, erVal:0.00029, erWeak:0.01169, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:22:21
+	Epoch[107/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.21483, erVal:0.00034, erWeak:0.01160, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:22:33
+	Epoch[108/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20008, erVal:0.00035, erWeak:0.01114, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:22:46
+	Epoch[109/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19943, erVal:0.00032, erWeak:0.00928, erAqc:0.055, erAqa:0.055, lr 0.00100, time 00:22:59
+	Epoch[110/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20715, erVal:0.00027, erWeak:0.01065, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:23:11
+	Epoch[111/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.21192, erVal:0.00048, erWeak:0.01144, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:23:24
+	Epoch[112/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20078, erVal:0.00032, erWeak:0.01100, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:23:37
+	Epoch[113/200]:loss_c:0.13294, loss_p:0.13295, erTrain:0.20064, erVal:0.00032, erWeak:0.01128, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:23:50
+	Epoch[114/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20654, erVal:0.00028, erWeak:0.01144, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:24:03
+	Epoch[115/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.21250, erVal:0.00045, erWeak:0.01127, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:24:15
+	Epoch[116/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19944, erVal:0.00037, erWeak:0.01191, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:24:28
+	Epoch[117/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19951, erVal:0.00035, erWeak:0.01101, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:24:40
+	Epoch[118/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.21414, erVal:0.00027, erWeak:0.01103, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:24:53
+	Epoch[119/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20601, erVal:0.00045, erWeak:0.01084, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:25:06
+	Epoch[120/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19952, erVal:0.00027, erWeak:0.01029, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:25:18
+	Epoch[121/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20568, erVal:0.00028, erWeak:0.00949, erAqc:0.055, erAqa:0.055, lr 0.00100, time 00:25:31
+	Epoch[122/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20797, erVal:0.00025, erWeak:0.01076, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:25:43
+	Epoch[123/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20681, erVal:0.00025, erWeak:0.01036, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:25:56
+	Epoch[124/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19927, erVal:0.00038, erWeak:0.00883, erAqc:0.055, erAqa:0.055, lr 0.00100, time 00:26:09
+	Epoch[125/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20494, erVal:0.00027, erWeak:0.01085, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:26:21
+	Epoch[126/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.21478, erVal:0.00034, erWeak:0.00997, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:26:34
+	Epoch[127/200]:loss_c:0.13294, loss_p:0.13295, erTrain:0.20010, erVal:0.00031, erWeak:0.01020, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:26:47
+	Epoch[128/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19948, erVal:0.00052, erWeak:0.00938, erAqc:0.055, erAqa:0.055, lr 0.00100, time 00:26:59
+	Epoch[129/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20716, erVal:0.00023, erWeak:0.01014, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:27:12
+	Epoch[130/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.21191, erVal:0.00025, erWeak:0.01022, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:27:25
+	Epoch[131/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20072, erVal:0.00022, erWeak:0.01036, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:27:38, V
+	Epoch[132/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20067, erVal:0.00033, erWeak:0.01016, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:27:51
+	Epoch[133/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20654, erVal:0.00024, erWeak:0.00995, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:28:03
+	Epoch[134/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.21247, erVal:0.00026, erWeak:0.01054, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:28:16
+	Epoch[135/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19939, erVal:0.00030, erWeak:0.00966, erAqc:0.055, erAqa:0.055, lr 0.00100, time 00:28:29
+	Epoch[136/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19953, erVal:0.00026, erWeak:0.00989, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:28:41
+	Epoch[137/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.21416, erVal:0.00028, erWeak:0.01089, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:28:54
+	Epoch[138/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20599, erVal:0.00030, erWeak:0.01081, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:29:07
+	Epoch[139/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19952, erVal:0.00039, erWeak:0.01058, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:29:19
+	Epoch[140/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20569, erVal:0.00030, erWeak:0.01053, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:29:32
+	Epoch[141/200]:loss_c:0.13294, loss_p:0.13295, erTrain:0.20797, erVal:0.00028, erWeak:0.01054, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:29:45
+	Epoch[142/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20688, erVal:0.00034, erWeak:0.00956, erAqc:0.055, erAqa:0.055, lr 0.00100, time 00:29:58
+	Epoch[143/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19929, erVal:0.00024, erWeak:0.01058, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:30:10
+	Epoch[144/200]:loss_c:0.13294, loss_p:0.13295, erTrain:0.20494, erVal:0.00026, erWeak:0.00968, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:30:23
+	Epoch[145/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.21481, erVal:0.00033, erWeak:0.01041, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:30:35
+	Epoch[146/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20009, erVal:0.00027, erWeak:0.00989, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:30:48
+	Epoch[147/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19948, erVal:0.00033, erWeak:0.00941, erAqc:0.055, erAqa:0.055, lr 0.00100, time 00:31:00
+	Epoch[148/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20714, erVal:0.00034, erWeak:0.01026, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:31:13
+	Epoch[149/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.21189, erVal:0.00027, erWeak:0.01076, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:31:25
+	Epoch[150/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20077, erVal:0.00025, erWeak:0.00987, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:31:38
+	Epoch[151/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20061, erVal:0.00043, erWeak:0.00939, erAqc:0.055, erAqa:0.055, lr 0.00100, time 00:31:50
+	Epoch[152/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20654, erVal:0.00030, erWeak:0.00976, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:32:04
+	Epoch[153/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.21244, erVal:0.00024, erWeak:0.01021, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:32:16
+	Epoch[154/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19939, erVal:0.00029, erWeak:0.00919, erAqc:0.055, erAqa:0.055, lr 0.00100, time 00:32:29
+	Epoch[155/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19954, erVal:0.00024, erWeak:0.00936, erAqc:0.055, erAqa:0.055, lr 0.00100, time 00:32:41
+	Epoch[156/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.21412, erVal:0.00035, erWeak:0.00974, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:32:54
+	Epoch[157/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20595, erVal:0.00041, erWeak:0.00950, erAqc:0.055, erAqa:0.055, lr 0.00100, time 00:33:07
+	Epoch[158/200]:loss_c:0.13294, loss_p:0.13295, erTrain:0.19959, erVal:0.00051, erWeak:0.00919, erAqc:0.055, erAqa:0.055, lr 0.00100, time 00:33:20
+	Epoch[159/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20571, erVal:0.00026, erWeak:0.00951, erAqc:0.055, erAqa:0.055, lr 0.00100, time 00:33:32
+	Epoch[160/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20796, erVal:0.00025, erWeak:0.00929, erAqc:0.055, erAqa:0.055, lr 0.00100, time 00:33:45
+	Epoch[161/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20681, erVal:0.00032, erWeak:0.00935, erAqc:0.055, erAqa:0.055, lr 0.00100, time 00:33:57
+	Epoch[162/200]:loss_c:0.13294, loss_p:0.13295, erTrain:0.19929, erVal:0.00037, erWeak:0.01000, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:34:10
+	Epoch[163/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20491, erVal:0.00020, erWeak:0.00993, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:34:23, V
+	Epoch[164/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.21479, erVal:0.00031, erWeak:0.00995, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:34:36
+	Epoch[165/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20008, erVal:0.00025, erWeak:0.00925, erAqc:0.055, erAqa:0.055, lr 0.00100, time 00:34:48
+	Epoch[166/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19947, erVal:0.00039, erWeak:0.00956, erAqc:0.055, erAqa:0.055, lr 0.00100, time 00:35:01
+	Epoch[167/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20717, erVal:0.00038, erWeak:0.00977, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:35:14
+	Epoch[168/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.21192, erVal:0.00026, erWeak:0.00915, erAqc:0.055, erAqa:0.055, lr 0.00100, time 00:35:26
+	Epoch[169/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20075, erVal:0.00032, erWeak:0.00948, erAqc:0.055, erAqa:0.055, lr 0.00100, time 00:35:39
+	Epoch[170/200]:loss_c:0.13294, loss_p:0.13295, erTrain:0.20058, erVal:0.00024, erWeak:0.00941, erAqc:0.055, erAqa:0.055, lr 0.00100, time 00:35:52
+	Epoch[171/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20652, erVal:0.00031, erWeak:0.00864, erAqc:0.055, erAqa:0.055, lr 0.00100, time 00:36:04
+	Epoch[172/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.21249, erVal:0.00032, erWeak:0.00907, erAqc:0.055, erAqa:0.055, lr 0.00100, time 00:36:17
+	Epoch[173/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19937, erVal:0.00026, erWeak:0.00838, erAqc:0.055, erAqa:0.055, lr 0.00100, time 00:36:30
+	Epoch[174/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19955, erVal:0.00028, erWeak:0.00917, erAqc:0.055, erAqa:0.055, lr 0.00100, time 00:36:42
+	Epoch[175/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.21412, erVal:0.00029, erWeak:0.00851, erAqc:0.055, erAqa:0.055, lr 0.00100, time 00:36:55
+	Epoch[176/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20599, erVal:0.00048, erWeak:0.00899, erAqc:0.055, erAqa:0.055, lr 0.00100, time 00:37:08
+	Epoch[177/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19953, erVal:0.00027, erWeak:0.00999, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:37:21
+	Epoch[178/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20569, erVal:0.00035, erWeak:0.00996, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:37:33
+	Epoch[179/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20794, erVal:0.00036, erWeak:0.01057, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:37:46
+	Epoch[180/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20682, erVal:0.00033, erWeak:0.01000, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:37:59
+	Epoch[181/200]:loss_c:0.13294, loss_p:0.13295, erTrain:0.19926, erVal:0.00035, erWeak:0.00972, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:38:11
+	Epoch[182/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20496, erVal:0.00028, erWeak:0.00993, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:38:24
+	Epoch[183/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.21481, erVal:0.00041, erWeak:0.00962, erAqc:0.055, erAqa:0.055, lr 0.00100, time 00:38:36
+	Epoch[184/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20005, erVal:0.00023, erWeak:0.00985, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:38:49
+	Epoch[185/200]:loss_c:0.13296, loss_p:0.13295, erTrain:0.19942, erVal:0.00032, erWeak:0.00935, erAqc:0.055, erAqa:0.055, lr 0.00100, time 00:39:02
+	Epoch[186/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20718, erVal:0.00035, erWeak:0.00932, erAqc:0.055, erAqa:0.055, lr 0.00100, time 00:39:14
+	Epoch[187/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.21191, erVal:0.00024, erWeak:0.01021, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:39:27
+	Epoch[188/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20069, erVal:0.00028, erWeak:0.00988, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:39:40
+	Epoch[189/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20059, erVal:0.00026, erWeak:0.00930, erAqc:0.055, erAqa:0.055, lr 0.00100, time 00:39:52
+	Epoch[190/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20650, erVal:0.00025, erWeak:0.00926, erAqc:0.055, erAqa:0.055, lr 0.00100, time 00:40:05
+	Epoch[191/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.21249, erVal:0.00035, erWeak:0.00974, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:40:18
+	Epoch[192/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19942, erVal:0.00025, erWeak:0.00940, erAqc:0.055, erAqa:0.055, lr 0.00100, time 00:40:31
+	Epoch[193/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19953, erVal:0.00027, erWeak:0.01011, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:40:43
+	Epoch[194/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.21412, erVal:0.00042, erWeak:0.00956, erAqc:0.055, erAqa:0.055, lr 0.00100, time 00:40:56
+	Epoch[195/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20597, erVal:0.00038, erWeak:0.01001, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:41:09
+	Epoch[196/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19952, erVal:0.00032, erWeak:0.00923, erAqc:0.055, erAqa:0.055, lr 0.00100, time 00:41:22
+	Epoch[197/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20567, erVal:0.00028, erWeak:0.01002, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:41:34
+	Epoch[198/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20798, erVal:0.00027, erWeak:0.00976, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:41:47
+	Epoch[199/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20681, erVal:0.00026, erWeak:0.00916, erAqc:0.055, erAqa:0.055, lr 0.00100, time 00:42:00
+	Epoch[200/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19926, erVal:0.00025, erWeak:0.00956, erAqc:0.055, erAqa:0.055, lr 0.00100, time 00:42:13
+Done balancing: epoch 163, best_val_err=0.00020, best_weak_er=0.00838, run time 00:42:13
+Saved to: ./HTRU_2_16107_9/BalQ1_6_6_1800/bal_coreset_1800_rep_3.pt
+Loss post training:
+	C(torch.Tensor,s=torch.Size([1800, 9]),dtype=torch.float64,trainable=False,is_cuda=False): [[0.12, 1.19, -0.32, -0.34, -0.31, -0.36, -0.38, -0.5, -1.0], [0.12, -0.28, -0.16, -0.27, -0.39, -0. ...too long
+	U(torch.Tensor,s=torch.Size([1800]),dtype=torch.float64,trainable=False,is_cuda=False): [8.95, 8.95, 8.95, 8.95, 8.95, 8.95, 8.95, 8.95, 8.95, 8.95, 8.95, 8.95, 8.95, 8.95, 8.95, 8.95, 8.9 ...too long
+	loss(A,C,U,Q_train):|Q|=10000, loss_c=0.133, loss_p=0.133, error=0.00020(max=0.00409) (std=0.000)
+	loss(A,C,U,Q_val  ):|Q|=2000, loss_c=0.128, loss_p=0.128, error=0.00020(max=0.00382) (std=0.000)
+	loss(A,C,U,testQ  ):|Q|=1000, loss_c=0.126, loss_p=0.126, error=0.00020(max=0.00346) (std=0.000)
+	Weak test(post): f(A,lc)=0.05551, f(A,la)=0.05497, error=0.00993
+	ending sum weights:
+		sum(W)=16107
+		sum(U)=16107.353193640194
+-------------------------------------------------------------------------------- rep 3 time 00:42:29
+-------------------------------------------------------------------------------- rep 4
+	starting sum weights:
+		sum(W)=16107
+		sum(U)=16107.000732421875
+Balance params: epochs 200, batch_size 100, total batches 100, base_lr 0.001
+Loss before training:
+	trainQ(torch.Tensor,s=torch.Size([10000, 9, 1]),dtype=torch.float64,trainable=False,is_cuda=False): [[[0.34], [0.09], [1.89], [0.11], [-0.24], [0.24], [-0.12], [-0.01], [-1.33]], [[0.31], [0.11], [1.7 ...too long
+	A(torch.Tensor,s=torch.Size([16107, 9]),dtype=torch.float64,trainable=False,is_cuda=False): [[0.03, 0.23, -0.24, -0.3, -0.38, -0.74, 1.14, 1.2, -1.0], [-1.26, -1.4, 0.25, 0.23, -0.17, 0.42, -0 ...too long
+	C(torch.Tensor,s=torch.Size([1800, 9]),dtype=torch.float64,trainable=True,is_cuda=False): [[-0.3, -0.64, 0.0, -0.14, -0.38, -0.6, 0.83, 0.53, -1.0], [1.05, 1.17, -0.57, -0.4, -0.33, -0.45, 0 ...too long
+	U(torch.Tensor,s=torch.Size([1800]),dtype=torch.float64,trainable=True,is_cuda=False): [8.95, 8.95, 8.95, 8.95, 8.95, 8.95, 8.95, 8.95, 8.95, 8.95, 8.95, 8.95, 8.95, 8.95, 8.95, 8.95, 8.9 ...too long
+	loss(A,C,U,Q_train):|Q|=10000, loss_c=0.138, loss_p=0.133, error=0.06111(max=0.17843) (std=0.028)
+	valQ(torch.Tensor,s=torch.Size([2000, 9, 1]),dtype=torch.float64,trainable=False,is_cuda=False): [[[-0.22], [0.1], [1.29], [-0.0], [-0.34], [0.37], [-0.2], [0.07], [-1.63]], [[0.33], [0.13], [1.65] ...too long
+	loss(A,C,U,Q_val  ):|Q|=2000, loss_c=0.132, loss_p=0.128, error=0.06089(max=0.17763) (std=0.028)
+	testQ(torch.Tensor,s=torch.Size([1000, 9, 1]),dtype=torch.float64,trainable=False,is_cuda=False): [[[-0.32], [0.1], [1.18], [-0.05], [-0.42], [0.43], [-0.22], [0.06], [-1.71]], [[-0.97], [-0.61], [- ...too long
+	loss(A,C,U,testQ  ):|Q|=1000, loss_c=0.131, loss_p=0.126, error=0.06200(max=0.17831) (std=0.028)
+	Weak test(pre): f(A,lc)=0.05710, f(A,la)=0.05497, error=0.03874
+build_1_bal_SGD_coreset(size=1800):
+	optimizer = Adam (Parameter Group 0 amsgrad: False betas: (0.9, 0.999) eps: 1e-08 lr: 0.001 weight_decay: 0), |trainable_vars| = 2
+	Epoch[1/200]:loss_c:0.13372, loss_p:0.13295, erTrain:0.26845, erVal:0.00357, erWeak:0.03207, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:00:12, V
+	Epoch[2/200]:loss_c:0.13304, loss_p:0.13295, erTrain:0.20122, erVal:0.00135, erWeak:0.03112, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:00:25, V
+	Epoch[3/200]:loss_c:0.13297, loss_p:0.13295, erTrain:0.20018, erVal:0.00071, erWeak:0.03114, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:00:38, V
+	Epoch[4/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.21454, erVal:0.00056, erWeak:0.03133, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:00:50, V
+	Epoch[5/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20622, erVal:0.00055, erWeak:0.03137, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:01:03, V
+	Epoch[6/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19968, erVal:0.00051, erWeak:0.03145, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:01:16, V
+	Epoch[7/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20587, erVal:0.00043, erWeak:0.03159, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:01:29, V
+	Epoch[8/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20812, erVal:0.00036, erWeak:0.03159, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:01:41, V
+	Epoch[9/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20694, erVal:0.00062, erWeak:0.03144, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:01:54
+	Epoch[10/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19943, erVal:0.00042, erWeak:0.03158, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:02:07
+	Epoch[11/200]:loss_c:0.13294, loss_p:0.13295, erTrain:0.20501, erVal:0.00035, erWeak:0.03143, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:02:20, V
+	Epoch[12/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.21488, erVal:0.00038, erWeak:0.03138, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:02:33
+	Epoch[13/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20020, erVal:0.00035, erWeak:0.03123, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:02:45, V
+	Epoch[14/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19953, erVal:0.00036, erWeak:0.03151, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:02:57
+	Epoch[15/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20726, erVal:0.00046, erWeak:0.03149, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:03:10
+	Epoch[16/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.21193, erVal:0.00039, erWeak:0.03146, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:03:22
+	Epoch[17/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20086, erVal:0.00037, erWeak:0.03054, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:03:35
+	Epoch[18/200]:loss_c:0.13294, loss_p:0.13295, erTrain:0.20073, erVal:0.00045, erWeak:0.03160, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:03:48
+	Epoch[19/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20668, erVal:0.00039, erWeak:0.03234, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:04:00
+	Epoch[20/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.21255, erVal:0.00033, erWeak:0.03151, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:04:13, V
+	Epoch[21/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19944, erVal:0.00036, erWeak:0.03054, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:04:25
+	Epoch[22/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19960, erVal:0.00036, erWeak:0.03095, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:04:38
+	Epoch[23/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.21423, erVal:0.00040, erWeak:0.03066, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:04:51
+	Epoch[24/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20602, erVal:0.00067, erWeak:0.02922, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:05:04
+	Epoch[25/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19957, erVal:0.00045, erWeak:0.03039, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:05:16
+	Epoch[26/200]:loss_c:0.13294, loss_p:0.13295, erTrain:0.20574, erVal:0.00033, erWeak:0.02634, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:05:29
+	Epoch[27/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20806, erVal:0.00030, erWeak:0.02625, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:05:42, V
+	Epoch[28/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20688, erVal:0.00034, erWeak:0.02532, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:05:54
+	Epoch[29/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19934, erVal:0.00038, erWeak:0.02531, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:06:07
+	Epoch[30/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20497, erVal:0.00051, erWeak:0.02503, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:06:20
+	Epoch[31/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.21481, erVal:0.00027, erWeak:0.02503, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:06:32, V
+	Epoch[32/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20017, erVal:0.00038, erWeak:0.02494, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:06:45
+	Epoch[33/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19951, erVal:0.00045, erWeak:0.02482, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:06:58
+	Epoch[34/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20727, erVal:0.00029, erWeak:0.02494, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:07:10
+	Epoch[35/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.21190, erVal:0.00033, erWeak:0.02570, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:07:23
+	Epoch[36/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20080, erVal:0.00040, erWeak:0.02505, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:07:35
+	Epoch[37/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20065, erVal:0.00048, erWeak:0.02521, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:07:48
+	Epoch[38/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20662, erVal:0.00029, erWeak:0.02486, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:08:01
+	Epoch[39/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.21251, erVal:0.00029, erWeak:0.02496, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:08:13
+	Epoch[40/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19944, erVal:0.00032, erWeak:0.02500, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:08:26
+	Epoch[41/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19952, erVal:0.00035, erWeak:0.02499, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:08:38
+	Epoch[42/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.21420, erVal:0.00034, erWeak:0.02489, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:08:51
+	Epoch[43/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20599, erVal:0.00054, erWeak:0.02357, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:09:04
+	Epoch[44/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19956, erVal:0.00034, erWeak:0.02349, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:09:16
+	Epoch[45/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20573, erVal:0.00030, erWeak:0.02353, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:09:29
+	Epoch[46/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20802, erVal:0.00032, erWeak:0.02372, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:09:41
+	Epoch[47/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20691, erVal:0.00037, erWeak:0.02411, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:09:54
+	Epoch[48/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19928, erVal:0.00031, erWeak:0.02421, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:10:07
+	Epoch[49/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20494, erVal:0.00032, erWeak:0.02378, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:10:20
+	Epoch[50/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.21481, erVal:0.00040, erWeak:0.02344, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:10:32
+	Epoch[51/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20010, erVal:0.00041, erWeak:0.02436, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:10:45
+	Epoch[52/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19946, erVal:0.00037, erWeak:0.02367, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:10:57
+	Epoch[53/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20729, erVal:0.00042, erWeak:0.02360, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:11:10
+	Epoch[54/200]:loss_c:0.13294, loss_p:0.13295, erTrain:0.21194, erVal:0.00033, erWeak:0.02290, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:11:22
+	Epoch[55/200]:loss_c:0.13294, loss_p:0.13295, erTrain:0.20080, erVal:0.00039, erWeak:0.02314, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:11:35
+	Epoch[56/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20062, erVal:0.00042, erWeak:0.02358, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:11:47
+	Epoch[57/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20659, erVal:0.00028, erWeak:0.02314, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:12:00
+	Epoch[58/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.21246, erVal:0.00034, erWeak:0.02344, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:12:13
+	Epoch[59/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19944, erVal:0.00038, erWeak:0.02307, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:12:26
+	Epoch[60/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19954, erVal:0.00029, erWeak:0.02314, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:12:38
+	Epoch[61/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.21420, erVal:0.00026, erWeak:0.02330, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:12:51, V
+	Epoch[62/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20601, erVal:0.00054, erWeak:0.02358, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:13:03
+	Epoch[63/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19954, erVal:0.00029, erWeak:0.02334, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:13:16
+	Epoch[64/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20568, erVal:0.00034, erWeak:0.02334, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:13:29
+	Epoch[65/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20801, erVal:0.00037, erWeak:0.02368, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:13:41
+	Epoch[66/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20685, erVal:0.00028, erWeak:0.02378, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:13:54
+	Epoch[67/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19927, erVal:0.00025, erWeak:0.02366, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:14:07, V
+	Epoch[68/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20494, erVal:0.00044, erWeak:0.02409, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:14:20
+	Epoch[69/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.21477, erVal:0.00024, erWeak:0.02373, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:14:33, V
+	Epoch[70/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20013, erVal:0.00060, erWeak:0.02376, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:14:46
+	Epoch[71/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19949, erVal:0.00027, erWeak:0.02377, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:14:59
+	Epoch[72/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20721, erVal:0.00033, erWeak:0.02348, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:15:12
+	Epoch[73/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.21189, erVal:0.00025, erWeak:0.02384, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:15:24
+	Epoch[74/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20081, erVal:0.00034, erWeak:0.02380, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:15:37
+	Epoch[75/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20065, erVal:0.00031, erWeak:0.02570, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:15:50
+	Epoch[76/200]:loss_c:0.13294, loss_p:0.13295, erTrain:0.20659, erVal:0.00040, erWeak:0.02386, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:16:02
+	Epoch[77/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.21256, erVal:0.00025, erWeak:0.02357, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:16:15
+	Epoch[78/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19941, erVal:0.00036, erWeak:0.02357, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:16:27
+	Epoch[79/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19952, erVal:0.00030, erWeak:0.02384, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:16:40
+	Epoch[80/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.21415, erVal:0.00027, erWeak:0.02366, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:16:53
+	Epoch[81/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20594, erVal:0.00027, erWeak:0.02410, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:17:06
+	Epoch[82/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19952, erVal:0.00029, erWeak:0.02438, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:17:18
+	Epoch[83/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20568, erVal:0.00038, erWeak:0.02377, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:17:31
+	Epoch[84/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20797, erVal:0.00035, erWeak:0.02411, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:17:44
+	Epoch[85/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20681, erVal:0.00031, erWeak:0.02520, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:17:57
+	Epoch[86/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19931, erVal:0.00025, erWeak:0.02408, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:18:09
+	Epoch[87/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20503, erVal:0.00032, erWeak:0.02406, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:18:22
+	Epoch[88/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.21480, erVal:0.00034, erWeak:0.02563, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:18:35
+	Epoch[89/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20013, erVal:0.00024, erWeak:0.02297, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:18:47
+	Epoch[90/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19946, erVal:0.00028, erWeak:0.02401, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:19:00
+	Epoch[91/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20718, erVal:0.00039, erWeak:0.02165, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:19:13
+	Epoch[92/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.21186, erVal:0.00027, erWeak:0.02411, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:19:26
+	Epoch[93/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20081, erVal:0.00028, erWeak:0.02260, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:19:38
+	Epoch[94/200]:loss_c:0.13294, loss_p:0.13295, erTrain:0.20061, erVal:0.00025, erWeak:0.02213, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:19:51
+	Epoch[95/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20657, erVal:0.00024, erWeak:0.02473, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:20:04
+	Epoch[96/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.21256, erVal:0.00031, erWeak:0.02240, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:20:17
+	Epoch[97/200]:loss_c:0.13296, loss_p:0.13295, erTrain:0.19938, erVal:0.00026, erWeak:0.02386, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:20:30
+	Epoch[98/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19947, erVal:0.00026, erWeak:0.02215, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:20:42
+	Epoch[99/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.21414, erVal:0.00032, erWeak:0.02256, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:20:55
+	Epoch[100/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20597, erVal:0.00031, erWeak:0.02518, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:21:07
+	Epoch[101/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19956, erVal:0.00035, erWeak:0.01656, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:21:20
+	Epoch[102/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20570, erVal:0.00021, erWeak:0.02357, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:21:33, V
+	Epoch[103/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20797, erVal:0.00027, erWeak:0.02552, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:21:46
+	Epoch[104/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20683, erVal:0.00021, erWeak:0.01983, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:21:59
+	Epoch[105/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19927, erVal:0.00037, erWeak:0.01729, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:22:11
+	Epoch[106/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20492, erVal:0.00033, erWeak:0.02345, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:22:24
+	Epoch[107/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.21476, erVal:0.00033, erWeak:0.01921, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:22:37
+	Epoch[108/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20012, erVal:0.00026, erWeak:0.02047, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:22:49
+	Epoch[109/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19942, erVal:0.00022, erWeak:0.02055, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:23:02
+	Epoch[110/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20716, erVal:0.00056, erWeak:0.02048, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:23:14
+	Epoch[111/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.21192, erVal:0.00029, erWeak:0.02142, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:23:27
+	Epoch[112/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20073, erVal:0.00025, erWeak:0.01805, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:23:40
+	Epoch[113/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20062, erVal:0.00039, erWeak:0.01831, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:23:52
+	Epoch[114/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20662, erVal:0.00033, erWeak:0.02142, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:24:05
+	Epoch[115/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.21244, erVal:0.00054, erWeak:0.01985, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:24:18
+	Epoch[116/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19946, erVal:0.00034, erWeak:0.01814, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:24:30
+	Epoch[117/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19955, erVal:0.00047, erWeak:0.01821, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:24:43
+	Epoch[118/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.21417, erVal:0.00035, erWeak:0.01756, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:24:55
+	Epoch[119/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20601, erVal:0.00030, erWeak:0.01819, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:25:08
+	Epoch[120/200]:loss_c:0.13294, loss_p:0.13295, erTrain:0.19953, erVal:0.00029, erWeak:0.01832, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:25:21
+	Epoch[121/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20568, erVal:0.00033, erWeak:0.02072, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:25:34
+	Epoch[122/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20795, erVal:0.00040, erWeak:0.01763, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:25:46
+	Epoch[123/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20686, erVal:0.00025, erWeak:0.01726, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:25:59
+	Epoch[124/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19928, erVal:0.00056, erWeak:0.02491, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:26:11
+	Epoch[125/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20495, erVal:0.00026, erWeak:0.01731, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:26:24
+	Epoch[126/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.21477, erVal:0.00037, erWeak:0.01966, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:26:36
+	Epoch[127/200]:loss_c:0.13294, loss_p:0.13295, erTrain:0.20012, erVal:0.00041, erWeak:0.01937, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:26:49
+	Epoch[128/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19946, erVal:0.00033, erWeak:0.02081, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:27:02
+	Epoch[129/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20721, erVal:0.00044, erWeak:0.01905, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:27:14
+	Epoch[130/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.21186, erVal:0.00028, erWeak:0.02289, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:27:27
+	Epoch[131/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20076, erVal:0.00032, erWeak:0.02370, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:27:39
+	Epoch[132/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20060, erVal:0.00025, erWeak:0.02205, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:27:52
+	Epoch[133/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20656, erVal:0.00027, erWeak:0.01865, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:28:05
+	Epoch[134/200]:loss_c:0.13296, loss_p:0.13295, erTrain:0.21249, erVal:0.00064, erWeak:0.02175, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:28:17
+	Epoch[135/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19938, erVal:0.00020, erWeak:0.02256, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:28:29, V
+	Epoch[136/200]:loss_c:0.13294, loss_p:0.13295, erTrain:0.19947, erVal:0.00027, erWeak:0.01861, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:28:42
+	Epoch[137/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.21411, erVal:0.00042, erWeak:0.02215, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:28:55
+	Epoch[138/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20601, erVal:0.00025, erWeak:0.01802, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:29:07
+	Epoch[139/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19950, erVal:0.00032, erWeak:0.01780, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:29:20
+	Epoch[140/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20570, erVal:0.00040, erWeak:0.01905, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:29:33
+	Epoch[141/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20796, erVal:0.00030, erWeak:0.01781, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:29:46
+	Epoch[142/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20684, erVal:0.00028, erWeak:0.01777, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:29:59
+	Epoch[143/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19926, erVal:0.00018, erWeak:0.01822, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:30:12, V
+	Epoch[144/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20487, erVal:0.00037, erWeak:0.01992, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:30:25
+	Epoch[145/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.21477, erVal:0.00024, erWeak:0.01907, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:30:37
+	Epoch[146/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20017, erVal:0.00037, erWeak:0.01782, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:30:50
+	Epoch[147/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19945, erVal:0.00044, erWeak:0.02741, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:31:03
+	Epoch[148/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20728, erVal:0.00021, erWeak:0.01948, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:31:16
+	Epoch[149/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.21184, erVal:0.00033, erWeak:0.01767, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:31:29
+	Epoch[150/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20076, erVal:0.00041, erWeak:0.02003, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:31:41
+	Epoch[151/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20068, erVal:0.00032, erWeak:0.02122, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:31:54
+	Epoch[152/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20667, erVal:0.00027, erWeak:0.02127, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:32:07
+	Epoch[153/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.21249, erVal:0.00025, erWeak:0.02432, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:32:20
+	Epoch[154/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19942, erVal:0.00044, erWeak:0.01683, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:32:32
+	Epoch[155/200]:loss_c:0.13294, loss_p:0.13295, erTrain:0.19958, erVal:0.00024, erWeak:0.02171, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:32:45
+	Epoch[156/200]:loss_c:0.13296, loss_p:0.13295, erTrain:0.21420, erVal:0.00026, erWeak:0.02098, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:32:58
+	Epoch[157/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20593, erVal:0.00023, erWeak:0.01899, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:33:10
+	Epoch[158/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19957, erVal:0.00031, erWeak:0.02047, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:33:23
+	Epoch[159/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20573, erVal:0.00029, erWeak:0.01916, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:33:36
+	Epoch[160/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20800, erVal:0.00024, erWeak:0.01898, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:33:48
+	Epoch[161/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20678, erVal:0.00032, erWeak:0.02189, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:34:01
+	Epoch[162/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19928, erVal:0.00033, erWeak:0.02334, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:34:14
+	Epoch[163/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20488, erVal:0.00021, erWeak:0.02306, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:34:26
+	Epoch[164/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.21474, erVal:0.00028, erWeak:0.02268, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:34:39
+	Epoch[165/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20018, erVal:0.00027, erWeak:0.01952, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:34:51
+	Epoch[166/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19942, erVal:0.00043, erWeak:0.02730, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:35:04
+	Epoch[167/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20723, erVal:0.00028, erWeak:0.02506, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:35:17
+	Epoch[168/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.21183, erVal:0.00028, erWeak:0.02448, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:35:30
+	Epoch[169/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20084, erVal:0.00046, erWeak:0.02710, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:35:42
+	Epoch[170/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20070, erVal:0.00041, erWeak:0.02520, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:35:55
+	Epoch[171/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20653, erVal:0.00026, erWeak:0.01868, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:36:08
+	Epoch[172/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.21246, erVal:0.00059, erWeak:0.02715, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:36:21
+	Epoch[173/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19942, erVal:0.00022, erWeak:0.02095, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:36:34
+	Epoch[174/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19954, erVal:0.00037, erWeak:0.01990, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:36:46
+	Epoch[175/200]:loss_c:0.13294, loss_p:0.13295, erTrain:0.21415, erVal:0.00030, erWeak:0.02063, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:36:59
+	Epoch[176/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20593, erVal:0.00027, erWeak:0.02167, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:37:12
+	Epoch[177/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19946, erVal:0.00023, erWeak:0.02282, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:37:25
+	Epoch[178/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20570, erVal:0.00029, erWeak:0.01947, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:37:37
+	Epoch[179/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20801, erVal:0.00032, erWeak:0.02034, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:37:49
+	Epoch[180/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20681, erVal:0.00025, erWeak:0.02074, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:37:59
+	Epoch[181/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19929, erVal:0.00060, erWeak:0.02419, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:38:08
+	Epoch[182/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20492, erVal:0.00025, erWeak:0.02499, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:38:17
+	Epoch[183/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.21472, erVal:0.00027, erWeak:0.02718, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:38:26
+	Epoch[184/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20010, erVal:0.00040, erWeak:0.01885, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:38:35
+	Epoch[185/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19947, erVal:0.00028, erWeak:0.02060, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:38:45
+	Epoch[186/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20719, erVal:0.00040, erWeak:0.02457, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:38:54
+	Epoch[187/200]:loss_c:0.13296, loss_p:0.13295, erTrain:0.21190, erVal:0.00024, erWeak:0.02712, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:39:03
+	Epoch[188/200]:loss_c:0.13294, loss_p:0.13295, erTrain:0.20072, erVal:0.00028, erWeak:0.03111, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:39:12
+	Epoch[189/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20071, erVal:0.00030, erWeak:0.03112, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:39:21
+	Epoch[190/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20662, erVal:0.00049, erWeak:0.02914, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:39:30
+	Epoch[191/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.21246, erVal:0.00031, erWeak:0.02158, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:39:40
+	Epoch[192/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19935, erVal:0.00031, erWeak:0.02996, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:39:49
+	Epoch[193/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19951, erVal:0.00041, erWeak:0.02707, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:39:58
+	Epoch[194/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.21419, erVal:0.00046, erWeak:0.02830, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:40:07
+	Epoch[195/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20607, erVal:0.00037, erWeak:0.02810, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:40:16
+	Epoch[196/200]:loss_c:0.13296, loss_p:0.13295, erTrain:0.19948, erVal:0.00036, erWeak:0.02366, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:40:25
+	Epoch[197/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20598, erVal:0.00035, erWeak:0.03006, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:40:34
+	Epoch[198/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.20796, erVal:0.00040, erWeak:0.02625, erAqc:0.056, erAqa:0.055, lr 0.00100, time 00:40:44
+	Epoch[199/200]:loss_c:0.13294, loss_p:0.13295, erTrain:0.20687, erVal:0.00040, erWeak:0.02815, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:40:53
+	Epoch[200/200]:loss_c:0.13295, loss_p:0.13295, erTrain:0.19932, erVal:0.00052, erWeak:0.02961, erAqc:0.057, erAqa:0.055, lr 0.00100, time 00:41:02
+Done balancing: epoch 143, best_val_err=0.00018, best_weak_er=0.01656, run time 00:41:02
+Saved to: ./HTRU_2_16107_9/BalQ1_6_6_1800/bal_coreset_1800_rep_4.pt
+Loss post training:
+	C(torch.Tensor,s=torch.Size([1800, 9]),dtype=torch.float64,trainable=False,is_cuda=False): [[-0.28, -0.63, -0.01, -0.14, -0.41, -0.66, 0.78, 0.47, -1.0], [1.07, 1.16, -0.56, -0.38, -0.33, -0. ...too long
+	U(torch.Tensor,s=torch.Size([1800]),dtype=torch.float64,trainable=False,is_cuda=False): [8.95, 8.95, 8.95, 8.95, 8.95, 8.95, 8.95, 8.95, 8.95, 8.95, 8.95, 8.95, 8.95, 8.95, 8.95, 8.95, 8.9 ...too long
+	loss(A,C,U,Q_train):|Q|=10000, loss_c=0.133, loss_p=0.133, error=0.00017(max=0.00426) (std=0.000)
+	loss(A,C,U,Q_val  ):|Q|=2000, loss_c=0.128, loss_p=0.128, error=0.00018(max=0.00374) (std=0.000)
+	loss(A,C,U,testQ  ):|Q|=1000, loss_c=0.126, loss_p=0.126, error=0.00016(max=0.00362) (std=0.000)
+	Weak test(post): f(A,lc)=0.05597, f(A,la)=0.05497, error=0.01822
+	ending sum weights:
+		sum(W)=16107
+		sum(U)=16106.771331559836
+-------------------------------------------------------------------------------- rep 4 time 00:41:16
+c_size = 1800: time 03:31:58
+build_bal_SGD_coresets time 03:31:58
+sp_list: MURAD,UNI,SGD
+get_sp_list time 03:31:58
+get_list_of_coresets_for_each_size:
+	|A|=[16107, 9], reps=100, c_sizes=[1800], sp_names=MURAD,UNI,SGD
+	Loaded: ./HTRU_2_16107_9/BalQ1_6_6_1800/bal_coreset_1800_rep_0.pt
+	Loaded: ./HTRU_2_16107_9/BalQ1_6_6_1800/bal_coreset_1800_rep_1.pt
+	Loaded: ./HTRU_2_16107_9/BalQ1_6_6_1800/bal_coreset_1800_rep_2.pt
+	Loaded: ./HTRU_2_16107_9/BalQ1_6_6_1800/bal_coreset_1800_rep_3.pt
+	Loaded: ./HTRU_2_16107_9/BalQ1_6_6_1800/bal_coreset_1800_rep_4.pt
+	for size 1800: created MURAD 100x[1800, 9] coresets, UNI 100x[1800, 9] coresets, SGD 5x[1800, 9] coresets
+get_list_of_coresets_for_each_size time 00:00:00
+test_coresets:
+	name_color_list:[('MURAD', 'g'), ('UNI', 'r'), ('SGD', 'b')]
+	|A|=[16107, 9], c_sizes [1800], reps=100, bal reps=5:
+		error(A, q_opt)=0.05
+starting weak...
+MURAD: [0.0083,0.0171,0.0116,0.0151,0.0050,0.0318,0.0115,0.0141,0.0155,0.0193,0.0201,0.0219,0.0118,0.0132,0.0145,0.0182,0.0200,0.0190,0.0235,0.0185,0.0185,0.0257,0.0103,0.0255,0.0322,0.0093,0.0276,0.0469,0.0137,0.0133,0.0429,0.0323,0.0103,0.0141,0.0138,0.0198,0.0496,0.0393,0.0269,0.0119,0.0159,0.0257,0.0246,0.0702,0.0088,0.0206,0.0144,0.0154,0.0149,0.0280,0.0084,0.0194,0.0105,0.0127,0.0085,0.0082,0.0343,0.0155,0.0083,0.0245,0.0080,0.0201,0.0264,0.0113,0.0307,0.0117,0.0216,0.0238,0.0103,0.0033,0.0132,0.0182,0.0330,0.0161,0.0123,0.0204,0.0100,0.0032,0.0179,0.0114,0.0155,0.0274,0.0135,0.0558,0.0447,0.0312,0.0092,0.0496,0.0108,0.0137,0.0216,0.0106,0.0105,0.0188,0.0263,0.0075,0.0212,0.0211,0.0086,0.0127]
+UNI: [0.0404,0.0447,0.0230,0.0606,0.0187,0.0332,0.0292,0.0404,0.0369,0.0344,0.0389,0.0742,0.0155,0.0455,0.0304,0.0506,0.0190,0.0486,0.1076,0.0470,0.0814,0.0279,0.0495,0.1065,0.0218,0.0702,0.0207,0.0298,0.0561,0.0666,0.0691,0.0212,0.0736,0.0756,0.0337,0.0209,0.0290,0.0176,0.0304,0.0435,0.0331,0.0332,0.0508,0.0468,0.0404,0.0144,0.0775,0.0479,0.0340,0.0827,0.0572,0.0246,0.0487,0.0287,0.0926,0.0256,0.0068,0.1376,0.0435,0.0490,0.0432,0.0292,0.0537,0.0440,0.0518,0.0125,0.0320,0.0486,0.0848,0.0157,0.0665,0.0736,0.0162,0.0308,0.0200,0.0311,0.0666,0.0093,0.0224,0.2190,0.0197,0.0500,0.0327,0.0139,0.0518,0.0442,0.0348,0.0186,0.0434,0.0217,0.0146,0.0333,0.1181,0.0359,0.0170,0.0353,0.0521,0.0182,0.1233,0.0628]
+SGD: [0.0113,0.0271,0.0288,0.0099,0.0182]
+weak test on MURAD,UNI,SGD (other reps=100, bal reps=5)
+	MURAD errors: [0.01956], stds: [0.01165]
+	UNI errors: [0.04571], stds: [0.03104]
+	SGD errors: [0.01906], stds: [0.00778]
+	saved to ./HTRU_2_16107_9/BalQ1_6_6_1800/1800_to_1800_weak.png
+weak_time 00:00:06
+test_coresets time 00:00:06
+--------------------------------------------------------------------------------
+Total run time 3:32:12
+
+Process finished with exit code 0

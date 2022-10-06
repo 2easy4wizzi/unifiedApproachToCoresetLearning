@@ -1,0 +1,2008 @@
+C:\Users\GiladEiniKbyLake\.conda\envs\AutoCL2\python.exe D:/workspace/2019SGD/DataReduction/LinearRegNewLoss/mainLinearRegressionV4.py
+--------------------------------------------------------------------------------
+main_wrapper:
+* Run started at 19-07-2022 21:00:51
+* Python Version 3.6.13 |Anaconda, Inc.| (default, Mar 16 2021, 11:37:27) [MSC v.1916 64 bit (AMD64)]
+* Operating System uname_result(system='Windows', node='Wizzi-Dorms', release='10', version='10.0.19041', machine='AMD64', processor='Intel64 Family 6 Model 158 Stepping 9, GenuineIntel')
+* Interpreter: C:\Users\GiladEiniKbyLake\.conda\envs\AutoCL2\python.exe
+* wizzi_utils Version 7.2.0
+* Working Dir: D:\workspace\2019SGD\DataReduction\LinearRegNewLoss
+* Computer Mac: 70:4D:7B:8A:65:EE
+* CPU Info: AMD64, Intel64 Family 6 Model 158 Stepping 9, GenuineIntel, Physical cores 4, Total cores 8, Frequency 3601.00Mhz, CPU Usage 13.1%
+* Physical Memory: C: Total 232.33 GB, Used 190.83 GB(82.10%), Free 41.5 GB, D: Total 931.39 GB, Used 201.29 GB(21.60%), Free 730.1 GB, E: PermissionError: [WinError 21] The device is not ready: 'E', G: Total 17.0 GB, Used 3.26 GB(19.20%), Free 13.74 GB
+* RAM: Total 15.94 GB, Used 8.69 GB(54.6%), Available 7.24 GB
+* CUDA Version: v10.2 (cuDNN Version 7.6.5) (Turned off)
+* PyTorch Version 1.8.1+cu101 - GPU detected ? False
+Function <function main at 0x00000210BE3AAF28> started:
+--------------------------------------------------------------------------------
+working on CPU
+get_data(ds_name=3DRoad):
+	3DRoad_data(torch.Tensor,s=torch.Size([434874, 3]),dtype=torch.float32,trainable=False,is_cuda=False): [[9.35, 56.74, 17.05], [9.35, 56.74, 17.61], [9.35, 56.74, 18.08], [9.35, 56.74, 18.28], [9.35, 56.7 ...too long
+get_data time 00:00:02
+argv:
+	ds_name: 3DRoad
+	base_folder: ./3DRoad_434874_3
+	f: <function f_opt at 0x00000210BE3A2D90>
+	solver: <function solver_sklearn at 0x00000210BE3A2E18>
+	Q: {'path': './3DRoad_434874_3/Q3.pt', 'init_size': 20, 'init_miu': 0, 'init_std': 1, 'sample_step': 0.5, 'epochs': 80, 'bs': 2000, 'lr': 0.0001, 'mv': {'factor': 0.1, 'patience': 80, 'min_lr': 0.0001}, 'infoQ_show_er': False, 'trainQ_s': 20000, 'valQ_s': 2000, 'testQ_s': 2000}
+	color_dict: {'SGD': 'b', 'SVD': 'g', 'UNI': 'r'}
+	SVD_sp_folder: ./3DRoad_434874_3
+	Bal: {'folder': './3DRoad_434874_3/bal_optimized_5_epochs', 'reps': 10, 'epochs': 5, 'bs': 25, 'lr': 0.01, 'mv': {'factor': 0.1, 'patience': 100000, 'min_lr': 0.001}, 'lambda': 1, 'epochs_info': True, 'epochs_info_stds': False, 'batches_info': False, 'loss_stats': False}
+	show_plots: False
+	save_plots: True
+	c_sizes: [50, 60, 70, 80, 90, 100, 110, 120, 130, 140]
+	reps: 100
+./3DRoad_434874_3/bal_optimized_5_epochs exists
+Balancing:
+get_Q_sets
+Loaded: ./3DRoad_434874_3/Q3.pt
+	|allQ|=[174400, 3, 1]:
+	|trainQ|=[20000, 3, 1]:
+	|valQ|=[2000, 3, 1]:
+	|testQ|=[2000, 3, 1]:
+get_Q_sets time 00:00:00
+get_sp_list:
+build_bal_SGD_coresets for |A|=torch.Size([434874, 3]) (DONE ONLY ONCE):
+	c_sizes=[50, 60, 70, 80, 90, 100, 110, 120, 130, 140], bal_reps=10, |trainQ|=20000, |valQ|=2000
+c_size 50:
+-------------------------------------------------------------------------------- rep 0
+	calculating f(A, Q)
+		Done
+	starting sum weights:
+		sum(W)=434874
+		sum(U)=434874.0
+Balance params: epochs 5, batch_size 25, total batches 800, base_lr 0.01
+build_1_bal_SGD_coreset(size=50):
+	optimizer = Adam (Parameter Group 0 amsgrad: False betas: (0.9, 0.999) eps: 1e-08 lr: 0.01 weight_decay: 0), |trainable_vars| = 2
+	Epoch[1/5]:loss_c:1,248.932, loss_p:1,292.027, erTrain:0.06368, erVal:0.00381, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:09, V
+	Epoch[2/5]:loss_c:1,291.705, loss_p:1,292.027, erTrain:0.02116, erVal:0.00007, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:18, V
+	Epoch[3/5]:loss_c:1,292.026, loss_p:1,292.027, erTrain:0.02098, erVal:0.00012, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:27
+	Epoch[4/5]:loss_c:1,292.028, loss_p:1,292.027, erTrain:0.02094, erVal:0.00013, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:36
+	Epoch[5/5]:loss_c:1,292.024, loss_p:1,292.027, erTrain:0.02095, erVal:0.00005, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:47, V
+Done balancing: epoch 5, best_val_err=0.00005, best_weak_er=-1.00000, run time 00:00:47
+Saved to: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_50_rep_0.pt
+	ending sum weights:
+		sum(W)=434874
+		sum(U)=434874.03125
+-------------------------------------------------------------------------------- rep 0 time 00:01:26
+-------------------------------------------------------------------------------- rep 1
+	starting sum weights:
+		sum(W)=434874
+		sum(U)=434874.0
+Balance params: epochs 5, batch_size 25, total batches 800, base_lr 0.01
+build_1_bal_SGD_coreset(size=50):
+	optimizer = Adam (Parameter Group 0 amsgrad: False betas: (0.9, 0.999) eps: 1e-08 lr: 0.01 weight_decay: 0), |trainable_vars| = 2
+	Epoch[1/5]:loss_c:1,293.197, loss_p:1,292.027, erTrain:0.08498, erVal:0.00067, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:10, V
+	Epoch[2/5]:loss_c:1,292.029, loss_p:1,292.027, erTrain:0.07865, erVal:0.00039, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:20, V
+	Epoch[3/5]:loss_c:1,292.025, loss_p:1,292.027, erTrain:0.07839, erVal:0.00013, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:31, V
+	Epoch[4/5]:loss_c:1,292.026, loss_p:1,292.027, erTrain:0.07826, erVal:0.00014, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:43
+	Epoch[5/5]:loss_c:1,292.026, loss_p:1,292.027, erTrain:0.07825, erVal:0.00009, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:53, V
+Done balancing: epoch 5, best_val_err=0.00009, best_weak_er=-1.00000, run time 00:00:53
+Saved to: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_50_rep_1.pt
+	ending sum weights:
+		sum(W)=434874
+		sum(U)=434874.09375
+-------------------------------------------------------------------------------- rep 1 time 00:00:53
+-------------------------------------------------------------------------------- rep 2
+	starting sum weights:
+		sum(W)=434874
+		sum(U)=434874.0
+Balance params: epochs 5, batch_size 25, total batches 800, base_lr 0.01
+build_1_bal_SGD_coreset(size=50):
+	optimizer = Adam (Parameter Group 0 amsgrad: False betas: (0.9, 0.999) eps: 1e-08 lr: 0.01 weight_decay: 0), |trainable_vars| = 2
+	Epoch[1/5]:loss_c:1,292.642, loss_p:1,292.027, erTrain:0.05280, erVal:0.00020, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:10, V
+	Epoch[2/5]:loss_c:1,292.024, loss_p:1,292.027, erTrain:0.04702, erVal:0.00013, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:21, V
+	Epoch[3/5]:loss_c:1,292.025, loss_p:1,292.027, erTrain:0.04700, erVal:0.00015, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:32
+	Epoch[4/5]:loss_c:1,292.028, loss_p:1,292.027, erTrain:0.04699, erVal:0.00013, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:41, V
+	Epoch[5/5]:loss_c:1,292.028, loss_p:1,292.027, erTrain:0.04699, erVal:0.00005, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:50, V
+Done balancing: epoch 5, best_val_err=0.00005, best_weak_er=-1.00000, run time 00:00:50
+Saved to: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_50_rep_2.pt
+	ending sum weights:
+		sum(W)=434874
+		sum(U)=434873.9375
+-------------------------------------------------------------------------------- rep 2 time 00:00:50
+-------------------------------------------------------------------------------- rep 3
+	starting sum weights:
+		sum(W)=434874
+		sum(U)=434874.0
+Balance params: epochs 5, batch_size 25, total batches 800, base_lr 0.01
+build_1_bal_SGD_coreset(size=50):
+	optimizer = Adam (Parameter Group 0 amsgrad: False betas: (0.9, 0.999) eps: 1e-08 lr: 0.01 weight_decay: 0), |trainable_vars| = 2
+	Epoch[1/5]:loss_c:1,205.353, loss_p:1,292.027, erTrain:0.13494, erVal:0.04254, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:08, V
+	Epoch[2/5]:loss_c:1,251.910, loss_p:1,292.027, erTrain:0.03840, erVal:0.00056, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:18, V
+	Epoch[3/5]:loss_c:1,292.027, loss_p:1,292.027, erTrain:0.02129, erVal:0.00028, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:28, V
+	Epoch[4/5]:loss_c:1,292.027, loss_p:1,292.027, erTrain:0.02101, erVal:0.00013, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:37, V
+	Epoch[5/5]:loss_c:1,292.025, loss_p:1,292.027, erTrain:0.02095, erVal:0.00010, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:49, V
+Done balancing: epoch 5, best_val_err=0.00010, best_weak_er=-1.00000, run time 00:00:49
+Saved to: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_50_rep_3.pt
+	ending sum weights:
+		sum(W)=434874
+		sum(U)=434874.03125
+-------------------------------------------------------------------------------- rep 3 time 00:00:49
+-------------------------------------------------------------------------------- rep 4
+	starting sum weights:
+		sum(W)=434874
+		sum(U)=434874.0
+Balance params: epochs 5, batch_size 25, total batches 800, base_lr 0.01
+build_1_bal_SGD_coreset(size=50):
+	optimizer = Adam (Parameter Group 0 amsgrad: False betas: (0.9, 0.999) eps: 1e-08 lr: 0.01 weight_decay: 0), |trainable_vars| = 2
+	Epoch[1/5]:loss_c:1,302.984, loss_p:1,292.027, erTrain:0.03289, erVal:0.00175, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:09, V
+	Epoch[2/5]:loss_c:1,292.038, loss_p:1,292.027, erTrain:0.00149, erVal:0.00131, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:18, V
+	Epoch[3/5]:loss_c:1,292.036, loss_p:1,292.027, erTrain:0.00114, erVal:0.00093, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:28, V
+	Epoch[4/5]:loss_c:1,292.026, loss_p:1,292.027, erTrain:0.00076, erVal:0.00055, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:37, V
+	Epoch[5/5]:loss_c:1,292.022, loss_p:1,292.027, erTrain:0.00042, erVal:0.00030, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:47, V
+Done balancing: epoch 5, best_val_err=0.00030, best_weak_er=-1.00000, run time 00:00:47
+Saved to: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_50_rep_4.pt
+	ending sum weights:
+		sum(W)=434874
+		sum(U)=434874.0
+-------------------------------------------------------------------------------- rep 4 time 00:00:48
+-------------------------------------------------------------------------------- rep 5
+	starting sum weights:
+		sum(W)=434874
+		sum(U)=434874.0
+Balance params: epochs 5, batch_size 25, total batches 800, base_lr 0.01
+build_1_bal_SGD_coreset(size=50):
+	optimizer = Adam (Parameter Group 0 amsgrad: False betas: (0.9, 0.999) eps: 1e-08 lr: 0.01 weight_decay: 0), |trainable_vars| = 2
+	Epoch[1/5]:loss_c:1,270.529, loss_p:1,292.027, erTrain:0.04216, erVal:0.00010, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:09, V
+	Epoch[2/5]:loss_c:1,292.026, loss_p:1,292.027, erTrain:0.02095, erVal:0.00010, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:19, V
+	Epoch[3/5]:loss_c:1,292.027, loss_p:1,292.027, erTrain:0.02097, erVal:0.00006, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:28, V
+	Epoch[4/5]:loss_c:1,292.024, loss_p:1,292.027, erTrain:0.02094, erVal:0.00003, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:38, V
+	Epoch[5/5]:loss_c:1,292.027, loss_p:1,292.027, erTrain:0.02092, erVal:0.00005, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:50
+Done balancing: epoch 4, best_val_err=0.00003, best_weak_er=-1.00000, run time 00:00:50
+Saved to: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_50_rep_5.pt
+	ending sum weights:
+		sum(W)=434874
+		sum(U)=434873.96875
+-------------------------------------------------------------------------------- rep 5 time 00:00:50
+-------------------------------------------------------------------------------- rep 6
+	starting sum weights:
+		sum(W)=434874
+		sum(U)=434874.0
+Balance params: epochs 5, batch_size 25, total batches 800, base_lr 0.01
+build_1_bal_SGD_coreset(size=50):
+	optimizer = Adam (Parameter Group 0 amsgrad: False betas: (0.9, 0.999) eps: 1e-08 lr: 0.01 weight_decay: 0), |trainable_vars| = 2
+	Epoch[1/5]:loss_c:1,300.120, loss_p:1,292.027, erTrain:0.03044, erVal:0.00029, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:12, V
+	Epoch[2/5]:loss_c:1,292.028, loss_p:1,292.027, erTrain:0.02103, erVal:0.00011, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:24, V
+	Epoch[3/5]:loss_c:1,292.026, loss_p:1,292.027, erTrain:0.02100, erVal:0.00019, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:36
+	Epoch[4/5]:loss_c:1,292.024, loss_p:1,292.027, erTrain:0.02094, erVal:0.00015, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:46
+	Epoch[5/5]:loss_c:1,292.027, loss_p:1,292.027, erTrain:0.02093, erVal:0.00009, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:57, V
+Done balancing: epoch 5, best_val_err=0.00009, best_weak_er=-1.00000, run time 00:00:57
+Saved to: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_50_rep_6.pt
+	ending sum weights:
+		sum(W)=434874
+		sum(U)=434873.96875
+-------------------------------------------------------------------------------- rep 6 time 00:00:57
+-------------------------------------------------------------------------------- rep 7
+	starting sum weights:
+		sum(W)=434874
+		sum(U)=434874.0
+Balance params: epochs 5, batch_size 25, total batches 800, base_lr 0.01
+build_1_bal_SGD_coreset(size=50):
+	optimizer = Adam (Parameter Group 0 amsgrad: False betas: (0.9, 0.999) eps: 1e-08 lr: 0.01 weight_decay: 0), |trainable_vars| = 2
+	Epoch[1/5]:loss_c:1,361.351, loss_p:1,292.027, erTrain:0.09437, erVal:0.01625, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:10, V
+	Epoch[2/5]:loss_c:1,299.308, loss_p:1,292.027, erTrain:0.03453, erVal:0.00020, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:20, V
+	Epoch[3/5]:loss_c:1,292.029, loss_p:1,292.027, erTrain:0.03140, erVal:0.00007, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:32, V
+	Epoch[4/5]:loss_c:1,292.029, loss_p:1,292.027, erTrain:0.03147, erVal:0.00009, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:42
+	Epoch[5/5]:loss_c:1,292.026, loss_p:1,292.027, erTrain:0.03132, erVal:0.00009, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:53
+Done balancing: epoch 3, best_val_err=0.00007, best_weak_er=-1.00000, run time 00:00:53
+Saved to: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_50_rep_7.pt
+	ending sum weights:
+		sum(W)=434874
+		sum(U)=434873.9375
+-------------------------------------------------------------------------------- rep 7 time 00:00:53
+-------------------------------------------------------------------------------- rep 8
+	starting sum weights:
+		sum(W)=434874
+		sum(U)=434874.0
+Balance params: epochs 5, batch_size 25, total batches 800, base_lr 0.01
+build_1_bal_SGD_coreset(size=50):
+	optimizer = Adam (Parameter Group 0 amsgrad: False betas: (0.9, 0.999) eps: 1e-08 lr: 0.01 weight_decay: 0), |trainable_vars| = 2
+	Epoch[1/5]:loss_c:1,323.974, loss_p:1,292.027, erTrain:0.05782, erVal:0.00018, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:10, V
+	Epoch[2/5]:loss_c:1,292.024, loss_p:1,292.027, erTrain:0.03136, erVal:0.00015, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:22, V
+	Epoch[3/5]:loss_c:1,292.027, loss_p:1,292.027, erTrain:0.03145, erVal:0.00014, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:34, V
+	Epoch[4/5]:loss_c:1,292.023, loss_p:1,292.027, erTrain:0.03133, erVal:0.00017, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:45
+	Epoch[5/5]:loss_c:1,292.026, loss_p:1,292.027, erTrain:0.03132, erVal:0.00013, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:55, V
+Done balancing: epoch 5, best_val_err=0.00013, best_weak_er=-1.00000, run time 00:00:55
+Saved to: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_50_rep_8.pt
+	ending sum weights:
+		sum(W)=434874
+		sum(U)=434874.0625
+-------------------------------------------------------------------------------- rep 8 time 00:00:55
+-------------------------------------------------------------------------------- rep 9
+	starting sum weights:
+		sum(W)=434874
+		sum(U)=434874.0
+Balance params: epochs 5, batch_size 25, total batches 800, base_lr 0.01
+build_1_bal_SGD_coreset(size=50):
+	optimizer = Adam (Parameter Group 0 amsgrad: False betas: (0.9, 0.999) eps: 1e-08 lr: 0.01 weight_decay: 0), |trainable_vars| = 2
+	Epoch[1/5]:loss_c:1,289.987, loss_p:1,292.027, erTrain:0.02947, erVal:0.00042, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:10, V
+	Epoch[2/5]:loss_c:1,292.024, loss_p:1,292.027, erTrain:0.02115, erVal:0.00019, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:20, V
+	Epoch[3/5]:loss_c:1,292.025, loss_p:1,292.027, erTrain:0.02101, erVal:0.00029, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:31
+	Epoch[4/5]:loss_c:1,292.026, loss_p:1,292.027, erTrain:0.02096, erVal:0.00012, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:44, V
+	Epoch[5/5]:loss_c:1,292.025, loss_p:1,292.027, erTrain:0.02093, erVal:0.00010, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:54, V
+Done balancing: epoch 5, best_val_err=0.00010, best_weak_er=-1.00000, run time 00:00:54
+Saved to: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_50_rep_9.pt
+	ending sum weights:
+		sum(W)=434874
+		sum(U)=434874.03125
+-------------------------------------------------------------------------------- rep 9 time 00:00:54
+c_size = 50: time 00:09:20
+c_size 60:
+-------------------------------------------------------------------------------- rep 0
+	starting sum weights:
+		sum(W)=434874
+		sum(U)=434874.0
+Balance params: epochs 5, batch_size 25, total batches 800, base_lr 0.01
+build_1_bal_SGD_coreset(size=60):
+	optimizer = Adam (Parameter Group 0 amsgrad: False betas: (0.9, 0.999) eps: 1e-08 lr: 0.01 weight_decay: 0), |trainable_vars| = 2
+	Epoch[1/5]:loss_c:1,285.568, loss_p:1,292.027, erTrain:0.03356, erVal:0.00111, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:10, V
+	Epoch[2/5]:loss_c:1,292.045, loss_p:1,292.027, erTrain:0.00095, erVal:0.00081, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:19, V
+	Epoch[3/5]:loss_c:1,292.027, loss_p:1,292.027, erTrain:0.00060, erVal:0.00046, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:28, V
+	Epoch[4/5]:loss_c:1,292.020, loss_p:1,292.027, erTrain:0.00033, erVal:0.00021, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:38, V
+	Epoch[5/5]:loss_c:1,292.028, loss_p:1,292.027, erTrain:0.00015, erVal:0.00018, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:47, V
+Done balancing: epoch 5, best_val_err=0.00018, best_weak_er=-1.00000, run time 00:00:47
+Saved to: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_60_rep_0.pt
+	ending sum weights:
+		sum(W)=434874
+		sum(U)=434874.0
+-------------------------------------------------------------------------------- rep 0 time 00:00:47
+-------------------------------------------------------------------------------- rep 1
+	starting sum weights:
+		sum(W)=434874
+		sum(U)=434874.0
+Balance params: epochs 5, batch_size 25, total batches 800, base_lr 0.01
+build_1_bal_SGD_coreset(size=60):
+	optimizer = Adam (Parameter Group 0 amsgrad: False betas: (0.9, 0.999) eps: 1e-08 lr: 0.01 weight_decay: 0), |trainable_vars| = 2
+	Epoch[1/5]:loss_c:1,292.945, loss_p:1,292.027, erTrain:0.05221, erVal:0.00051, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:09, V
+	Epoch[2/5]:loss_c:1,292.024, loss_p:1,292.027, erTrain:0.04729, erVal:0.00029, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:18, V
+	Epoch[3/5]:loss_c:1,292.023, loss_p:1,292.027, erTrain:0.04708, erVal:0.00010, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:27, V
+	Epoch[4/5]:loss_c:1,292.026, loss_p:1,292.027, erTrain:0.04701, erVal:0.00013, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:36
+	Epoch[5/5]:loss_c:1,292.025, loss_p:1,292.027, erTrain:0.04701, erVal:0.00004, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:45, V
+Done balancing: epoch 5, best_val_err=0.00004, best_weak_er=-1.00000, run time 00:00:45
+Saved to: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_60_rep_1.pt
+	ending sum weights:
+		sum(W)=434874
+		sum(U)=434874.0625
+-------------------------------------------------------------------------------- rep 1 time 00:00:45
+-------------------------------------------------------------------------------- rep 2
+	starting sum weights:
+		sum(W)=434874
+		sum(U)=434874.0
+Balance params: epochs 5, batch_size 25, total batches 800, base_lr 0.01
+build_1_bal_SGD_coreset(size=60):
+	optimizer = Adam (Parameter Group 0 amsgrad: False betas: (0.9, 0.999) eps: 1e-08 lr: 0.01 weight_decay: 0), |trainable_vars| = 2
+	Epoch[1/5]:loss_c:1,294.035, loss_p:1,292.027, erTrain:0.02390, erVal:0.00117, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:09, V
+	Epoch[2/5]:loss_c:1,292.015, loss_p:1,292.027, erTrain:0.00090, erVal:0.00076, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:19, V
+	Epoch[3/5]:loss_c:1,292.023, loss_p:1,292.027, erTrain:0.00059, erVal:0.00046, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:29, V
+	Epoch[4/5]:loss_c:1,292.033, loss_p:1,292.027, erTrain:0.00030, erVal:0.00014, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:38, V
+	Epoch[5/5]:loss_c:1,292.029, loss_p:1,292.027, erTrain:0.00015, erVal:0.00011, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:47, V
+Done balancing: epoch 5, best_val_err=0.00011, best_weak_er=-1.00000, run time 00:00:47
+Saved to: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_60_rep_2.pt
+	ending sum weights:
+		sum(W)=434874
+		sum(U)=434874.0
+-------------------------------------------------------------------------------- rep 2 time 00:00:47
+-------------------------------------------------------------------------------- rep 3
+	starting sum weights:
+		sum(W)=434874
+		sum(U)=434874.0
+Balance params: epochs 5, batch_size 25, total batches 800, base_lr 0.01
+build_1_bal_SGD_coreset(size=60):
+	optimizer = Adam (Parameter Group 0 amsgrad: False betas: (0.9, 0.999) eps: 1e-08 lr: 0.01 weight_decay: 0), |trainable_vars| = 2
+	Epoch[1/5]:loss_c:1,426.218, loss_p:1,292.027, erTrain:0.23327, erVal:0.04722, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:09, V
+	Epoch[2/5]:loss_c:1,331.165, loss_p:1,292.027, erTrain:0.02206, erVal:0.00390, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:18, V
+	Epoch[3/5]:loss_c:1,291.945, loss_p:1,292.027, erTrain:0.00354, erVal:0.00337, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:28, V
+	Epoch[4/5]:loss_c:1,291.969, loss_p:1,292.027, erTrain:0.00318, erVal:0.00307, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:37, V
+	Epoch[5/5]:loss_c:1,291.948, loss_p:1,292.027, erTrain:0.00283, erVal:0.00282, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:46, V
+Done balancing: epoch 5, best_val_err=0.00282, best_weak_er=-1.00000, run time 00:00:46
+Saved to: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_60_rep_3.pt
+	ending sum weights:
+		sum(W)=434874
+		sum(U)=434874.0
+-------------------------------------------------------------------------------- rep 3 time 00:00:46
+-------------------------------------------------------------------------------- rep 4
+	starting sum weights:
+		sum(W)=434874
+		sum(U)=434874.0
+Balance params: epochs 5, batch_size 25, total batches 800, base_lr 0.01
+build_1_bal_SGD_coreset(size=60):
+	optimizer = Adam (Parameter Group 0 amsgrad: False betas: (0.9, 0.999) eps: 1e-08 lr: 0.01 weight_decay: 0), |trainable_vars| = 2
+	Epoch[1/5]:loss_c:1,364.450, loss_p:1,292.027, erTrain:0.09232, erVal:0.01705, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:09, V
+	Epoch[2/5]:loss_c:1,299.675, loss_p:1,292.027, erTrain:0.00463, erVal:0.00144, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:18, V
+	Epoch[3/5]:loss_c:1,292.033, loss_p:1,292.027, erTrain:0.00121, erVal:0.00103, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:27, V
+	Epoch[4/5]:loss_c:1,292.020, loss_p:1,292.027, erTrain:0.00086, erVal:0.00066, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:36, V
+	Epoch[5/5]:loss_c:1,292.027, loss_p:1,292.027, erTrain:0.00052, erVal:0.00033, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:45, V
+Done balancing: epoch 5, best_val_err=0.00033, best_weak_er=-1.00000, run time 00:00:45
+Saved to: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_60_rep_4.pt
+	ending sum weights:
+		sum(W)=434874
+		sum(U)=434874.0
+-------------------------------------------------------------------------------- rep 4 time 00:00:45
+-------------------------------------------------------------------------------- rep 5
+	starting sum weights:
+		sum(W)=434874
+		sum(U)=434874.0
+Balance params: epochs 5, batch_size 25, total batches 800, base_lr 0.01
+build_1_bal_SGD_coreset(size=60):
+	optimizer = Adam (Parameter Group 0 amsgrad: False betas: (0.9, 0.999) eps: 1e-08 lr: 0.01 weight_decay: 0), |trainable_vars| = 2
+	Epoch[1/5]:loss_c:1,317.183, loss_p:1,292.027, erTrain:0.08341, erVal:0.00053, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:09, V
+	Epoch[2/5]:loss_c:1,292.013, loss_p:1,292.027, erTrain:0.06282, erVal:0.00017, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:18, V
+	Epoch[3/5]:loss_c:1,292.025, loss_p:1,292.027, erTrain:0.06265, erVal:0.00023, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:27
+	Epoch[4/5]:loss_c:1,292.028, loss_p:1,292.027, erTrain:0.06262, erVal:0.00013, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:36, V
+	Epoch[5/5]:loss_c:1,292.026, loss_p:1,292.027, erTrain:0.06262, erVal:0.00009, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:46, V
+Done balancing: epoch 5, best_val_err=0.00009, best_weak_er=-1.00000, run time 00:00:46
+Saved to: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_60_rep_5.pt
+	ending sum weights:
+		sum(W)=434874
+		sum(U)=434873.90625
+-------------------------------------------------------------------------------- rep 5 time 00:00:46
+-------------------------------------------------------------------------------- rep 6
+	starting sum weights:
+		sum(W)=434874
+		sum(U)=434874.0
+Balance params: epochs 5, batch_size 25, total batches 800, base_lr 0.01
+build_1_bal_SGD_coreset(size=60):
+	optimizer = Adam (Parameter Group 0 amsgrad: False betas: (0.9, 0.999) eps: 1e-08 lr: 0.01 weight_decay: 0), |trainable_vars| = 2
+	Epoch[1/5]:loss_c:1,264.022, loss_p:1,292.027, erTrain:0.06144, erVal:0.00178, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:09, V
+	Epoch[2/5]:loss_c:1,292.068, loss_p:1,292.027, erTrain:0.00147, erVal:0.00129, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:18, V
+	Epoch[3/5]:loss_c:1,292.045, loss_p:1,292.027, erTrain:0.00108, erVal:0.00095, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:27, V
+	Epoch[4/5]:loss_c:1,292.025, loss_p:1,292.027, erTrain:0.00076, erVal:0.00058, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:36, V
+	Epoch[5/5]:loss_c:1,292.020, loss_p:1,292.027, erTrain:0.00042, erVal:0.00023, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:45, V
+Done balancing: epoch 5, best_val_err=0.00023, best_weak_er=-1.00000, run time 00:00:45
+Saved to: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_60_rep_6.pt
+	ending sum weights:
+		sum(W)=434874
+		sum(U)=434874.0
+-------------------------------------------------------------------------------- rep 6 time 00:00:45
+-------------------------------------------------------------------------------- rep 7
+	starting sum weights:
+		sum(W)=434874
+		sum(U)=434874.0
+Balance params: epochs 5, batch_size 25, total batches 800, base_lr 0.01
+build_1_bal_SGD_coreset(size=60):
+	optimizer = Adam (Parameter Group 0 amsgrad: False betas: (0.9, 0.999) eps: 1e-08 lr: 0.01 weight_decay: 0), |trainable_vars| = 2
+	Epoch[1/5]:loss_c:1,301.107, loss_p:1,292.027, erTrain:0.03728, erVal:0.00133, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:09, V
+	Epoch[2/5]:loss_c:1,292.010, loss_p:1,292.027, erTrain:0.00117, erVal:0.00102, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:18, V
+	Epoch[3/5]:loss_c:1,292.019, loss_p:1,292.027, erTrain:0.00089, erVal:0.00076, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:27, V
+	Epoch[4/5]:loss_c:1,292.031, loss_p:1,292.027, erTrain:0.00060, erVal:0.00044, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:38, V
+	Epoch[5/5]:loss_c:1,292.033, loss_p:1,292.027, erTrain:0.00034, erVal:0.00019, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:48, V
+Done balancing: epoch 5, best_val_err=0.00019, best_weak_er=-1.00000, run time 00:00:48
+Saved to: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_60_rep_7.pt
+	ending sum weights:
+		sum(W)=434874
+		sum(U)=434874.0
+-------------------------------------------------------------------------------- rep 7 time 00:00:48
+-------------------------------------------------------------------------------- rep 8
+	starting sum weights:
+		sum(W)=434874
+		sum(U)=434874.0
+Balance params: epochs 5, batch_size 25, total batches 800, base_lr 0.01
+build_1_bal_SGD_coreset(size=60):
+	optimizer = Adam (Parameter Group 0 amsgrad: False betas: (0.9, 0.999) eps: 1e-08 lr: 0.01 weight_decay: 0), |trainable_vars| = 2
+	Epoch[1/5]:loss_c:1,414.111, loss_p:1,292.027, erTrain:0.12754, erVal:0.04330, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:09, V
+	Epoch[2/5]:loss_c:1,341.780, loss_p:1,292.027, erTrain:0.01956, erVal:0.00061, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:18, V
+	Epoch[3/5]:loss_c:1,292.034, loss_p:1,292.027, erTrain:0.00044, erVal:0.00027, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:28, V
+	Epoch[4/5]:loss_c:1,292.027, loss_p:1,292.027, erTrain:0.00020, erVal:0.00017, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:37, V
+	Epoch[5/5]:loss_c:1,292.024, loss_p:1,292.027, erTrain:0.00013, erVal:0.00018, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:46
+Done balancing: epoch 4, best_val_err=0.00017, best_weak_er=-1.00000, run time 00:00:46
+Saved to: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_60_rep_8.pt
+	ending sum weights:
+		sum(W)=434874
+		sum(U)=434874.0
+-------------------------------------------------------------------------------- rep 8 time 00:00:46
+-------------------------------------------------------------------------------- rep 9
+	starting sum weights:
+		sum(W)=434874
+		sum(U)=434874.0
+Balance params: epochs 5, batch_size 25, total batches 800, base_lr 0.01
+build_1_bal_SGD_coreset(size=60):
+	optimizer = Adam (Parameter Group 0 amsgrad: False betas: (0.9, 0.999) eps: 1e-08 lr: 0.01 weight_decay: 0), |trainable_vars| = 2
+	Epoch[1/5]:loss_c:1,294.142, loss_p:1,292.027, erTrain:0.01574, erVal:0.00007, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:09, V
+	Epoch[2/5]:loss_c:1,292.025, loss_p:1,292.027, erTrain:0.00011, erVal:0.00014, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:18
+	Epoch[3/5]:loss_c:1,292.029, loss_p:1,292.027, erTrain:0.00011, erVal:0.00004, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:27, V
+	Epoch[4/5]:loss_c:1,292.026, loss_p:1,292.027, erTrain:0.00011, erVal:0.00004, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:36
+	Epoch[5/5]:loss_c:1,292.026, loss_p:1,292.027, erTrain:0.00011, erVal:0.00014, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:45
+Done balancing: epoch 3, best_val_err=0.00004, best_weak_er=-1.00000, run time 00:00:45
+Saved to: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_60_rep_9.pt
+	ending sum weights:
+		sum(W)=434874
+		sum(U)=434874.0
+-------------------------------------------------------------------------------- rep 9 time 00:00:45
+c_size = 60: time 00:07:45
+c_size 70:
+-------------------------------------------------------------------------------- rep 0
+	starting sum weights:
+		sum(W)=434874
+		sum(U)=434873.96875
+Balance params: epochs 5, batch_size 25, total batches 800, base_lr 0.01
+build_1_bal_SGD_coreset(size=70):
+	optimizer = Adam (Parameter Group 0 amsgrad: False betas: (0.9, 0.999) eps: 1e-08 lr: 0.01 weight_decay: 0), |trainable_vars| = 2
+	Epoch[1/5]:loss_c:1,303.793, loss_p:1,292.027, erTrain:0.09560, erVal:0.00030, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:09, V
+	Epoch[2/5]:loss_c:1,292.030, loss_p:1,292.027, erTrain:0.08143, erVal:0.00010, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:18, V
+	Epoch[3/5]:loss_c:1,292.025, loss_p:1,292.027, erTrain:0.08138, erVal:0.00004, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:27, V
+	Epoch[4/5]:loss_c:1,292.027, loss_p:1,292.027, erTrain:0.08139, erVal:0.00020, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:36
+	Epoch[5/5]:loss_c:1,292.027, loss_p:1,292.027, erTrain:0.08136, erVal:0.00011, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:45
+Done balancing: epoch 3, best_val_err=0.00004, best_weak_er=-1.00000, run time 00:00:45
+Saved to: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_70_rep_0.pt
+	ending sum weights:
+		sum(W)=434874
+		sum(U)=434873.96875
+-------------------------------------------------------------------------------- rep 0 time 00:00:45
+-------------------------------------------------------------------------------- rep 1
+	starting sum weights:
+		sum(W)=434874
+		sum(U)=434873.96875
+Balance params: epochs 5, batch_size 25, total batches 800, base_lr 0.01
+build_1_bal_SGD_coreset(size=70):
+	optimizer = Adam (Parameter Group 0 amsgrad: False betas: (0.9, 0.999) eps: 1e-08 lr: 0.01 weight_decay: 0), |trainable_vars| = 2
+	Epoch[1/5]:loss_c:1,303.663, loss_p:1,292.027, erTrain:0.09317, erVal:0.00011, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:09, V
+	Epoch[2/5]:loss_c:1,292.029, loss_p:1,292.027, erTrain:0.08136, erVal:0.00004, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:18, V
+	Epoch[3/5]:loss_c:1,292.026, loss_p:1,292.027, erTrain:0.08137, erVal:0.00004, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:27, V
+	Epoch[4/5]:loss_c:1,292.027, loss_p:1,292.027, erTrain:0.08136, erVal:0.00012, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:36
+	Epoch[5/5]:loss_c:1,292.026, loss_p:1,292.027, erTrain:0.08136, erVal:0.00014, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:45
+Done balancing: epoch 3, best_val_err=0.00004, best_weak_er=-1.00000, run time 00:00:45
+Saved to: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_70_rep_1.pt
+	ending sum weights:
+		sum(W)=434874
+		sum(U)=434873.96875
+-------------------------------------------------------------------------------- rep 1 time 00:00:45
+-------------------------------------------------------------------------------- rep 2
+	starting sum weights:
+		sum(W)=434874
+		sum(U)=434873.96875
+Balance params: epochs 5, batch_size 25, total batches 800, base_lr 0.01
+build_1_bal_SGD_coreset(size=70):
+	optimizer = Adam (Parameter Group 0 amsgrad: False betas: (0.9, 0.999) eps: 1e-08 lr: 0.01 weight_decay: 0), |trainable_vars| = 2
+	Epoch[1/5]:loss_c:1,355.755, loss_p:1,292.027, erTrain:0.15514, erVal:0.01206, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:09, V
+	Epoch[2/5]:loss_c:1,295.119, loss_p:1,292.027, erTrain:0.08432, erVal:0.00161, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:18, V
+	Epoch[3/5]:loss_c:1,292.005, loss_p:1,292.027, erTrain:0.08270, erVal:0.00129, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:27, V
+	Epoch[4/5]:loss_c:1,292.008, loss_p:1,292.027, erTrain:0.08235, erVal:0.00101, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:36, V
+	Epoch[5/5]:loss_c:1,292.026, loss_p:1,292.027, erTrain:0.08205, erVal:0.00061, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:45, V
+Done balancing: epoch 5, best_val_err=0.00061, best_weak_er=-1.00000, run time 00:00:45
+Saved to: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_70_rep_2.pt
+	ending sum weights:
+		sum(W)=434874
+		sum(U)=434873.96875
+-------------------------------------------------------------------------------- rep 2 time 00:00:45
+-------------------------------------------------------------------------------- rep 3
+	starting sum weights:
+		sum(W)=434874
+		sum(U)=434873.96875
+Balance params: epochs 5, batch_size 25, total batches 800, base_lr 0.01
+build_1_bal_SGD_coreset(size=70):
+	optimizer = Adam (Parameter Group 0 amsgrad: False betas: (0.9, 0.999) eps: 1e-08 lr: 0.01 weight_decay: 0), |trainable_vars| = 2
+	Epoch[1/5]:loss_c:1,220.987, loss_p:1,292.027, erTrain:0.17608, erVal:0.02407, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:09, V
+	Epoch[2/5]:loss_c:1,279.043, loss_p:1,292.027, erTrain:0.08792, erVal:0.00115, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:18, V
+	Epoch[3/5]:loss_c:1,292.034, loss_p:1,292.027, erTrain:0.08225, erVal:0.00087, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:27, V
+	Epoch[4/5]:loss_c:1,292.031, loss_p:1,292.027, erTrain:0.08188, erVal:0.00069, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:36, V
+	Epoch[5/5]:loss_c:1,292.029, loss_p:1,292.027, erTrain:0.08159, erVal:0.00024, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:45, V
+Done balancing: epoch 5, best_val_err=0.00024, best_weak_er=-1.00000, run time 00:00:45
+Saved to: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_70_rep_3.pt
+	ending sum weights:
+		sum(W)=434874
+		sum(U)=434873.96875
+-------------------------------------------------------------------------------- rep 3 time 00:00:45
+-------------------------------------------------------------------------------- rep 4
+	starting sum weights:
+		sum(W)=434874
+		sum(U)=434873.96875
+Balance params: epochs 5, batch_size 25, total batches 800, base_lr 0.01
+build_1_bal_SGD_coreset(size=70):
+	optimizer = Adam (Parameter Group 0 amsgrad: False betas: (0.9, 0.999) eps: 1e-08 lr: 0.01 weight_decay: 0), |trainable_vars| = 2
+	Epoch[1/5]:loss_c:1,272.904, loss_p:1,292.027, erTrain:0.10741, erVal:0.00067, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:09, V
+	Epoch[2/5]:loss_c:1,292.029, loss_p:1,292.027, erTrain:0.08180, erVal:0.00043, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:18, V
+	Epoch[3/5]:loss_c:1,292.020, loss_p:1,292.027, erTrain:0.08154, erVal:0.00025, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:27, V
+	Epoch[4/5]:loss_c:1,292.023, loss_p:1,292.027, erTrain:0.08141, erVal:0.00006, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:36, V
+	Epoch[5/5]:loss_c:1,292.026, loss_p:1,292.027, erTrain:0.08137, erVal:0.00009, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:45
+Done balancing: epoch 4, best_val_err=0.00006, best_weak_er=-1.00000, run time 00:00:45
+Saved to: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_70_rep_4.pt
+	ending sum weights:
+		sum(W)=434874
+		sum(U)=434873.96875
+-------------------------------------------------------------------------------- rep 4 time 00:00:45
+-------------------------------------------------------------------------------- rep 5
+	starting sum weights:
+		sum(W)=434874
+		sum(U)=434873.96875
+Balance params: epochs 5, batch_size 25, total batches 800, base_lr 0.01
+build_1_bal_SGD_coreset(size=70):
+	optimizer = Adam (Parameter Group 0 amsgrad: False betas: (0.9, 0.999) eps: 1e-08 lr: 0.01 weight_decay: 0), |trainable_vars| = 2
+	Epoch[1/5]:loss_c:1,258.577, loss_p:1,292.027, erTrain:0.11809, erVal:0.00043, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:09, V
+	Epoch[2/5]:loss_c:1,292.023, loss_p:1,292.027, erTrain:0.08152, erVal:0.00023, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:18, V
+	Epoch[3/5]:loss_c:1,292.027, loss_p:1,292.027, erTrain:0.08140, erVal:0.00006, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:27, V
+	Epoch[4/5]:loss_c:1,292.026, loss_p:1,292.027, erTrain:0.08139, erVal:0.00009, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:36
+	Epoch[5/5]:loss_c:1,292.028, loss_p:1,292.027, erTrain:0.08137, erVal:0.00005, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:46, V
+Done balancing: epoch 5, best_val_err=0.00005, best_weak_er=-1.00000, run time 00:00:46
+Saved to: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_70_rep_5.pt
+	ending sum weights:
+		sum(W)=434874
+		sum(U)=434873.96875
+-------------------------------------------------------------------------------- rep 5 time 00:00:46
+-------------------------------------------------------------------------------- rep 6
+	starting sum weights:
+		sum(W)=434874
+		sum(U)=434873.96875
+Balance params: epochs 5, batch_size 25, total batches 800, base_lr 0.01
+build_1_bal_SGD_coreset(size=70):
+	optimizer = Adam (Parameter Group 0 amsgrad: False betas: (0.9, 0.999) eps: 1e-08 lr: 0.01 weight_decay: 0), |trainable_vars| = 2
+	Epoch[1/5]:loss_c:1,291.458, loss_p:1,292.027, erTrain:0.08787, erVal:0.00052, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:09, V
+	Epoch[2/5]:loss_c:1,292.026, loss_p:1,292.027, erTrain:0.08159, erVal:0.00021, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:18, V
+	Epoch[3/5]:loss_c:1,292.026, loss_p:1,292.027, erTrain:0.08141, erVal:0.00013, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:27, V
+	Epoch[4/5]:loss_c:1,292.021, loss_p:1,292.027, erTrain:0.08138, erVal:0.00023, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:37
+	Epoch[5/5]:loss_c:1,292.027, loss_p:1,292.027, erTrain:0.08138, erVal:0.00008, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:46, V
+Done balancing: epoch 5, best_val_err=0.00008, best_weak_er=-1.00000, run time 00:00:46
+Saved to: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_70_rep_6.pt
+	ending sum weights:
+		sum(W)=434874
+		sum(U)=434873.96875
+-------------------------------------------------------------------------------- rep 6 time 00:00:46
+-------------------------------------------------------------------------------- rep 7
+	starting sum weights:
+		sum(W)=434874
+		sum(U)=434873.96875
+Balance params: epochs 5, batch_size 25, total batches 800, base_lr 0.01
+build_1_bal_SGD_coreset(size=70):
+	optimizer = Adam (Parameter Group 0 amsgrad: False betas: (0.9, 0.999) eps: 1e-08 lr: 0.01 weight_decay: 0), |trainable_vars| = 2
+	Epoch[1/5]:loss_c:1,302.584, loss_p:1,292.027, erTrain:0.09407, erVal:0.00029, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:09, V
+	Epoch[2/5]:loss_c:1,292.027, loss_p:1,292.027, erTrain:0.08145, erVal:0.00019, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:18, V
+	Epoch[3/5]:loss_c:1,292.026, loss_p:1,292.027, erTrain:0.08137, erVal:0.00012, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:27, V
+	Epoch[4/5]:loss_c:1,292.023, loss_p:1,292.027, erTrain:0.08136, erVal:0.00006, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:37, V
+	Epoch[5/5]:loss_c:1,292.027, loss_p:1,292.027, erTrain:0.08137, erVal:0.00008, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:46
+Done balancing: epoch 4, best_val_err=0.00006, best_weak_er=-1.00000, run time 00:00:46
+Saved to: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_70_rep_7.pt
+	ending sum weights:
+		sum(W)=434874
+		sum(U)=434873.96875
+-------------------------------------------------------------------------------- rep 7 time 00:00:46
+-------------------------------------------------------------------------------- rep 8
+	starting sum weights:
+		sum(W)=434874
+		sum(U)=434873.96875
+Balance params: epochs 5, batch_size 25, total batches 800, base_lr 0.01
+build_1_bal_SGD_coreset(size=70):
+	optimizer = Adam (Parameter Group 0 amsgrad: False betas: (0.9, 0.999) eps: 1e-08 lr: 0.01 weight_decay: 0), |trainable_vars| = 2
+	Epoch[1/5]:loss_c:1,242.000, loss_p:1,292.027, erTrain:0.13130, erVal:0.00669, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:09, V
+	Epoch[2/5]:loss_c:1,291.102, loss_p:1,292.027, erTrain:0.08194, erVal:0.00017, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:21, V
+	Epoch[3/5]:loss_c:1,292.027, loss_p:1,292.027, erTrain:0.08140, erVal:0.00004, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:32, V
+	Epoch[4/5]:loss_c:1,292.028, loss_p:1,292.027, erTrain:0.08138, erVal:0.00010, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:42
+	Epoch[5/5]:loss_c:1,292.027, loss_p:1,292.027, erTrain:0.08137, erVal:0.00005, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:51
+Done balancing: epoch 3, best_val_err=0.00004, best_weak_er=-1.00000, run time 00:00:51
+Saved to: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_70_rep_8.pt
+	ending sum weights:
+		sum(W)=434874
+		sum(U)=434873.96875
+-------------------------------------------------------------------------------- rep 8 time 00:00:51
+-------------------------------------------------------------------------------- rep 9
+	starting sum weights:
+		sum(W)=434874
+		sum(U)=434873.96875
+Balance params: epochs 5, batch_size 25, total batches 800, base_lr 0.01
+build_1_bal_SGD_coreset(size=70):
+	optimizer = Adam (Parameter Group 0 amsgrad: False betas: (0.9, 0.999) eps: 1e-08 lr: 0.01 weight_decay: 0), |trainable_vars| = 2
+	Epoch[1/5]:loss_c:1,278.107, loss_p:1,292.027, erTrain:0.11603, erVal:0.00182, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:10, V
+	Epoch[2/5]:loss_c:1,292.038, loss_p:1,292.027, erTrain:0.08287, erVal:0.00141, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:20, V
+	Epoch[3/5]:loss_c:1,292.051, loss_p:1,292.027, erTrain:0.08251, erVal:0.00117, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:30, V
+	Epoch[4/5]:loss_c:1,292.031, loss_p:1,292.027, erTrain:0.08214, erVal:0.00072, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:42, V
+	Epoch[5/5]:loss_c:1,292.023, loss_p:1,292.027, erTrain:0.08178, erVal:0.00034, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:52, V
+Done balancing: epoch 5, best_val_err=0.00034, best_weak_er=-1.00000, run time 00:00:52
+Saved to: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_70_rep_9.pt
+	ending sum weights:
+		sum(W)=434874
+		sum(U)=434873.96875
+-------------------------------------------------------------------------------- rep 9 time 00:00:52
+c_size = 70: time 00:07:51
+c_size 80:
+-------------------------------------------------------------------------------- rep 0
+	starting sum weights:
+		sum(W)=434874
+		sum(U)=434874.0
+Balance params: epochs 5, batch_size 25, total batches 800, base_lr 0.01
+build_1_bal_SGD_coreset(size=80):
+	optimizer = Adam (Parameter Group 0 amsgrad: False betas: (0.9, 0.999) eps: 1e-08 lr: 0.01 weight_decay: 0), |trainable_vars| = 2
+	Epoch[1/5]:loss_c:1,293.071, loss_p:1,292.027, erTrain:0.11023, erVal:0.00035, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:09, V
+	Epoch[2/5]:loss_c:1,292.028, loss_p:1,292.027, erTrain:0.09402, erVal:0.00015, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:19, V
+	Epoch[3/5]:loss_c:1,292.028, loss_p:1,292.027, erTrain:0.09388, erVal:0.00010, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:29, V
+	Epoch[4/5]:loss_c:1,292.027, loss_p:1,292.027, erTrain:0.09386, erVal:0.00016, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:38
+	Epoch[5/5]:loss_c:1,292.027, loss_p:1,292.027, erTrain:0.09386, erVal:0.00010, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:48, V
+Done balancing: epoch 5, best_val_err=0.00010, best_weak_er=-1.00000, run time 00:00:48
+Saved to: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_80_rep_0.pt
+	ending sum weights:
+		sum(W)=434874
+		sum(U)=434874.0625
+-------------------------------------------------------------------------------- rep 0 time 00:00:48
+-------------------------------------------------------------------------------- rep 1
+	starting sum weights:
+		sum(W)=434874
+		sum(U)=434874.0
+Balance params: epochs 5, batch_size 25, total batches 800, base_lr 0.01
+build_1_bal_SGD_coreset(size=80):
+	optimizer = Adam (Parameter Group 0 amsgrad: False betas: (0.9, 0.999) eps: 1e-08 lr: 0.01 weight_decay: 0), |trainable_vars| = 2
+	Epoch[1/5]:loss_c:1,290.882, loss_p:1,292.027, erTrain:0.03394, erVal:0.00031, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:10, V
+	Epoch[2/5]:loss_c:1,292.026, loss_p:1,292.027, erTrain:0.03143, erVal:0.00009, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:19, V
+	Epoch[3/5]:loss_c:1,292.028, loss_p:1,292.027, erTrain:0.03136, erVal:0.00009, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:30
+	Epoch[4/5]:loss_c:1,292.027, loss_p:1,292.027, erTrain:0.03136, erVal:0.00012, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:40
+	Epoch[5/5]:loss_c:1,292.027, loss_p:1,292.027, erTrain:0.03135, erVal:0.00019, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:49
+Done balancing: epoch 2, best_val_err=0.00009, best_weak_er=-1.00000, run time 00:00:49
+Saved to: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_80_rep_1.pt
+	ending sum weights:
+		sum(W)=434874
+		sum(U)=434873.96875
+-------------------------------------------------------------------------------- rep 1 time 00:00:49
+-------------------------------------------------------------------------------- rep 2
+	starting sum weights:
+		sum(W)=434874
+		sum(U)=434874.0
+Balance params: epochs 5, batch_size 25, total batches 800, base_lr 0.01
+build_1_bal_SGD_coreset(size=80):
+	optimizer = Adam (Parameter Group 0 amsgrad: False betas: (0.9, 0.999) eps: 1e-08 lr: 0.01 weight_decay: 0), |trainable_vars| = 2
+	Epoch[1/5]:loss_c:1,297.489, loss_p:1,292.027, erTrain:0.28857, erVal:0.00021, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:08, V
+	Epoch[2/5]:loss_c:1,292.024, loss_p:1,292.027, erTrain:0.28151, erVal:0.00005, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:17, V
+	Epoch[3/5]:loss_c:1,292.027, loss_p:1,292.027, erTrain:0.28175, erVal:0.00007, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:26
+	Epoch[4/5]:loss_c:1,292.027, loss_p:1,292.027, erTrain:0.28082, erVal:0.00009, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:35
+	Epoch[5/5]:loss_c:1,292.025, loss_p:1,292.027, erTrain:0.28152, erVal:0.00011, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:44
+Done balancing: epoch 2, best_val_err=0.00005, best_weak_er=-1.00000, run time 00:00:44
+Saved to: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_80_rep_2.pt
+	ending sum weights:
+		sum(W)=434874
+		sum(U)=434874.4375
+-------------------------------------------------------------------------------- rep 2 time 00:00:44
+-------------------------------------------------------------------------------- rep 3
+	starting sum weights:
+		sum(W)=434874
+		sum(U)=434874.0
+Balance params: epochs 5, batch_size 25, total batches 800, base_lr 0.01
+build_1_bal_SGD_coreset(size=80):
+	optimizer = Adam (Parameter Group 0 amsgrad: False betas: (0.9, 0.999) eps: 1e-08 lr: 0.01 weight_decay: 0), |trainable_vars| = 2
+	Epoch[1/5]:loss_c:1,404.076, loss_p:1,292.027, erTrain:0.31053, erVal:0.03600, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:10, V
+	Epoch[2/5]:loss_c:1,316.828, loss_p:1,292.027, erTrain:0.13245, erVal:0.00366, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:22, V
+	Epoch[3/5]:loss_c:1,291.961, loss_p:1,292.027, erTrain:0.12041, erVal:0.00307, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:38, V
+	Epoch[4/5]:loss_c:1,291.946, loss_p:1,292.027, erTrain:0.12005, erVal:0.00276, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:52, V
+	Epoch[5/5]:loss_c:1,291.948, loss_p:1,292.027, erTrain:0.11970, erVal:0.00237, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:01:03, V
+Done balancing: epoch 5, best_val_err=0.00237, best_weak_er=-1.00000, run time 00:01:03
+Saved to: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_80_rep_3.pt
+	ending sum weights:
+		sum(W)=434874
+		sum(U)=434874.0625
+-------------------------------------------------------------------------------- rep 3 time 00:01:03
+-------------------------------------------------------------------------------- rep 4
+	starting sum weights:
+		sum(W)=434874
+		sum(U)=434874.0
+Balance params: epochs 5, batch_size 25, total batches 800, base_lr 0.01
+build_1_bal_SGD_coreset(size=80):
+	optimizer = Adam (Parameter Group 0 amsgrad: False betas: (0.9, 0.999) eps: 1e-08 lr: 0.01 weight_decay: 0), |trainable_vars| = 2
+	Epoch[1/5]:loss_c:1,253.971, loss_p:1,292.027, erTrain:0.33204, erVal:0.00164, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:08, V
+	Epoch[2/5]:loss_c:1,292.041, loss_p:1,292.027, erTrain:0.27994, erVal:0.00119, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:19, V
+	Epoch[3/5]:loss_c:1,292.030, loss_p:1,292.027, erTrain:0.27987, erVal:0.00082, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:27, V
+	Epoch[4/5]:loss_c:1,292.021, loss_p:1,292.027, erTrain:0.27905, erVal:0.00045, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:36, V
+	Epoch[5/5]:loss_c:1,292.022, loss_p:1,292.027, erTrain:0.27892, erVal:0.00023, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:45, V
+Done balancing: epoch 5, best_val_err=0.00023, best_weak_er=-1.00000, run time 00:00:45
+Saved to: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_80_rep_4.pt
+	ending sum weights:
+		sum(W)=434874
+		sum(U)=434873.5625
+-------------------------------------------------------------------------------- rep 4 time 00:00:45
+-------------------------------------------------------------------------------- rep 5
+	starting sum weights:
+		sum(W)=434874
+		sum(U)=434874.0
+Balance params: epochs 5, batch_size 25, total batches 800, base_lr 0.01
+build_1_bal_SGD_coreset(size=80):
+	optimizer = Adam (Parameter Group 0 amsgrad: False betas: (0.9, 0.999) eps: 1e-08 lr: 0.01 weight_decay: 0), |trainable_vars| = 2
+	Epoch[1/5]:loss_c:1,241.597, loss_p:1,292.027, erTrain:0.34573, erVal:0.00656, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:08, V
+	Epoch[2/5]:loss_c:1,291.317, loss_p:1,292.027, erTrain:0.28038, erVal:0.00136, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:17, V
+	Epoch[3/5]:loss_c:1,292.039, loss_p:1,292.027, erTrain:0.28005, erVal:0.00092, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:25, V
+	Epoch[4/5]:loss_c:1,292.030, loss_p:1,292.027, erTrain:0.27922, erVal:0.00063, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:34, V
+	Epoch[5/5]:loss_c:1,292.031, loss_p:1,292.027, erTrain:0.27904, erVal:0.00026, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:43, V
+Done balancing: epoch 5, best_val_err=0.00026, best_weak_er=-1.00000, run time 00:00:43
+Saved to: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_80_rep_5.pt
+	ending sum weights:
+		sum(W)=434874
+		sum(U)=434873.5625
+-------------------------------------------------------------------------------- rep 5 time 00:00:43
+-------------------------------------------------------------------------------- rep 6
+	starting sum weights:
+		sum(W)=434874
+		sum(U)=434874.0
+Balance params: epochs 5, batch_size 25, total batches 800, base_lr 0.01
+build_1_bal_SGD_coreset(size=80):
+	optimizer = Adam (Parameter Group 0 amsgrad: False betas: (0.9, 0.999) eps: 1e-08 lr: 0.01 weight_decay: 0), |trainable_vars| = 2
+	Epoch[1/5]:loss_c:1,296.383, loss_p:1,292.027, erTrain:0.01401, erVal:0.00068, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:08, V
+	Epoch[2/5]:loss_c:1,292.024, loss_p:1,292.027, erTrain:0.00049, erVal:0.00034, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:17, V
+	Epoch[3/5]:loss_c:1,292.022, loss_p:1,292.027, erTrain:0.00023, erVal:0.00009, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:26, V
+	Epoch[4/5]:loss_c:1,292.029, loss_p:1,292.027, erTrain:0.00014, erVal:0.00014, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:34
+	Epoch[5/5]:loss_c:1,292.026, loss_p:1,292.027, erTrain:0.00013, erVal:0.00014, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:43
+Done balancing: epoch 3, best_val_err=0.00009, best_weak_er=-1.00000, run time 00:00:43
+Saved to: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_80_rep_6.pt
+	ending sum weights:
+		sum(W)=434874
+		sum(U)=434874.0
+-------------------------------------------------------------------------------- rep 6 time 00:00:43
+-------------------------------------------------------------------------------- rep 7
+	starting sum weights:
+		sum(W)=434874
+		sum(U)=434874.0
+Balance params: epochs 5, batch_size 25, total batches 800, base_lr 0.01
+build_1_bal_SGD_coreset(size=80):
+	optimizer = Adam (Parameter Group 0 amsgrad: False betas: (0.9, 0.999) eps: 1e-08 lr: 0.01 weight_decay: 0), |trainable_vars| = 2
+	Epoch[1/5]:loss_c:1,349.262, loss_p:1,292.027, erTrain:0.21612, erVal:0.01079, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:08, V
+	Epoch[2/5]:loss_c:1,294.120, loss_p:1,292.027, erTrain:0.11289, erVal:0.00241, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:17, V
+	Epoch[3/5]:loss_c:1,292.007, loss_p:1,292.027, erTrain:0.11155, erVal:0.00200, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:26, V
+	Epoch[4/5]:loss_c:1,291.991, loss_p:1,292.027, erTrain:0.11119, erVal:0.00176, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:34, V
+	Epoch[5/5]:loss_c:1,292.012, loss_p:1,292.027, erTrain:0.11083, erVal:0.00126, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:43, V
+Done balancing: epoch 5, best_val_err=0.00126, best_weak_er=-1.00000, run time 00:00:43
+Saved to: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_80_rep_7.pt
+	ending sum weights:
+		sum(W)=434874
+		sum(U)=434874.0625
+-------------------------------------------------------------------------------- rep 7 time 00:00:43
+-------------------------------------------------------------------------------- rep 8
+	starting sum weights:
+		sum(W)=434874
+		sum(U)=434874.0
+Balance params: epochs 5, batch_size 25, total batches 800, base_lr 0.01
+build_1_bal_SGD_coreset(size=80):
+	optimizer = Adam (Parameter Group 0 amsgrad: False betas: (0.9, 0.999) eps: 1e-08 lr: 0.01 weight_decay: 0), |trainable_vars| = 2
+	Epoch[1/5]:loss_c:1,294.385, loss_p:1,292.027, erTrain:0.28598, erVal:0.00083, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:08, V
+	Epoch[2/5]:loss_c:1,292.020, loss_p:1,292.027, erTrain:0.27430, erVal:0.00056, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:17, V
+	Epoch[3/5]:loss_c:1,292.030, loss_p:1,292.027, erTrain:0.27431, erVal:0.00036, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:26, V
+	Epoch[4/5]:loss_c:1,292.029, loss_p:1,292.027, erTrain:0.27305, erVal:0.00015, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:34, V
+	Epoch[5/5]:loss_c:1,292.025, loss_p:1,292.027, erTrain:0.27373, erVal:0.00008, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:43, V
+Done balancing: epoch 5, best_val_err=0.00008, best_weak_er=-1.00000, run time 00:00:43
+Saved to: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_80_rep_8.pt
+	ending sum weights:
+		sum(W)=434874
+		sum(U)=434874.4375
+-------------------------------------------------------------------------------- rep 8 time 00:00:43
+-------------------------------------------------------------------------------- rep 9
+	starting sum weights:
+		sum(W)=434874
+		sum(U)=434874.0
+Balance params: epochs 5, batch_size 25, total batches 800, base_lr 0.01
+build_1_bal_SGD_coreset(size=80):
+	optimizer = Adam (Parameter Group 0 amsgrad: False betas: (0.9, 0.999) eps: 1e-08 lr: 0.01 weight_decay: 0), |trainable_vars| = 2
+	Epoch[1/5]:loss_c:1,399.288, loss_p:1,292.027, erTrain:0.27152, erVal:0.03393, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:08, V
+	Epoch[2/5]:loss_c:1,319.152, loss_p:1,292.027, erTrain:0.10860, erVal:0.00317, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:17, V
+	Epoch[3/5]:loss_c:1,291.946, loss_p:1,292.027, erTrain:0.09663, erVal:0.00274, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:26, V
+	Epoch[4/5]:loss_c:1,291.976, loss_p:1,292.027, erTrain:0.09629, erVal:0.00241, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:35, V
+	Epoch[5/5]:loss_c:1,291.973, loss_p:1,292.027, erTrain:0.09592, erVal:0.00198, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:44, V
+Done balancing: epoch 5, best_val_err=0.00198, best_weak_er=-1.00000, run time 00:00:44
+Saved to: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_80_rep_9.pt
+	ending sum weights:
+		sum(W)=434874
+		sum(U)=434874.0625
+-------------------------------------------------------------------------------- rep 9 time 00:00:44
+c_size = 80: time 00:07:48
+c_size 90:
+-------------------------------------------------------------------------------- rep 0
+	starting sum weights:
+		sum(W)=434874
+		sum(U)=434873.9375
+Balance params: epochs 5, batch_size 25, total batches 800, base_lr 0.01
+build_1_bal_SGD_coreset(size=90):
+	optimizer = Adam (Parameter Group 0 amsgrad: False betas: (0.9, 0.999) eps: 1e-08 lr: 0.01 weight_decay: 0), |trainable_vars| = 2
+	Epoch[1/5]:loss_c:1,235.302, loss_p:1,292.027, erTrain:0.16493, erVal:0.01135, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:08, V
+	Epoch[2/5]:loss_c:1,290.012, loss_p:1,292.027, erTrain:0.08107, erVal:0.00193, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:17, V
+	Epoch[3/5]:loss_c:1,292.055, loss_p:1,292.027, erTrain:0.07977, erVal:0.00158, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:26, V
+	Epoch[4/5]:loss_c:1,292.039, loss_p:1,292.027, erTrain:0.07940, erVal:0.00109, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:34, V
+	Epoch[5/5]:loss_c:1,292.041, loss_p:1,292.027, erTrain:0.07901, erVal:0.00091, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:43, V
+Done balancing: epoch 5, best_val_err=0.00091, best_weak_er=-1.00000, run time 00:00:43
+Saved to: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_90_rep_0.pt
+	ending sum weights:
+		sum(W)=434874
+		sum(U)=434873.9375
+-------------------------------------------------------------------------------- rep 0 time 00:00:43
+-------------------------------------------------------------------------------- rep 1
+	starting sum weights:
+		sum(W)=434874
+		sum(U)=434873.9375
+Balance params: epochs 5, batch_size 25, total batches 800, base_lr 0.01
+build_1_bal_SGD_coreset(size=90):
+	optimizer = Adam (Parameter Group 0 amsgrad: False betas: (0.9, 0.999) eps: 1e-08 lr: 0.01 weight_decay: 0), |trainable_vars| = 2
+	Epoch[1/5]:loss_c:1,291.940, loss_p:1,292.027, erTrain:0.08213, erVal:0.00008, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:08, V
+	Epoch[2/5]:loss_c:1,292.026, loss_p:1,292.027, erTrain:0.07822, erVal:0.00012, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:17
+	Epoch[3/5]:loss_c:1,292.026, loss_p:1,292.027, erTrain:0.07822, erVal:0.00012, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:26
+	Epoch[4/5]:loss_c:1,292.024, loss_p:1,292.027, erTrain:0.07824, erVal:0.00018, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:34
+	Epoch[5/5]:loss_c:1,292.029, loss_p:1,292.027, erTrain:0.07823, erVal:0.00004, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:43, V
+Done balancing: epoch 5, best_val_err=0.00004, best_weak_er=-1.00000, run time 00:00:43
+Saved to: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_90_rep_1.pt
+	ending sum weights:
+		sum(W)=434874
+		sum(U)=434873.9375
+-------------------------------------------------------------------------------- rep 1 time 00:00:43
+-------------------------------------------------------------------------------- rep 2
+	starting sum weights:
+		sum(W)=434874
+		sum(U)=434873.9375
+Balance params: epochs 5, batch_size 25, total batches 800, base_lr 0.01
+build_1_bal_SGD_coreset(size=90):
+	optimizer = Adam (Parameter Group 0 amsgrad: False betas: (0.9, 0.999) eps: 1e-08 lr: 0.01 weight_decay: 0), |trainable_vars| = 2
+	Epoch[1/5]:loss_c:1,335.647, loss_p:1,292.027, erTrain:0.12016, erVal:0.00133, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:08, V
+	Epoch[2/5]:loss_c:1,292.025, loss_p:1,292.027, erTrain:0.07872, erVal:0.00046, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:17, V
+	Epoch[3/5]:loss_c:1,292.032, loss_p:1,292.027, erTrain:0.07843, erVal:0.00020, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:26, V
+	Epoch[4/5]:loss_c:1,292.025, loss_p:1,292.027, erTrain:0.07827, erVal:0.00010, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:34, V
+	Epoch[5/5]:loss_c:1,292.025, loss_p:1,292.027, erTrain:0.07825, erVal:0.00011, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:43
+Done balancing: epoch 4, best_val_err=0.00010, best_weak_er=-1.00000, run time 00:00:43
+Saved to: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_90_rep_2.pt
+	ending sum weights:
+		sum(W)=434874
+		sum(U)=434873.9375
+-------------------------------------------------------------------------------- rep 2 time 00:00:43
+-------------------------------------------------------------------------------- rep 3
+	starting sum weights:
+		sum(W)=434874
+		sum(U)=434873.9375
+Balance params: epochs 5, batch_size 25, total batches 800, base_lr 0.01
+build_1_bal_SGD_coreset(size=90):
+	optimizer = Adam (Parameter Group 0 amsgrad: False betas: (0.9, 0.999) eps: 1e-08 lr: 0.01 weight_decay: 0), |trainable_vars| = 2
+	Epoch[1/5]:loss_c:1,450.314, loss_p:1,292.027, erTrain:0.29032, erVal:0.06975, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:08, V
+	Epoch[2/5]:loss_c:1,391.026, loss_p:1,292.027, erTrain:0.12152, erVal:0.02077, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:17, V
+	Epoch[3/5]:loss_c:1,302.766, loss_p:1,292.027, erTrain:0.08476, erVal:0.00230, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:26, V
+	Epoch[4/5]:loss_c:1,291.982, loss_p:1,292.027, erTrain:0.08015, erVal:0.00203, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:35, V
+	Epoch[5/5]:loss_c:1,292.012, loss_p:1,292.027, erTrain:0.07978, erVal:0.00152, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:43, V
+Done balancing: epoch 5, best_val_err=0.00152, best_weak_er=-1.00000, run time 00:00:43
+Saved to: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_90_rep_3.pt
+	ending sum weights:
+		sum(W)=434874
+		sum(U)=434873.9375
+-------------------------------------------------------------------------------- rep 3 time 00:00:43
+-------------------------------------------------------------------------------- rep 4
+	starting sum weights:
+		sum(W)=434874
+		sum(U)=434873.9375
+Balance params: epochs 5, batch_size 25, total batches 800, base_lr 0.01
+build_1_bal_SGD_coreset(size=90):
+	optimizer = Adam (Parameter Group 0 amsgrad: False betas: (0.9, 0.999) eps: 1e-08 lr: 0.01 weight_decay: 0), |trainable_vars| = 2
+	Epoch[1/5]:loss_c:1,295.395, loss_p:1,292.027, erTrain:0.08972, erVal:0.00065, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:08, V
+	Epoch[2/5]:loss_c:1,292.023, loss_p:1,292.027, erTrain:0.07868, erVal:0.00039, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:17, V
+	Epoch[3/5]:loss_c:1,292.029, loss_p:1,292.027, erTrain:0.07844, erVal:0.00021, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:26, V
+	Epoch[4/5]:loss_c:1,292.026, loss_p:1,292.027, erTrain:0.07828, erVal:0.00022, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:35
+	Epoch[5/5]:loss_c:1,292.028, loss_p:1,292.027, erTrain:0.07825, erVal:0.00009, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:43, V
+Done balancing: epoch 5, best_val_err=0.00009, best_weak_er=-1.00000, run time 00:00:43
+Saved to: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_90_rep_4.pt
+	ending sum weights:
+		sum(W)=434874
+		sum(U)=434873.9375
+-------------------------------------------------------------------------------- rep 4 time 00:00:43
+-------------------------------------------------------------------------------- rep 5
+	starting sum weights:
+		sum(W)=434874
+		sum(U)=434873.9375
+Balance params: epochs 5, batch_size 25, total batches 800, base_lr 0.01
+build_1_bal_SGD_coreset(size=90):
+	optimizer = Adam (Parameter Group 0 amsgrad: False betas: (0.9, 0.999) eps: 1e-08 lr: 0.01 weight_decay: 0), |trainable_vars| = 2
+	Epoch[1/5]:loss_c:1,321.883, loss_p:1,292.027, erTrain:0.13372, erVal:0.00208, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:08, V
+	Epoch[2/5]:loss_c:1,291.976, loss_p:1,292.027, erTrain:0.07993, erVal:0.00163, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:17, V
+	Epoch[3/5]:loss_c:1,291.993, loss_p:1,292.027, erTrain:0.07959, erVal:0.00144, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:26, V
+	Epoch[4/5]:loss_c:1,292.010, loss_p:1,292.027, erTrain:0.07928, erVal:0.00099, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:34, V
+	Epoch[5/5]:loss_c:1,292.015, loss_p:1,292.027, erTrain:0.07895, erVal:0.00066, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:43, V
+Done balancing: epoch 5, best_val_err=0.00066, best_weak_er=-1.00000, run time 00:00:43
+Saved to: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_90_rep_5.pt
+	ending sum weights:
+		sum(W)=434874
+		sum(U)=434873.9375
+-------------------------------------------------------------------------------- rep 5 time 00:00:43
+-------------------------------------------------------------------------------- rep 6
+	starting sum weights:
+		sum(W)=434874
+		sum(U)=434873.9375
+Balance params: epochs 5, batch_size 25, total batches 800, base_lr 0.01
+build_1_bal_SGD_coreset(size=90):
+	optimizer = Adam (Parameter Group 0 amsgrad: False betas: (0.9, 0.999) eps: 1e-08 lr: 0.01 weight_decay: 0), |trainable_vars| = 2
+	Epoch[1/5]:loss_c:1,293.765, loss_p:1,292.027, erTrain:0.08694, erVal:0.00057, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:08, V
+	Epoch[2/5]:loss_c:1,292.029, loss_p:1,292.027, erTrain:0.07847, erVal:0.00018, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:17, V
+	Epoch[3/5]:loss_c:1,292.028, loss_p:1,292.027, erTrain:0.07829, erVal:0.00011, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:26, V
+	Epoch[4/5]:loss_c:1,292.029, loss_p:1,292.027, erTrain:0.07824, erVal:0.00004, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:35, V
+	Epoch[5/5]:loss_c:1,292.028, loss_p:1,292.027, erTrain:0.07824, erVal:0.00018, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:43
+Done balancing: epoch 4, best_val_err=0.00004, best_weak_er=-1.00000, run time 00:00:43
+Saved to: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_90_rep_6.pt
+	ending sum weights:
+		sum(W)=434874
+		sum(U)=434873.9375
+-------------------------------------------------------------------------------- rep 6 time 00:00:43
+-------------------------------------------------------------------------------- rep 7
+	starting sum weights:
+		sum(W)=434874
+		sum(U)=434873.9375
+Balance params: epochs 5, batch_size 25, total batches 800, base_lr 0.01
+build_1_bal_SGD_coreset(size=90):
+	optimizer = Adam (Parameter Group 0 amsgrad: False betas: (0.9, 0.999) eps: 1e-08 lr: 0.01 weight_decay: 0), |trainable_vars| = 2
+	Epoch[1/5]:loss_c:1,274.045, loss_p:1,292.027, erTrain:0.09968, erVal:0.00035, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:08, V
+	Epoch[2/5]:loss_c:1,292.023, loss_p:1,292.027, erTrain:0.07840, erVal:0.00012, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:17, V
+	Epoch[3/5]:loss_c:1,292.028, loss_p:1,292.027, erTrain:0.07826, erVal:0.00008, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:26, V
+	Epoch[4/5]:loss_c:1,292.028, loss_p:1,292.027, erTrain:0.07825, erVal:0.00009, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:34
+	Epoch[5/5]:loss_c:1,292.027, loss_p:1,292.027, erTrain:0.07824, erVal:0.00004, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:43, V
+Done balancing: epoch 5, best_val_err=0.00004, best_weak_er=-1.00000, run time 00:00:43
+Saved to: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_90_rep_7.pt
+	ending sum weights:
+		sum(W)=434874
+		sum(U)=434873.9375
+-------------------------------------------------------------------------------- rep 7 time 00:00:43
+-------------------------------------------------------------------------------- rep 8
+	starting sum weights:
+		sum(W)=434874
+		sum(U)=434873.9375
+Balance params: epochs 5, batch_size 25, total batches 800, base_lr 0.01
+build_1_bal_SGD_coreset(size=90):
+	optimizer = Adam (Parameter Group 0 amsgrad: False betas: (0.9, 0.999) eps: 1e-08 lr: 0.01 weight_decay: 0), |trainable_vars| = 2
+	Epoch[1/5]:loss_c:1,317.759, loss_p:1,292.027, erTrain:0.10126, erVal:0.00057, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:08, V
+	Epoch[2/5]:loss_c:1,292.025, loss_p:1,292.027, erTrain:0.07858, erVal:0.00032, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:17, V
+	Epoch[3/5]:loss_c:1,292.026, loss_p:1,292.027, erTrain:0.07832, erVal:0.00013, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:26, V
+	Epoch[4/5]:loss_c:1,292.027, loss_p:1,292.027, erTrain:0.07825, erVal:0.00009, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:34, V
+	Epoch[5/5]:loss_c:1,292.027, loss_p:1,292.027, erTrain:0.07824, erVal:0.00008, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:43, V
+Done balancing: epoch 5, best_val_err=0.00008, best_weak_er=-1.00000, run time 00:00:43
+Saved to: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_90_rep_8.pt
+	ending sum weights:
+		sum(W)=434874
+		sum(U)=434873.9375
+-------------------------------------------------------------------------------- rep 8 time 00:00:43
+-------------------------------------------------------------------------------- rep 9
+	starting sum weights:
+		sum(W)=434874
+		sum(U)=434873.9375
+Balance params: epochs 5, batch_size 25, total batches 800, base_lr 0.01
+build_1_bal_SGD_coreset(size=90):
+	optimizer = Adam (Parameter Group 0 amsgrad: False betas: (0.9, 0.999) eps: 1e-08 lr: 0.01 weight_decay: 0), |trainable_vars| = 2
+	Epoch[1/5]:loss_c:1,307.857, loss_p:1,292.027, erTrain:0.09714, erVal:0.00039, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:08, V
+	Epoch[2/5]:loss_c:1,292.027, loss_p:1,292.027, erTrain:0.07842, erVal:0.00012, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:17, V
+	Epoch[3/5]:loss_c:1,292.025, loss_p:1,292.027, erTrain:0.07828, erVal:0.00008, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:26, V
+	Epoch[4/5]:loss_c:1,292.027, loss_p:1,292.027, erTrain:0.07824, erVal:0.00010, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:34
+	Epoch[5/5]:loss_c:1,292.025, loss_p:1,292.027, erTrain:0.07825, erVal:0.00007, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:43, V
+Done balancing: epoch 5, best_val_err=0.00007, best_weak_er=-1.00000, run time 00:00:43
+Saved to: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_90_rep_9.pt
+	ending sum weights:
+		sum(W)=434874
+		sum(U)=434873.9375
+-------------------------------------------------------------------------------- rep 9 time 00:00:43
+c_size = 90: time 00:07:16
+c_size 100:
+-------------------------------------------------------------------------------- rep 0
+	starting sum weights:
+		sum(W)=434874
+		sum(U)=434874.0
+Balance params: epochs 5, batch_size 25, total batches 800, base_lr 0.01
+build_1_bal_SGD_coreset(size=100):
+	optimizer = Adam (Parameter Group 0 amsgrad: False betas: (0.9, 0.999) eps: 1e-08 lr: 0.01 weight_decay: 0), |trainable_vars| = 2
+	Epoch[1/5]:loss_c:1,291.765, loss_p:1,292.027, erTrain:0.34312, erVal:0.00010, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:08, V
+	Epoch[2/5]:loss_c:1,292.024, loss_p:1,292.027, erTrain:0.33881, erVal:0.00007, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:17, V
+	Epoch[3/5]:loss_c:1,292.029, loss_p:1,292.027, erTrain:0.33902, erVal:0.00009, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:26
+	Epoch[4/5]:loss_c:1,292.028, loss_p:1,292.027, erTrain:0.33816, erVal:0.00003, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:34, V
+	Epoch[5/5]:loss_c:1,292.026, loss_p:1,292.027, erTrain:0.33878, erVal:0.00010, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:43
+Done balancing: epoch 4, best_val_err=0.00003, best_weak_er=-1.00000, run time 00:00:43
+Saved to: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_100_rep_0.pt
+	ending sum weights:
+		sum(W)=434874
+		sum(U)=434874.25
+-------------------------------------------------------------------------------- rep 0 time 00:00:43
+-------------------------------------------------------------------------------- rep 1
+	starting sum weights:
+		sum(W)=434874
+		sum(U)=434874.0
+Balance params: epochs 5, batch_size 25, total batches 800, base_lr 0.01
+build_1_bal_SGD_coreset(size=100):
+	optimizer = Adam (Parameter Group 0 amsgrad: False betas: (0.9, 0.999) eps: 1e-08 lr: 0.01 weight_decay: 0), |trainable_vars| = 2
+	Epoch[1/5]:loss_c:1,288.655, loss_p:1,292.027, erTrain:0.35002, erVal:0.00116, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:08, V
+	Epoch[2/5]:loss_c:1,292.050, loss_p:1,292.027, erTrain:0.33444, erVal:0.00090, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:17, V
+	Epoch[3/5]:loss_c:1,292.023, loss_p:1,292.027, erTrain:0.33436, erVal:0.00069, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:26, V
+	Epoch[4/5]:loss_c:1,292.025, loss_p:1,292.027, erTrain:0.33326, erVal:0.00025, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:34, V
+	Epoch[5/5]:loss_c:1,292.023, loss_p:1,292.027, erTrain:0.33362, erVal:0.00016, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:43, V
+Done balancing: epoch 5, best_val_err=0.00016, best_weak_er=-1.00000, run time 00:00:43
+Saved to: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_100_rep_1.pt
+	ending sum weights:
+		sum(W)=434874
+		sum(U)=434873.5
+-------------------------------------------------------------------------------- rep 1 time 00:00:43
+-------------------------------------------------------------------------------- rep 2
+	starting sum weights:
+		sum(W)=434874
+		sum(U)=434874.0
+Balance params: epochs 5, batch_size 25, total batches 800, base_lr 0.01
+build_1_bal_SGD_coreset(size=100):
+	optimizer = Adam (Parameter Group 0 amsgrad: False betas: (0.9, 0.999) eps: 1e-08 lr: 0.01 weight_decay: 0), |trainable_vars| = 2
+	Epoch[1/5]:loss_c:1,299.134, loss_p:1,292.027, erTrain:0.08621, erVal:0.00066, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:08, V
+	Epoch[2/5]:loss_c:1,292.019, loss_p:1,292.027, erTrain:0.07867, erVal:0.00034, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:17, V
+	Epoch[3/5]:loss_c:1,292.028, loss_p:1,292.027, erTrain:0.07839, erVal:0.00018, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:26, V
+	Epoch[4/5]:loss_c:1,292.025, loss_p:1,292.027, erTrain:0.07828, erVal:0.00028, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:34
+	Epoch[5/5]:loss_c:1,292.026, loss_p:1,292.027, erTrain:0.07825, erVal:0.00021, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:43
+Done balancing: epoch 3, best_val_err=0.00018, best_weak_er=-1.00000, run time 00:00:43
+Saved to: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_100_rep_2.pt
+	ending sum weights:
+		sum(W)=434874
+		sum(U)=434874.03125
+-------------------------------------------------------------------------------- rep 2 time 00:00:43
+-------------------------------------------------------------------------------- rep 3
+	starting sum weights:
+		sum(W)=434874
+		sum(U)=434874.0
+Balance params: epochs 5, batch_size 25, total batches 800, base_lr 0.01
+build_1_bal_SGD_coreset(size=100):
+	optimizer = Adam (Parameter Group 0 amsgrad: False betas: (0.9, 0.999) eps: 1e-08 lr: 0.01 weight_decay: 0), |trainable_vars| = 2
+	Epoch[1/5]:loss_c:1,353.546, loss_p:1,292.027, erTrain:0.38802, erVal:0.01087, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:08, V
+	Epoch[2/5]:loss_c:1,295.445, loss_p:1,292.027, erTrain:0.33492, erVal:0.00010, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:17, V
+	Epoch[3/5]:loss_c:1,292.028, loss_p:1,292.027, erTrain:0.33384, erVal:0.00009, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:26, V
+	Epoch[4/5]:loss_c:1,292.026, loss_p:1,292.027, erTrain:0.33304, erVal:0.00010, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:34
+	Epoch[5/5]:loss_c:1,292.025, loss_p:1,292.027, erTrain:0.33348, erVal:0.00019, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:43
+Done balancing: epoch 3, best_val_err=0.00009, best_weak_er=-1.00000, run time 00:00:43
+Saved to: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_100_rep_3.pt
+	ending sum weights:
+		sum(W)=434874
+		sum(U)=434873.71875
+-------------------------------------------------------------------------------- rep 3 time 00:00:43
+-------------------------------------------------------------------------------- rep 4
+	starting sum weights:
+		sum(W)=434874
+		sum(U)=434874.0
+Balance params: epochs 5, batch_size 25, total batches 800, base_lr 0.01
+build_1_bal_SGD_coreset(size=100):
+	optimizer = Adam (Parameter Group 0 amsgrad: False betas: (0.9, 0.999) eps: 1e-08 lr: 0.01 weight_decay: 0), |trainable_vars| = 2
+	Epoch[1/5]:loss_c:1,322.138, loss_p:1,292.027, erTrain:0.36171, erVal:0.00024, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:08, V
+	Epoch[2/5]:loss_c:1,292.028, loss_p:1,292.027, erTrain:0.33349, erVal:0.00009, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:17, V
+	Epoch[3/5]:loss_c:1,292.026, loss_p:1,292.027, erTrain:0.33383, erVal:0.00007, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:26, V
+	Epoch[4/5]:loss_c:1,292.029, loss_p:1,292.027, erTrain:0.33305, erVal:0.00008, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:34
+	Epoch[5/5]:loss_c:1,292.025, loss_p:1,292.027, erTrain:0.33348, erVal:0.00007, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:43
+Done balancing: epoch 3, best_val_err=0.00007, best_weak_er=-1.00000, run time 00:00:43
+Saved to: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_100_rep_4.pt
+	ending sum weights:
+		sum(W)=434874
+		sum(U)=434873.71875
+-------------------------------------------------------------------------------- rep 4 time 00:00:43
+-------------------------------------------------------------------------------- rep 5
+	starting sum weights:
+		sum(W)=434874
+		sum(U)=434874.0
+Balance params: epochs 5, batch_size 25, total batches 800, base_lr 0.01
+build_1_bal_SGD_coreset(size=100):
+	optimizer = Adam (Parameter Group 0 amsgrad: False betas: (0.9, 0.999) eps: 1e-08 lr: 0.01 weight_decay: 0), |trainable_vars| = 2
+	Epoch[1/5]:loss_c:1,291.079, loss_p:1,292.027, erTrain:0.33993, erVal:0.00036, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:08, V
+	Epoch[2/5]:loss_c:1,292.028, loss_p:1,292.027, erTrain:0.33366, erVal:0.00015, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:17, V
+	Epoch[3/5]:loss_c:1,292.025, loss_p:1,292.027, erTrain:0.33381, erVal:0.00011, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:26, V
+	Epoch[4/5]:loss_c:1,292.026, loss_p:1,292.027, erTrain:0.33302, erVal:0.00017, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:34
+	Epoch[5/5]:loss_c:1,292.026, loss_p:1,292.027, erTrain:0.33357, erVal:0.00014, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:43
+Done balancing: epoch 3, best_val_err=0.00011, best_weak_er=-1.00000, run time 00:00:43
+Saved to: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_100_rep_5.pt
+	ending sum weights:
+		sum(W)=434874
+		sum(U)=434874.28125
+-------------------------------------------------------------------------------- rep 5 time 00:00:43
+-------------------------------------------------------------------------------- rep 6
+	starting sum weights:
+		sum(W)=434874
+		sum(U)=434874.0
+Balance params: epochs 5, batch_size 25, total batches 800, base_lr 0.01
+build_1_bal_SGD_coreset(size=100):
+	optimizer = Adam (Parameter Group 0 amsgrad: False betas: (0.9, 0.999) eps: 1e-08 lr: 0.01 weight_decay: 0), |trainable_vars| = 2
+	Epoch[1/5]:loss_c:1,287.297, loss_p:1,292.027, erTrain:0.34492, erVal:0.00112, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:08, V
+	Epoch[2/5]:loss_c:1,292.026, loss_p:1,292.027, erTrain:0.32907, erVal:0.00072, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:17, V
+	Epoch[3/5]:loss_c:1,292.030, loss_p:1,292.027, erTrain:0.32899, erVal:0.00035, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:26, V
+	Epoch[4/5]:loss_c:1,292.024, loss_p:1,292.027, erTrain:0.32790, erVal:0.00020, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:34, V
+	Epoch[5/5]:loss_c:1,292.023, loss_p:1,292.027, erTrain:0.32839, erVal:0.00005, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:43, V
+Done balancing: epoch 5, best_val_err=0.00005, best_weak_er=-1.00000, run time 00:00:43
+Saved to: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_100_rep_6.pt
+	ending sum weights:
+		sum(W)=434874
+		sum(U)=434873.5
+-------------------------------------------------------------------------------- rep 6 time 00:00:43
+-------------------------------------------------------------------------------- rep 7
+	starting sum weights:
+		sum(W)=434874
+		sum(U)=434874.0
+Balance params: epochs 5, batch_size 25, total batches 800, base_lr 0.01
+build_1_bal_SGD_coreset(size=100):
+	optimizer = Adam (Parameter Group 0 amsgrad: False betas: (0.9, 0.999) eps: 1e-08 lr: 0.01 weight_decay: 0), |trainable_vars| = 2
+	Epoch[1/5]:loss_c:1,258.628, loss_p:1,292.027, erTrain:0.37555, erVal:0.00098, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:08, V
+	Epoch[2/5]:loss_c:1,292.029, loss_p:1,292.027, erTrain:0.33413, erVal:0.00059, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:17, V
+	Epoch[3/5]:loss_c:1,292.025, loss_p:1,292.027, erTrain:0.33407, erVal:0.00039, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:26, V
+	Epoch[4/5]:loss_c:1,292.028, loss_p:1,292.027, erTrain:0.33307, erVal:0.00019, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:35, V
+	Epoch[5/5]:loss_c:1,292.026, loss_p:1,292.027, erTrain:0.33359, erVal:0.00005, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:43, V
+Done balancing: epoch 5, best_val_err=0.00005, best_weak_er=-1.00000, run time 00:00:43
+Saved to: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_100_rep_7.pt
+	ending sum weights:
+		sum(W)=434874
+		sum(U)=434873.5
+-------------------------------------------------------------------------------- rep 7 time 00:00:43
+-------------------------------------------------------------------------------- rep 8
+	starting sum weights:
+		sum(W)=434874
+		sum(U)=434874.0
+Balance params: epochs 5, batch_size 25, total batches 800, base_lr 0.01
+build_1_bal_SGD_coreset(size=100):
+	optimizer = Adam (Parameter Group 0 amsgrad: False betas: (0.9, 0.999) eps: 1e-08 lr: 0.01 weight_decay: 0), |trainable_vars| = 2
+	Epoch[1/5]:loss_c:1,283.274, loss_p:1,292.027, erTrain:0.16081, erVal:0.00070, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:08, V
+	Epoch[2/5]:loss_c:1,292.016, loss_p:1,292.027, erTrain:0.14899, erVal:0.00043, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:17, V
+	Epoch[3/5]:loss_c:1,292.028, loss_p:1,292.027, erTrain:0.14873, erVal:0.00015, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:26, V
+	Epoch[4/5]:loss_c:1,292.028, loss_p:1,292.027, erTrain:0.14858, erVal:0.00022, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:34
+	Epoch[5/5]:loss_c:1,292.024, loss_p:1,292.027, erTrain:0.14855, erVal:0.00007, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:43, V
+Done balancing: epoch 5, best_val_err=0.00007, best_weak_er=-1.00000, run time 00:00:43
+Saved to: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_100_rep_8.pt
+	ending sum weights:
+		sum(W)=434874
+		sum(U)=434873.875
+-------------------------------------------------------------------------------- rep 8 time 00:00:43
+-------------------------------------------------------------------------------- rep 9
+	starting sum weights:
+		sum(W)=434874
+		sum(U)=434874.0
+Balance params: epochs 5, batch_size 25, total batches 800, base_lr 0.01
+build_1_bal_SGD_coreset(size=100):
+	optimizer = Adam (Parameter Group 0 amsgrad: False betas: (0.9, 0.999) eps: 1e-08 lr: 0.01 weight_decay: 0), |trainable_vars| = 2
+	Epoch[1/5]:loss_c:1,270.557, loss_p:1,292.027, erTrain:0.05445, erVal:0.00013, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:08, V
+	Epoch[2/5]:loss_c:1,292.027, loss_p:1,292.027, erTrain:0.03137, erVal:0.00005, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:17, V
+	Epoch[3/5]:loss_c:1,292.026, loss_p:1,292.027, erTrain:0.03139, erVal:0.00014, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:26
+	Epoch[4/5]:loss_c:1,292.026, loss_p:1,292.027, erTrain:0.03136, erVal:0.00014, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:34
+	Epoch[5/5]:loss_c:1,292.027, loss_p:1,292.027, erTrain:0.03136, erVal:0.00007, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:43
+Done balancing: epoch 2, best_val_err=0.00005, best_weak_er=-1.00000, run time 00:00:43
+Saved to: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_100_rep_9.pt
+	ending sum weights:
+		sum(W)=434874
+		sum(U)=434874.03125
+-------------------------------------------------------------------------------- rep 9 time 00:00:43
+c_size = 100: time 00:07:16
+c_size 110:
+-------------------------------------------------------------------------------- rep 0
+	starting sum weights:
+		sum(W)=434874
+		sum(U)=434873.96875
+Balance params: epochs 5, batch_size 25, total batches 800, base_lr 0.01
+build_1_bal_SGD_coreset(size=110):
+	optimizer = Adam (Parameter Group 0 amsgrad: False betas: (0.9, 0.999) eps: 1e-08 lr: 0.01 weight_decay: 0), |trainable_vars| = 2
+	Epoch[1/5]:loss_c:1,255.225, loss_p:1,292.027, erTrain:0.11554, erVal:0.00035, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:08, V
+	Epoch[2/5]:loss_c:1,292.020, loss_p:1,292.027, erTrain:0.08044, erVal:0.00015, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:17, V
+	Epoch[3/5]:loss_c:1,292.029, loss_p:1,292.027, erTrain:0.08067, erVal:0.00012, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:26, V
+	Epoch[4/5]:loss_c:1,292.027, loss_p:1,292.027, erTrain:0.08032, erVal:0.00016, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:35
+	Epoch[5/5]:loss_c:1,292.026, loss_p:1,292.027, erTrain:0.08050, erVal:0.00008, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:43, V
+Done balancing: epoch 5, best_val_err=0.00008, best_weak_er=-1.00000, run time 00:00:43
+Saved to: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_110_rep_0.pt
+	ending sum weights:
+		sum(W)=434874
+		sum(U)=434873.96875
+-------------------------------------------------------------------------------- rep 0 time 00:00:43
+-------------------------------------------------------------------------------- rep 1
+	starting sum weights:
+		sum(W)=434874
+		sum(U)=434873.96875
+Balance params: epochs 5, batch_size 25, total batches 800, base_lr 0.01
+build_1_bal_SGD_coreset(size=110):
+	optimizer = Adam (Parameter Group 0 amsgrad: False betas: (0.9, 0.999) eps: 1e-08 lr: 0.01 weight_decay: 0), |trainable_vars| = 2
+	Epoch[1/5]:loss_c:1,274.683, loss_p:1,292.027, erTrain:0.10026, erVal:0.00015, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:08, V
+	Epoch[2/5]:loss_c:1,292.025, loss_p:1,292.027, erTrain:0.08042, erVal:0.00004, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:17, V
+	Epoch[3/5]:loss_c:1,292.028, loss_p:1,292.027, erTrain:0.08067, erVal:0.00019, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:26
+	Epoch[4/5]:loss_c:1,292.025, loss_p:1,292.027, erTrain:0.08031, erVal:0.00008, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:35
+	Epoch[5/5]:loss_c:1,292.027, loss_p:1,292.027, erTrain:0.08050, erVal:0.00006, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:43
+Done balancing: epoch 2, best_val_err=0.00004, best_weak_er=-1.00000, run time 00:00:43
+Saved to: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_110_rep_1.pt
+	ending sum weights:
+		sum(W)=434874
+		sum(U)=434874.15625
+-------------------------------------------------------------------------------- rep 1 time 00:00:43
+-------------------------------------------------------------------------------- rep 2
+	starting sum weights:
+		sum(W)=434874
+		sum(U)=434873.96875
+Balance params: epochs 5, batch_size 25, total batches 800, base_lr 0.01
+build_1_bal_SGD_coreset(size=110):
+	optimizer = Adam (Parameter Group 0 amsgrad: False betas: (0.9, 0.999) eps: 1e-08 lr: 0.01 weight_decay: 0), |trainable_vars| = 2
+	Epoch[1/5]:loss_c:1,244.084, loss_p:1,292.027, erTrain:0.13873, erVal:0.00812, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:08, V
+	Epoch[2/5]:loss_c:1,290.600, loss_p:1,292.027, erTrain:0.08166, erVal:0.00067, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:17, V
+	Epoch[3/5]:loss_c:1,292.024, loss_p:1,292.027, erTrain:0.08105, erVal:0.00033, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:26, V
+	Epoch[4/5]:loss_c:1,292.024, loss_p:1,292.027, erTrain:0.08042, erVal:0.00009, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:34, V
+	Epoch[5/5]:loss_c:1,292.028, loss_p:1,292.027, erTrain:0.08053, erVal:0.00018, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:43
+Done balancing: epoch 4, best_val_err=0.00009, best_weak_er=-1.00000, run time 00:00:43
+Saved to: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_110_rep_2.pt
+	ending sum weights:
+		sum(W)=434874
+		sum(U)=434874.125
+-------------------------------------------------------------------------------- rep 2 time 00:00:43
+-------------------------------------------------------------------------------- rep 3
+	starting sum weights:
+		sum(W)=434874
+		sum(U)=434873.96875
+Balance params: epochs 5, batch_size 25, total batches 800, base_lr 0.01
+build_1_bal_SGD_coreset(size=110):
+	optimizer = Adam (Parameter Group 0 amsgrad: False betas: (0.9, 0.999) eps: 1e-08 lr: 0.01 weight_decay: 0), |trainable_vars| = 2
+	Epoch[1/5]:loss_c:1,298.152, loss_p:1,292.027, erTrain:0.09111, erVal:0.00036, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:08, V
+	Epoch[2/5]:loss_c:1,292.028, loss_p:1,292.027, erTrain:0.08053, erVal:0.00011, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:17, V
+	Epoch[3/5]:loss_c:1,292.026, loss_p:1,292.027, erTrain:0.08069, erVal:0.00012, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:26
+	Epoch[4/5]:loss_c:1,292.024, loss_p:1,292.027, erTrain:0.08032, erVal:0.00010, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:35, V
+	Epoch[5/5]:loss_c:1,292.027, loss_p:1,292.027, erTrain:0.08052, erVal:0.00008, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:43, V
+Done balancing: epoch 5, best_val_err=0.00008, best_weak_er=-1.00000, run time 00:00:43
+Saved to: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_110_rep_3.pt
+	ending sum weights:
+		sum(W)=434874
+		sum(U)=434873.96875
+-------------------------------------------------------------------------------- rep 3 time 00:00:43
+-------------------------------------------------------------------------------- rep 4
+	starting sum weights:
+		sum(W)=434874
+		sum(U)=434873.96875
+Balance params: epochs 5, batch_size 25, total batches 800, base_lr 0.01
+build_1_bal_SGD_coreset(size=110):
+	optimizer = Adam (Parameter Group 0 amsgrad: False betas: (0.9, 0.999) eps: 1e-08 lr: 0.01 weight_decay: 0), |trainable_vars| = 2
+	Epoch[1/5]:loss_c:1,280.350, loss_p:1,292.027, erTrain:0.09235, erVal:0.00020, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:08, V
+	Epoch[2/5]:loss_c:1,292.027, loss_p:1,292.027, erTrain:0.08043, erVal:0.00021, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:17
+	Epoch[3/5]:loss_c:1,292.026, loss_p:1,292.027, erTrain:0.08067, erVal:0.00007, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:26, V
+	Epoch[4/5]:loss_c:1,292.028, loss_p:1,292.027, erTrain:0.08031, erVal:0.00006, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:34, V
+	Epoch[5/5]:loss_c:1,292.029, loss_p:1,292.027, erTrain:0.08050, erVal:0.00010, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:43
+Done balancing: epoch 4, best_val_err=0.00006, best_weak_er=-1.00000, run time 00:00:43
+Saved to: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_110_rep_4.pt
+	ending sum weights:
+		sum(W)=434874
+		sum(U)=434874.125
+-------------------------------------------------------------------------------- rep 4 time 00:00:43
+-------------------------------------------------------------------------------- rep 5
+	starting sum weights:
+		sum(W)=434874
+		sum(U)=434873.96875
+Balance params: epochs 5, batch_size 25, total batches 800, base_lr 0.01
+build_1_bal_SGD_coreset(size=110):
+	optimizer = Adam (Parameter Group 0 amsgrad: False betas: (0.9, 0.999) eps: 1e-08 lr: 0.01 weight_decay: 0), |trainable_vars| = 2
+	Epoch[1/5]:loss_c:1,289.881, loss_p:1,292.027, erTrain:0.08936, erVal:0.00059, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:08, V
+	Epoch[2/5]:loss_c:1,292.027, loss_p:1,292.027, erTrain:0.08069, erVal:0.00024, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:17, V
+	Epoch[3/5]:loss_c:1,292.027, loss_p:1,292.027, erTrain:0.08076, erVal:0.00017, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:26, V
+	Epoch[4/5]:loss_c:1,292.025, loss_p:1,292.027, erTrain:0.08033, erVal:0.00009, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:34, V
+	Epoch[5/5]:loss_c:1,292.026, loss_p:1,292.027, erTrain:0.08052, erVal:0.00008, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:43, V
+Done balancing: epoch 5, best_val_err=0.00008, best_weak_er=-1.00000, run time 00:00:43
+Saved to: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_110_rep_5.pt
+	ending sum weights:
+		sum(W)=434874
+		sum(U)=434873.96875
+-------------------------------------------------------------------------------- rep 5 time 00:00:43
+-------------------------------------------------------------------------------- rep 6
+	starting sum weights:
+		sum(W)=434874
+		sum(U)=434873.96875
+Balance params: epochs 5, batch_size 25, total batches 800, base_lr 0.01
+build_1_bal_SGD_coreset(size=110):
+	optimizer = Adam (Parameter Group 0 amsgrad: False betas: (0.9, 0.999) eps: 1e-08 lr: 0.01 weight_decay: 0), |trainable_vars| = 2
+	Epoch[1/5]:loss_c:1,310.607, loss_p:1,292.027, erTrain:0.09985, erVal:0.00052, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:08, V
+	Epoch[2/5]:loss_c:1,292.026, loss_p:1,292.027, erTrain:0.08060, erVal:0.00018, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:17, V
+	Epoch[3/5]:loss_c:1,292.027, loss_p:1,292.027, erTrain:0.08070, erVal:0.00003, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:26, V
+	Epoch[4/5]:loss_c:1,292.030, loss_p:1,292.027, erTrain:0.08031, erVal:0.00015, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:34
+	Epoch[5/5]:loss_c:1,292.025, loss_p:1,292.027, erTrain:0.08049, erVal:0.00008, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:43
+Done balancing: epoch 3, best_val_err=0.00003, best_weak_er=-1.00000, run time 00:00:43
+Saved to: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_110_rep_6.pt
+	ending sum weights:
+		sum(W)=434874
+		sum(U)=434873.96875
+-------------------------------------------------------------------------------- rep 6 time 00:00:43
+-------------------------------------------------------------------------------- rep 7
+	starting sum weights:
+		sum(W)=434874
+		sum(U)=434873.96875
+Balance params: epochs 5, batch_size 25, total batches 800, base_lr 0.01
+build_1_bal_SGD_coreset(size=110):
+	optimizer = Adam (Parameter Group 0 amsgrad: False betas: (0.9, 0.999) eps: 1e-08 lr: 0.01 weight_decay: 0), |trainable_vars| = 2
+	Epoch[1/5]:loss_c:1,287.664, loss_p:1,292.027, erTrain:0.08766, erVal:0.00021, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:08, V
+	Epoch[2/5]:loss_c:1,292.025, loss_p:1,292.027, erTrain:0.08040, erVal:0.00006, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:17, V
+	Epoch[3/5]:loss_c:1,292.025, loss_p:1,292.027, erTrain:0.08067, erVal:0.00005, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:26, V
+	Epoch[4/5]:loss_c:1,292.026, loss_p:1,292.027, erTrain:0.08031, erVal:0.00020, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:35
+	Epoch[5/5]:loss_c:1,292.025, loss_p:1,292.027, erTrain:0.08049, erVal:0.00010, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:43
+Done balancing: epoch 3, best_val_err=0.00005, best_weak_er=-1.00000, run time 00:00:43
+Saved to: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_110_rep_7.pt
+	ending sum weights:
+		sum(W)=434874
+		sum(U)=434873.96875
+-------------------------------------------------------------------------------- rep 7 time 00:00:43
+-------------------------------------------------------------------------------- rep 8
+	starting sum weights:
+		sum(W)=434874
+		sum(U)=434873.96875
+Balance params: epochs 5, batch_size 25, total batches 800, base_lr 0.01
+build_1_bal_SGD_coreset(size=110):
+	optimizer = Adam (Parameter Group 0 amsgrad: False betas: (0.9, 0.999) eps: 1e-08 lr: 0.01 weight_decay: 0), |trainable_vars| = 2
+	Epoch[1/5]:loss_c:1,330.158, loss_p:1,292.027, erTrain:0.13092, erVal:0.00181, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:08, V
+	Epoch[2/5]:loss_c:1,292.000, loss_p:1,292.027, erTrain:0.08174, erVal:0.00135, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:17, V
+	Epoch[3/5]:loss_c:1,292.018, loss_p:1,292.027, erTrain:0.08168, erVal:0.00099, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:26, V
+	Epoch[4/5]:loss_c:1,292.034, loss_p:1,292.027, erTrain:0.08098, erVal:0.00068, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:34, V
+	Epoch[5/5]:loss_c:1,292.031, loss_p:1,292.027, erTrain:0.08084, erVal:0.00030, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:43, V
+Done balancing: epoch 5, best_val_err=0.00030, best_weak_er=-1.00000, run time 00:00:43
+Saved to: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_110_rep_8.pt
+	ending sum weights:
+		sum(W)=434874
+		sum(U)=434873.96875
+-------------------------------------------------------------------------------- rep 8 time 00:00:43
+-------------------------------------------------------------------------------- rep 9
+	starting sum weights:
+		sum(W)=434874
+		sum(U)=434873.96875
+Balance params: epochs 5, batch_size 25, total batches 800, base_lr 0.01
+build_1_bal_SGD_coreset(size=110):
+	optimizer = Adam (Parameter Group 0 amsgrad: False betas: (0.9, 0.999) eps: 1e-08 lr: 0.01 weight_decay: 0), |trainable_vars| = 2
+	Epoch[1/5]:loss_c:1,304.205, loss_p:1,292.027, erTrain:0.09357, erVal:0.00014, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:08, V
+	Epoch[2/5]:loss_c:1,292.026, loss_p:1,292.027, erTrain:0.08038, erVal:0.00009, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:17, V
+	Epoch[3/5]:loss_c:1,292.026, loss_p:1,292.027, erTrain:0.08066, erVal:0.00009, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:26
+	Epoch[4/5]:loss_c:1,292.028, loss_p:1,292.027, erTrain:0.08031, erVal:0.00015, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:34
+	Epoch[5/5]:loss_c:1,292.028, loss_p:1,292.027, erTrain:0.08050, erVal:0.00007, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:43, V
+Done balancing: epoch 5, best_val_err=0.00007, best_weak_er=-1.00000, run time 00:00:43
+Saved to: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_110_rep_9.pt
+	ending sum weights:
+		sum(W)=434874
+		sum(U)=434873.96875
+-------------------------------------------------------------------------------- rep 9 time 00:00:43
+c_size = 110: time 00:07:17
+c_size 120:
+-------------------------------------------------------------------------------- rep 0
+	starting sum weights:
+		sum(W)=434874
+		sum(U)=434874.0
+Balance params: epochs 5, batch_size 25, total batches 800, base_lr 0.01
+build_1_bal_SGD_coreset(size=120):
+	optimizer = Adam (Parameter Group 0 amsgrad: False betas: (0.9, 0.999) eps: 1e-08 lr: 0.01 weight_decay: 0), |trainable_vars| = 2
+	Epoch[1/5]:loss_c:1,287.663, loss_p:1,292.027, erTrain:0.20350, erVal:0.00045, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:08, V
+	Epoch[2/5]:loss_c:1,292.027, loss_p:1,292.027, erTrain:0.19177, erVal:0.00022, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:17, V
+	Epoch[3/5]:loss_c:1,292.028, loss_p:1,292.027, erTrain:0.19158, erVal:0.00015, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:26, V
+	Epoch[4/5]:loss_c:1,292.026, loss_p:1,292.027, erTrain:0.19152, erVal:0.00012, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:34, V
+	Epoch[5/5]:loss_c:1,292.025, loss_p:1,292.027, erTrain:0.19152, erVal:0.00005, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:43, V
+Done balancing: epoch 5, best_val_err=0.00005, best_weak_er=-1.00000, run time 00:00:43
+Saved to: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_120_rep_0.pt
+	ending sum weights:
+		sum(W)=434874
+		sum(U)=434874.21875
+-------------------------------------------------------------------------------- rep 0 time 00:00:43
+-------------------------------------------------------------------------------- rep 1
+	starting sum weights:
+		sum(W)=434874
+		sum(U)=434874.0
+Balance params: epochs 5, batch_size 25, total batches 800, base_lr 0.01
+build_1_bal_SGD_coreset(size=120):
+	optimizer = Adam (Parameter Group 0 amsgrad: False betas: (0.9, 0.999) eps: 1e-08 lr: 0.01 weight_decay: 0), |trainable_vars| = 2
+	Epoch[1/5]:loss_c:1,271.971, loss_p:1,292.027, erTrain:0.22519, erVal:0.00116, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:08, V
+	Epoch[2/5]:loss_c:1,292.036, loss_p:1,292.027, erTrain:0.19238, erVal:0.00085, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:17, V
+	Epoch[3/5]:loss_c:1,292.028, loss_p:1,292.027, erTrain:0.19205, erVal:0.00045, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:26, V
+	Epoch[4/5]:loss_c:1,292.025, loss_p:1,292.027, erTrain:0.19175, erVal:0.00016, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:35, V
+	Epoch[5/5]:loss_c:1,292.025, loss_p:1,292.027, erTrain:0.19157, erVal:0.00021, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:43
+Done balancing: epoch 4, best_val_err=0.00016, best_weak_er=-1.00000, run time 00:00:43
+Saved to: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_120_rep_1.pt
+	ending sum weights:
+		sum(W)=434874
+		sum(U)=434874.21875
+-------------------------------------------------------------------------------- rep 1 time 00:00:43
+-------------------------------------------------------------------------------- rep 2
+	starting sum weights:
+		sum(W)=434874
+		sum(U)=434874.0
+Balance params: epochs 5, batch_size 25, total batches 800, base_lr 0.01
+build_1_bal_SGD_coreset(size=120):
+	optimizer = Adam (Parameter Group 0 amsgrad: False betas: (0.9, 0.999) eps: 1e-08 lr: 0.01 weight_decay: 0), |trainable_vars| = 2
+	Epoch[1/5]:loss_c:1,290.260, loss_p:1,292.027, erTrain:0.20186, erVal:0.00061, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:08, V
+	Epoch[2/5]:loss_c:1,292.023, loss_p:1,292.027, erTrain:0.19186, erVal:0.00035, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:17, V
+	Epoch[3/5]:loss_c:1,292.023, loss_p:1,292.027, erTrain:0.19164, erVal:0.00012, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:26, V
+	Epoch[4/5]:loss_c:1,292.029, loss_p:1,292.027, erTrain:0.19155, erVal:0.00034, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:34
+	Epoch[5/5]:loss_c:1,292.029, loss_p:1,292.027, erTrain:0.19152, erVal:0.00011, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:43, V
+Done balancing: epoch 5, best_val_err=0.00011, best_weak_er=-1.00000, run time 00:00:43
+Saved to: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_120_rep_2.pt
+	ending sum weights:
+		sum(W)=434874
+		sum(U)=434874.21875
+-------------------------------------------------------------------------------- rep 2 time 00:00:43
+-------------------------------------------------------------------------------- rep 3
+	starting sum weights:
+		sum(W)=434874
+		sum(U)=434874.0
+Balance params: epochs 5, batch_size 25, total batches 800, base_lr 0.01
+build_1_bal_SGD_coreset(size=120):
+	optimizer = Adam (Parameter Group 0 amsgrad: False betas: (0.9, 0.999) eps: 1e-08 lr: 0.01 weight_decay: 0), |trainable_vars| = 2
+	Epoch[1/5]:loss_c:1,292.755, loss_p:1,292.027, erTrain:0.04024, erVal:0.00030, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:08, V
+	Epoch[2/5]:loss_c:1,292.026, loss_p:1,292.027, erTrain:0.03146, erVal:0.00013, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:17, V
+	Epoch[3/5]:loss_c:1,292.024, loss_p:1,292.027, erTrain:0.03138, erVal:0.00007, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:26, V
+	Epoch[4/5]:loss_c:1,292.028, loss_p:1,292.027, erTrain:0.03136, erVal:0.00011, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:34
+	Epoch[5/5]:loss_c:1,292.027, loss_p:1,292.027, erTrain:0.03137, erVal:0.00022, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:43
+Done balancing: epoch 3, best_val_err=0.00007, best_weak_er=-1.00000, run time 00:00:43
+Saved to: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_120_rep_3.pt
+	ending sum weights:
+		sum(W)=434874
+		sum(U)=434874.03125
+-------------------------------------------------------------------------------- rep 3 time 00:00:43
+-------------------------------------------------------------------------------- rep 4
+	starting sum weights:
+		sum(W)=434874
+		sum(U)=434874.0
+Balance params: epochs 5, batch_size 25, total batches 800, base_lr 0.01
+build_1_bal_SGD_coreset(size=120):
+	optimizer = Adam (Parameter Group 0 amsgrad: False betas: (0.9, 0.999) eps: 1e-08 lr: 0.01 weight_decay: 0), |trainable_vars| = 2
+	Epoch[1/5]:loss_c:1,222.388, loss_p:1,292.027, erTrain:0.29208, erVal:0.01956, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:08, V
+	Epoch[2/5]:loss_c:1,283.917, loss_p:1,292.027, erTrain:0.19666, erVal:0.00168, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:17, V
+	Epoch[3/5]:loss_c:1,292.044, loss_p:1,292.027, erTrain:0.19288, erVal:0.00125, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:26, V
+	Epoch[4/5]:loss_c:1,292.035, loss_p:1,292.027, erTrain:0.19249, erVal:0.00085, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:35, V
+	Epoch[5/5]:loss_c:1,292.026, loss_p:1,292.027, erTrain:0.19210, erVal:0.00075, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:43, V
+Done balancing: epoch 5, best_val_err=0.00075, best_weak_er=-1.00000, run time 00:00:43
+Saved to: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_120_rep_4.pt
+	ending sum weights:
+		sum(W)=434874
+		sum(U)=434874.21875
+-------------------------------------------------------------------------------- rep 4 time 00:00:43
+-------------------------------------------------------------------------------- rep 5
+	starting sum weights:
+		sum(W)=434874
+		sum(U)=434874.0
+Balance params: epochs 5, batch_size 25, total batches 800, base_lr 0.01
+build_1_bal_SGD_coreset(size=120):
+	optimizer = Adam (Parameter Group 0 amsgrad: False betas: (0.9, 0.999) eps: 1e-08 lr: 0.01 weight_decay: 0), |trainable_vars| = 2
+	Epoch[1/5]:loss_c:1,293.133, loss_p:1,292.027, erTrain:0.20899, erVal:0.00121, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:08, V
+	Epoch[2/5]:loss_c:1,292.041, loss_p:1,292.027, erTrain:0.19244, erVal:0.00090, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:17, V
+	Epoch[3/5]:loss_c:1,292.027, loss_p:1,292.027, erTrain:0.19211, erVal:0.00051, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:26, V
+	Epoch[4/5]:loss_c:1,292.028, loss_p:1,292.027, erTrain:0.19180, erVal:0.00025, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:34, V
+	Epoch[5/5]:loss_c:1,292.023, loss_p:1,292.027, erTrain:0.19160, erVal:0.00008, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:43, V
+Done balancing: epoch 5, best_val_err=0.00008, best_weak_er=-1.00000, run time 00:00:43
+Saved to: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_120_rep_5.pt
+	ending sum weights:
+		sum(W)=434874
+		sum(U)=434874.21875
+-------------------------------------------------------------------------------- rep 5 time 00:00:43
+-------------------------------------------------------------------------------- rep 6
+	starting sum weights:
+		sum(W)=434874
+		sum(U)=434874.0
+Balance params: epochs 5, batch_size 25, total batches 800, base_lr 0.01
+build_1_bal_SGD_coreset(size=120):
+	optimizer = Adam (Parameter Group 0 amsgrad: False betas: (0.9, 0.999) eps: 1e-08 lr: 0.01 weight_decay: 0), |trainable_vars| = 2
+	Epoch[1/5]:loss_c:1,263.293, loss_p:1,292.027, erTrain:0.22311, erVal:0.00040, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:08, V
+	Epoch[2/5]:loss_c:1,292.027, loss_p:1,292.027, erTrain:0.19169, erVal:0.00016, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:17, V
+	Epoch[3/5]:loss_c:1,292.026, loss_p:1,292.027, erTrain:0.19155, erVal:0.00018, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:26
+	Epoch[4/5]:loss_c:1,292.023, loss_p:1,292.027, erTrain:0.19154, erVal:0.00012, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:34, V
+	Epoch[5/5]:loss_c:1,292.025, loss_p:1,292.027, erTrain:0.19153, erVal:0.00010, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:43, V
+Done balancing: epoch 5, best_val_err=0.00010, best_weak_er=-1.00000, run time 00:00:43
+Saved to: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_120_rep_6.pt
+	ending sum weights:
+		sum(W)=434874
+		sum(U)=434874.21875
+-------------------------------------------------------------------------------- rep 6 time 00:00:43
+-------------------------------------------------------------------------------- rep 7
+	starting sum weights:
+		sum(W)=434874
+		sum(U)=434874.0
+Balance params: epochs 5, batch_size 25, total batches 800, base_lr 0.01
+build_1_bal_SGD_coreset(size=120):
+	optimizer = Adam (Parameter Group 0 amsgrad: False betas: (0.9, 0.999) eps: 1e-08 lr: 0.01 weight_decay: 0), |trainable_vars| = 2
+	Epoch[1/5]:loss_c:1,291.076, loss_p:1,292.027, erTrain:0.04480, erVal:0.00076, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:08, V
+	Epoch[2/5]:loss_c:1,292.017, loss_p:1,292.027, erTrain:0.03185, erVal:0.00047, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:17, V
+	Epoch[3/5]:loss_c:1,292.024, loss_p:1,292.027, erTrain:0.03162, erVal:0.00022, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:26, V
+	Epoch[4/5]:loss_c:1,292.026, loss_p:1,292.027, erTrain:0.03142, erVal:0.00012, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:34, V
+	Epoch[5/5]:loss_c:1,292.027, loss_p:1,292.027, erTrain:0.03138, erVal:0.00016, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:43
+Done balancing: epoch 4, best_val_err=0.00012, best_weak_er=-1.00000, run time 00:00:43
+Saved to: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_120_rep_7.pt
+	ending sum weights:
+		sum(W)=434874
+		sum(U)=434874.03125
+-------------------------------------------------------------------------------- rep 7 time 00:00:43
+-------------------------------------------------------------------------------- rep 8
+	starting sum weights:
+		sum(W)=434874
+		sum(U)=434874.0
+Balance params: epochs 5, batch_size 25, total batches 800, base_lr 0.01
+build_1_bal_SGD_coreset(size=120):
+	optimizer = Adam (Parameter Group 0 amsgrad: False betas: (0.9, 0.999) eps: 1e-08 lr: 0.01 weight_decay: 0), |trainable_vars| = 2
+	Epoch[1/5]:loss_c:1,292.171, loss_p:1,292.027, erTrain:0.03796, erVal:0.00010, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:08, V
+	Epoch[2/5]:loss_c:1,292.027, loss_p:1,292.027, erTrain:0.03138, erVal:0.00009, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:17, V
+	Epoch[3/5]:loss_c:1,292.026, loss_p:1,292.027, erTrain:0.03136, erVal:0.00012, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:26
+	Epoch[4/5]:loss_c:1,292.026, loss_p:1,292.027, erTrain:0.03138, erVal:0.00017, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:34
+	Epoch[5/5]:loss_c:1,292.027, loss_p:1,292.027, erTrain:0.03136, erVal:0.00013, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:43
+Done balancing: epoch 2, best_val_err=0.00009, best_weak_er=-1.00000, run time 00:00:43
+Saved to: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_120_rep_8.pt
+	ending sum weights:
+		sum(W)=434874
+		sum(U)=434874.03125
+-------------------------------------------------------------------------------- rep 8 time 00:00:43
+-------------------------------------------------------------------------------- rep 9
+	starting sum weights:
+		sum(W)=434874
+		sum(U)=434874.0
+Balance params: epochs 5, batch_size 25, total batches 800, base_lr 0.01
+build_1_bal_SGD_coreset(size=120):
+	optimizer = Adam (Parameter Group 0 amsgrad: False betas: (0.9, 0.999) eps: 1e-08 lr: 0.01 weight_decay: 0), |trainable_vars| = 2
+	Epoch[1/5]:loss_c:1,316.194, loss_p:1,292.027, erTrain:0.06164, erVal:0.00089, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:08, V
+	Epoch[2/5]:loss_c:1,292.020, loss_p:1,292.027, erTrain:0.03175, erVal:0.00041, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:17, V
+	Epoch[3/5]:loss_c:1,292.030, loss_p:1,292.027, erTrain:0.03149, erVal:0.00023, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:26, V
+	Epoch[4/5]:loss_c:1,292.026, loss_p:1,292.027, erTrain:0.03139, erVal:0.00011, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:34, V
+	Epoch[5/5]:loss_c:1,292.026, loss_p:1,292.027, erTrain:0.03137, erVal:0.00019, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:43
+Done balancing: epoch 4, best_val_err=0.00011, best_weak_er=-1.00000, run time 00:00:43
+Saved to: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_120_rep_9.pt
+	ending sum weights:
+		sum(W)=434874
+		sum(U)=434874.03125
+-------------------------------------------------------------------------------- rep 9 time 00:00:43
+c_size = 120: time 00:07:16
+c_size 130:
+-------------------------------------------------------------------------------- rep 0
+	starting sum weights:
+		sum(W)=434874
+		sum(U)=434873.9375
+Balance params: epochs 5, batch_size 25, total batches 800, base_lr 0.01
+build_1_bal_SGD_coreset(size=130):
+	optimizer = Adam (Parameter Group 0 amsgrad: False betas: (0.9, 0.999) eps: 1e-08 lr: 0.01 weight_decay: 0), |trainable_vars| = 2
+	Epoch[1/5]:loss_c:1,337.883, loss_p:1,292.027, erTrain:0.21069, erVal:0.00328, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:09, V
+	Epoch[2/5]:loss_c:1,292.136, loss_p:1,292.027, erTrain:0.16056, erVal:0.00097, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:19, V
+	Epoch[3/5]:loss_c:1,292.018, loss_p:1,292.027, erTrain:0.16017, erVal:0.00071, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:29, V
+	Epoch[4/5]:loss_c:1,292.027, loss_p:1,292.027, erTrain:0.15988, erVal:0.00033, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:39, V
+	Epoch[5/5]:loss_c:1,292.032, loss_p:1,292.027, erTrain:0.15961, erVal:0.00021, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:48, V
+Done balancing: epoch 5, best_val_err=0.00021, best_weak_er=-1.00000, run time 00:00:48
+Saved to: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_130_rep_0.pt
+	ending sum weights:
+		sum(W)=434874
+		sum(U)=434874.125
+-------------------------------------------------------------------------------- rep 0 time 00:00:48
+-------------------------------------------------------------------------------- rep 1
+	starting sum weights:
+		sum(W)=434874
+		sum(U)=434873.9375
+Balance params: epochs 5, batch_size 25, total batches 800, base_lr 0.01
+build_1_bal_SGD_coreset(size=130):
+	optimizer = Adam (Parameter Group 0 amsgrad: False betas: (0.9, 0.999) eps: 1e-08 lr: 0.01 weight_decay: 0), |trainable_vars| = 2
+	Epoch[1/5]:loss_c:1,330.421, loss_p:1,292.027, erTrain:0.19909, erVal:0.00083, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:09, V
+	Epoch[2/5]:loss_c:1,292.015, loss_p:1,292.027, erTrain:0.15989, erVal:0.00034, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:19, V
+	Epoch[3/5]:loss_c:1,292.031, loss_p:1,292.027, erTrain:0.15963, erVal:0.00014, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:29, V
+	Epoch[4/5]:loss_c:1,292.030, loss_p:1,292.027, erTrain:0.15952, erVal:0.00007, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:39, V
+	Epoch[5/5]:loss_c:1,292.028, loss_p:1,292.027, erTrain:0.15950, erVal:0.00007, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:49, V
+Done balancing: epoch 5, best_val_err=0.00007, best_weak_er=-1.00000, run time 00:00:49
+Saved to: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_130_rep_1.pt
+	ending sum weights:
+		sum(W)=434874
+		sum(U)=434874.125
+-------------------------------------------------------------------------------- rep 1 time 00:00:49
+-------------------------------------------------------------------------------- rep 2
+	starting sum weights:
+		sum(W)=434874
+		sum(U)=434873.9375
+Balance params: epochs 5, batch_size 25, total batches 800, base_lr 0.01
+build_1_bal_SGD_coreset(size=130):
+	optimizer = Adam (Parameter Group 0 amsgrad: False betas: (0.9, 0.999) eps: 1e-08 lr: 0.01 weight_decay: 0), |trainable_vars| = 2
+	Epoch[1/5]:loss_c:1,304.674, loss_p:1,292.027, erTrain:0.18130, erVal:0.00095, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:09, V
+	Epoch[2/5]:loss_c:1,292.024, loss_p:1,292.027, erTrain:0.16010, erVal:0.00056, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:19, V
+	Epoch[3/5]:loss_c:1,292.029, loss_p:1,292.027, erTrain:0.15981, erVal:0.00027, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:29, V
+	Epoch[4/5]:loss_c:1,292.029, loss_p:1,292.027, erTrain:0.15957, erVal:0.00015, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:39, V
+	Epoch[5/5]:loss_c:1,292.027, loss_p:1,292.027, erTrain:0.15950, erVal:0.00005, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:48, V
+Done balancing: epoch 5, best_val_err=0.00005, best_weak_er=-1.00000, run time 00:00:48
+Saved to: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_130_rep_2.pt
+	ending sum weights:
+		sum(W)=434874
+		sum(U)=434874.125
+-------------------------------------------------------------------------------- rep 2 time 00:00:48
+-------------------------------------------------------------------------------- rep 3
+	starting sum weights:
+		sum(W)=434874
+		sum(U)=434873.9375
+Balance params: epochs 5, batch_size 25, total batches 800, base_lr 0.01
+build_1_bal_SGD_coreset(size=130):
+	optimizer = Adam (Parameter Group 0 amsgrad: False betas: (0.9, 0.999) eps: 1e-08 lr: 0.01 weight_decay: 0), |trainable_vars| = 2
+	Epoch[1/5]:loss_c:1,296.481, loss_p:1,292.027, erTrain:0.17062, erVal:0.00062, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:09, V
+	Epoch[2/5]:loss_c:1,292.026, loss_p:1,292.027, erTrain:0.15987, erVal:0.00036, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:19, V
+	Epoch[3/5]:loss_c:1,292.026, loss_p:1,292.027, erTrain:0.15962, erVal:0.00018, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:29, V
+	Epoch[4/5]:loss_c:1,292.030, loss_p:1,292.027, erTrain:0.15951, erVal:0.00011, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:38, V
+	Epoch[5/5]:loss_c:1,292.028, loss_p:1,292.027, erTrain:0.15950, erVal:0.00008, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:48, V
+Done balancing: epoch 5, best_val_err=0.00008, best_weak_er=-1.00000, run time 00:00:48
+Saved to: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_130_rep_3.pt
+	ending sum weights:
+		sum(W)=434874
+		sum(U)=434874.125
+-------------------------------------------------------------------------------- rep 3 time 00:00:48
+-------------------------------------------------------------------------------- rep 4
+	starting sum weights:
+		sum(W)=434874
+		sum(U)=434873.9375
+Balance params: epochs 5, batch_size 25, total batches 800, base_lr 0.01
+build_1_bal_SGD_coreset(size=130):
+	optimizer = Adam (Parameter Group 0 amsgrad: False betas: (0.9, 0.999) eps: 1e-08 lr: 0.01 weight_decay: 0), |trainable_vars| = 2
+	Epoch[1/5]:loss_c:1,235.075, loss_p:1,292.027, erTrain:0.22338, erVal:0.01270, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:09, V
+	Epoch[2/5]:loss_c:1,288.245, loss_p:1,292.027, erTrain:0.16127, erVal:0.00024, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:19, V
+	Epoch[3/5]:loss_c:1,292.027, loss_p:1,292.027, erTrain:0.15955, erVal:0.00009, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:29, V
+	Epoch[4/5]:loss_c:1,292.028, loss_p:1,292.027, erTrain:0.15953, erVal:0.00005, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:38, V
+	Epoch[5/5]:loss_c:1,292.024, loss_p:1,292.027, erTrain:0.15949, erVal:0.00008, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:48
+Done balancing: epoch 4, best_val_err=0.00005, best_weak_er=-1.00000, run time 00:00:48
+Saved to: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_130_rep_4.pt
+	ending sum weights:
+		sum(W)=434874
+		sum(U)=434874.125
+-------------------------------------------------------------------------------- rep 4 time 00:00:48
+-------------------------------------------------------------------------------- rep 5
+	starting sum weights:
+		sum(W)=434874
+		sum(U)=434873.9375
+Balance params: epochs 5, batch_size 25, total batches 800, base_lr 0.01
+build_1_bal_SGD_coreset(size=130):
+	optimizer = Adam (Parameter Group 0 amsgrad: False betas: (0.9, 0.999) eps: 1e-08 lr: 0.01 weight_decay: 0), |trainable_vars| = 2
+	Epoch[1/5]:loss_c:1,291.921, loss_p:1,292.027, erTrain:0.16459, erVal:0.00010, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:09, V
+	Epoch[2/5]:loss_c:1,292.028, loss_p:1,292.027, erTrain:0.15951, erVal:0.00010, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:19, V
+	Epoch[3/5]:loss_c:1,292.026, loss_p:1,292.027, erTrain:0.15948, erVal:0.00008, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:29, V
+	Epoch[4/5]:loss_c:1,292.026, loss_p:1,292.027, erTrain:0.15948, erVal:0.00009, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:39
+	Epoch[5/5]:loss_c:1,292.029, loss_p:1,292.027, erTrain:0.15948, erVal:0.00011, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:48
+Done balancing: epoch 3, best_val_err=0.00008, best_weak_er=-1.00000, run time 00:00:48
+Saved to: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_130_rep_5.pt
+	ending sum weights:
+		sum(W)=434874
+		sum(U)=434874.125
+-------------------------------------------------------------------------------- rep 5 time 00:00:48
+-------------------------------------------------------------------------------- rep 6
+	starting sum weights:
+		sum(W)=434874
+		sum(U)=434873.9375
+Balance params: epochs 5, batch_size 25, total batches 800, base_lr 0.01
+build_1_bal_SGD_coreset(size=130):
+	optimizer = Adam (Parameter Group 0 amsgrad: False betas: (0.9, 0.999) eps: 1e-08 lr: 0.01 weight_decay: 0), |trainable_vars| = 2
+	Epoch[1/5]:loss_c:1,297.217, loss_p:1,292.027, erTrain:0.16979, erVal:0.00013, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:09, V
+	Epoch[2/5]:loss_c:1,292.023, loss_p:1,292.027, erTrain:0.15952, erVal:0.00019, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:19
+	Epoch[3/5]:loss_c:1,292.032, loss_p:1,292.027, erTrain:0.15950, erVal:0.00014, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:29
+	Epoch[4/5]:loss_c:1,292.027, loss_p:1,292.027, erTrain:0.15949, erVal:0.00016, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:38
+	Epoch[5/5]:loss_c:1,292.028, loss_p:1,292.027, erTrain:0.15948, erVal:0.00009, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:48, V
+Done balancing: epoch 5, best_val_err=0.00009, best_weak_er=-1.00000, run time 00:00:48
+Saved to: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_130_rep_6.pt
+	ending sum weights:
+		sum(W)=434874
+		sum(U)=434874.125
+-------------------------------------------------------------------------------- rep 6 time 00:00:48
+-------------------------------------------------------------------------------- rep 7
+	starting sum weights:
+		sum(W)=434874
+		sum(U)=434873.9375
+Balance params: epochs 5, batch_size 25, total batches 800, base_lr 0.01
+build_1_bal_SGD_coreset(size=130):
+	optimizer = Adam (Parameter Group 0 amsgrad: False betas: (0.9, 0.999) eps: 1e-08 lr: 0.01 weight_decay: 0), |trainable_vars| = 2
+	Epoch[1/5]:loss_c:1,293.105, loss_p:1,292.027, erTrain:0.16918, erVal:0.00054, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:10, V
+	Epoch[2/5]:loss_c:1,292.035, loss_p:1,292.027, erTrain:0.15979, erVal:0.00025, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:19, V
+	Epoch[3/5]:loss_c:1,292.027, loss_p:1,292.027, erTrain:0.15957, erVal:0.00023, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:29, V
+	Epoch[4/5]:loss_c:1,292.025, loss_p:1,292.027, erTrain:0.15951, erVal:0.00006, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:39, V
+	Epoch[5/5]:loss_c:1,292.025, loss_p:1,292.027, erTrain:0.15949, erVal:0.00004, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:48, V
+Done balancing: epoch 5, best_val_err=0.00004, best_weak_er=-1.00000, run time 00:00:48
+Saved to: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_130_rep_7.pt
+	ending sum weights:
+		sum(W)=434874
+		sum(U)=434874.125
+-------------------------------------------------------------------------------- rep 7 time 00:00:48
+-------------------------------------------------------------------------------- rep 8
+	starting sum weights:
+		sum(W)=434874
+		sum(U)=434873.9375
+Balance params: epochs 5, batch_size 25, total batches 800, base_lr 0.01
+build_1_bal_SGD_coreset(size=130):
+	optimizer = Adam (Parameter Group 0 amsgrad: False betas: (0.9, 0.999) eps: 1e-08 lr: 0.01 weight_decay: 0), |trainable_vars| = 2
+	Epoch[1/5]:loss_c:1,293.099, loss_p:1,292.027, erTrain:0.16865, erVal:0.00060, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:09, V
+	Epoch[2/5]:loss_c:1,292.021, loss_p:1,292.027, erTrain:0.15979, erVal:0.00038, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:19, V
+	Epoch[3/5]:loss_c:1,292.022, loss_p:1,292.027, erTrain:0.15958, erVal:0.00007, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:28, V
+	Epoch[4/5]:loss_c:1,292.027, loss_p:1,292.027, erTrain:0.15951, erVal:0.00005, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:38, V
+	Epoch[5/5]:loss_c:1,292.026, loss_p:1,292.027, erTrain:0.15949, erVal:0.00005, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:48
+Done balancing: epoch 4, best_val_err=0.00005, best_weak_er=-1.00000, run time 00:00:48
+Saved to: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_130_rep_8.pt
+	ending sum weights:
+		sum(W)=434874
+		sum(U)=434874.125
+-------------------------------------------------------------------------------- rep 8 time 00:00:48
+-------------------------------------------------------------------------------- rep 9
+	starting sum weights:
+		sum(W)=434874
+		sum(U)=434873.9375
+Balance params: epochs 5, batch_size 25, total batches 800, base_lr 0.01
+build_1_bal_SGD_coreset(size=130):
+	optimizer = Adam (Parameter Group 0 amsgrad: False betas: (0.9, 0.999) eps: 1e-08 lr: 0.01 weight_decay: 0), |trainable_vars| = 2
+	Epoch[1/5]:loss_c:1,289.389, loss_p:1,292.027, erTrain:0.16863, erVal:0.00039, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:09, V
+	Epoch[2/5]:loss_c:1,292.023, loss_p:1,292.027, erTrain:0.15964, erVal:0.00019, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:19, V
+	Epoch[3/5]:loss_c:1,292.028, loss_p:1,292.027, erTrain:0.15951, erVal:0.00008, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:28, V
+	Epoch[4/5]:loss_c:1,292.025, loss_p:1,292.027, erTrain:0.15949, erVal:0.00012, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:38
+	Epoch[5/5]:loss_c:1,292.026, loss_p:1,292.027, erTrain:0.15950, erVal:0.00003, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:48, V
+Done balancing: epoch 5, best_val_err=0.00003, best_weak_er=-1.00000, run time 00:00:48
+Saved to: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_130_rep_9.pt
+	ending sum weights:
+		sum(W)=434874
+		sum(U)=434874.125
+-------------------------------------------------------------------------------- rep 9 time 00:00:48
+c_size = 130: time 00:08:06
+c_size 140:
+-------------------------------------------------------------------------------- rep 0
+	starting sum weights:
+		sum(W)=434874
+		sum(U)=434874.0
+Balance params: epochs 5, batch_size 25, total batches 800, base_lr 0.01
+build_1_bal_SGD_coreset(size=140):
+	optimizer = Adam (Parameter Group 0 amsgrad: False betas: (0.9, 0.999) eps: 1e-08 lr: 0.01 weight_decay: 0), |trainable_vars| = 2
+	Epoch[1/5]:loss_c:1,296.048, loss_p:1,292.027, erTrain:0.24454, erVal:0.00062, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:10, V
+	Epoch[2/5]:loss_c:1,292.024, loss_p:1,292.027, erTrain:0.23097, erVal:0.00032, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:19, V
+	Epoch[3/5]:loss_c:1,292.029, loss_p:1,292.027, erTrain:0.23071, erVal:0.00015, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:29, V
+	Epoch[4/5]:loss_c:1,292.026, loss_p:1,292.027, erTrain:0.23061, erVal:0.00007, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:39, V
+	Epoch[5/5]:loss_c:1,292.026, loss_p:1,292.027, erTrain:0.23059, erVal:0.00015, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:48
+Done balancing: epoch 4, best_val_err=0.00007, best_weak_er=-1.00000, run time 00:00:48
+Saved to: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_140_rep_0.pt
+	ending sum weights:
+		sum(W)=434874
+		sum(U)=434873.71875
+-------------------------------------------------------------------------------- rep 0 time 00:00:48
+-------------------------------------------------------------------------------- rep 1
+	starting sum weights:
+		sum(W)=434874
+		sum(U)=434874.0
+Balance params: epochs 5, batch_size 25, total batches 800, base_lr 0.01
+build_1_bal_SGD_coreset(size=140):
+	optimizer = Adam (Parameter Group 0 amsgrad: False betas: (0.9, 0.999) eps: 1e-08 lr: 0.01 weight_decay: 0), |trainable_vars| = 2
+	Epoch[1/5]:loss_c:1,305.588, loss_p:1,292.027, erTrain:0.10066, erVal:0.00037, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:09, V
+	Epoch[2/5]:loss_c:1,292.033, loss_p:1,292.027, erTrain:0.08706, erVal:0.00014, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:19, V
+	Epoch[3/5]:loss_c:1,292.026, loss_p:1,292.027, erTrain:0.08696, erVal:0.00008, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:29, V
+	Epoch[4/5]:loss_c:1,292.024, loss_p:1,292.027, erTrain:0.08695, erVal:0.00014, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:38
+	Epoch[5/5]:loss_c:1,292.031, loss_p:1,292.027, erTrain:0.08687, erVal:0.00010, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:48
+Done balancing: epoch 3, best_val_err=0.00008, best_weak_er=-1.00000, run time 00:00:48
+Saved to: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_140_rep_1.pt
+	ending sum weights:
+		sum(W)=434874
+		sum(U)=434873.9375
+-------------------------------------------------------------------------------- rep 1 time 00:00:48
+-------------------------------------------------------------------------------- rep 2
+	starting sum weights:
+		sum(W)=434874
+		sum(U)=434874.0
+Balance params: epochs 5, batch_size 25, total batches 800, base_lr 0.01
+build_1_bal_SGD_coreset(size=140):
+	optimizer = Adam (Parameter Group 0 amsgrad: False betas: (0.9, 0.999) eps: 1e-08 lr: 0.01 weight_decay: 0), |trainable_vars| = 2
+	Epoch[1/5]:loss_c:1,297.137, loss_p:1,292.027, erTrain:0.23766, erVal:0.00008, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:09, V
+	Epoch[2/5]:loss_c:1,292.028, loss_p:1,292.027, erTrain:0.21497, erVal:0.00004, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:19, V
+	Epoch[3/5]:loss_c:1,292.026, loss_p:1,292.027, erTrain:0.21495, erVal:0.00005, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:29
+	Epoch[4/5]:loss_c:1,292.028, loss_p:1,292.027, erTrain:0.21496, erVal:0.00031, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:38
+	Epoch[5/5]:loss_c:1,292.027, loss_p:1,292.027, erTrain:0.21497, erVal:0.00008, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:48
+Done balancing: epoch 2, best_val_err=0.00004, best_weak_er=-1.00000, run time 00:00:48
+Saved to: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_140_rep_2.pt
+	ending sum weights:
+		sum(W)=434874
+		sum(U)=434874.1875
+-------------------------------------------------------------------------------- rep 2 time 00:00:48
+-------------------------------------------------------------------------------- rep 3
+	starting sum weights:
+		sum(W)=434874
+		sum(U)=434874.0
+Balance params: epochs 5, batch_size 25, total batches 800, base_lr 0.01
+build_1_bal_SGD_coreset(size=140):
+	optimizer = Adam (Parameter Group 0 amsgrad: False betas: (0.9, 0.999) eps: 1e-08 lr: 0.01 weight_decay: 0), |trainable_vars| = 2
+	Epoch[1/5]:loss_c:1,295.159, loss_p:1,292.027, erTrain:0.24205, erVal:0.00055, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:09, V
+	Epoch[2/5]:loss_c:1,292.033, loss_p:1,292.027, erTrain:0.23086, erVal:0.00022, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:19, V
+	Epoch[3/5]:loss_c:1,292.029, loss_p:1,292.027, erTrain:0.23065, erVal:0.00014, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:29, V
+	Epoch[4/5]:loss_c:1,292.027, loss_p:1,292.027, erTrain:0.23061, erVal:0.00005, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:39, V
+	Epoch[5/5]:loss_c:1,292.027, loss_p:1,292.027, erTrain:0.23059, erVal:0.00007, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:49
+Done balancing: epoch 4, best_val_err=0.00005, best_weak_er=-1.00000, run time 00:00:49
+Saved to: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_140_rep_3.pt
+	ending sum weights:
+		sum(W)=434874
+		sum(U)=434873.71875
+-------------------------------------------------------------------------------- rep 3 time 00:00:49
+-------------------------------------------------------------------------------- rep 4
+	starting sum weights:
+		sum(W)=434874
+		sum(U)=434874.0
+Balance params: epochs 5, batch_size 25, total batches 800, base_lr 0.01
+build_1_bal_SGD_coreset(size=140):
+	optimizer = Adam (Parameter Group 0 amsgrad: False betas: (0.9, 0.999) eps: 1e-08 lr: 0.01 weight_decay: 0), |trainable_vars| = 2
+	Epoch[1/5]:loss_c:1,289.173, loss_p:1,292.027, erTrain:0.07656, erVal:0.00031, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:09, V
+	Epoch[2/5]:loss_c:1,292.026, loss_p:1,292.027, erTrain:0.07213, erVal:0.00024, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:19, V
+	Epoch[3/5]:loss_c:1,292.025, loss_p:1,292.027, erTrain:0.07209, erVal:0.00009, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:29, V
+	Epoch[4/5]:loss_c:1,292.028, loss_p:1,292.027, erTrain:0.07207, erVal:0.00019, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:38
+	Epoch[5/5]:loss_c:1,292.028, loss_p:1,292.027, erTrain:0.09925, erVal:0.00011, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:48
+Done balancing: epoch 3, best_val_err=0.00009, best_weak_er=-1.00000, run time 00:00:48
+Saved to: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_140_rep_4.pt
+	ending sum weights:
+		sum(W)=434874
+		sum(U)=434874.0
+-------------------------------------------------------------------------------- rep 4 time 00:00:48
+-------------------------------------------------------------------------------- rep 5
+	starting sum weights:
+		sum(W)=434874
+		sum(U)=434874.0
+Balance params: epochs 5, batch_size 25, total batches 800, base_lr 0.01
+build_1_bal_SGD_coreset(size=140):
+	optimizer = Adam (Parameter Group 0 amsgrad: False betas: (0.9, 0.999) eps: 1e-08 lr: 0.01 weight_decay: 0), |trainable_vars| = 2
+	Epoch[1/5]:loss_c:1,292.428, loss_p:1,292.027, erTrain:0.08382, erVal:0.00014, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:09, V
+	Epoch[2/5]:loss_c:1,292.028, loss_p:1,292.027, erTrain:0.07825, erVal:0.00009, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:19, V
+	Epoch[3/5]:loss_c:1,292.026, loss_p:1,292.027, erTrain:0.07823, erVal:0.00014, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:29
+	Epoch[4/5]:loss_c:1,292.028, loss_p:1,292.027, erTrain:0.07825, erVal:0.00012, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:39
+	Epoch[5/5]:loss_c:1,292.026, loss_p:1,292.027, erTrain:0.07823, erVal:0.00025, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:48
+Done balancing: epoch 2, best_val_err=0.00009, best_weak_er=-1.00000, run time 00:00:48
+Saved to: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_140_rep_5.pt
+	ending sum weights:
+		sum(W)=434874
+		sum(U)=434874.03125
+-------------------------------------------------------------------------------- rep 5 time 00:00:48
+-------------------------------------------------------------------------------- rep 6
+	starting sum weights:
+		sum(W)=434874
+		sum(U)=434874.0
+Balance params: epochs 5, batch_size 25, total batches 800, base_lr 0.01
+build_1_bal_SGD_coreset(size=140):
+	optimizer = Adam (Parameter Group 0 amsgrad: False betas: (0.9, 0.999) eps: 1e-08 lr: 0.01 weight_decay: 0), |trainable_vars| = 2
+	Epoch[1/5]:loss_c:1,295.539, loss_p:1,292.027, erTrain:0.09296, erVal:0.00018, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:09, V
+	Epoch[2/5]:loss_c:1,292.030, loss_p:1,292.027, erTrain:0.08707, erVal:0.00017, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:19, V
+	Epoch[3/5]:loss_c:1,292.026, loss_p:1,292.027, erTrain:0.08689, erVal:0.00009, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:29, V
+	Epoch[4/5]:loss_c:1,292.026, loss_p:1,292.027, erTrain:0.08687, erVal:0.00005, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:38, V
+	Epoch[5/5]:loss_c:1,292.027, loss_p:1,292.027, erTrain:0.08691, erVal:0.00009, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:48
+Done balancing: epoch 4, best_val_err=0.00005, best_weak_er=-1.00000, run time 00:00:48
+Saved to: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_140_rep_6.pt
+	ending sum weights:
+		sum(W)=434874
+		sum(U)=434873.875
+-------------------------------------------------------------------------------- rep 6 time 00:00:48
+-------------------------------------------------------------------------------- rep 7
+	starting sum weights:
+		sum(W)=434874
+		sum(U)=434874.0
+Balance params: epochs 5, batch_size 25, total batches 800, base_lr 0.01
+build_1_bal_SGD_coreset(size=140):
+	optimizer = Adam (Parameter Group 0 amsgrad: False betas: (0.9, 0.999) eps: 1e-08 lr: 0.01 weight_decay: 0), |trainable_vars| = 2
+	Epoch[1/5]:loss_c:1,309.598, loss_p:1,292.027, erTrain:0.25437, erVal:0.00082, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:09, V
+	Epoch[2/5]:loss_c:1,292.030, loss_p:1,292.027, erTrain:0.23106, erVal:0.00042, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:19, V
+	Epoch[3/5]:loss_c:1,292.027, loss_p:1,292.027, erTrain:0.23080, erVal:0.00015, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:29, V
+	Epoch[4/5]:loss_c:1,292.027, loss_p:1,292.027, erTrain:0.23063, erVal:0.00012, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:39, V
+	Epoch[5/5]:loss_c:1,292.028, loss_p:1,292.027, erTrain:0.23059, erVal:0.00021, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:48
+Done balancing: epoch 4, best_val_err=0.00012, best_weak_er=-1.00000, run time 00:00:48
+Saved to: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_140_rep_7.pt
+	ending sum weights:
+		sum(W)=434874
+		sum(U)=434873.71875
+-------------------------------------------------------------------------------- rep 7 time 00:00:48
+-------------------------------------------------------------------------------- rep 8
+	starting sum weights:
+		sum(W)=434874
+		sum(U)=434874.0
+Balance params: epochs 5, batch_size 25, total batches 800, base_lr 0.01
+build_1_bal_SGD_coreset(size=140):
+	optimizer = Adam (Parameter Group 0 amsgrad: False betas: (0.9, 0.999) eps: 1e-08 lr: 0.01 weight_decay: 0), |trainable_vars| = 2
+	Epoch[1/5]:loss_c:1,292.091, loss_p:1,292.027, erTrain:0.23615, erVal:0.00011, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:09, V
+	Epoch[2/5]:loss_c:1,292.027, loss_p:1,292.027, erTrain:0.23059, erVal:0.00009, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:19, V
+	Epoch[3/5]:loss_c:1,292.030, loss_p:1,292.027, erTrain:0.23058, erVal:0.00030, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:29
+	Epoch[4/5]:loss_c:1,292.023, loss_p:1,292.027, erTrain:0.23058, erVal:0.00012, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:38
+	Epoch[5/5]:loss_c:1,292.026, loss_p:1,292.027, erTrain:0.23058, erVal:0.00022, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:48
+Done balancing: epoch 2, best_val_err=0.00009, best_weak_er=-1.00000, run time 00:00:48
+Saved to: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_140_rep_8.pt
+	ending sum weights:
+		sum(W)=434874
+		sum(U)=434873.71875
+-------------------------------------------------------------------------------- rep 8 time 00:00:48
+-------------------------------------------------------------------------------- rep 9
+	starting sum weights:
+		sum(W)=434874
+		sum(U)=434874.0
+Balance params: epochs 5, batch_size 25, total batches 800, base_lr 0.01
+build_1_bal_SGD_coreset(size=140):
+	optimizer = Adam (Parameter Group 0 amsgrad: False betas: (0.9, 0.999) eps: 1e-08 lr: 0.01 weight_decay: 0), |trainable_vars| = 2
+	Epoch[1/5]:loss_c:1,274.309, loss_p:1,292.027, erTrain:0.07530, erVal:0.00086, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:09, V
+	Epoch[2/5]:loss_c:1,292.028, loss_p:1,292.027, erTrain:0.04744, erVal:0.00041, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:19, V
+	Epoch[3/5]:loss_c:1,292.024, loss_p:1,292.027, erTrain:0.04716, erVal:0.00018, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:29, V
+	Epoch[4/5]:loss_c:1,292.031, loss_p:1,292.027, erTrain:0.04703, erVal:0.00029, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:39
+	Epoch[5/5]:loss_c:1,292.027, loss_p:1,292.027, erTrain:0.04701, erVal:0.00013, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:49, V
+Done balancing: epoch 5, best_val_err=0.00013, best_weak_er=-1.00000, run time 00:00:49
+Saved to: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_140_rep_9.pt
+	ending sum weights:
+		sum(W)=434874
+		sum(U)=434873.9375
+-------------------------------------------------------------------------------- rep 9 time 00:00:49
+c_size = 140: time 00:08:08
+build_bal_SGD_coresets time 01:18:09
+LinearReg.get_SP_SVD torch.Size([434874, 3]):
+	Loaded: ./3DRoad_434874_3/SVD.npy
+	|A|=torch.Size([434874, 3]), |SP_SVD|=(434874,), sum(SP_SVD)=3.00 (should be equal to d(3))
+sp_list: SGD,SVD,UNI
+get_sp_list time 01:18:09
+get_list_of_coresets_for_each_size:
+	|A|=[434874, 3], reps=100, c_sizes=[50, 60, 70, 80, 90, 100, 110, 120, 130, 140], sp_names=SGD,SVD,UNI
+	Loaded: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_50_rep_0.pt
+	Loaded: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_50_rep_1.pt
+	Loaded: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_50_rep_2.pt
+	Loaded: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_50_rep_3.pt
+	Loaded: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_50_rep_4.pt
+	Loaded: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_50_rep_5.pt
+	Loaded: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_50_rep_6.pt
+	Loaded: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_50_rep_7.pt
+	Loaded: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_50_rep_8.pt
+	Loaded: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_50_rep_9.pt
+	for size 50: created SGD 10x[50, 3] coresets, SVD 100x[50, 3] coresets, UNI 100x[50, 3] coresets
+	Loaded: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_60_rep_0.pt
+	Loaded: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_60_rep_1.pt
+	Loaded: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_60_rep_2.pt
+	Loaded: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_60_rep_3.pt
+	Loaded: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_60_rep_4.pt
+	Loaded: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_60_rep_5.pt
+	Loaded: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_60_rep_6.pt
+	Loaded: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_60_rep_7.pt
+	Loaded: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_60_rep_8.pt
+	Loaded: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_60_rep_9.pt
+	for size 60: created SGD 10x[60, 3] coresets, SVD 100x[60, 3] coresets, UNI 100x[60, 3] coresets
+	Loaded: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_70_rep_0.pt
+	Loaded: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_70_rep_1.pt
+	Loaded: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_70_rep_2.pt
+	Loaded: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_70_rep_3.pt
+	Loaded: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_70_rep_4.pt
+	Loaded: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_70_rep_5.pt
+	Loaded: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_70_rep_6.pt
+	Loaded: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_70_rep_7.pt
+	Loaded: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_70_rep_8.pt
+	Loaded: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_70_rep_9.pt
+	for size 70: created SGD 10x[70, 3] coresets, SVD 100x[70, 3] coresets, UNI 100x[70, 3] coresets
+	Loaded: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_80_rep_0.pt
+	Loaded: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_80_rep_1.pt
+	Loaded: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_80_rep_2.pt
+	Loaded: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_80_rep_3.pt
+	Loaded: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_80_rep_4.pt
+	Loaded: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_80_rep_5.pt
+	Loaded: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_80_rep_6.pt
+	Loaded: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_80_rep_7.pt
+	Loaded: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_80_rep_8.pt
+	Loaded: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_80_rep_9.pt
+	for size 80: created SGD 10x[80, 3] coresets, SVD 100x[80, 3] coresets, UNI 100x[80, 3] coresets
+	Loaded: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_90_rep_0.pt
+	Loaded: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_90_rep_1.pt
+	Loaded: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_90_rep_2.pt
+	Loaded: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_90_rep_3.pt
+	Loaded: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_90_rep_4.pt
+	Loaded: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_90_rep_5.pt
+	Loaded: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_90_rep_6.pt
+	Loaded: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_90_rep_7.pt
+	Loaded: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_90_rep_8.pt
+	Loaded: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_90_rep_9.pt
+	for size 90: created SGD 10x[90, 3] coresets, SVD 100x[90, 3] coresets, UNI 100x[90, 3] coresets
+	Loaded: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_100_rep_0.pt
+	Loaded: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_100_rep_1.pt
+	Loaded: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_100_rep_2.pt
+	Loaded: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_100_rep_3.pt
+	Loaded: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_100_rep_4.pt
+	Loaded: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_100_rep_5.pt
+	Loaded: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_100_rep_6.pt
+	Loaded: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_100_rep_7.pt
+	Loaded: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_100_rep_8.pt
+	Loaded: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_100_rep_9.pt
+	for size 100: created SGD 10x[100, 3] coresets, SVD 100x[100, 3] coresets, UNI 100x[100, 3] coresets
+	Loaded: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_110_rep_0.pt
+	Loaded: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_110_rep_1.pt
+	Loaded: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_110_rep_2.pt
+	Loaded: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_110_rep_3.pt
+	Loaded: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_110_rep_4.pt
+	Loaded: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_110_rep_5.pt
+	Loaded: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_110_rep_6.pt
+	Loaded: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_110_rep_7.pt
+	Loaded: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_110_rep_8.pt
+	Loaded: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_110_rep_9.pt
+	for size 110: created SGD 10x[110, 3] coresets, SVD 100x[110, 3] coresets, UNI 100x[110, 3] coresets
+	Loaded: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_120_rep_0.pt
+	Loaded: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_120_rep_1.pt
+	Loaded: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_120_rep_2.pt
+	Loaded: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_120_rep_3.pt
+	Loaded: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_120_rep_4.pt
+	Loaded: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_120_rep_5.pt
+	Loaded: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_120_rep_6.pt
+	Loaded: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_120_rep_7.pt
+	Loaded: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_120_rep_8.pt
+	Loaded: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_120_rep_9.pt
+	for size 120: created SGD 10x[120, 3] coresets, SVD 100x[120, 3] coresets, UNI 100x[120, 3] coresets
+	Loaded: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_130_rep_0.pt
+	Loaded: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_130_rep_1.pt
+	Loaded: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_130_rep_2.pt
+	Loaded: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_130_rep_3.pt
+	Loaded: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_130_rep_4.pt
+	Loaded: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_130_rep_5.pt
+	Loaded: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_130_rep_6.pt
+	Loaded: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_130_rep_7.pt
+	Loaded: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_130_rep_8.pt
+	Loaded: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_130_rep_9.pt
+	for size 130: created SGD 10x[130, 3] coresets, SVD 100x[130, 3] coresets, UNI 100x[130, 3] coresets
+	Loaded: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_140_rep_0.pt
+	Loaded: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_140_rep_1.pt
+	Loaded: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_140_rep_2.pt
+	Loaded: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_140_rep_3.pt
+	Loaded: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_140_rep_4.pt
+	Loaded: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_140_rep_5.pt
+	Loaded: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_140_rep_6.pt
+	Loaded: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_140_rep_7.pt
+	Loaded: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_140_rep_8.pt
+	Loaded: ./3DRoad_434874_3/bal_optimized_5_epochs/bal_coreset_140_rep_9.pt
+	for size 140: created SGD 10x[140, 3] coresets, SVD 100x[140, 3] coresets, UNI 100x[140, 3] coresets
+get_list_of_coresets_for_each_size time 00:01:53
+test_coresets:
+	name_color_list:[('SGD', 'b'), ('SVD', 'g'), ('UNI', 'r')]
+	|A|=[434874, 3], c_sizes [50, 60, 70, 80, 90, 100, 110, 120, 130, 140], reps=100, bal reps=10:
+		error(A, q_opt)=337.46
+weak test on SGD,SVD,UNI (other reps=100, bal reps=10)
+	SGD errors: [0.00838,0.04073,0.01688,0.06155,0.02699,0.00593,0.01046,0.01064,0.00819,0.00597], stds: [0.00763,0.04891,0.03153,0.07789,0.04339,0.00624,0.01935,0.01084,0.01044,0.00624]
+	SVD errors: [0.04731,0.04279,0.03557,0.03239,0.02368,0.02013,0.01898,0.01576,0.01428,0.01691], stds: [0.05054,0.03530,0.03684,0.02750,0.02041,0.01689,0.01595,0.01262,0.01126,0.01605]
+	UNI errors: [0.05304,0.04265,0.04006,0.03749,0.03121,0.02947,0.02635,0.02554,0.02183,0.02143], stds: [0.05611,0.03457,0.03410,0.03669,0.02793,0.02437,0.02140,0.01890,0.01960,0.01759]
+	saved to ./3DRoad_434874_3/bal_optimized_5_epochs/50_to_140_weak.png
+weak_time 00:00:06
+strong test(|testQ|=[2000, 3, 1]) on SGD,SVD,UNI (other reps=100, bal reps=10)
+	SGD errors: [0.00010,0.00041,0.00015,0.00063,0.00034,0.00009,0.00009,0.00016,0.00008,0.00008], stds: [0.00007,0.00077,0.00017,0.00081,0.00047,0.00005,0.00007,0.00019,0.00005,0.00003]
+	SVD errors: [0.09303,0.08500,0.08710,0.07821,0.07511,0.06983,0.06798,0.07090,0.05495,0.06200], stds: [0.04542,0.04292,0.04883,0.03880,0.03714,0.03615,0.03344,0.03434,0.02577,0.03622]
+	UNI errors: [0.15692,0.14224,0.13588,0.12738,0.11501,0.11691,0.11024,0.11149,0.11293,0.10120], stds: [0.11449,0.08501,0.08841,0.09121,0.08008,0.07111,0.08016,0.07506,0.07079,0.06286]
+	saved to ./3DRoad_434874_3/bal_optimized_5_epochs/50_to_140_strong_mean_mean.png
+st_mean_time 02:05:32
+test_coresets time 02:05:38
+--------------------------------------------------------------------------------
+Total run time 3:25:44
+
+Process finished with exit code 0

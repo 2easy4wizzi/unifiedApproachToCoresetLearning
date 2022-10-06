@@ -1,0 +1,14 @@
+Linear regression 3droad ds:
+Q3.pt
+    size 174400,3
+    time N/A - (should be extremely fast)
+coresets:
+    sizes [50, 60, 70, 80, 90, 100, 110, 120, 130, 140]
+    reps 10
+    time per coreset (10 reps) ~1:20:00
+    time per run 14:51:27
+        * includes weak and strong test (about 2 hours)
+    * all time measurements include many redundant actions for debug
+
+NOTICE if a specific log show slower time measurements, it's more than likely it was running parallel to more
+experiments, hence time is slower

@@ -1,0 +1,477 @@
+C:\Users\GiladEiniKbyLake\.conda\envs\bin\python.exe D:/workspace/2019SGD/DataReduction/LinearReg/mainLinearRegressionV2.py
+Python  Version 3.6.8 |Anaconda, Inc.| (default, Feb 21 2019, 18:30:04) [MSC v.1916 64 bit (AMD64)]
+PyTorch Version 1.1.0
+working on CPU
+get_data(ds_name=3DRoad):
+data    : (434874, 3), dtype:float64
+3droad[0]: (3,)    , dtype:float64, data: [9.35, 56.74, 17.05]
+data[0][0] = 9.3498486, type=<class 'numpy.float64'>
+3DRoad  : [434874, 3], dtype:torch.float32, trainable:False, is_cuda:False
+argv:
+	ds_name: 3DRoad
+	base_folder: ./3DRoad_434874_3
+	f: <function f_opt at 0x0000016271974BF8>
+	solver: <function solver_sklearn at 0x0000016271974C80>
+	Q: {'path': './3DRoad_434874_3/Q3.pt', 'init_size': 20, 'init_miu': 0, 'init_std': 1, 'sample_step': 0.5, 'epochs': 80, 'bs': 2000, 'lr': 0.0001, 'mv': {'factor': 0.1, 'patience': 250, 'min_lr': 0.001}, 'infoQ_show_er': True, 'trainQ_s': 4000, 'valQ_s': 400, 'testQ_s': 505}
+	color_dict: {'SGD': 'b', 'SVD': 'g', 'UNI': 'r'}
+	SVD_sp_folder: ./3DRoad_434874_3
+	Bal: {'folder': './3DRoad_434874_3/balance6b', 'epochs': 6, 'bs': 100, 'lr': 0.01, 'mv': {'factor': 0.1, 'patience': 6, 'min_lr': 0.001}, 'C_init': 'subset', 'U_trainable': True, 'epochs_info': True, 'epochs_info_stds': False, 'batches_info': False, 'loss_pre_train': False, 'loss_post_train': False}
+	show_plots: False
+	save_plots: True
+	c_sizes: [50, 100, 150, 200, 250, 300, 350, 400, 450]
+	reps: 1
+./3DRoad_434874_3/balance6b exists
+Balancing:
+get_Q_sets
+build_Q:
+	|initQ|=[20, 3, 1]:
+		loss(A,q_opt)      =      146,909,728.00(avg=337.82)
+		avg loss(A,initQ  )=    1,718,622,865.60(avg=3,952.00,std=3,852.40,min=354.93, max=14,185.50)
+		avg |1- loss(A,q)/loss(A,q_opt)|=10.698(std=11.40,min=0.05, max=40.99))
+1/20
+build_Q:
+	epochs 80, bs 2000, #batches 218, base lr 0.0001
+	In each epoch(80 total) there are 218 batches(different qs). sample 50.0%(109) from them. expected |Q|=8720
+	early stop if |1-loss_q/loss_q_opt|< 0.001
+	Opt loss 146,909,728.000. avg=337.821
+	Our loss 3,101,980,160.000. avg=7,133.055
+Training...
+	epoch [8/80]: avg loss:5,374.987, diff=14.910739, lr=0.00010, |Q|=872
+	epoch [16/80]: avg loss:3,939.860, diff=10.662555, lr=0.00010, |Q|=1744
+	epoch [24/80]: avg loss:2,776.866, diff=7.219925, lr=0.00010, |Q|=2616
+	epoch [32/80]: avg loss:1,863.217, diff=4.515392, lr=0.00010, |Q|=3488
+	epoch [40/80]: avg loss:1,185.201, diff=2.508367, lr=0.00010, |Q|=4360
+	epoch [48/80]: avg loss:727.920, diff=1.154749, lr=0.00010, |Q|=5232
+	epoch [56/80]: avg loss:468.218, diff=0.385992, lr=0.00010, |Q|=6104
+	epoch [64/80]: avg loss:364.720, diff=0.079624, lr=0.00010, |Q|=6976
+	epoch [72/80]: avg loss:346.876, diff=0.026803, lr=0.00010, |Q|=7848
+	epoch [80/80]: avg loss:346.479, diff=0.025627, lr=0.00010, |Q|=8720
+Done training. Results:
+	Opt avg loss 337.821
+	Our avg loss 346.479 (epoch 80)
+	best_diff=0.025627
+2/20
+build_Q:
+	epochs 80, bs 2000, #batches 218, base lr 0.0001
+	In each epoch(80 total) there are 218 batches(different qs). sample 50.0%(109) from them. expected |Q|=8720
+	early stop if |1-loss_q/loss_q_opt|< 0.001
+	Opt loss 146,909,728.000. avg=337.821
+	Our loss 164,313,984.000. avg=377.843
+Training...
+	epoch [8/80]: avg loss:350.836, diff=0.038526, lr=0.00010, |Q|=872
+	epoch [16/80]: avg loss:350.785, diff=0.038375, lr=0.00010, |Q|=1744
+	epoch [24/80]: avg loss:350.702, diff=0.038128, lr=0.00010, |Q|=2616
+	epoch [32/80]: avg loss:350.597, diff=0.037818, lr=0.00010, |Q|=3488
+	epoch [40/80]: avg loss:350.490, diff=0.037500, lr=0.00010, |Q|=4360
+	epoch [48/80]: avg loss:350.385, diff=0.037191, lr=0.00010, |Q|=5232
+	epoch [56/80]: avg loss:350.283, diff=0.036888, lr=0.00010, |Q|=6104
+	epoch [64/80]: avg loss:350.182, diff=0.036590, lr=0.00010, |Q|=6976
+	epoch [72/80]: avg loss:350.086, diff=0.036305, lr=0.00010, |Q|=7848
+	epoch [80/80]: avg loss:349.991, diff=0.036023, lr=0.00010, |Q|=8720
+Done training. Results:
+	Opt avg loss 337.821
+	Our avg loss 349.991 (epoch 80)
+	best_diff=0.036023
+3/20
+build_Q:
+	epochs 80, bs 2000, #batches 218, base lr 0.0001
+	In each epoch(80 total) there are 218 batches(different qs). sample 50.0%(109) from them. expected |Q|=8720
+	early stop if |1-loss_q/loss_q_opt|< 0.001
+	Opt loss 146,909,728.000. avg=337.821
+	Our loss 5,896,983,040.000. avg=13,560.211
+Training...
+	epoch [8/80]: avg loss:11,033.864, diff=31.661831, lr=0.00010, |Q|=872
+	epoch [16/80]: avg loss:8,838.036, diff=25.161863, lr=0.00010, |Q|=1744
+	epoch [24/80]: avg loss:6,925.150, diff=19.499445, lr=0.00010, |Q|=2616
+	epoch [32/80]: avg loss:5,275.609, diff=14.616566, lr=0.00010, |Q|=3488
+	epoch [40/80]: avg loss:3,880.995, diff=10.488307, lr=0.00010, |Q|=4360
+	epoch [48/80]: avg loss:2,735.583, diff=7.097720, lr=0.00010, |Q|=5232
+	epoch [56/80]: avg loss:1,832.864, diff=4.425542, lr=0.00010, |Q|=6104
+	epoch [64/80]: avg loss:1,163.802, diff=2.445023, lr=0.00010, |Q|=6976
+	epoch [72/80]: avg loss:714.488, diff=1.114987, lr=0.00010, |Q|=7848
+	epoch [80/80]: avg loss:461.563, diff=0.366293, lr=0.00010, |Q|=8720
+Done training. Results:
+	Opt avg loss 337.821
+	Our avg loss 461.563 (epoch 80)
+	best_diff=0.366293
+4/20
+build_Q:
+	epochs 80, bs 2000, #batches 218, base lr 0.0001
+	In each epoch(80 total) there are 218 batches(different qs). sample 50.0%(109) from them. expected |Q|=8720
+	early stop if |1-loss_q/loss_q_opt|< 0.001
+	Opt loss 146,909,728.000. avg=337.821
+	Our loss 540,282,688.000. avg=1,242.389
+Training...
+	epoch [8/80]: avg loss:712.780, diff=1.109933, lr=0.00010, |Q|=872
+	epoch [16/80]: avg loss:451.052, diff=0.335180, lr=0.00010, |Q|=1744
+	epoch [24/80]: avg loss:359.281, diff=0.063523, lr=0.00010, |Q|=2616
+	epoch [32/80]: avg loss:346.531, diff=0.025781, lr=0.00010, |Q|=3488
+	epoch [40/80]: avg loss:346.358, diff=0.025270, lr=0.00010, |Q|=4360
+	epoch [48/80]: avg loss:346.357, diff=0.025265, lr=0.00010, |Q|=5232
+	epoch [56/80]: avg loss:346.354, diff=0.025259, lr=0.00010, |Q|=6104
+	epoch [64/80]: avg loss:346.352, diff=0.025251, lr=0.00010, |Q|=6976
+	epoch [72/80]: avg loss:346.349, diff=0.025243, lr=0.00010, |Q|=7848
+	epoch [80/80]: avg loss:346.347, diff=0.025236, lr=0.00010, |Q|=8720
+Done training. Results:
+	Opt avg loss 337.821
+	Our avg loss 346.346 (epoch 79)
+	best_diff=0.025236
+5/20
+build_Q:
+	epochs 80, bs 2000, #batches 218, base lr 0.0001
+	In each epoch(80 total) there are 218 batches(different qs). sample 50.0%(109) from them. expected |Q|=8720
+	early stop if |1-loss_q/loss_q_opt|< 0.001
+	Opt loss 146,909,728.000. avg=337.821
+	Our loss 1,821,074,048.000. avg=4,187.590
+Training...
+	epoch [8/80]: avg loss:2,909.767, diff=7.613331, lr=0.00010, |Q|=872
+	epoch [16/80]: avg loss:1,945.760, diff=4.759732, lr=0.00010, |Q|=1744
+	epoch [24/80]: avg loss:1,239.536, diff=2.669206, lr=0.00010, |Q|=2616
+	epoch [32/80]: avg loss:761.394, diff=1.253835, lr=0.00010, |Q|=3488
+	epoch [40/80]: avg loss:484.838, diff=0.435192, lr=0.00010, |Q|=4360
+	epoch [48/80]: avg loss:369.671, diff=0.094279, lr=0.00010, |Q|=5232
+	epoch [56/80]: avg loss:347.523, diff=0.028719, lr=0.00010, |Q|=6104
+	epoch [64/80]: avg loss:346.882, diff=0.026820, lr=0.00010, |Q|=6976
+	epoch [72/80]: avg loss:346.876, diff=0.026803, lr=0.00010, |Q|=7848
+	epoch [80/80]: avg loss:346.865, diff=0.026772, lr=0.00010, |Q|=8720
+Done training. Results:
+	Opt avg loss 337.821
+	Our avg loss 346.865 (epoch 80)
+	best_diff=0.026772
+6/20
+build_Q:
+	epochs 80, bs 2000, #batches 218, base lr 0.0001
+	In each epoch(80 total) there are 218 batches(different qs). sample 50.0%(109) from them. expected |Q|=8720
+	early stop if |1-loss_q/loss_q_opt|< 0.001
+	Opt loss 146,909,728.000. avg=337.821
+	Our loss 2,853,543,936.000. avg=6,561.772
+Training...
+	epoch [8/80]: avg loss:4,887.227, diff=13.466897, lr=0.00010, |Q|=872
+	epoch [16/80]: avg loss:3,534.549, diff=9.462776, lr=0.00010, |Q|=1744
+	epoch [24/80]: avg loss:2,452.179, diff=6.258805, lr=0.00010, |Q|=2616
+	epoch [32/80]: avg loss:1,616.573, diff=3.785289, lr=0.00010, |Q|=3488
+	epoch [40/80]: avg loss:1,012.737, diff=1.997847, lr=0.00010, |Q|=4360
+	epoch [48/80]: avg loss:623.491, diff=0.845623, lr=0.00010, |Q|=5232
+	epoch [56/80]: avg loss:420.929, diff=0.246009, lr=0.00010, |Q|=6104
+	epoch [64/80]: avg loss:354.694, diff=0.049945, lr=0.00010, |Q|=6976
+	epoch [72/80]: avg loss:347.653, diff=0.029102, lr=0.00010, |Q|=7848
+	epoch [80/80]: avg loss:347.600, diff=0.028948, lr=0.00010, |Q|=8720
+Done training. Results:
+	Opt avg loss 337.821
+	Our avg loss 347.600 (epoch 80)
+	best_diff=0.028948
+7/20
+build_Q:
+	epochs 80, bs 2000, #batches 218, base lr 0.0001
+	In each epoch(80 total) there are 218 batches(different qs). sample 50.0%(109) from them. expected |Q|=8720
+	early stop if |1-loss_q/loss_q_opt|< 0.001
+	Opt loss 146,909,728.000. avg=337.821
+	Our loss 154,349,120.000. avg=354.928
+Training...
+	epoch [8/80]: avg loss:347.670, diff=0.029153, lr=0.00010, |Q|=872
+	epoch [16/80]: avg loss:347.643, diff=0.029074, lr=0.00010, |Q|=1744
+	epoch [24/80]: avg loss:347.609, diff=0.028973, lr=0.00010, |Q|=2616
+	epoch [32/80]: avg loss:347.574, diff=0.028870, lr=0.00010, |Q|=3488
+	epoch [40/80]: avg loss:347.541, diff=0.028773, lr=0.00010, |Q|=4360
+	epoch [48/80]: avg loss:347.509, diff=0.028678, lr=0.00010, |Q|=5232
+	epoch [56/80]: avg loss:347.476, diff=0.028579, lr=0.00010, |Q|=6104
+	epoch [64/80]: avg loss:347.446, diff=0.028491, lr=0.00010, |Q|=6976
+	epoch [72/80]: avg loss:347.416, diff=0.028400, lr=0.00010, |Q|=7848
+	epoch [80/80]: avg loss:347.385, diff=0.028310, lr=0.00010, |Q|=8720
+Done training. Results:
+	Opt avg loss 337.821
+	Our avg loss 347.385 (epoch 80)
+	best_diff=0.028310
+8/20
+build_Q:
+	epochs 80, bs 2000, #batches 218, base lr 0.0001
+	In each epoch(80 total) there are 218 batches(different qs). sample 50.0%(109) from them. expected |Q|=8720
+	early stop if |1-loss_q/loss_q_opt|< 0.001
+	Opt loss 146,909,728.000. avg=337.821
+	Our loss 705,274,048.000. avg=1,621.789
+Training...
+	epoch [8/80]: avg loss:958.437, diff=1.837113, lr=0.00010, |Q|=872
+	epoch [16/80]: avg loss:578.547, diff=0.712582, lr=0.00010, |Q|=1744
+	epoch [24/80]: avg loss:399.975, diff=0.183984, lr=0.00010, |Q|=2616
+	epoch [32/80]: avg loss:350.249, diff=0.036786, lr=0.00010, |Q|=3488
+	epoch [40/80]: avg loss:346.561, diff=0.025871, lr=0.00010, |Q|=4360
+	epoch [48/80]: avg loss:346.549, diff=0.025834, lr=0.00010, |Q|=5232
+	epoch [56/80]: avg loss:346.544, diff=0.025820, lr=0.00010, |Q|=6104
+	epoch [64/80]: avg loss:346.537, diff=0.025800, lr=0.00010, |Q|=6976
+	epoch [72/80]: avg loss:346.529, diff=0.025776, lr=0.00010, |Q|=7848
+	epoch [80/80]: avg loss:346.520, diff=0.025749, lr=0.00010, |Q|=8720
+Done training. Results:
+	Opt avg loss 337.821
+	Our avg loss 346.520 (epoch 80)
+	best_diff=0.025749
+9/20
+build_Q:
+	epochs 80, bs 2000, #batches 218, base lr 0.0001
+	In each epoch(80 total) there are 218 batches(different qs). sample 50.0%(109) from them. expected |Q|=8720
+	early stop if |1-loss_q/loss_q_opt|< 0.001
+	Opt loss 146,909,728.000. avg=337.821
+	Our loss 1,981,770,624.000. avg=4,557.115
+Training...
+	epoch [8/80]: avg loss:3,210.749, diff=8.504279, lr=0.00010, |Q|=872
+	epoch [16/80]: avg loss:2,179.963, diff=5.453004, lr=0.00010, |Q|=1744
+	epoch [24/80]: avg loss:1,409.724, diff=3.172988, lr=0.00010, |Q|=2616
+	epoch [32/80]: avg loss:871.849, diff=1.580799, lr=0.00010, |Q|=3488
+	epoch [40/80]: avg loss:542.888, diff=0.607027, lr=0.00010, |Q|=4360
+	epoch [48/80]: avg loss:388.625, diff=0.150387, lr=0.00010, |Q|=5232
+	epoch [56/80]: avg loss:349.085, diff=0.033341, lr=0.00010, |Q|=6104
+	epoch [64/80]: avg loss:346.770, diff=0.026490, lr=0.00010, |Q|=6976
+	epoch [72/80]: avg loss:346.763, diff=0.026469, lr=0.00010, |Q|=7848
+	epoch [80/80]: avg loss:346.756, diff=0.026447, lr=0.00010, |Q|=8720
+Done training. Results:
+	Opt avg loss 337.821
+	Our avg loss 346.756 (epoch 80)
+	best_diff=0.026447
+10/20
+build_Q:
+	epochs 80, bs 2000, #batches 218, base lr 0.0001
+	In each epoch(80 total) there are 218 batches(different qs). sample 50.0%(109) from them. expected |Q|=8720
+	early stop if |1-loss_q/loss_q_opt|< 0.001
+	Opt loss 146,909,728.000. avg=337.821
+	Our loss 368,069,280.000. avg=846.381
+Training...
+	epoch [8/80]: avg loss:489.387, diff=0.448656, lr=0.00010, |Q|=872
+	epoch [16/80]: avg loss:365.908, diff=0.083140, lr=0.00010, |Q|=1744
+	epoch [24/80]: avg loss:346.592, diff=0.025962, lr=0.00010, |Q|=2616
+	epoch [32/80]: avg loss:346.219, diff=0.024860, lr=0.00010, |Q|=3488
+	epoch [40/80]: avg loss:346.219, diff=0.024859, lr=0.00010, |Q|=4360
+	epoch [48/80]: avg loss:346.219, diff=0.024859, lr=0.00010, |Q|=5232
+	epoch [56/80]: avg loss:346.219, diff=0.024858, lr=0.00010, |Q|=6104
+	epoch [64/80]: avg loss:346.220, diff=0.024862, lr=0.00010, |Q|=6976
+	epoch [72/80]: avg loss:346.219, diff=0.024858, lr=0.00010, |Q|=7848
+	epoch [80/80]: avg loss:346.219, diff=0.024857, lr=0.00010, |Q|=8720
+Done training. Results:
+	Opt avg loss 337.821
+	Our avg loss 346.218 (epoch 76)
+	best_diff=0.024856
+11/20
+build_Q:
+	epochs 80, bs 2000, #batches 218, base lr 0.0001
+	In each epoch(80 total) there are 218 batches(different qs). sample 50.0%(109) from them. expected |Q|=8720
+	early stop if |1-loss_q/loss_q_opt|< 0.001
+	Opt loss 146,909,728.000. avg=337.821
+	Our loss 382,653,376.000. avg=879.918
+Training...
+	epoch [8/80]: avg loss:507.127, diff=0.501169, lr=0.00010, |Q|=872
+	epoch [16/80]: avg loss:372.087, diff=0.101431, lr=0.00010, |Q|=1744
+	epoch [24/80]: avg loss:348.496, diff=0.031600, lr=0.00010, |Q|=2616
+	epoch [32/80]: avg loss:347.892, diff=0.029812, lr=0.00010, |Q|=3488
+	epoch [40/80]: avg loss:347.878, diff=0.029769, lr=0.00010, |Q|=4360
+	epoch [48/80]: avg loss:347.853, diff=0.029694, lr=0.00010, |Q|=5232
+	epoch [56/80]: avg loss:347.816, diff=0.029587, lr=0.00010, |Q|=6104
+	epoch [64/80]: avg loss:347.779, diff=0.029476, lr=0.00010, |Q|=6976
+	epoch [72/80]: avg loss:347.740, diff=0.029362, lr=0.00010, |Q|=7848
+	epoch [80/80]: avg loss:347.703, diff=0.029251, lr=0.00010, |Q|=8720
+Done training. Results:
+	Opt avg loss 337.821
+	Our avg loss 347.703 (epoch 80)
+	best_diff=0.029251
+12/20
+build_Q:
+	epochs 80, bs 2000, #batches 218, base lr 0.0001
+	In each epoch(80 total) there are 218 batches(different qs). sample 50.0%(109) from them. expected |Q|=8720
+	early stop if |1-loss_q/loss_q_opt|< 0.001
+	Opt loss 146,909,728.000. avg=337.821
+	Our loss 907,254,720.000. avg=2,086.247
+Training...
+	epoch [8/80]: avg loss:1,283.564, diff=2.799536, lr=0.00010, |Q|=872
+	epoch [16/80]: avg loss:775.046, diff=1.294248, lr=0.00010, |Q|=1744
+	epoch [24/80]: avg loss:489.244, diff=0.448233, lr=0.00010, |Q|=2616
+	epoch [32/80]: avg loss:370.994, diff=0.098196, lr=0.00010, |Q|=3488
+	epoch [40/80]: avg loss:348.030, diff=0.030220, lr=0.00010, |Q|=4360
+	epoch [48/80]: avg loss:347.339, diff=0.028173, lr=0.00010, |Q|=5232
+	epoch [56/80]: avg loss:347.329, diff=0.028143, lr=0.00010, |Q|=6104
+	epoch [64/80]: avg loss:347.310, diff=0.028088, lr=0.00010, |Q|=6976
+	epoch [72/80]: avg loss:347.284, diff=0.028011, lr=0.00010, |Q|=7848
+	epoch [80/80]: avg loss:347.256, diff=0.027928, lr=0.00010, |Q|=8720
+Done training. Results:
+	Opt avg loss 337.821
+	Our avg loss 347.256 (epoch 80)
+	best_diff=0.027928
+13/20
+build_Q:
+	epochs 80, bs 2000, #batches 218, base lr 0.0001
+	In each epoch(80 total) there are 218 batches(different qs). sample 50.0%(109) from them. expected |Q|=8720
+	early stop if |1-loss_q/loss_q_opt|< 0.001
+	Opt loss 146,909,728.000. avg=337.821
+	Our loss 954,843,392.000. avg=2,195.678
+Training...
+	epoch [8/80]: avg loss:1,362.519, diff=3.033253, lr=0.00010, |Q|=872
+	epoch [16/80]: avg loss:825.478, diff=1.443534, lr=0.00010, |Q|=1744
+	epoch [24/80]: avg loss:514.793, diff=0.523861, lr=0.00010, |Q|=2616
+	epoch [32/80]: avg loss:378.286, diff=0.119780, lr=0.00010, |Q|=3488
+	epoch [40/80]: avg loss:347.639, diff=0.029062, lr=0.00010, |Q|=4360
+	epoch [48/80]: avg loss:346.327, diff=0.025178, lr=0.00010, |Q|=5232
+	epoch [56/80]: avg loss:346.325, diff=0.025173, lr=0.00010, |Q|=6104
+	epoch [64/80]: avg loss:346.323, diff=0.025167, lr=0.00010, |Q|=6976
+	epoch [72/80]: avg loss:346.321, diff=0.025159, lr=0.00010, |Q|=7848
+	epoch [80/80]: avg loss:346.318, diff=0.025150, lr=0.00010, |Q|=8720
+Done training. Results:
+	Opt avg loss 337.821
+	Our avg loss 346.318 (epoch 80)
+	best_diff=0.025150
+14/20
+build_Q:
+	epochs 80, bs 2000, #batches 218, base lr 0.0001
+	In each epoch(80 total) there are 218 batches(different qs). sample 50.0%(109) from them. expected |Q|=8720
+	early stop if |1-loss_q/loss_q_opt|< 0.001
+	Opt loss 146,909,728.000. avg=337.821
+	Our loss 6,168,905,216.000. avg=14,185.500
+Training...
+	epoch [8/80]: avg loss:11,595.607, diff=33.324673, lr=0.00010, |Q|=872
+	epoch [16/80]: avg loss:9,336.785, diff=26.638233, lr=0.00010, |Q|=1744
+	epoch [24/80]: avg loss:7,361.470, diff=20.791014, lr=0.00010, |Q|=2616
+	epoch [32/80]: avg loss:5,650.192, diff=15.725384, lr=0.00010, |Q|=3488
+	epoch [40/80]: avg loss:4,194.771, diff=11.417129, lr=0.00010, |Q|=4360
+	epoch [48/80]: avg loss:2,989.761, diff=7.850125, lr=0.00010, |Q|=5232
+	epoch [56/80]: avg loss:2,029.131, diff=5.006520, lr=0.00010, |Q|=6104
+	epoch [64/80]: avg loss:1,304.707, diff=2.862121, lr=0.00010, |Q|=6976
+	epoch [72/80]: avg loss:803.987, diff=1.379916, lr=0.00010, |Q|=7848
+	epoch [80/80]: avg loss:506.588, diff=0.499575, lr=0.00010, |Q|=8720
+Done training. Results:
+	Opt avg loss 337.821
+	Our avg loss 506.588 (epoch 80)
+	best_diff=0.499575
+15/20
+build_Q:
+	epochs 80, bs 2000, #batches 218, base lr 0.0001
+	In each epoch(80 total) there are 218 batches(different qs). sample 50.0%(109) from them. expected |Q|=8720
+	early stop if |1-loss_q/loss_q_opt|< 0.001
+	Opt loss 146,909,728.000. avg=337.821
+	Our loss 1,971,184,512.000. avg=4,532.771
+Training...
+	epoch [8/80]: avg loss:3,190.954, diff=8.445685, lr=0.00010, |Q|=872
+	epoch [16/80]: avg loss:2,164.485, diff=5.407188, lr=0.00010, |Q|=1744
+	epoch [24/80]: avg loss:1,398.409, diff=3.139492, lr=0.00010, |Q|=2616
+	epoch [32/80]: avg loss:864.440, diff=1.558867, lr=0.00010, |Q|=3488
+	epoch [40/80]: avg loss:538.935, diff=0.595326, lr=0.00010, |Q|=4360
+	epoch [48/80]: avg loss:387.343, diff=0.146592, lr=0.00010, |Q|=5232
+	epoch [56/80]: avg loss:349.129, diff=0.033471, lr=0.00010, |Q|=6104
+	epoch [64/80]: avg loss:346.973, diff=0.027091, lr=0.00010, |Q|=6976
+	epoch [72/80]: avg loss:346.966, diff=0.027068, lr=0.00010, |Q|=7848
+	epoch [80/80]: avg loss:346.955, diff=0.027038, lr=0.00010, |Q|=8720
+Done training. Results:
+	Opt avg loss 337.821
+	Our avg loss 346.955 (epoch 80)
+	best_diff=0.027038
+16/20
+build_Q:
+	epochs 80, bs 2000, #batches 218, base lr 0.0001
+	In each epoch(80 total) there are 218 batches(different qs). sample 50.0%(109) from them. expected |Q|=8720
+	early stop if |1-loss_q/loss_q_opt|< 0.001
+	Opt loss 146,909,728.000. avg=337.821
+	Our loss 1,621,735,040.000. avg=3,729.207
+Training...
+	epoch [8/80]: avg loss:2,541.198, diff=6.522313, lr=0.00010, |Q|=872
+	epoch [16/80]: avg loss:1,664.572, diff=3.927372, lr=0.00010, |Q|=1744
+	epoch [24/80]: avg loss:1,041.481, diff=2.082933, lr=0.00010, |Q|=2616
+	epoch [32/80]: avg loss:639.778, diff=0.893834, lr=0.00010, |Q|=3488
+	epoch [40/80]: avg loss:428.066, diff=0.267139, lr=0.00010, |Q|=4360
+	epoch [48/80]: avg loss:356.402, diff=0.055002, lr=0.00010, |Q|=5232
+	epoch [56/80]: avg loss:348.098, diff=0.030419, lr=0.00010, |Q|=6104
+	epoch [64/80]: avg loss:348.021, diff=0.030191, lr=0.00010, |Q|=6976
+	epoch [72/80]: avg loss:348.001, diff=0.030133, lr=0.00010, |Q|=7848
+	epoch [80/80]: avg loss:347.968, diff=0.030036, lr=0.00010, |Q|=8720
+Done training. Results:
+	Opt avg loss 337.821
+	Our avg loss 347.968 (epoch 80)
+	best_diff=0.030036
+17/20
+build_Q:
+	epochs 80, bs 2000, #batches 218, base lr 0.0001
+	In each epoch(80 total) there are 218 batches(different qs). sample 50.0%(109) from them. expected |Q|=8720
+	early stop if |1-loss_q/loss_q_opt|< 0.001
+	Opt loss 146,909,728.000. avg=337.821
+	Our loss 954,509,952.000. avg=2,194.912
+Training...
+	epoch [8/80]: avg loss:1,361.962, diff=3.031605, lr=0.00010, |Q|=872
+	epoch [16/80]: avg loss:825.124, diff=1.442487, lr=0.00010, |Q|=1744
+	epoch [24/80]: avg loss:514.634, diff=0.523392, lr=0.00010, |Q|=2616
+	epoch [32/80]: avg loss:378.256, diff=0.119694, lr=0.00010, |Q|=3488
+	epoch [40/80]: avg loss:347.686, diff=0.029202, lr=0.00010, |Q|=4360
+	epoch [48/80]: avg loss:346.379, diff=0.025333, lr=0.00010, |Q|=5232
+	epoch [56/80]: avg loss:346.377, diff=0.025327, lr=0.00010, |Q|=6104
+	epoch [64/80]: avg loss:346.374, diff=0.025318, lr=0.00010, |Q|=6976
+	epoch [72/80]: avg loss:346.371, diff=0.025307, lr=0.00010, |Q|=7848
+	epoch [80/80]: avg loss:346.368, diff=0.025298, lr=0.00010, |Q|=8720
+Done training. Results:
+	Opt avg loss 337.821
+	Our avg loss 346.367 (epoch 78)
+	best_diff=0.025295
+18/20
+build_Q:
+	epochs 80, bs 2000, #batches 218, base lr 0.0001
+	In each epoch(80 total) there are 218 batches(different qs). sample 50.0%(109) from them. expected |Q|=8720
+	early stop if |1-loss_q/loss_q_opt|< 0.001
+	Opt loss 146,909,728.000. avg=337.821
+	Our loss 1,262,989,568.000. avg=2,904.266
+Training...
+	epoch [8/80]: avg loss:1,894.207, diff=4.607127, lr=0.00010, |Q|=872
+	epoch [16/80]: avg loss:1,189.110, diff=2.519938, lr=0.00010, |Q|=1744
+	epoch [24/80]: avg loss:726.672, diff=1.151055, lr=0.00010, |Q|=2616
+	epoch [32/80]: avg loss:467.386, diff=0.383530, lr=0.00010, |Q|=3488
+	epoch [40/80]: avg loss:365.066, diff=0.080648, lr=0.00010, |Q|=4360
+	epoch [48/80]: avg loss:347.722, diff=0.029307, lr=0.00010, |Q|=5232
+	epoch [56/80]: avg loss:347.345, diff=0.028192, lr=0.00010, |Q|=6104
+	epoch [64/80]: avg loss:347.335, diff=0.028162, lr=0.00010, |Q|=6976
+	epoch [72/80]: avg loss:347.316, diff=0.028105, lr=0.00010, |Q|=7848
+	epoch [80/80]: avg loss:347.294, diff=0.028039, lr=0.00010, |Q|=8720
+Done training. Results:
+	Opt avg loss 337.821
+	Our avg loss 347.294 (epoch 80)
+	best_diff=0.028039
+19/20
+build_Q:
+	epochs 80, bs 2000, #batches 218, base lr 0.0001
+	In each epoch(80 total) there are 218 batches(different qs). sample 50.0%(109) from them. expected |Q|=8720
+	early stop if |1-loss_q/loss_q_opt|< 0.001
+	Opt loss 146,909,728.000. avg=337.821
+	Our loss 2,331,718,144.000. avg=5,361.825
+Training...
+	epoch [8/80]: avg loss:3,875.980, diff=10.473461, lr=0.00010, |Q|=872
+	epoch [16/80]: avg loss:2,708.642, diff=7.017973, lr=0.00010, |Q|=1744
+	epoch [24/80]: avg loss:1,806.588, diff=4.347762, lr=0.00010, |Q|=2616
+	epoch [32/80]: avg loss:1,144.091, diff=2.386675, lr=0.00010, |Q|=3488
+	epoch [40/80]: avg loss:702.163, diff=1.078505, lr=0.00010, |Q|=4360
+	epoch [48/80]: avg loss:455.802, diff=0.349240, lr=0.00010, |Q|=5232
+	epoch [56/80]: avg loss:361.517, diff=0.070142, lr=0.00010, |Q|=6104
+	epoch [64/80]: avg loss:346.787, diff=0.026540, lr=0.00010, |Q|=6976
+	epoch [72/80]: avg loss:346.528, diff=0.025774, lr=0.00010, |Q|=7848
+	epoch [80/80]: avg loss:346.525, diff=0.025765, lr=0.00010, |Q|=8720
+Done training. Results:
+	Opt avg loss 337.821
+	Our avg loss 346.525 (epoch 80)
+	best_diff=0.025765
+20/20
+build_Q:
+	epochs 80, bs 2000, #batches 218, base lr 0.0001
+	In each epoch(80 total) there are 218 batches(different qs). sample 50.0%(109) from them. expected |Q|=8720
+	early stop if |1-loss_q/loss_q_opt|< 0.001
+	Opt loss 146,909,728.000. avg=337.821
+	Our loss 229,022,464.000. avg=526.641
+Training...
+	epoch [8/80]: avg loss:363.730, diff=0.076692, lr=0.00010, |Q|=872
+	epoch [16/80]: avg loss:346.578, diff=0.025922, lr=0.00010, |Q|=1744
+	epoch [24/80]: avg loss:346.451, diff=0.025545, lr=0.00010, |Q|=2616
+	epoch [32/80]: avg loss:346.448, diff=0.025536, lr=0.00010, |Q|=3488
+	epoch [40/80]: avg loss:346.445, diff=0.025526, lr=0.00010, |Q|=4360
+	epoch [48/80]: avg loss:346.438, diff=0.025507, lr=0.00010, |Q|=5232
+	epoch [56/80]: avg loss:346.432, diff=0.025488, lr=0.00010, |Q|=6104
+	epoch [64/80]: avg loss:346.426, diff=0.025472, lr=0.00010, |Q|=6976
+	epoch [72/80]: avg loss:346.422, diff=0.025458, lr=0.00010, |Q|=7848
+	epoch [80/80]: avg loss:346.415, diff=0.025438, lr=0.00010, |Q|=8720
+Done training. Results:
+	Opt avg loss 337.821
+	Our avg loss 346.415 (epoch 80)
+	best_diff=0.025438
+Saved to: ./3DRoad_434874_3/Q3.pt
+	|allQ|=[174400, 3, 1]:
+		loss(A,q_opt)      =      146,909,728.00(avg=337.82)
+		avg loss(A,allQ   )=      549,028,508.05(avg=1,262.50,std=2,035.66,min=346.22, max=14,183.90)
+		avg |1- loss(A,q)/loss(A,q_opt)|=2.737(std=6.03,min=0.02, max=40.99))
+
+Process finished with exit code 99

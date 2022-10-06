@@ -1,0 +1,23 @@
+sklearn on A_train -> get loss (should be the loss on q_opt)
+vs our loss on q opt
+Murad Corset for near convex function
+check if svm is "new loss" or normal
+check if i normalize the weights
+
+1 next exp - add trainable W
+2 with 1, add new loss func
+3 build better Q2
+4 start with the worst c_init (4th)
+
+
+
+
+3d PLOT of lin data
+    P
+    C (if C far from P -> CU or C*squart(U))
+
+3d plot of HTRU_2
+    PCA to 3 or 2
+    same like above
+
+time for Q and for C

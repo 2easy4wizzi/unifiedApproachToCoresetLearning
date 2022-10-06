@@ -1,0 +1,17 @@
+SVM HTRU_2 ds:
+Q.pt
+    size 20000,9
+    time 0:01:55 (extremely fast)
+coresets:
+    sizes [800, 1000, 1200, 1400, 1600, 1800]
+    reps 5
+    time per coreset (5 reps) ~03:30:00
+    time per run estimation about 21:00:00
+    * all time measurements include many redundant actions for debug
+
+NOTICE if a specific log show slower time measurements, it's more than likely it was running parallel to more
+experiments, hence time is slower
+
+Difference between svm and logistic is substantial despite same data size. the main reasons are:
+    * in logistic we could have achieved the same results with a lower epoch number (1000 vs 200 in svm)
+    * found optimization that cut epoch run time in 3 way after finishing logistic

@@ -1,0 +1,105 @@
+C:\Users\GiladEiniKbyLake\.conda\envs\AutoCL2\python.exe D:/workspace/2019SGD/DataReduction/LinearRegNewLoss/mainLinearRegressionV4.py
+--------------------------------------------------------------------------------
+main_wrapper:
+* Run started at 19-07-2022 20:36:52
+* Python Version 3.6.13 |Anaconda, Inc.| (default, Mar 16 2021, 11:37:27) [MSC v.1916 64 bit (AMD64)]
+* Operating System uname_result(system='Windows', node='Wizzi-Dorms', release='10', version='10.0.19041', machine='AMD64', processor='Intel64 Family 6 Model 158 Stepping 9, GenuineIntel')
+* Interpreter: C:\Users\GiladEiniKbyLake\.conda\envs\AutoCL2\python.exe
+* wizzi_utils Version 7.2.0
+* Working Dir: D:\workspace\2019SGD\DataReduction\LinearRegNewLoss
+* Computer Mac: 70:4D:7B:8A:65:EE
+* CPU Info: AMD64, Intel64 Family 6 Model 158 Stepping 9, GenuineIntel, Physical cores 4, Total cores 8, Frequency 3601.00Mhz, CPU Usage 12.4%
+* Physical Memory: C: Total 232.33 GB, Used 190.83 GB(82.10%), Free 41.51 GB, D: Total 931.39 GB, Used 201.29 GB(21.60%), Free 730.1 GB, E: PermissionError: [WinError 21] The device is not ready: 'E', G: Total 17.0 GB, Used 3.26 GB(19.20%), Free 13.74 GB
+* RAM: Total 15.94 GB, Used 8.8 GB(55.2%), Available 7.14 GB
+* CUDA Version: v10.2 (cuDNN Version 7.6.5) (Turned off)
+* PyTorch Version 1.8.1+cu101 - GPU detected ? False
+Function <function main at 0x000002303920D048> started:
+--------------------------------------------------------------------------------
+working on CPU
+get_data(ds_name=3DRoad):
+	3DRoad_data(torch.Tensor,s=torch.Size([434874, 3]),dtype=torch.float32,trainable=False,is_cuda=False): [[9.35, 56.74, 17.05], [9.35, 56.74, 17.61], [9.35, 56.74, 18.08], [9.35, 56.74, 18.28], [9.35, 56.7 ...too long
+get_data time 00:00:02
+argv:
+	ds_name: 3DRoad
+	base_folder: ./3DRoad_434874_3
+	f: <function f_opt at 0x0000023039202E18>
+	solver: <function solver_sklearn at 0x0000023039202EA0>
+	Q: {'path': './3DRoad_434874_3/Q3.pt', 'init_size': 20, 'init_miu': 0, 'init_std': 1, 'sample_step': 0.5, 'epochs': 80, 'bs': 2000, 'lr': 0.0001, 'mv': {'factor': 0.1, 'patience': 80, 'min_lr': 0.0001}, 'infoQ_show_er': False, 'trainQ_s': 20000, 'valQ_s': 2000, 'testQ_s': 2000}
+	color_dict: {'SGD': 'b', 'SVD': 'g', 'UNI': 'r'}
+	SVD_sp_folder: ./3DRoad_434874_3
+	Bal: {'folder': './3DRoad_434874_3/bal3', 'reps': 1, 'epochs': 10, 'bs': 25, 'lr': 0.01, 'mv': {'factor': 0.1, 'patience': 100000, 'min_lr': 0.001}, 'lambda': 1, 'epochs_info': True, 'epochs_info_stds': False, 'batches_info': False, 'loss_stats': False}
+	show_plots: False
+	save_plots: True
+	c_sizes: [50]
+	reps: 1
+./3DRoad_434874_3/bal3 created
+Balancing:
+get_Q_sets
+Loaded: ./3DRoad_434874_3/Q3.pt
+	|allQ|=[174400, 3, 1]:
+	|trainQ|=[20000, 3, 1]:
+	|valQ|=[2000, 3, 1]:
+	|testQ|=[2000, 3, 1]:
+get_Q_sets time 00:00:00
+get_sp_list:
+build_bal_SGD_coresets for |A|=torch.Size([434874, 3]) (DONE ONLY ONCE):
+	c_sizes=[50], bal_reps=1, |trainQ|=20000, |valQ|=2000
+c_size 50:
+-------------------------------------------------------------------------------- rep 0
+	starting sum weights:
+		sum(W)=434874
+		sum(U)=434874.0
+Balance params: epochs 10, batch_size 25, total batches 800, base_lr 0.01
+build_1_bal_SGD_coreset(size=50):
+	optimizer = Adam (Parameter Group 0 amsgrad: False betas: (0.9, 0.999) eps: 1e-08 lr: 0.01 weight_decay: 0), |trainable_vars| = 2
+	calculating f(A, Q)
+		Done
+	Epoch[1/10]:loss_c:1,248.932, loss_p:1,292.027, erTrain:0.06368, erVal:0.00381, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:11, V
+	Epoch[2/10]:loss_c:1,291.705, loss_p:1,292.027, erTrain:0.02116, erVal:0.00007, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:22, V
+	Epoch[3/10]:loss_c:1,292.026, loss_p:1,292.027, erTrain:0.02098, erVal:0.00012, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:32
+	Epoch[4/10]:loss_c:1,292.028, loss_p:1,292.027, erTrain:0.02094, erVal:0.00013, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:43
+	Epoch[5/10]:loss_c:1,292.024, loss_p:1,292.027, erTrain:0.02095, erVal:0.00005, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:00:53, V
+	Epoch[6/10]:loss_c:1,292.027, loss_p:1,292.027, erTrain:0.02099, erVal:0.00019, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:01:04
+	Epoch[7/10]:loss_c:1,292.028, loss_p:1,292.027, erTrain:0.02094, erVal:0.00007, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:01:14
+	Epoch[8/10]:loss_c:1,292.028, loss_p:1,292.027, erTrain:0.02094, erVal:0.00020, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:01:24
+	Epoch[9/10]:loss_c:1,292.025, loss_p:1,292.027, erTrain:0.02098, erVal:0.00011, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:01:34
+	Epoch[10/10]:loss_c:1,292.029, loss_p:1,292.027, erTrain:0.02095, erVal:0.00005, erWeak:-1.00000, erAqc:-0.000, erAqa:-0.000, lr 0.010, time 00:01:44, V
+Done balancing: epoch 10, best_val_err=0.00005, best_weak_er=-1.00000, run time 00:01:44
+Saved to: ./3DRoad_434874_3/bal3/bal_coreset_50_rep_0.pt
+	ending sum weights:
+		sum(W)=434874
+		sum(U)=434873.96875
+-------------------------------------------------------------------------------- rep 0 time 00:02:27
+c_size = 50: time 00:02:27
+build_bal_SGD_coresets time 00:02:27
+LinearReg.get_SP_SVD torch.Size([434874, 3]):
+	Loaded: ./3DRoad_434874_3/SVD.npy
+	|A|=torch.Size([434874, 3]), |SP_SVD|=(434874,), sum(SP_SVD)=3.00 (should be equal to d(3))
+sp_list: SGD,SVD,UNI
+get_sp_list time 00:02:27
+get_list_of_coresets_for_each_size:
+	|A|=[434874, 3], reps=1, c_sizes=[50], sp_names=SGD,SVD,UNI
+	Loaded: ./3DRoad_434874_3/bal3/bal_coreset_50_rep_0.pt
+	for size 50: created SGD 1x[50, 3] coresets, SVD 1x[50, 3] coresets, UNI 1x[50, 3] coresets
+get_list_of_coresets_for_each_size time 00:00:00
+test_coresets:
+	name_color_list:[('SGD', 'b'), ('SVD', 'g'), ('UNI', 'r')]
+	|A|=[434874, 3], c_sizes [50], reps=1, bal reps=1:
+		error(A, q_opt)=337.46
+weak test on SGD,SVD,UNI (other reps=1, bal reps=1)
+	SGD errors: [0.00551], stds: [0.00000]
+	SVD errors: [0.08914], stds: [0.00000]
+	UNI errors: [0.02944], stds: [0.00000]
+	saved to ./3DRoad_434874_3/bal3/50_to_50_weak.png
+weak_time 00:00:00
+strong test(|testQ|=[2000, 3, 1]) on SGD,SVD,UNI (other reps=1, bal reps=1)
+	SGD errors: [0.00005], stds: [0.00000]
+	SVD errors: [0.12979], stds: [0.00000]
+	UNI errors: [0.27017], stds: [0.00000]
+	saved to ./3DRoad_434874_3/bal3/50_to_50_strong_mean_mean.png
+st_mean_time 00:00:13
+test_coresets time 00:00:13
+--------------------------------------------------------------------------------
+Total run time 0:02:43
+
+Process finished with exit code 0
